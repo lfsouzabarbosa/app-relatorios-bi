@@ -11,7 +11,7 @@ const { Company } = require('./companies/company.entity');
 * @return {express.Router} router
 */
 const buildAdminRouter = (admin) => {
-     const router = buildAuthenticatedRouter(admin, {
+        const router = buildAuthenticatedRouter(admin, {
         cookieName: 'admin-bro',
         cookiePassword: 'superlongandcomplicatedname',
         authenticate: async (email, password) => {
@@ -24,11 +24,11 @@ const buildAdminRouter = (admin) => {
     }, null, {
         resave: false,
         saveUninitialized: true,
-        store: MongoDbStore.create({ mongoUrl: 'mongodb://localhost:27017/test' })
+        store: MongoDbStore.create({ mongoUrl: 'mongodb+srv://techandsol:techandsol@cluster0.x9bvg.mongodb.net/myFirstDatabase?retryWrites=true&w=majority' })
     }); 
     return router;
     // const router = buildRouter(admin);
-    //return router;
+    // return router;
 };
 
 module.exports = buildAdminRouter;

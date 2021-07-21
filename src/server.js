@@ -8,10 +8,12 @@ const app = express();
 const port = 3000;
 
 const run = async () =>{
-  await mongoose.connect('mongodb://localhost:27017/test', {
+  await mongoose.connect('mongodb+srv://techandsol:techandsol@cluster0.x9bvg.mongodb.net/myFirstDatabase?retryWrites=true&w=majority', {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   });
+
+  
 
   const admin = new AdminBro(options);
   const router = buildAdminRouter(admin);
