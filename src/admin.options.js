@@ -4,7 +4,7 @@ const AdminBroMongoose = require('admin-bro-mongoose');
 AdminBro.registerAdapter(AdminBroMongoose);
 
 const AdminCompany = require('./companies/company.admin');
-const dash = require('./homepage');
+//const dash = require('./homepage');
 
 /** @type {import(admin-bro).AdminBroOptions} */
 const options = {
@@ -12,9 +12,9 @@ const options = {
     branding: {
         companyName: 'Tech and Soul',
     },
-    dashboard: {
-        component: require('./homepage')
-    },
+  //  dashboard: {
+  //      component: require('./homepage')
+  //  },
 };
 
 module.exports = options; 
