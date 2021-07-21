@@ -1,24 +1,29 @@
 {
-  "name": "app-relatorios-bi",
+  "name": "power-dashboards",
   "version": "1.0.0",
-  "description": "app-relatorios-bi",
+  "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node index.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/lfsouzabarbosa/app-relatorios-bi.git"
+    "start": "nodemon",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/lfsouzabarbosa/app-relatorios-bi/issues"
-  },
-  "homepage": "https://github.com/lfsouzabarbosa/app-relatorios-bi#readme",
   "dependencies": {
-    "express": "^4.17.1"
+    "admin-bro": "^4.0.1",
+    "admin-bro-expressjs": "^2.1.1",
+    "admin-bro-mongoose": "^0.5.2",
+    "argon": "^2.0.21",
+    "argon2": "^0.28.2",
+    "connect-mongo": "^4.4.1",
+    "eslint": "^7.31.0",
+    "express": "^4.17.1",
+    "express-formidable": "^1.2.0",
+    "express-session": "^1.17.2",
+    "md5": "^2.3.0",
+    "mongoose": "^5.13.3",
+    "nodemon": "^2.0.12",
+    "react": "^17.0.2"
   }
 }
