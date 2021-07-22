@@ -12,9 +12,12 @@ const options = {
     branding: {
         companyName: 'Tech and Soul',
     },
-  //  dashboard: {
-  //      component: require('./homepage')
-  //  },
+    dashboard: {
+    handler: async () => {
+      return { some: 'output' }
+    },
+    component: AdminBro.bundle('../homepage')
+  }
 };
 
 module.exports = options; 
