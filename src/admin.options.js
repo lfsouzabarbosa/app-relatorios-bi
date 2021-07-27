@@ -11,11 +11,10 @@ const options = {
     resources: [AdminCompany],
     branding: {
         companyName: 'Tech and Soul',
+        logo: 'https://www.techandsoul.com.br/img/techandsoul.svg',
+        softwareBrothers: false,
     },
     dashboard: {
-    handler: async () => {
-      return { some: 'output' }
-    },
     component: AdminBro.bundle('../homepage')
   }
 };
