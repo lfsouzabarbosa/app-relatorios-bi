@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 const CompanySchema = new mongoose.Schema({
-    companyName: {
+     Nome: {
         type: String,
         required: true,
     },
@@ -9,7 +9,7 @@ const CompanySchema = new mongoose.Schema({
         type: String,
         required: true,
     },
-    address: {
+    endereço: {
         type: String,
     },
     encryptedPassword: {
@@ -18,6 +18,6 @@ const CompanySchema = new mongoose.Schema({
 
 });
 
-const Company = mongoose.model('Company', CompanySchema);
+const Company = mongoose.model('Usuário', CompanySchema);
 
 module.exports = { CompanySchema, Company }
