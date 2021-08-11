@@ -8,11 +8,6 @@ const app = express();
 const port = 3004;
 
 const locaweb = async () =>{
-  await mongoose.connect('mongodb+srv://techandsol:techandsol@cluster0.x9bvg.mongodb.net/myFirstDatabase?retryWrites=true&w=majority', {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-  });
-
   const admin = new AdminBro(options);
   const router = buildAdminRouter(admin);
 
