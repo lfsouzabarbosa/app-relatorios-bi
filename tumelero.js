@@ -2,7 +2,6 @@ const express = require('express');
 const { default: AdminBro } = require('admin-bro');
 const options = require('./src/admin.options');
 const buildAdminRouter = require('./src/admin.router');
-const mongoose = require('mongoose');
 
 const app = express();
 const port = 3002;
