@@ -1,7 +1,8 @@
 const express = require('express');
-const { default: AdminBro } = require('admin-bro');
-const options = require('./src/admin.options');
-const buildAdminRouter = require('./src/admin.router');
+const AdminBro = require('admin-bro')
+const AdminBroExpress = require('@admin-bro/express')
+const adminBro = new AdminBro()
+const buildAdminRouter = AdminBroExpress.buildRouter(adminBro)
 const mongoose = require('mongoose');
 
 const app = express();

@@ -1,6 +1,17 @@
 const AdminBro = require('admin-bro')
 const AdminBroExpress = require('@admin-bro/express')
 const AdminBroMongoose = require('@admin-bro/mongoose')
+const klabin = require('./klabin')
+const locaweb = require('./locaweb')
+const suhai = require('./suhai')
+const telhanorte = require('./telhanorte')
+const tumelero = require('./tumelero')
+
+klabin()
+locaweb()
+suhai()
+telhanorte()
+tumelero()
 
 AdminBro.registerAdapter(AdminBroMongoose)
 
