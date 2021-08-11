@@ -1,5 +1,5 @@
 {
-  "name": "power-dashboards",
+  "name": "technsoul",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -11,9 +11,12 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@admin-bro/express": "^3.1.0",
+    "@admin-bro/mongoose": "^1.1.0",
     "admin-bro": "^4.0.1",
     "admin-bro-expressjs": "^2.1.1",
     "admin-bro-mongoose": "^0.5.2",
+    "admin-bro-typeorm": "^0.1.6-alpha.9",
     "argon": "^2.0.21",
     "argon2": "^0.28.2",
     "connect-mongo": "^4.4.1",
@@ -24,8 +27,10 @@
     "js-tabs": "^1.0.1",
     "material-ui": "^0.20.2",
     "md5": "^2.3.0",
-    "mongoose": "^5.13.3",
+    "mongoose": "^5.13.6",
     "nodemon": "^2.0.12",
-    "react": "^17.0.2"
+    "react": "^17.0.2",
+    "tslib": "^2.3.0",
+    "typeorm": "^0.2.36"
   }
 }
