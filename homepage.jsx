@@ -33,8 +33,8 @@ const Dashboard = () => {
               <a href="http://vps23593.publiccloud.com.br:3001/" class="sc-dIsAE default-dashboard__Card-y6jxa9-0 kgyQN kKlyvT admin-bro_Box">
                 <div class="sc-jrsJCI exBroz admin-bro_Text">
 
-                  <h5 font-size="xl" class="sc-dIvqjp lbrNjM sc-fKgIGh admin-bro_Header admin-bro_H5" font-weight="normal">Telha Norte</h5>
-                  <div class="sc-jrsJCI bJANQE admin-bro_Text">Acesse aqui as informações da Telha Norte no Trends.</div>
+                  <h5 font-size="xl" class="sc-dIvqjp lbrNjM sc-fKgIGh admin-bro_Header admin-bro_H5" font-weight="normal">Telhanorte</h5>
+                  <div class="sc-jrsJCI bJANQE admin-bro_Text">Acesse aqui as informações da Telhanorte no Trends.</div>
                 </div>
               </a>
             </section>

@@ -9,7 +9,7 @@ const telha = express();
 const port = 3000;
 
 const run = async () =>{
-  await mongoose.connect('mongodb+srv://techandsol:techandsol@cluster0.x9bvg.mongodb.net/myFirstDatabase?retryWrites=true&w=majority', {
+  await mongoose.connect('mongodb+srv://techandsol:techandsol@cluster0.x9bvg.mongodb.net/configuracoes?retryWrites=true&w=majority', {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   });
