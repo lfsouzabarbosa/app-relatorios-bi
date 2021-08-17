@@ -1,39 +1,98 @@
 const AdminBro = require('admin-bro')
 const AdminBroExpress = require('@admin-bro/express')
 const AdminBroMongoose = require('@admin-bro/mongoose')
-const klabin = require('./klabin')
-const locaweb = require('./locaweb')
-const suhai = require('./suhai')
-const telhanorte = require('./telhanorte')
-const tumelero = require('./tumelero')
-
-klabin()
-locaweb()
-suhai()
-telhanorte()
-tumelero()
+const mongoose = require('mongoose')
+const session = require('express-session')
+// const MongoStore = require('connect-mongo')(session)
+const bcrypt = require('bcrypt')
+const AdminBroExpressjs = require('@admin-bro/express')
 
 AdminBro.registerAdapter(AdminBroMongoose)
 
 const express = require('express')
 const app = express()
 
+const Usuario = mongoose.model('Usuario', {
+  nome: { type: String, required: true },
+  encryptedPassword: { type: String, required: true },
+  email: { type: String, required: true },
+  acesso: { type: String, enum: ['C-Level', 'Cliente', 'Head', 'Operacional'], required: true },
+})
+
+const Clientes = mongoose.model('Clientes', {
+  nome: String,
+  ownerId: {
+    type: mongoose.Types.ObjectId,
+    ref: 'Usuario',
+  }
+})
+
+const podeEditarClientes = ({ currentAdmin }) =>  currentAdmin.acesso === 'Head' || currentAdmin.acesso === 'C-Level'
+
+const podeEditarUsuarios = ({ currentAdmin }) => currentAdmin && currentAdmin.acesso === 'Head' || currentAdmin.acesso === 'C-Level'
+
 const adminBro = new AdminBro({
   rootPath: '/admin',
- /** resources: [
-    { resource: Usuario, options: {
-       parent: 'Configurações',
-    }},
-  ],*/ 
+  resources: [{
+    resource: Clientes,
+    options: {
+      parent: 'Informações',
+      properties: {
+        ownerId: { isVisible: { edit: false, show: false, list: false, filter: false } },
+        checkbox: { isVisible: { edit: false, show: false, list: false, filter: false } }
+      },
+      actions: {
+        edit: { isAccessible: podeEditarClientes },
+        delete: { isAccessible: podeEditarClientes },
+        new:  { isAccessible: podeEditarClientes },
+      }
+    }
+  },
+  {
+    resource: Usuario,
+    options: {
+      parent: 'Configurações',
+      icon: 'fa fa-cog',
+      properties: {
+        encryptedPassword: {
+          isVisible: false,
+        },
+        password: {
+          type: 'password',
+          isVisible: {
+            list: false, edit: true, filter: false, show: false,
+          },
+        }
+      },
+      actions: {
+        new: {
+          before: async (request) => {
+            if (request.payload.password) {
+              request.payload = {
+                ...request.payload,
+                encryptedPassword: await bcrypt.hash(request.payload.password, 10),
+                password: undefined,
+              }
+            }
+            return request
+          },
+        },
+        edit: { isAccessible: podeEditarUsuarios },
+        delete: { isAccessible: podeEditarUsuarios },
+        new: { isAccessible: podeEditarUsuarios },
+      }
+    }
+  }],
   branding: {
     companyName: 'Tech and Soul',
     logo: 'https://www.techandsoul.com.br/img/techandsoul.svg',
     softwareBrothers: false,
   },
   dashboard: {
-    component: AdminBro.bundle('./homepage')
+    component: AdminBro.bundle('./homepage'),
+    isAccessible: ({ currentAdmin }) => currentAdmin.role === 'Head',
   },
-    locale: {
+  locale: {
     translations: {
       actions: {
         new: 'Criar novo',
@@ -51,12 +110,15 @@ const adminBro = new AdminBro({
         resetFilter: 'Limpar Filtros',
         confirmRemovalMany: 'Confirmar a remoção de {{count}} registro(s)',
         confirmRemovalMany_plural: 'Confirmar a remoção de {{count}} registros',
-        logout: 'Logout',
+        logout: 'Sair',
+        login: 'Entrar',
         seeTheDocumentation: 'Ver: <1>a documentação</1>',
         createFirstRecord: 'Criar primeiro registro',
       },
       labels: {
         navigation: 'Menu',
+        Logout: 'Sair',
+        Login: 'Entrar',
         pages: 'Páginas',
         selectedRecords: 'Selecionados ({{selected}})',
         filters: 'Filtros',
@@ -111,13 +173,39 @@ const adminBro = new AdminBro({
         foundBug_subtitle: 'Levantar um problema em nosso repositório GitHub',
         needMoreSolutions_title: 'Precisa de soluções mais avançadas?',
         needMoreSolutions_subtitle: 'Estamos aqui para fornecer a você um belo design de UX/UI e um software feito sob medida com base (não apenas) no AdminBro',
-        invalidCredentials: 'Email e/ou senha errados',
+        invalidCredentials: 'Email e/ou password errados',
       }
     }
   }
 })
 
-const router = AdminBroExpress.buildRouter(adminBro)
+const run = async () => {
+  await mongoose.connect('mongodb+srv://techandsol:techandsol@cluster0.x9bvg.mongodb.net/myFirstDatabase?retryWrites=true&w=majority', {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  });
+}
+
+run()
+
+// const router = AdminBroExpress.buildRouter(adminBro)
+
+const router = AdminBroExpressjs.buildAuthenticatedRouter(adminBro, {
+  authenticate: async (email, password) => {
+    const user = await Usuario.findOne({ email })
+    if (user) {
+      const matched = await bcrypt.compare(password, user.encryptedPassword)
+      if (matched) {
+        return user
+      }
+    }
+    return false
+  },
+  cookiePassword: 'some-secret-password-used-to-secure-cookie',
+  resave: false,
+  saveUnitilialized: true,
+  // store: new MongoStore({ mongooseConnection: mongoose.connection }),
+})
 
 app.use(adminBro.options.rootPath, router)
 app.listen(8080, () => console.log('Sistema rodando em localhost:8080/admin'))

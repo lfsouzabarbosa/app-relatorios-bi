@@ -3,18 +3,12 @@ const AdminBro = require('admin-bro')
 const AdminBroExpress = require('@admin-bro/express')
 const adminBro = new AdminBro()
 const buildAdminRouter = AdminBroExpress.buildRouter(adminBro)
-const mongoose = require('mongoose');
 
 const app = express();
 const port = 3005;
 
 const klabin = async () =>{
-  await mongoose.connect('mongodb+srv://techandsol:techandsol@cluster0.x9bvg.mongodb.net/myFirstDatabase?retryWrites=true&w=majority', {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-  });
-
-  const admin = new AdminBro(options);
+  const admin = new AdminBro();
   const router = buildAdminRouter(admin);
 
   app.use(admin.options.rootPath, router);
