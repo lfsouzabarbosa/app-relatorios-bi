@@ -4,7 +4,7 @@ const AdminBroMongoose = require('@admin-bro/mongoose')
 const mongoose = require('mongoose')
 const session = require('express-session')
 // const MongoStore = require('connect-mongo')(session)
-const bcrypt = require('bcrypt')
+// const bcrypt = require('bcrypt')
 const AdminBroExpressjs = require('@admin-bro/express')
 
 AdminBro.registerAdapter(AdminBroMongoose)
@@ -65,7 +65,7 @@ const adminBro = new AdminBro({
         }
       },
       actions: {
-        new: {
+       /* new: {
           before: async (request) => {
             if (request.payload.password) {
               request.payload = {
@@ -76,7 +76,7 @@ const adminBro = new AdminBro({
             }
             return request
           },
-        },
+        }, */ 
         edit: { isAccessible: podeEditarUsuarios },
         delete: { isAccessible: podeEditarUsuarios },
         new: { isAccessible: podeEditarUsuarios },
@@ -194,7 +194,7 @@ const router = AdminBroExpressjs.buildAuthenticatedRouter(adminBro, {
   authenticate: async (email, password) => {
     const user = await Usuario.findOne({ email })
     if (user) {
-      const matched = await bcrypt.compare(password, user.encryptedPassword)
+      const matched = await  user.encryptedPassword
       if (matched) {
         return user
       }
