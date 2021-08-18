@@ -12,9 +12,18 @@ AdminBro.registerAdapter(AdminBroMongoose)
 const express = require('express')
 const app = express()
 
+const run = async () => {
+  await mongoose.connect('mongodb+srv://techandsol:techandsol@cluster0.x9bvg.mongodb.net/myFirstDatabase?retryWrites=true&w=majority', {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  });
+}
+
+run()
+
 const Usuario = mongoose.model('Usuario', {
   nome: { type: String, required: true },
-  encryptedPassword: { type: String, required: true },
+  senha: { type: String, required: true },
   email: { type: String, required: true },
   acesso: { type: String, enum: ['Admin','C-Level', 'Cliente', 'Head', 'Operacional'], required: true },
 })
@@ -60,7 +69,7 @@ const suhai =  mongoose.model('suhai', {
 const podeEditarClientes = ({ currentAdmin }) =>  currentAdmin.acesso === 'Head' || currentAdmin.acesso === 'C-Level'
 const podeEditarUsuarios = ({ currentAdmin }) => currentAdmin && currentAdmin.acesso === 'Admin'
 const clevel = ({ currentAdmin }) => currentAdmin && currentAdmin.acesso === 'C-Level'
-const operacional = ({ currentAdmin }) => currentAdmin && currentAdmin.acesso === 'Operacional'
+const operacional = ({ currentAdmin }) => currentAdmin.acesso === 'Operacional'
 
 const adminBro = new AdminBro({
   rootPath: '/admin',
@@ -71,29 +80,14 @@ const adminBro = new AdminBro({
       parent: 'Configurações',
       icon: 'fa fa-cog',
       properties: {
-        encryptedPassword: {
-          isVisible: false,
-        },
-        password: {
+        senha: {
           type: 'password',
-          isVisible: {
-            list: false, edit: true, filter: false, show: false,
+            isVisible: {
+            list: false, edit: true, filter: false, show: false, new: true,
           },
         }
       },
       actions: {
-       /* new: {
-          before: async (request) => {
-            if (request.payload.password) {
-              request.payload = {
-                ...request.payload,
-                encryptedPassword: await bcrypt.hash(request.payload.password, 10),
-                password: undefined,
-              }
-            }
-            return request
-          },
-        }, */ 
         edit: { isAccessible: podeEditarUsuarios },
         delete: { isAccessible: podeEditarUsuarios },
         new: { isAccessible: podeEditarUsuarios },
@@ -115,7 +109,7 @@ const adminBro = new AdminBro({
         delete: { isAccessible: podeEditarClientes },
         new:  { isAccessible: operacional },
         show:  { isAccessible: podeEditarClientes },
-        // list:  { isAccessible: podeEditarClientes },
+        list:  { isAccessible: operacional },
       }
     }
   },
@@ -172,7 +166,6 @@ const adminBro = new AdminBro({
   }
 
   ],
-  page: AdminBro.bundle('./homepage'),
   branding: {
     companyName: 'Tech and Soul',
     logo: 'https://www.techandsoul.com.br/img/techandsoul.svg',
@@ -268,22 +261,13 @@ const adminBro = new AdminBro({
   }
 })
 
-const run = async () => {
-  await mongoose.connect('mongodb+srv://techandsol:techandsol@cluster0.x9bvg.mongodb.net/myFirstDatabase?retryWrites=true&w=majority', {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-  });
-}
-
-run()
-
 // const router = AdminBroExpress.buildRouter(adminBro)
 
 const router = AdminBroExpressjs.buildAuthenticatedRouter(adminBro, {
-  authenticate: async (email, password) => {
+  authenticate: async (email, senha) => {
     const user = await Usuario.findOne({ email })
     if (user) {
-      const matched = await  user.encryptedPassword
+      const matched = await  user.senha
       if (matched) {
         return user
       }
@@ -293,7 +277,6 @@ const router = AdminBroExpressjs.buildAuthenticatedRouter(adminBro, {
   cookiePassword: 'some-secret-password-used-to-secure-cookie',
   resave: false,
   saveUnitilialized: true,
-  // store: new MongoStore({ mongooseConnection: mongoose.connection }),
 })
 
 app.use(adminBro.options.rootPath, router)
