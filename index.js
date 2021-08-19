@@ -25,7 +25,7 @@ const Usuario = mongoose.model('Usuario', {
   nome: { type: String, required: true },
   senha: { type: String, required: true },
   email: { type: String, required: true },
-  acesso: { type: String, enum: ['Admin','C-Level', 'Cliente', 'Head', 'Operacional'], required: true },
+  acesso: { type: String, enum: ['Admin', 'C-Level', 'Cliente', 'Head', 'Operacional'], required: true },
 })
 
 const Clientes = mongoose.model('Clientes', {
@@ -36,7 +36,7 @@ const Clientes = mongoose.model('Clientes', {
   }
 })
 
-const C6 =  mongoose.model('C6', {
+const C6 = mongoose.model('C6', {
   seguidores: Number,
   Data: Date,
   ownerId: {
@@ -44,21 +44,21 @@ const C6 =  mongoose.model('C6', {
     ref: 'Usuario',
   }
 })
-const telhanorte =  mongoose.model('telhanorte', {
+const telhanorte = mongoose.model('telhanorte', {
   nome: String,
   ownerId: {
     type: mongoose.Types.ObjectId,
     ref: 'Usuario',
   }
 })
-const tumelero =  mongoose.model('tumelero', {
+const tumelero = mongoose.model('tumelero', {
   nome: String,
   ownerId: {
     type: mongoose.Types.ObjectId,
     ref: 'Usuario',
   }
 })
-const suhai =  mongoose.model('suhai', {
+const suhai = mongoose.model('suhai', {
   nome: String,
   ownerId: {
     type: mongoose.Types.ObjectId,
@@ -66,7 +66,7 @@ const suhai =  mongoose.model('suhai', {
   }
 })
 
-const podeEditarClientes = ({ currentAdmin }) =>  currentAdmin.acesso === 'Head' || currentAdmin.acesso === 'C-Level'
+const podeEditarClientes = ({ currentAdmin }) => currentAdmin.acesso === 'Head' || currentAdmin.acesso === 'C-Level'
 const podeEditarUsuarios = ({ currentAdmin }) => currentAdmin && currentAdmin.acesso === 'Admin'
 const clevel = ({ currentAdmin }) => currentAdmin && currentAdmin.acesso === 'C-Level'
 const operacional = ({ currentAdmin }) => currentAdmin.acesso === 'Operacional'
@@ -75,103 +75,120 @@ const adminBro = new AdminBro({
   rootPath: '/admin',
   resources: [
     {
-    resource: Usuario,
-    options: {
-      parent: 'Configurações',
-      icon: 'fa fa-cog',
-      properties: {
-        senha: {
-          type: 'password',
+      resource: Usuario,
+      options: {
+        parent: 'Configurações',
+        icon: 'fa fa-cog',
+        properties: {
+          senha: {
+            type: 'password',
             isVisible: {
-            list: false, edit: true, filter: false, show: false, new: true,
-          },
+              list: false, edit: true, filter: false, show: false, new: true,
+            },
+          }
+        },
+        actions: {
+          edit: { isAccessible: podeEditarUsuarios },
+          delete: { isAccessible: podeEditarUsuarios },
+          new: { isAccessible: podeEditarUsuarios },
+          show: { isAccessible: podeEditarUsuarios },
+          list: { isAccessible: podeEditarUsuarios },
         }
-      },
-      actions: {
-        edit: { isAccessible: podeEditarUsuarios },
-        delete: { isAccessible: podeEditarUsuarios },
-        new: { isAccessible: podeEditarUsuarios },
-        show: { isAccessible: podeEditarUsuarios },
-        list: { isAccessible: podeEditarUsuarios },
       }
-    }
-  },
-  {
-    resource: C6,
-    options: {
-      parent: 'Clientes',
-      properties: {
-        ownerId: { isVisible: { edit: false, show: false, list: false, filter: false } },
-        checkbox: { isVisible: { edit: false, show: false, list: false, filter: false } }
-      },
+    },
+    {
+      resource: C6,
+      options: {
+        parent: 'Clientes',
+        properties: {
+          ownerId: { isVisible: { edit: false, show: false, list: false, filter: false } },
+          checkbox: { isVisible: { edit: false, show: false, list: false, filter: false } }
+        },
+        actions: {
+          edit: { isAccessible: operacional },
+          delete: { isAccessible: podeEditarClientes },
+          new: { isAccessible: operacional },
+          show: { isAccessible: podeEditarClientes },
+          list: { isAccessible: operacional },
+        }
+      }
+    },
+    {
+      resource: telhanorte,
+      options: {
+        parent: 'Clientes',
+        properties: {
+          ownerId: { isVisible: { edit: false, show: false, list: false, filter: false } },
+          checkbox: { isVisible: { edit: false, show: false, list: false, filter: false } }
+        },
+        actions: {
+          edit: { isAccessible: podeEditarClientes },
+          delete: { isAccessible: podeEditarClientes },
+          new: { isAccessible: podeEditarClientes },
+          show: { isAccessible: podeEditarClientes },
+          list: { isAccessible: podeEditarClientes },
+        }
+      }
+    },
+    {
+      resource: tumelero,
+      options: {
+        parent: 'Clientes',
+        properties: {
+          ownerId: { isVisible: { edit: false, show: false, list: false, filter: false } },
+          checkbox: { isVisible: { edit: false, show: false, list: false, filter: false } }
+        },
+        actions: {
+          edit: { isAccessible: clevel },
+          delete: { isAccessible: clevel },
+          new: { isAccessible: clevel },
+          show: { isAccessible: clevel },
+          list: { isAccessible: clevel },
+        }
+      }
+    },
+    {
+      resource: suhai,
+      options: {
+        parent: 'Clientes',
+        properties: {
+          ownerId: { isVisible: { edit: false, show: false, list: false, filter: false } },
+          checkbox: { isVisible: { edit: false, show: false, list: false, filter: false } }
+        },
+        actions: {
+          edit: { isAccessible: clevel },
+          delete: { isAccessible: clevel },
+          new: { isAccessible: clevel },
+          show: { isAccessible: clevel },
+          list: { isAccessible: clevel },
+        }
+      }
+    },  
+  ],
+  pages: {
+    Telhanorte: {
       actions: {
         edit: { isAccessible: operacional },
-        delete: { isAccessible: podeEditarClientes },
-        new:  { isAccessible: operacional },
-        show:  { isAccessible: podeEditarClientes },
-        list:  { isAccessible: operacional },
-      }
-    }
-  },
-  {
-    resource: telhanorte,
-    options: {
-      parent: 'Clientes',
-      properties: {
-        ownerId: { isVisible: { edit: false, show: false, list: false, filter: false } },
-        checkbox: { isVisible: { edit: false, show: false, list: false, filter: false } }
+        delete: { isAccessible: operacional },
+        new: { isAccessible: operacional },
+        show: { isAccessible: operacional },
+        list: { isAccessible: operacional },
       },
-      actions: {
-        edit: { isAccessible: podeEditarClientes },
-        delete: { isAccessible: podeEditarClientes },
-        new:  { isAccessible: podeEditarClientes },
-        show:  { isAccessible: podeEditarClientes },
-        list:  { isAccessible: podeEditarClientes },
-      }
-    }
-  },
-  {
-    resource: tumelero,
-    options: {
-      parent: 'Clientes',
-      properties: {
-        ownerId: { isVisible: { edit: false, show: false, list: false, filter: false } },
-        checkbox: { isVisible: { edit: false, show: false, list: false, filter: false } }
+      label: "Telhanorte",
+      handler: async (request, response, context) => {
+        return {
+          text: 'I am fetched from the backend',
+        }
       },
-      actions: {
-        edit: { isAccessible: clevel },
-        delete: { isAccessible: clevel },
-        new:  { isAccessible: clevel },
-        show:  { isAccessible: clevel },
-        list:  { isAccessible: clevel },
-      }
-    }
+      component: AdminBro.bundle('./homepage'),
+    },
   },
-  {
-    resource: suhai,
-    options: {
-      parent: 'Clientes',
-      properties: {
-        ownerId: { isVisible: { edit: false, show: false, list: false, filter: false } },
-        checkbox: { isVisible: { edit: false, show: false, list: false, filter: false } }
-      },
-      actions: {
-        edit: { isAccessible: clevel },
-        delete: { isAccessible: clevel },
-        new:  { isAccessible: clevel },
-        show:  { isAccessible: clevel },
-        list:  { isAccessible: clevel },
-      }
-    }
-  }
-
-  ],
   branding: {
     companyName: 'Tech and Soul',
     logo: 'https://www.techandsoul.com.br/img/techandsoul.svg',
     softwareBrothers: false,
   },
-   dashboard: {
+  dashboard: {
     component: AdminBro.bundle('./homepage'),
   },
   locale: {
@@ -267,7 +284,7 @@ const router = AdminBroExpressjs.buildAuthenticatedRouter(adminBro, {
   authenticate: async (email, senha) => {
     const user = await Usuario.findOne({ email })
     if (user) {
-      const matched = await  user.senha
+      const matched = await user.senha
       if (matched) {
         return user
       }
