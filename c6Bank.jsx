@@ -237,9 +237,9 @@ const Dashboard = () => {
                                                 alt="Taxa de Crescimento"></img>
                                                 <Text fontSize="15px" fontWeight="3px">Crescimento</Text>
                                             </Box>
-                                            <Text marginTop="27px" fontSize="xl" fontWeight="900">1.345.845
+                                            <Text marginTop="27px" fontSize="xl" fontWeight="900">
                                             </Text>
-                                            <Text marginTop="27px" marginLeft="10px"fontSize="xl" fontWeight="900" color="#00a500">12%
+                                            <Text marginTop="27px" marginLeft="10px"fontSize="xl" fontWeight="900" color="#00a500">0,1%
                                             </Text>
                                         </Box>
                                         <hr color="black" size="2" width="100%" ></hr>
@@ -254,9 +254,9 @@ const Dashboard = () => {
                                                 alt="Impressoes"></img>
                                                 <Text fontSize="15px" fontWeight="3px">Impressões</Text>
                                             </Box>
-                                            <Text marginTop="33px" fontSize="xl" fontWeight="900">4.896.365
+                                            <Text marginTop="33px" fontSize="xl" fontWeight="900">000.000
                                             </Text>
-                                            <Text marginTop="33px" marginLeft="10px"fontSize="xl" fontWeight="900" color="#00a500">8%
+                                            <Text marginTop="33px" marginLeft="10px"fontSize="xl" fontWeight="900" color="#00a500">
                                             </Text> 
                                         </Box>
                                          <hr color="black" size="2" width="100%" ></hr>
@@ -270,9 +270,9 @@ const Dashboard = () => {
                                                 <img width="25px" height="25px" src="https://image.flaticon.com/icons/png/512/1250/1250999.png" alt="Icone Alcance"></img>
                                                 <Text fontSize="15px" fontWeight="3px">Alcance</Text>
                                             </Box>
-                                                <Text marginTop="27px" fontSize="xl" fontWeight="900">5.109.041
+                                                <Text marginTop="27px" fontSize="xl" fontWeight="900">1823
                                                 </Text>
-                                                <Text marginTop="27px" marginLeft="10px"fontSize="xl" fontWeight="900" color="#00a500">3%
+                                                <Text marginTop="27px" marginLeft="10px"fontSize="xl" fontWeight="900" color="#00a500">
                                                 </Text>
                                             </Box>
                                         <hr color="black" size="2" width="100%" ></hr>
