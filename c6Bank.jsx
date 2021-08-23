@@ -35,7 +35,7 @@ const Dashboard = () => {
                                                 alt="Fãs"></img>
                                                 <Text fontSize="15px" fontWeight="3px">Fãs</Text>
                                             </Box>
-                                            <Text textAlign="right" marginTop="27px" fontSize="xl" fontWeight="900">75625
+                                            <Text marginTop="27px" fontSize="xl" fontWeight="900">75625
                                             </Text>
                                         </Box>
                                         <hr color="black" size="2" width="100%" ></hr>
