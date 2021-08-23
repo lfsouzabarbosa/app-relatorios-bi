@@ -29,15 +29,13 @@ const Dashboard = () => {
                                 </div>
                                 <div>
                                     <Box>
-                                        <Box flex  margin="0 10px">
-                                            <Box marginRight="70px">
+                                        <Box flex flexDirection="row" margin="0 10px">
+                                            <Box>
                                                 <img width="25px" height="25px" src="https://image.flaticon.com/icons/png/512/2097/2097681.png" alt="Icone Fãs"
                                                 alt="Fãs"></img>
                                                 <Text fontSize="15px" fontWeight="3px">Fãs</Text>
                                             </Box>
-                                            <Text marginTop="27px" fontSize="xl" fontWeight="900">1.345.845
-                                            </Text>
-                                            <Text marginTop="27px" marginLeft="10px"fontSize="xl" fontWeight="900" color="#00a500">12%
+                                            <Text textAlign="right" marginTop="27px" fontSize="xl" fontWeight="900">75625
                                             </Text>
                                         </Box>
                                         <hr color="black" size="2" width="100%" ></hr>
@@ -52,9 +50,7 @@ const Dashboard = () => {
                                                 alt="Taxa de Crescimento"></img>
                                                 <Text fontSize="15px" fontWeight="3px">Crescimento</Text>
                                             </Box>
-                                            <Text marginTop="27px" fontSize="xl" fontWeight="900">1.345.845
-                                            </Text>
-                                            <Text marginTop="27px" marginLeft="10px"fontSize="xl" fontWeight="900" color="#00a500">12%
+                                            <Text marginTop="27px" marginLeft="10px"fontSize="xl" fontWeight="900" color="#00a500">0.8%
                                             </Text>
                                         </Box>
                                         <hr color="black" size="2" width="100%" ></hr>
@@ -69,9 +65,9 @@ const Dashboard = () => {
                                                 alt="Impressoes"></img>
                                                 <Text fontSize="15px" fontWeight="3px">Impressões</Text>
                                             </Box>
-                                            <Text marginTop="33px" fontSize="xl" fontWeight="900">4.896.365
+                                            <Text marginTop="33px" fontSize="xl" fontWeight="900">000.000
                                             </Text>
-                                            <Text marginTop="33px" marginLeft="10px"fontSize="xl" fontWeight="900" color="#00a500">8%
+                                            <Text marginTop="33px" marginLeft="10px"fontSize="xl" fontWeight="900" color="#00a500">
                                             </Text> 
                                         </Box>
                                          <hr color="black" size="2" width="100%" ></hr>
@@ -85,9 +81,9 @@ const Dashboard = () => {
                                                 <img width="25px" height="25px" src="https://image.flaticon.com/icons/png/512/1250/1250999.png" alt="Icone Alcance"></img>
                                                 <Text fontSize="15px" fontWeight="3px">Alcance</Text>
                                             </Box>
-                                                <Text marginTop="27px" fontSize="xl" fontWeight="900">5.109.041
+                                                <Text marginTop="27px" fontSize="xl" fontWeight="900">9220
                                                 </Text>
-                                                <Text marginTop="27px" marginLeft="10px"fontSize="xl" fontWeight="900" color="#00a500">3%
+                                                <Text marginTop="27px" marginLeft="10px"fontSize="xl" fontWeight="900" color="#00a500">
                                                 </Text>
                                             </Box>
                                         <hr color="black" size="2" width="100%" ></hr>
@@ -102,9 +98,9 @@ const Dashboard = () => {
                                                 alt="Interaçoes"></img>
                                             <Text fontSize="15px" fontWeight="3px">Interações</Text>
                                             </Box>
-                                            <Text marginTop="27px" fontSize="xl" fontWeight="900">5.109.041
+                                            <Text marginTop="27px" fontSize="xl" fontWeight="900">1.745
                                             </Text>
-                                            <Text marginTop="27px" marginLeft="10px"fontSize="xl" fontWeight="900" color="#00a500">3%
+                                            <Text marginTop="27px" marginLeft="10px"fontSize="xl" fontWeight="900" color="#00a500">
                                             </Text>
                                         </Box>
                                         <hr color="black" size="2" width="100%" ></hr>
@@ -113,7 +109,7 @@ const Dashboard = () => {
                                 <br></br>
                                 <br></br>
                                 <Button marginLeft="50px" fontSize="xl" fontWeight="400" size="300px" backgroundColor="ffffff">
-                                    + Detalhes
+                                + Detalhes
                                 </Button>
                             </a>
                         </section>
@@ -133,9 +129,7 @@ const Dashboard = () => {
                                                 alt="Fãs"></img>
                                                 <Text fontSize="15px" fontWeight="3px">Seguidores</Text>
                                             </Box>
-                                            <Text marginTop="27px" fontSize="xl" fontWeight="900">1.345.845
-                                            </Text>
-                                            <Text marginTop="27px" marginLeft="10px"fontSize="xl" fontWeight="900" color="#00a500">12%
+                                            <Text marginTop="27px" fontSize="xl" fontWeight="900">415.326
                                             </Text>
                                         </Box>
                                         <hr color="black" size="2" width="100%" ></hr>
@@ -150,9 +144,7 @@ const Dashboard = () => {
                                                 alt="Taxa de Crescimento"></img>
                                                 <Text fontSize="15px" fontWeight="3px">Crescimento</Text>
                                             </Box>
-                                            <Text marginTop="27px" fontSize="xl" fontWeight="900">1.345.845
-                                            </Text>
-                                            <Text marginTop="27px" marginLeft="10px"fontSize="xl" fontWeight="900" color="#00a500">12%
+                                            <Text marginTop="27px" marginLeft="10px"fontSize="xl" fontWeight="900" color="#00a500">0,1%
                                             </Text>
                                         </Box>
                                         <hr color="black" size="2" width="100%" ></hr>
@@ -167,9 +159,9 @@ const Dashboard = () => {
                                                 alt="Impressoes"></img>
                                                 <Text fontSize="15px" fontWeight="3px">Impressões</Text>
                                             </Box>
-                                            <Text marginTop="33px" fontSize="xl" fontWeight="900">4.896.365
+                                            <Text marginTop="33px" fontSize="xl" fontWeight="900">000.000
                                             </Text>
-                                            <Text marginTop="33px" marginLeft="10px"fontSize="xl" fontWeight="900" color="#00a500">8%
+                                            <Text marginTop="33px" marginLeft="10px"fontSize="xl" fontWeight="900" color="#00a500">
                                             </Text> 
                                         </Box>
                                          <hr color="black" size="2" width="100%" ></hr>
@@ -183,9 +175,9 @@ const Dashboard = () => {
                                                 <img width="25px" height="25px" src="https://image.flaticon.com/icons/png/512/1250/1250999.png" alt="Icone Alcance"></img>
                                                 <Text fontSize="15px" fontWeight="3px">Alcance</Text>
                                             </Box>
-                                                <Text marginTop="27px" fontSize="xl" fontWeight="900">5.109.041
+                                                <Text marginTop="27px" fontSize="xl" fontWeight="900">18.023
                                                 </Text>
-                                                <Text marginTop="27px" marginLeft="10px"fontSize="xl" fontWeight="900" color="#00a500">3%
+                                                <Text marginTop="27px" marginLeft="10px"fontSize="xl" fontWeight="900" color="#00a500">
                                                 </Text>
                                             </Box>
                                         <hr color="black" size="2" width="100%" ></hr>
@@ -200,9 +192,9 @@ const Dashboard = () => {
                                                 alt="Interaçoes"></img>
                                             <Text fontSize="15px" fontWeight="3px">Interações</Text>
                                             </Box>
-                                            <Text marginTop="27px" fontSize="xl" fontWeight="900">5.109.041
+                                            <Text marginTop="27px" fontSize="xl" fontWeight="900">6.688
                                             </Text>
-                                            <Text marginTop="27px" marginLeft="10px"fontSize="xl" fontWeight="900" color="#00a500">3%
+                                            <Text marginTop="27px" marginLeft="10px"fontSize="xl" fontWeight="900" color="#00a500">
                                             </Text>
                                         </Box>
                                         <hr color="black" size="2" width="100%" ></hr>
@@ -230,9 +222,7 @@ const Dashboard = () => {
                                                 alt="Fãs"></img>
                                                 <Text fontSize="15px" fontWeight="3px">Seguidores</Text>
                                             </Box>
-                                            <Text marginTop="27px" fontSize="xl" fontWeight="900">1.345.845
-                                            </Text>
-                                            <Text marginTop="27px" marginLeft="10px"fontSize="xl" fontWeight="900" color="#00a500">12%
+                                            <Text marginTop="27px" fontSize="xl" fontWeight="900">39.125
                                             </Text>
                                         </Box>
                                         <hr color="black" size="2" width="100%" ></hr>
