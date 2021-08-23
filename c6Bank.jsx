@@ -10,7 +10,7 @@ const Dashboard = () => {
     return (
         <section>
             <Box margin="30px 0 20px 45px" width="200px"  minHeight="20px">
-                <img width="170px" src="https://logodhttps://upload.wikimedia.org/wikipedia/commons/thumb/7/77/Logo_C6_Bank.svg/2560px-Logo_C6_Bank.svg.png"
+                <img width="170px" src="https://logodownload.org/wp-content/uploads/2020/11/c6-bank-logo.png"    
                 alt="Logo C6Bank"></img>
             </Box>
             <Box variant="grey">        
@@ -217,7 +217,7 @@ const Dashboard = () => {
                         </section>
 
                         <section width="auto" class="sc-dIsAE cHuGUn admin-bro_Box">
-                            <a href="http://vps23593.publiccloud.com.br:3004/" class="sc-dIsAE default-dashboard__Card-y6jxa9-0 kgyQN kKlyvT admin-bro_Box">
+                            <a href="http://vps23593.publiccloud.com.br:3001/" class="sc-dIsAE default-dashboard__Card-y6jxa9-0 kgyQN kKlyvT admin-bro_Box">
                                 <div class="sc-jrsJCI exBroz admin-bro_Text">
                                     <img width="auto" height="90" src="https://image.flaticon.com/icons/png/512/733/733579.png" alt="Icone Twitter"></img>
                                     <div class="sc-jrsJCI bJANQE admin-bro_Text"></div>
@@ -316,14 +316,12 @@ const Dashboard = () => {
                     </section>
                 </section>
             </Box>
-            
-            <Text margin="0 0 20px 47px" fontSize="xl" fontWeight="400">Google Trends</Text>
-            <Box border="2px solid #ffffff" borderRadius="10px" maxWidth="800px" minHeight="600px" backgroundColor="#ffffff" margin=" 10px auto 30px">
-            </Box>
 
             <Text margin="0 0 20px 47px" fontSize="xl" fontWeight="400">Google News</Text>
             <Box border="2px solid #ffffff" borderRadius="10px" maxWidth="800px" minHeight="600px" backgroundColor="#ffffff" margin=" 10px auto 30px">
+            <iframe width="1000" height="500" src="https://app.powerbi.com/view?r=eyJrIjoiZWFhODZkNzItZDc0YS00YTJlLThmMmEtYzk1OTY0MDg0MzY1IiwidCI6Ijg3ZTcxOWVhLTg0MGUtNDFiMy05Y2NkLTM5MDg2YzllY2NiNiIsImMiOjR9&pageName=ReportSection" frameborder="0" allowFullScreen="true"></iframe>
             </Box>
+           
 
     </section>
     )

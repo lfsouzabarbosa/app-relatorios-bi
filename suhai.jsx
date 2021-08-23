@@ -10,7 +10,7 @@ const Dashboard = () => {
     return (
         <section>
             <Box margin="30px 0 20px 45px" width="200px"  minHeight="20px">
-                <img width="170px" src="https://logodhttps://upload.wikimedia.org/wikipedia/commons/thumb/7/77/Logo_C6_Bank.svg/2560px-Logo_C6_Bank.svg.png"
+                <img width="170px" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRgDDAk7HNLdKCcV0QoZfZkOZoR5Z0IcZXgiojUM7iYt1noMg3wI7_UGXv9ESvbSMtFTw&usqp=CAU"
                 alt="Logo Suhai"></img>
             </Box>
             <Box variant="grey">        

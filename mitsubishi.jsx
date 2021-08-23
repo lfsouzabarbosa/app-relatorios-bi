@@ -10,7 +10,7 @@ const Dashboard = () => {
     return (
         <section>
             <Box margin="30px 0 20px 45px" width="200px"  minHeight="20px">
-                <img width="170px" src="https://logodhttps://upload.wikimedia.org/wikipedia/commons/thumb/7/77/Logo_C6_Bank.svg/2560px-Logo_C6_Bank.svg.png"
+                <img width="170px" src="https://logodownload.org/wp-content/uploads/2014/10/mitsubish-logo-1.png"
                 alt="Logo Mitsubishi"></img>
             </Box>
             <Box variant="grey">        

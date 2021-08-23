@@ -2,7 +2,7 @@ const AdminBro = require('admin-bro')
 const AdminBroExpress = require('@admin-bro/express')
 const AdminBroMongoose = require('@admin-bro/mongoose')
 const mongoose = require('mongoose')
-const session = require('express-session')
+const c6 = require('./c6Trends')
 // const MongoStore = require('connect-mongo')(session)
 // const bcrypt = require('bcrypt')
 const AdminBroExpressjs = require('@admin-bro/express')
@@ -11,6 +11,8 @@ AdminBro.registerAdapter(AdminBroMongoose)
 
 const express = require('express')
 const app = express()
+
+c6()
 
 const run = async () => {
   await mongoose.connect('mongodb+srv://techandsol:techandsol@cluster0.x9bvg.mongodb.net/myFirstDatabase?retryWrites=true&w=majority', {
@@ -199,11 +201,11 @@ const adminBro = new AdminBro({
     **/
   ],
   pages: {
+    C6: {
+      component: AdminBro.bundle('./c6Bank'),
+    },
     Telhanorte: {
       component: AdminBro.bundle('./homepage'),
-    },
-     C6: {
-      component: AdminBro.bundle('./c6Bank'),
     },
     klabin: {
       component: AdminBro.bundle('./klabin'),
@@ -233,7 +235,7 @@ const adminBro = new AdminBro({
     softwareBrothers: false,
   },
   dashboard: {
-   // component: AdminBro.bundle('./homepage'),
+    component: AdminBro.bundle('./c6Bank'),
   },
   locale: {
     translations: {
