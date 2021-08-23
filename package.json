@@ -26,6 +26,7 @@
     "express": "^4.17.1",
     "express-formidable": "^1.2.0",
     "express-session": "^1.17.2",
+    "google-trends-api": "^3.0.2",
     "js-tabs": "^1.0.1",
     "material-ui": "^0.20.2",
     "md5": "^2.3.0",
