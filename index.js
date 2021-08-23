@@ -95,8 +95,8 @@ const adminBro = new AdminBro({
           list: { isAccessible: podeEditarUsuarios },
         }
       }
-    },
-    {
+    },  
+     /** {
       resource: C6,
       options: {
         parent: 'Clientes',
@@ -112,8 +112,8 @@ const adminBro = new AdminBro({
           list: { isAccessible: operacional },
         }
       }
-    },
-    {
+    },*/
+    /** {
       resource: telhanorte,
       options: {
         parent: 'Clientes',
@@ -129,7 +129,7 @@ const adminBro = new AdminBro({
           list: { isAccessible: podeEditarClientes },
         }
       }
-    },
+    }, 
     {
       resource: tumelero,
       options: {
@@ -164,24 +164,68 @@ const adminBro = new AdminBro({
         }
       }
     },  
+    
+    
+    
+     C6: {
+      component: AdminBro.bundle('./c6'),
+    },
+    klabin: {
+      component: AdminBro.bundle('./klabin'),
+    },
+    locaweb: {
+      component: AdminBro.bundle('./locaweb'),
+    },
+    mitsubishi: {
+      component: AdminBro.bundle('./mitsubishi'),
+    },
+    obraja: {
+      component: AdminBro.bundle('./obraja'),
+    },
+    suhai: {
+      component: AdminBro.bundle('./suhai'),
+    },
+    suzuki: {
+      component: AdminBro.bundle('./suzuki'),
+    },
+    tumelero: {
+      component: AdminBro.bundle('./tumelero'),
+    }, 
+    
+    
+    
+    
+    
+    **/
   ],
   pages: {
     Telhanorte: {
-      actions: {
-        edit: { isAccessible: operacional },
-        delete: { isAccessible: operacional },
-        new: { isAccessible: operacional },
-        show: { isAccessible: operacional },
-        list: { isAccessible: operacional },
-      },
-      label: "Telhanorte",
-      handler: async (request, response, context) => {
-        return {
-          text: 'I am fetched from the backend',
-        }
-      },
       component: AdminBro.bundle('./homepage'),
     },
+     C6: {
+      component: AdminBro.bundle('./c6Bank'),
+    },
+    klabin: {
+      component: AdminBro.bundle('./klabin'),
+    },
+    locaweb: {
+      component: AdminBro.bundle('./locaweb'),
+    },
+    mitsubishi: {
+      component: AdminBro.bundle('./mitsubishi'),
+    },
+    obraja: {
+      component: AdminBro.bundle('./obraja'),
+    },
+    suhai: {
+      component: AdminBro.bundle('./suhai'),
+    },
+    suzuki: {
+      component: AdminBro.bundle('./suzuki'),
+    },
+    tumelero: {
+      component: AdminBro.bundle('./tumelero'),
+    }, 
   },
   branding: {
     companyName: 'Tech and Soul',
@@ -189,7 +233,7 @@ const adminBro = new AdminBro({
     softwareBrothers: false,
   },
   dashboard: {
-    component: AdminBro.bundle('./homepage'),
+   // component: AdminBro.bundle('./homepage'),
   },
   locale: {
     translations: {
