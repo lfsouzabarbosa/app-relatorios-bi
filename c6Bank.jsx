@@ -289,7 +289,7 @@ const Dashboard = () => {
                                             </Box>
                                             <Text marginTop="27px" fontSize="xl" fontWeight="900">5.109.041
                                             </Text>
-                                            <Text marginTop="27px" marginLeft="10px"fontSize="xl" fontWeight="900" color="#00a500">3%
+                                            <Text marginTop="27px" marginLeft="10px"fontSize="xl" fontWeight="900" color="#00a500">
                                             </Text>
                                         </Box>
                                         <hr color="black" size="2" width="100%" ></hr>
