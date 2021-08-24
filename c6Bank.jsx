@@ -228,7 +228,7 @@ const Dashboard = () => {
                                                 <Text fontSize="15px" fontWeight="3px">Crescimento</Text>
                                         </Box>
                                         <Box width="140px">
-                                            <Text textAlign="right" marginTop="27px" fontSize="xl" fontWeight="900">0.8%</Text>
+                                            <Text textAlign="right" marginTop="27px" fontSize="xl" fontWeight="900">0.1%</Text>
                                         </Box> 
                                    </Box>
                                    <hr color="black" size="2" width="100%" ></hr>
@@ -257,7 +257,7 @@ const Dashboard = () => {
                                                 <Text fontSize="15px" fontWeight="3px">Alcance</Text>
                                         </Box>
                                         <Box width="140px">
-                                            <Text textAlign="right"  marginTop="27px" fontSize="xl" fontWeight="900">9.220
+                                            <Text textAlign="right"  marginTop="27px" fontSize="xl" fontWeight="900">4.429
                                             </Text> 
                                         </Box> 
                                    </Box>
@@ -269,10 +269,10 @@ const Dashboard = () => {
                                         <Box width="110px">
                                                 <img width="25px" height="25px" src="https://image.flaticon.com/icons/png/512/32/32557.png" alt="Icone Interações"
                                                 alt="Alcance"></img>
-                                                <Text fontSize="15px" fontWeight="3px">Interações</Text>
+                                                <Text fontSize="15px" fontWeight="3px">Engajamento</Text>
                                         </Box>
                                         <Box width="140px">
-                                            <Text textAlign="right"  marginTop="27px" fontSize="xl" fontWeight="900">1.745
+                                            <Text textAlign="right"  marginTop="27px" fontSize="xl" fontWeight="900">1.832
                                             </Text> 
                                         </Box> 
                                    </Box>
@@ -297,6 +297,20 @@ const Dashboard = () => {
             <Box border="2px solid #ffffff" borderRadius="10px" maxWidth="800px" minHeight="600px" backgroundColor="#ffffff" margin=" 10px auto 30px">
             <iframe width="1000" height="500" src="https://app.powerbi.com/view?r=eyJrIjoiZWFhODZkNzItZDc0YS00YTJlLThmMmEtYzk1OTY0MDg0MzY1IiwidCI6Ijg3ZTcxOWVhLTg0MGUtNDFiMy05Y2NkLTM5MDg2YzllY2NiNiIsImMiOjR9&pageName=ReportSection" frameborder="0" allowFullScreen="true"></iframe>
             </Box>
+
+            <div>
+                <Text margin="0 0 20px 47px" fontSize="xl" fontWeight="400">Google Trends</Text>
+                <Box boxShadow="card" border="2px solid #ffffff" backgroundColor="#ffffff" borderRadius="10px" maxWidth="800px" minHeight="300px" margin=" 10px auto 30px" >
+                    <Box>
+                        <img width="800" height="250px" src="https://64.media.tumblr.com/3a48170cc3ce37252ec6e5d84b3a4abc/2c5fe4201d328713-92/s540x810/7c055dc02ac6b2ef5fec40477bb482fd9c67fc1a.png" alt="Imagem Trends"></img>
+                    </Box>
+                    <Box margin="10px 322px">
+                        <Button fontSize="xl" fontWeight="400" size="300px" backgroundColor="ffffff">+ Detalhes</Button>
+                    </Box>
+                </Box>
+            </div>
+
+       
            
 
     </section>
