@@ -270,7 +270,7 @@ const Dashboard = () => {
                                                 <img width="25px" height="25px" src="https://image.flaticon.com/icons/png/512/1250/1250999.png" alt="Icone Alcance"></img>
                                                 <Text fontSize="15px" fontWeight="3px">Alcance</Text>
                                             </Box>
-                                                <Text marginTop="27px" fontSize="xl" fontWeight="900">1823
+                                                <Text marginTop="27px" fontSize="xl" fontWeight="900">4.429
                                                 </Text>
                                                 <Text marginTop="27px" marginLeft="10px"fontSize="xl" fontWeight="900" color="#00a500">
                                                 </Text>
@@ -287,7 +287,7 @@ const Dashboard = () => {
                                                 alt="Interaçoes"></img>
                                             <Text fontSize="15px" fontWeight="3px">Engajamento</Text>
                                             </Box>
-                                            <Text marginTop="27px" fontSize="xl" fontWeight="900">5.109.041
+                                            <Text marginTop="27px" fontSize="xl" fontWeight="900">1.832
                                             </Text>
                                             <Text marginTop="27px" marginLeft="10px"fontSize="xl" fontWeight="900" color="#00a500">
                                             </Text>
