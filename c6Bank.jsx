@@ -1,7 +1,9 @@
 import { ApiClient } from 'admin-bro'
 import { Box } from '@admin-bro/design-system'
 import { Text } from '@admin-bro/design-system'
-import { Button, ButtonCSS } from '@admin-bro/design-system'
+import { Button } from '@admin-bro/design-system'
+import { Link, LinkProps } from '@admin-bro/design-system'
+import { ContentDeliveryNetwork32 } from '@carbon/icons-react';
 
 const api = new ApiClient()
 
@@ -291,44 +293,61 @@ const Dashboard = () => {
             </Box>
 
             <Text margin="0 0 20px 47px" fontSize="xl" fontWeight="400">Google News</Text>
-            <Box justifyContent="space-between" margin="20px auto" maxWidth="900px" maxHeight="1000px" display="flex" flexDirection="row" flexWrap="wrap" verticalAlign="center">  
-               <section width="auto">
-                    <a href="https://fdr.com.br/2021/08/26/c6-bank-anuncia-recurso-no-app-que-permite-pagamento-de-combustivel/" class="sc-dIsAE default-dashboard__Card-y6jxa9-0 kgyQN kKlyvT admin-bro_Box">
-                        <Box margin="auto"><img width="50px" height="50px" src="https://image.flaticon.com/icons/png/512/1042/1042782.png" alt="Icone News"></img></Box>
-                        <Box margin="auto">
-                            <Text textAlign="end" fontSize="xl" fontWeight="400">C6 Bank anuncia recurso no<br></br> app que permite pagamento de combustível</Text>
-                            <Text textAlign="end" fontSize="x1" fontWeight="200" color="grey">FDR -Terra • 4 horas atrás</Text>
-                        </Box>
-                    </a>
-                </section>
-                <section width="auto">
-                    <a class="sc-dIsAE default-dashboard__Card-y6jxa9-0 kgyQN kKlyvT admin-bro_Box" href="https://www.terra.com.br/noticias/tecnologia/c6-lanca-techinvest-carteira-de-investimentos-personalizada-e-automatica,7ed662496b6615c569cee7d74ac46af1kvppy0g0.html">
-                        <Box margin="auto"><img width="50px" height="50px" src="https://image.flaticon.com/icons/png/512/1042/1042782.png" alt="Icone News"></img></Box>
-                        <Box margin="auto">
-                            <Text textAlign="end" fontSize="xl" fontWeight="400">C6 lança TechInvest, carteira<br></br> de investimentos personalizada e automática</Text>
-                            <Text textAlign="end" fontSize="x1" fontWeight="200" color="grey">Terra • 6 horas atrás</Text>
-                        </Box>
-                    </a>
-                </section>
-                <section width="auto">
-                    <a href="https://www.moneytimes.com.br/c6-bank-lanca-plataforma-de-investimentos/" class="sc-dIsAE default-dashboard__Card-y6jxa9-0 kgyQN kKlyvT admin-bro_Box">
-                        <Box margin="auto"><img width="50px" height="50px" src="https://image.flaticon.com/icons/png/512/1042/1042782.png" alt="Icone News"></img></Box>
-                        <Box margin="auto">
-                            <Text textAlign="end" fontSize="xl" fontWeight="400"><br></br>  C6 Bank lança plataforma de investimentos</Text>
-                            <Text textAlign="end" fontSize="x1" fontWeight="200" color="grey">Money Times • 3 dias atrás</Text>
-                        </Box>
-                    </a>
-                </section>
-                <section width="auto">
-                    <a href="https://seucreditodigital.com.br/c6-bank-parceria-com-shell-box/" class="sc-dIsAE default-dashboard__Card-y6jxa9-0 kgyQN kKlyvT admin-bro_Box">
-                        <Box margin="auto"><img width="50px" height="50px" src="https://image.flaticon.com/icons/png/512/1042/1042782.png" alt="Icone News"></img></Box>
-                        <Box margin="auto">
-                            <Text textAlign="end" fontSize="xl" fontWeight="400">C6 Bank faz parceria com a <br></br>Shell Box para
-                            pagar a gasolina direto do app  </Text>
-                            <Text textAlign="end" fontSize="x1" fontWeight="200" color="grey">Seu Crédito Digital • Ontem</Text>
-                        </Box>
-                    </a>
-                </section>
+            <Box width="900px" height="500px" margin="20px 150px" display="inline-list-item" flexDirection="column">
+
+                <Box margin="7px auto" padding="20px" width="700px" height="100px" display="inline-flex" flexDirection="row"
+                backgroundColor="#ffffff" boxShadow="card">
+                    <Box marginTop="10px">
+                         <img margin="auto" width="40px" height="40px" src="https://image.flaticon.com/icons/png/512/1042/1042782.png"></img>
+                    </Box>
+                    <Box width="600px" marginLeft="20px" marginY="auto">
+                        <Link href="https://fdr.com.br/2021/08/26/c6-bank-anuncia-recurso-no-app-que-permite-pagamento-de-combustivel/" >
+                            <Text textAlign="start" fontSize="xl" fontWeight="400" color="black">C6 Bank anuncia recurso no app que permite pagamento de combustível</Text>
+                            <Text textAlign="start" fontSize="x1" fontWeight="200" color="grey">FDR -Terra • 4 horas atrás</Text>
+                        </Link>
+                    </Box>
+                </Box>
+
+                <Box margin="7px auto" padding="20px" width="700px" height="100px" display="inline-flex" flexDirection="row"
+                backgroundColor="#ffffff" boxShadow="card">
+                    <Box marginTop="10px">
+                         <img margin="auto" width="40px" height="40px" src="https://image.flaticon.com/icons/png/512/1042/1042782.png"></img>
+                    </Box>
+                    <Box width="600px" marginLeft="20px" marginY="auto">
+                        <Link href="https://www.terra.com.br/noticias/tecnologia/c6-lanca-techinvest-carteira-de-investimentos-personalizada-e-automatica,7ed662496b6615c569cee7d74ac46af1kvppy0g0.html" >
+                            <Text textAlign="start" fontSize="xl" fontWeight="400" color="black">C6 lança TechInvest, carteira de investimentos personalizada e automática</Text>
+                            <Text textAlign="star" fontSize="x1" fontWeight="200" color="grey">Terra • 6 horas atrás</Text>
+                        </Link>
+                    </Box>
+                </Box>
+
+                <Box margin="7px auto" padding="20px" width="700px" height="100px" display="inline-flex" flexDirection="row"
+                backgroundColor="#ffffff" boxShadow="card">
+                    <Box marginTop="10px">
+                         <img margin="auto" width="40px" height="40px" src="https://image.flaticon.com/icons/png/512/1042/1042782.png"></img>
+                    </Box>
+                    <Box width="600px" marginLeft="20px" marginY="auto">
+                        <Link href="https://www.moneytimes.com.br/c6-bank-lanca-plataforma-de-investimentos/" >
+                            <Text textAlign="start" fontSize="xl" fontWeight="400" color="black">C6 Bank lança plataforma de investimentos</Text>
+                            <Text textAlign="start" fontSize="x1" fontWeight="200" color="grey">Money Times • 3 dias atrás</Text>
+                        </Link>
+                    </Box>
+                </Box>
+
+                <Box margin="7px auto" padding="15px" width="700px" height="100px" display="inline-flex" flexDirection="row"
+                backgroundColor="#ffffff" boxShadow="card">
+                    <Box marginTop="10px">
+                         <img margin="auto" width="40px" height="40px" src="https://image.flaticon.com/icons/png/512/1042/1042782.png"></img>
+                    </Box>
+                    <Box width="600px" marginLeft="20px" marginY="auto">
+                        <Link href="https://seucreditodigital.com.br/c6-bank-parceria-com-shell-box/" >
+                            <Text textAlign="start" fontSize="xl" fontWeight="400" color="black">C6 Bank faz parceria com a Shell Box para
+                                pagar a gasolina direto do app</Text>
+                            <Text textAlign="start" fontSize="x1" fontWeight="200" color="grey">Seu Crédito Digital • Ontem</Text>
+                        </Link>
+                    </Box>
+                </Box>
+
             </Box>
 
             <div>

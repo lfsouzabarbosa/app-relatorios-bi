@@ -13,6 +13,7 @@
   "dependencies": {
     "@admin-bro/express": "^3.1.0",
     "@admin-bro/mongoose": "^1.1.0",
+    "@carbon/icons-react": "^10.37.0",
     "admin-bro": "^4.0.1",
     "admin-bro-expressjs": "^2.1.1",
     "admin-bro-mongoose": "^0.5.2",
@@ -33,6 +34,7 @@
     "mongoose": "^5.13.6",
     "nodemon": "^2.0.12",
     "react": "^17.0.2",
+    "styled-components": "^5.3.1",
     "tslib": "^2.3.0",
     "typeorm": "^0.2.36"
   }
