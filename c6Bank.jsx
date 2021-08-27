@@ -13,7 +13,7 @@ const Dashboard = () => {
                 <img width="170px" src="https://logodownload.org/wp-content/uploads/2020/11/c6-bank-logo.png"
                     alt="Logo C6Bank"></img>
             </Box>
-            <Box variant="grey">
+            <Box display="inline-flex" flexDirection="row" verticalAlign="center" variant="grey">
                 <br></br>
                 <br></br>
                 <br></br>
@@ -28,7 +28,7 @@ const Dashboard = () => {
                                     <div class="sc-jrsJCI bJANQE admin-bro_Text"></div>
                                 </div>
                                 <div>
-                                    <Box display="inline-flex">
+                                    <Box display="inline-flex" flexDirection="row" verticalAlign="center">
                                         <Box width="110px">
                                             <img width="25px" height="25px" src="https://image.flaticon.com/icons/png/512/2097/2097681.png" alt="Icone Fãs"
                                                 alt="Fãs"></img>
@@ -101,12 +101,11 @@ const Dashboard = () => {
                                 </div>
                                 <br></br>
                                 <br></br>
-                                <div>
-                                    <Box margin="0 45px">
+                                    <Box display="inline-flex" flexDirection="row" justifyContent="center" width="250px">
+                                        <Box>
                                         <Button fontSize="xl" fontWeight="400" size="300px" backgroundColor="ffffff">+ Detalhes
-                                        </Button>
+                                        </Button></Box>
                                     </Box>
-                                </div>
                             </a>
                         </section>
 
@@ -191,12 +190,11 @@ const Dashboard = () => {
                                 </div>
                                 <br></br>
                                 <br></br>
-                                <div>
-                                    <Box>
-                                        <Button margin="0 45px" fontSize="xl" fontWeight="400" size="300px" backgroundColor="ffffff">+ Detalhes
-                                        </Button>
+                                <Box display="inline-flex" flexDirection="row" justifyContent="center" width="250px">
+                                        <Box>
+                                        <Button fontSize="xl" fontWeight="400" size="300px" backgroundColor="ffffff">+ Detalhes
+                                        </Button></Box>
                                     </Box>
-                                </div>
                             </a>
                         </section>
 
@@ -280,12 +278,11 @@ const Dashboard = () => {
                                 </div>
                                 <br></br>
                                 <br></br>
-                                <div>
-                                    <Box margin="0 45px">
+                                <Box display="inline-flex" flexDirection="row" justifyContent="center" width="250px">
+                                        <Box>
                                         <Button fontSize="xl" fontWeight="400" size="300px" backgroundColor="ffffff">+ Detalhes
-                                        </Button>
+                                        </Button></Box>
                                     </Box>
-                                </div>
                             </a>
                         </section>
 
@@ -294,8 +291,44 @@ const Dashboard = () => {
             </Box>
 
             <Text margin="0 0 20px 47px" fontSize="xl" fontWeight="400">Google News</Text>
-            <Box border="2px solid #ffffff" borderRadius="10px" maxWidth="800px" minHeight="600px" backgroundColor="#ffffff" margin=" 10px auto 30px">
-                <iframe width="1000" height="500" src="https://app.powerbi.com/view?r=eyJrIjoiZWFhODZkNzItZDc0YS00YTJlLThmMmEtYzk1OTY0MDg0MzY1IiwidCI6Ijg3ZTcxOWVhLTg0MGUtNDFiMy05Y2NkLTM5MDg2YzllY2NiNiIsImMiOjR9&pageName=ReportSection" frameborder="0" allowFullScreen="true"></iframe>
+            <Box justifyContent="space-between" margin="20px auto" maxWidth="900px" maxHeight="1000px" display="flex" flexDirection="row" flexWrap="wrap" verticalAlign="center">  
+               <section width="auto">
+                    <a href="https://fdr.com.br/2021/08/26/c6-bank-anuncia-recurso-no-app-que-permite-pagamento-de-combustivel/" class="sc-dIsAE default-dashboard__Card-y6jxa9-0 kgyQN kKlyvT admin-bro_Box">
+                        <Box margin="auto"><img width="50px" height="50px" src="https://image.flaticon.com/icons/png/512/1042/1042782.png" alt="Icone News"></img></Box>
+                        <Box margin="auto">
+                            <Text textAlign="end" fontSize="xl" fontWeight="400">C6 Bank anuncia recurso no<br></br> app que permite pagamento de combustível</Text>
+                            <Text textAlign="end" fontSize="x1" fontWeight="200" color="grey">FDR -Terra • 4 horas atrás</Text>
+                        </Box>
+                    </a>
+                </section>
+                <section width="auto">
+                    <a class="sc-dIsAE default-dashboard__Card-y6jxa9-0 kgyQN kKlyvT admin-bro_Box" href="https://www.terra.com.br/noticias/tecnologia/c6-lanca-techinvest-carteira-de-investimentos-personalizada-e-automatica,7ed662496b6615c569cee7d74ac46af1kvppy0g0.html">
+                        <Box margin="auto"><img width="50px" height="50px" src="https://image.flaticon.com/icons/png/512/1042/1042782.png" alt="Icone News"></img></Box>
+                        <Box margin="auto">
+                            <Text textAlign="end" fontSize="xl" fontWeight="400">C6 lança TechInvest, carteira<br></br> de investimentos personalizada e automática</Text>
+                            <Text textAlign="end" fontSize="x1" fontWeight="200" color="grey">Terra • 6 horas atrás</Text>
+                        </Box>
+                    </a>
+                </section>
+                <section width="auto">
+                    <a href="https://www.moneytimes.com.br/c6-bank-lanca-plataforma-de-investimentos/" class="sc-dIsAE default-dashboard__Card-y6jxa9-0 kgyQN kKlyvT admin-bro_Box">
+                        <Box margin="auto"><img width="50px" height="50px" src="https://image.flaticon.com/icons/png/512/1042/1042782.png" alt="Icone News"></img></Box>
+                        <Box margin="auto">
+                            <Text textAlign="end" fontSize="xl" fontWeight="400"><br></br>  C6 Bank lança plataforma de investimentos</Text>
+                            <Text textAlign="end" fontSize="x1" fontWeight="200" color="grey">Money Times • 3 dias atrás</Text>
+                        </Box>
+                    </a>
+                </section>
+                <section width="auto">
+                    <a href="https://seucreditodigital.com.br/c6-bank-parceria-com-shell-box/" class="sc-dIsAE default-dashboard__Card-y6jxa9-0 kgyQN kKlyvT admin-bro_Box">
+                        <Box margin="auto"><img width="50px" height="50px" src="https://image.flaticon.com/icons/png/512/1042/1042782.png" alt="Icone News"></img></Box>
+                        <Box margin="auto">
+                            <Text textAlign="end" fontSize="xl" fontWeight="400">C6 Bank faz parceria com a <br></br>Shell Box para
+                            pagar a gasolina direto do app  </Text>
+                            <Text textAlign="end" fontSize="x1" fontWeight="200" color="grey">Seu Crédito Digital • Ontem</Text>
+                        </Box>
+                    </a>
+                </section>
             </Box>
 
             <div>
@@ -303,18 +336,15 @@ const Dashboard = () => {
 
                 <Box boxShadow="card" border="2px solid #ffffff" backgroundColor="#ffffff" borderRadius="10px" maxWidth="800px" minHeight="300px" margin=" 10px auto 30px" >
                     <a href="http://vps23593.publiccloud.com.br:8080/" class="sc-dIsAE default-dashboard__Card-y6jxa9-0 kgyQN kKlyvT admin-bro_Box">
-                        <Box>
-                            <img width="auto" height="250px" src="https://64.media.tumblr.com/3a48170cc3ce37252ec6e5d84b3a4abc/2c5fe4201d328713-92/s540x810/7c055dc02ac6b2ef5fec40477bb482fd9c67fc1a.png" alt="Imagem Trends"></img>
+                        <Box display="inline-flex" flexDirection="row" justifyContent="center" width="740px" >
+                            <img width="700" height="250px" src="https://64.media.tumblr.com/3a48170cc3ce37252ec6e5d84b3a4abc/2c5fe4201d328713-92/s540x810/7c055dc02ac6b2ef5fec40477bb482fd9c67fc1a.png" alt="Imagem Trends"></img>
                         </Box>
-                        <Box margin="10px 322px">
+                        <Box display="inline-flex" flexDirection="row" justifyContent="center" width="740px">
                             <Button fontSize="xl" fontWeight="400" size="300px" href="http://localhost:8080" backgroundColor="ffffff">+ Detalhes</Button>
                         </Box>
                     </a>
                 </Box>
             </div>
-
-
-
 
         </section>
     )
