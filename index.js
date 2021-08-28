@@ -207,27 +207,28 @@ const adminBro = new AdminBro({
     Telhanorte: {
       component: AdminBro.bundle('./homepage'),
     },
-    klabin: {
-      component: AdminBro.bundle('./klabin'),
-    },
-    locaweb: {
-      component: AdminBro.bundle('./locaweb'),
-    },
-    mitsubishi: {
-      component: AdminBro.bundle('./mitsubishi'),
-    },
-    obraja: {
-      component: AdminBro.bundle('./obraja'),
-    },
-    suhai: {
-      component: AdminBro.bundle('./suhai'),
-    },
-    suzuki: {
-      component: AdminBro.bundle('./suzuki'),
-    },
-    tumelero: {
+    Tumelero: {
       component: AdminBro.bundle('./tumelero'),
     }, 
+    Obraja: {
+      component: AdminBro.bundle('./obraja'),
+    },
+    Klabin: {
+      component: AdminBro.bundle('./klabin'),
+    },
+    Locaweb: {
+      component: AdminBro.bundle('./locaweb'),
+    },
+    Mitsubishi: {
+      component: AdminBro.bundle('./mitsubishi'),
+    },
+    Suhai: {
+      component: AdminBro.bundle('./suhai'),
+    },
+    Suzuki: {
+      component: AdminBro.bundle('./suzuki'),
+    },
+   
   },
   branding: {
     companyName: 'Tech and Soul',

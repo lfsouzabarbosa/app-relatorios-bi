@@ -2,6 +2,9 @@ import { ApiClient } from 'admin-bro'
 import { Box } from '@admin-bro/design-system'
 import { Text } from '@admin-bro/design-system'
 import { Button } from '@admin-bro/design-system'
+import { Link, LinkProps } from '@admin-bro/design-system'
+import { ContentDeliveryNetwork32 } from '@carbon/icons-react';
+
 
 const api = new ApiClient()
 
@@ -317,13 +320,78 @@ const Dashboard = () => {
                 </section>
             </Box>
             
-            <Text margin="0 0 20px 47px" fontSize="xl" fontWeight="400">Google Trends</Text>
-            <Box border="2px solid #ffffff" borderRadius="10px" maxWidth="800px" minHeight="600px" backgroundColor="#ffffff" margin=" 10px auto 30px">
+            <Text margin="0 0 20px 47px" fontSize="xl" fontWeight="400">Google News</Text>
+            <Box width="900px" height="500px" margin="20px 150px" display="inline-list-item" flexDirection="column">
+
+                <Box margin="7px auto" padding="20px" width="700px" height="100px" display="inline-flex" flexDirection="row"
+                backgroundColor="#ffffff" boxShadow="card">
+                    <Box marginTop="10px">
+                         <img margin="auto" width="40px" height="40px" src="https://image.flaticon.com/icons/png/512/1042/1042782.png"></img>
+                    </Box>
+                    <Box width="600px" marginLeft="20px" marginY="auto">
+                        <Link href="https://www.araxa.mg.gov.br/noticia/4689/projeto-maos-a-obra-ja-tem-92-cadastros-aprovados-e-continua-com-vagas-disponiveis" >
+                            <Text textAlign="start" fontSize="xl" fontWeight="400" color="black">Notícia</Text>
+                            <Text textAlign="start" fontSize="x1" fontWeight="200" color="grey">Notícia / Prefeitura de Araxá • 4 dias atrás</Text>
+                        </Link>
+                    </Box>
+                </Box>
+
+                <Box margin="7px auto" padding="20px" width="700px" height="100px" display="inline-flex" flexDirection="row"
+                backgroundColor="#ffffff" boxShadow="card">
+                    <Box marginTop="10px">
+                         <img margin="auto" width="40px" height="40px" src="https://image.flaticon.com/icons/png/512/1042/1042782.png"></img>
+                    </Box>
+                    <Box width="600px" marginLeft="20px" marginY="auto">
+                        <Link href="https://radioalianca.com.br/regiao/quartel-dos-bombeiros-de-piratuba-sera-ampliado-recursos-para-obra-ja-estao-sendo-captados" >
+                            <Text textAlign="start" fontSize="xl" fontWeight="400" color="black">Quartel dos Bombeiros de piratuba será ampliado. Recursos para obra já estão sendo captados</Text>
+                            <Text textAlign="star" fontSize="x1" fontWeight="200" color="grey">Rádio Aliança 750khz • 3 dias atrás</Text>
+                        </Link>
+                    </Box>
+                </Box>
+
+                <Box margin="7px auto" padding="20px" width="700px" height="100px" display="inline-flex" flexDirection="row"
+                backgroundColor="#ffffff" boxShadow="card">
+                    <Box marginTop="10px">
+                         <img margin="auto" width="40px" height="40px" src="https://image.flaticon.com/icons/png/512/1042/1042782.png"></img>
+                    </Box>
+                    <Box width="600px" marginLeft="20px" marginY="auto">
+                        <Link href="https://mercadoeconsumo.com.br/2021/01/13/com-a-bandeira-obra-ja-saint-gobain-investe-em-atacado-da-construcao/" >
+                            <Text textAlign="start" fontSize="xl" fontWeight="400" color="black">Com a bandeira Obra Já! Saint-Gobain investe em atacado da construção</Text>
+                            <Text textAlign="start" fontSize="x1" fontWeight="200" color="grey">Mercado e Consumo • 13 de jan</Text>
+                        </Link>
+                    </Box>
+                </Box>
+
+                <Box margin="7px auto" padding="15px" width="700px" height="100px" display="inline-flex" flexDirection="row"
+                backgroundColor="#ffffff" boxShadow="card">
+                    <Box marginTop="10px">
+                         <img margin="auto" width="40px" height="40px" src="https://image.flaticon.com/icons/png/512/1042/1042782.png"></img>
+                    </Box>
+                    <Box width="600px" marginLeft="20px" marginY="auto">
+                        <Link href="https://www.folhadaregiao.com.br/2021/08/28/arte-em-homenagem-a-ex-deputada-marielle-franco-e-apagada-de-muro/" >
+                            <Text textAlign="start" fontSize="xl" fontWeight="400" color="black">Arte em homenagem à ex-deputada Marielle Franco é apagada de muro</Text>
+                            <Text textAlign="start" fontSize="x1" fontWeight="200" color="grey">Folha da Região • 3 horas atrás</Text>
+                        </Link>
+                    </Box>
+                </Box>
+
             </Box>
 
-            <Text margin="0 0 20px 47px" fontSize="xl" fontWeight="400">Google News</Text>
-            <Box border="2px solid #ffffff" borderRadius="10px" maxWidth="800px" minHeight="600px" backgroundColor="#ffffff" margin=" 10px auto 30px">
-            </Box>
+            <div>
+                <Text margin="0 0 20px 47px" fontSize="xl" fontWeight="400">Google Trends</Text>
+
+                <Box boxShadow="card" border="2px solid #ffffff" backgroundColor="#ffffff" borderRadius="10px" maxWidth="800px" minHeight="300px" margin=" 10px auto 30px" >
+                    <a href="http://vps23593.publiccloud.com.br:8080/" class="sc-dIsAE default-dashboard__Card-y6jxa9-0 kgyQN kKlyvT admin-bro_Box">
+                        <Box display="inline-flex" flexDirection="row" justifyContent="center" width="740px" >
+                            <img width="700" height="250px" src="https://64.media.tumblr.com/3a48170cc3ce37252ec6e5d84b3a4abc/2c5fe4201d328713-92/s540x810/7c055dc02ac6b2ef5fec40477bb482fd9c67fc1a.png" alt="Imagem Trends"></img>
+                        </Box>
+                        <Box display="inline-flex" flexDirection="row" justifyContent="center" width="740px">
+                            <Button fontSize="xl" fontWeight="400" size="300px" href="http://localhost:8080" backgroundColor="ffffff">+ Detalhes</Button>
+                        </Box>
+                    </a>
+                </Box>
+            </div>
+
 
     </section>
     )

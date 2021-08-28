@@ -2,6 +2,9 @@ import { ApiClient } from 'admin-bro'
 import { Box } from '@admin-bro/design-system'
 import { Text } from '@admin-bro/design-system'
 import { Button } from '@admin-bro/design-system'
+import { Link, LinkProps } from '@admin-bro/design-system'
+import { ContentDeliveryNetwork32 } from '@carbon/icons-react';
+
 
 const api = new ApiClient()
 
@@ -317,13 +320,78 @@ const Dashboard = () => {
                 </section>
             </Box>
             
-            <Text margin="0 0 20px 47px" fontSize="xl" fontWeight="400">Google Trends</Text>
-            <Box border="2px solid #ffffff" borderRadius="10px" maxWidth="800px" minHeight="600px" backgroundColor="#ffffff" margin=" 10px auto 30px">
+            <Text margin="0 0 20px 47px" fontSize="xl" fontWeight="400">Google News</Text>
+            <Box width="900px" height="500px" margin="20px 150px" display="inline-list-item" flexDirection="column">
+
+                <Box margin="7px auto" padding="20px" width="700px" height="100px" display="inline-flex" flexDirection="row"
+                backgroundColor="#ffffff" boxShadow="card">
+                    <Box marginTop="10px">
+                         <img margin="auto" width="40px" height="40px" src="https://image.flaticon.com/icons/png/512/1042/1042782.png"></img>
+                    </Box>
+                    <Box width="600px" marginLeft="20px" marginY="auto">
+                        <Link href="https://www.segs.com.br/seguros/305573-suhai-seguradora-lanca-cobertura-de-terceiros" >
+                            <Text textAlign="start" fontSize="xl" fontWeight="400" color="black">Suhai Seguradora lança cobertura de terceiros / SEGS - Portal Nacional de Seguros, Saúde, Info, TI...</Text>
+                            <Text textAlign="start" fontSize="x1" fontWeight="200" color="grey">Portal nacional de Seguros • 10 dias atrás</Text>
+                        </Link>
+                    </Box>
+                </Box>
+
+                <Box margin="7px auto" padding="20px" width="700px" height="100px" display="inline-flex" flexDirection="row"
+                backgroundColor="#ffffff" boxShadow="card">
+                    <Box marginTop="10px">
+                         <img margin="auto" width="40px" height="40px" src="https://image.flaticon.com/icons/png/512/1042/1042782.png"></img>
+                    </Box>
+                    <Box width="600px" marginLeft="20px" marginY="auto">
+                        <Link href="https://propmark.com.br/anunciantes/suhai-chama-ele-para-mostrar-democratizacao-do-seguro/" >
+                            <Text textAlign="start" fontSize="xl" fontWeight="400" color="black">Suhai chama 'Ele' para mostrar democratização do seguro</Text>
+                            <Text textAlign="star" fontSize="x1" fontWeight="200" color="grey">Terra • 6 horas atrás</Text>
+                        </Link>
+                    </Box>
+                </Box>
+
+                <Box margin="7px auto" padding="20px" width="700px" height="100px" display="inline-flex" flexDirection="row"
+                backgroundColor="#ffffff" boxShadow="card">
+                    <Box marginTop="10px">
+                         <img margin="auto" width="40px" height="40px" src="https://image.flaticon.com/icons/png/512/1042/1042782.png"></img>
+                    </Box>
+                    <Box width="600px" marginLeft="20px" marginY="auto">
+                        <Link href="https://www.segs.com.br/seguros/306998-clube-dos-seguradores-da-bahia-recebe-executivo-da-sompo-seguros" >
+                            <Text textAlign="start" fontSize="xl" fontWeight="400" color="black">Clube dos seguradores da Bahia recebe executivo da SOMPO SEGUROS / SEGS - Portal Nacional de Seguros</Text>
+                            <Text textAlign="start" fontSize="x1" fontWeight="200" color="grey">Portal Nacional de Seguros • 14 horas atrás</Text>
+                        </Link>
+                    </Box>
+                </Box>
+
+                <Box margin="7px auto" padding="15px" width="700px" height="100px" display="inline-flex" flexDirection="row"
+                backgroundColor="#ffffff" boxShadow="card">
+                    <Box marginTop="10px">
+                         <img margin="auto" width="40px" height="40px" src="https://image.flaticon.com/icons/png/512/1042/1042782.png"></img>
+                    </Box>
+                    <Box width="600px" marginLeft="20px" marginY="auto">
+                        <Link href="https://noticias.uol.com.br/internacional/ultimas-noticias/2021/08/23/eua-acreditam-poder-evacuar-todos-os-americanos-do-afeganistao-ate-3108.htm" >
+                            <Text textAlign="start" fontSize="xl" fontWeight="400" color="black">EUA acreditam poder evacuar todos os americanos do Afeganistão até 31/08</Text>
+                            <Text textAlign="start" fontSize="x1" fontWeight="200" color="grey">UOL Notícias • 5 dias atrás</Text>
+                        </Link>
+                    </Box>
+                </Box>
+
             </Box>
 
-            <Text margin="0 0 20px 47px" fontSize="xl" fontWeight="400">Google News</Text>
-            <Box border="2px solid #ffffff" borderRadius="10px" maxWidth="800px" minHeight="600px" backgroundColor="#ffffff" margin=" 10px auto 30px">
-            </Box>
+            <div>
+                <Text margin="0 0 20px 47px" fontSize="xl" fontWeight="400">Google Trends</Text>
+
+                <Box boxShadow="card" border="2px solid #ffffff" backgroundColor="#ffffff" borderRadius="10px" maxWidth="800px" minHeight="300px" margin=" 10px auto 30px" >
+                    <a href="http://vps23593.publiccloud.com.br:8080/" class="sc-dIsAE default-dashboard__Card-y6jxa9-0 kgyQN kKlyvT admin-bro_Box">
+                        <Box display="inline-flex" flexDirection="row" justifyContent="center" width="740px" >
+                            <img width="700" height="250px" src="https://64.media.tumblr.com/3a48170cc3ce37252ec6e5d84b3a4abc/2c5fe4201d328713-92/s540x810/7c055dc02ac6b2ef5fec40477bb482fd9c67fc1a.png" alt="Imagem Trends"></img>
+                        </Box>
+                        <Box display="inline-flex" flexDirection="row" justifyContent="center" width="740px">
+                            <Button fontSize="xl" fontWeight="400" size="300px" href="http://localhost:8080" backgroundColor="ffffff">+ Detalhes</Button>
+                        </Box>
+                    </a>
+                </Box>
+            </div>
+
 
     </section>
     )
