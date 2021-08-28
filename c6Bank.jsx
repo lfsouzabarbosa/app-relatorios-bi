@@ -2,8 +2,7 @@ import { ApiClient } from 'admin-bro'
 import { Box } from '@admin-bro/design-system'
 import { Text } from '@admin-bro/design-system'
 import { Button } from '@admin-bro/design-system'
-import { Link, LinkProps } from '@admin-bro/design-system'
-import { ContentDeliveryNetwork32 } from '@carbon/icons-react';
+import { Link } from '@admin-bro/design-system'
 
 const api = new ApiClient()
 
@@ -11,15 +10,15 @@ const Dashboard = () => {
 
     return (
         <section>
-            <Box margin="30px 0 20px 45px" width="200px" minHeight="20px">
-                <img width="170px" src="https://logodownload.org/wp-content/uploads/2020/11/c6-bank-logo.png"
-                    alt="Logo C6Bank"></img>
-            </Box>
+            <Box margin="30px 0 20px 45px" width="200px"  minHeight="20px" > 
+                <img width="170" src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/Logo_C6_Bank.svg/2560px-Logo_C6_Bank.svg.png"></img>
+            </Box> 
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
             <Box display="inline-flex" flexDirection="row" verticalAlign="center" variant="grey">
-                <br></br>
-                <br></br>
-                <br></br>
-                <br></br>
+               
                 <section class="sc-dIsAE fbPpRS admin-bro_Box">
                     <section width="auto" class="sc-dIsAE cQyBfq admin-bro_Box">
 
