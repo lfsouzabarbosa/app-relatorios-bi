@@ -376,7 +376,10 @@ const Dashboard = () => {
                 </Box>
 
             </Box>
-
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
             <div>
                 <Text margin="0 0 20px 47px" fontSize="xl" fontWeight="400">Google Trends</Text>
 
