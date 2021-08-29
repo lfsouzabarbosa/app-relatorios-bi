@@ -323,7 +323,7 @@ const Dashboard = () => {
             <Text margin="0 0 20px 47px" fontSize="xl" fontWeight="400">Google News</Text>
             <Box maxWidth="900px" maxHeight="850px" padding="20px" margin="0 10% 7%" display="inline-list-item" flexDirection="column">
 
-                <Box margin="7px auto" padding="20px" width="700px" height="100px" display="inline-flex" flexDirection="row"
+            <Box margin="7px auto" padding="22px" display="flex" flexDirection="column"
                 backgroundColor="#ffffff" boxShadow="card">
                     <Box marginTop="10px">
                          <img margin="auto" width="40px" height="40px" src="https://image.flaticon.com/icons/png/512/1042/1042782.png"></img>
@@ -336,7 +336,7 @@ const Dashboard = () => {
                     </Box>
                 </Box>
 
-                <Box margin="7px auto" padding="20px" width="700px" height="100px" display="inline-flex" flexDirection="row"
+                <Box margin="7px auto" padding="22px" display="flex" flexDirection="column"
                 backgroundColor="#ffffff" boxShadow="card">
                     <Box marginTop="10px">
                          <img margin="auto" width="40px" height="40px" src="https://image.flaticon.com/icons/png/512/1042/1042782.png"></img>
@@ -349,7 +349,7 @@ const Dashboard = () => {
                     </Box>
                 </Box>
 
-                <Box margin="7px auto" padding="20px" width="700px" height="100px" display="inline-flex" flexDirection="row"
+                <Box margin="7px auto" padding="22px" display="flex" flexDirection="column"
                 backgroundColor="#ffffff" boxShadow="card">
                     <Box marginTop="10px">
                          <img margin="auto" width="40px" height="40px" src="https://image.flaticon.com/icons/png/512/1042/1042782.png"></img>
@@ -362,7 +362,7 @@ const Dashboard = () => {
                     </Box>
                 </Box>
 
-                <Box margin="7px auto" padding="15px" width="700px" height="100px" display="inline-flex" flexDirection="row"
+                <Box margin="7px auto" padding="22px" display="flex" flexDirection="column"
                 backgroundColor="#ffffff" boxShadow="card">
                     <Box marginTop="10px">
                          <img margin="auto" width="40px" height="40px" src="https://image.flaticon.com/icons/png/512/1042/1042782.png"></img>
