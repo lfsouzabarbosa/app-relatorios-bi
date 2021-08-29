@@ -321,14 +321,14 @@ const Dashboard = () => {
             </Box>
             
             <Text margin="0 0 20px 47px" fontSize="xl" fontWeight="400">Google News</Text>
-            <Box width="900px" height="500px" margin="20px 150px" display="inline-list-item" flexDirection="column">
+            <Box maxWidth="900px" maxHeight="850px" padding="20px" margin="0 10% 7%" display="inline-list-item" flexDirection="column">
 
                 <Box margin="7px auto" padding="20px" width="700px" height="100px" display="inline-flex" flexDirection="row"
                 backgroundColor="#ffffff" boxShadow="card">
                     <Box marginTop="10px">
                          <img margin="auto" width="40px" height="40px" src="https://image.flaticon.com/icons/png/512/1042/1042782.png"></img>
                     </Box>
-                    <Box width="600px" marginLeft="20px" marginY="auto">
+                    <Box>
                         <Link href="https://economia.uol.com.br/mais/ultimas-noticias/2021/08/25/acao-klabin-hoje-cotacao-ibovespa.htm" >
                             <Text textAlign="start" fontSize="xl" fontWeight="400" color="black">Ações Klabin (KLB11): saiba qual o preço hoje (25/08)</Text>
                             <Text textAlign="start" fontSize="x1" fontWeight="200" color="grey">UOL • 3 dias atrás</Text>
@@ -341,7 +341,7 @@ const Dashboard = () => {
                     <Box marginTop="10px">
                          <img margin="auto" width="40px" height="40px" src="https://image.flaticon.com/icons/png/512/1042/1042782.png"></img>
                     </Box>
-                    <Box width="600px" marginLeft="20px" marginY="auto">
+                    <Box>
                         <Link href="https://www.infomoney.com.br/mercados/acao-da-vale-tem-leve-queda-apos-salto-da-vespera-mosaico-tem-baixa-com-recomendacao-e-yduqs-cai-3-apos-tres-sessoes-de-ganhos/" >
                             <Text textAlign="start" fontSize="xl" fontWeight="400" color="black">Klabin reverte prejuízo e lucra R$ 719 milhões no 2ª trimestre de 2021</Text>
                             <Text textAlign="star" fontSize="x1" fontWeight="200" color="grey">InfoMoney • 18 dias atrás</Text>
@@ -354,7 +354,7 @@ const Dashboard = () => {
                     <Box marginTop="10px">
                          <img margin="auto" width="40px" height="40px" src="https://image.flaticon.com/icons/png/512/1042/1042782.png"></img>
                     </Box>
-                    <Box width="600px" marginLeft="20px" marginY="auto">
+                    <Box>
                         <Link href="https://valor.globo.com/empresas/noticia/2021/08/10/klabin-investe-r-40-milhoes-para-por-barreira-em-cartoes.ghtml" >
                             <Text textAlign="start" fontSize="xl" fontWeight="400" color="black">Klabin investe R$ 40 milhões para pôr barreira em cartões</Text>
                             <Text textAlign="start" fontSize="x1" fontWeight="200" color="grey">Valor Econômico • 18 dias atrás</Text>
@@ -367,7 +367,7 @@ const Dashboard = () => {
                     <Box marginTop="10px">
                          <img margin="auto" width="40px" height="40px" src="https://image.flaticon.com/icons/png/512/1042/1042782.png"></img>
                     </Box>
-                    <Box width="600px" marginLeft="20px" marginY="auto">
+                    <Box>
                         <Link href="https://valor.globo.com/empresas/noticia/2021/08/10/klabin-investe-r-40-milhoes-para-por-barreira-em-cartoes.ghtml" >
                             <Text textAlign="start" fontSize="xl" fontWeight="400" color="black">Ações de Suzano e Klabin saltam até 5,5%, Mosaico tem queda de 4% após recomendação e Braskem sobre 4%</Text>
                             <Text textAlign="start" fontSize="x1" fontWeight="200" color="grey">InfoMoney • 3 duas atrás</Text>

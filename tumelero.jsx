@@ -321,14 +321,14 @@ const Dashboard = () => {
             </Box>
             
             <Text margin="0 0 20px 47px" fontSize="xl" fontWeight="400">Google News</Text>
-            <Box width="900px" height="500px" margin="20px 150px" display="inline-list-item" flexDirection="column">
+            <Box maxWidth="900px" maxHeight="850px" padding="20px" margin="0 10% 7%" display="inline-list-item" flexDirection="column">
 
                 <Box margin="7px auto" padding="20px" width="700px" height="100px" display="inline-flex" flexDirection="row"
                 backgroundColor="#ffffff" boxShadow="card">
                     <Box marginTop="10px">
                          <img margin="auto" width="40px" height="40px" src="https://image.flaticon.com/icons/png/512/1042/1042782.png"></img>
                     </Box>
-                    <Box width="600px" marginLeft="20px" marginY="auto">
+                    <Box>
                         <Link href="https://www.jornaldocomercio.com/_conteudo/agro/2021/08/808698-jc-faz-homenagem-a-fapergs-na-25-edicao-do-premio-o-futuro-da-terra.html" >
                             <Text textAlign="start" fontSize="xl" fontWeight="400" color="black">JC faz homenagem à Fapergs na 25ª edição do Prêmio O Fundo da Terra</Text>
                             <Text textAlign="start" fontSize="x1" fontWeight="200" color="grey">Jornal do Comércio • 3 dias atrás</Text>
@@ -341,7 +341,7 @@ const Dashboard = () => {
                     <Box marginTop="10px">
                          <img margin="auto" width="40px" height="40px" src="https://image.flaticon.com/icons/png/512/1042/1042782.png"></img>
                     </Box>
-                    <Box width="600px" marginLeft="20px" marginY="auto">
+                    <Box>
                         <Link href="https://www.segs.com.br/demais/305860-crise-hidrica-como-reduzir-o-consumo-de-agua-e-de-quebra-economizar-no-bolso" >
                             <Text textAlign="start" fontSize="xl" fontWeight="400" color="black">Crise hídrica: Como reduzir o consumo de água e, de quebra, economizar no bolso...</Text>
                             <Text textAlign="start" fontSize="x1" fontWeight="200" color="grey">Portal Nacional de Seguros • 8 dias atrás</Text>
@@ -354,7 +354,7 @@ const Dashboard = () => {
                     <Box marginTop="10px">
                          <img margin="auto" width="40px" height="40px" src="https://image.flaticon.com/icons/png/512/1042/1042782.png"></img>
                     </Box>
-                    <Box width="600px" marginLeft="20px" marginY="auto">
+                    <Box>
                         <Link href="https://radioalianca.com.br/politica/autor-de-tentativa-de-homicidio-em-arvoredo-sera-julgado-na-proxima-segunda-feira" >
                             <Text textAlign="start" fontSize="xl" fontWeight="400" color="black">Autor de tentativa de homicídio em Arvoredo será julgado na próxima segunda-feira</Text>
                             <Text textAlign="start" fontSize="x1" fontWeight="200" color="grey">Rádio Aliança 750khz • Ontem</Text>
@@ -367,7 +367,7 @@ const Dashboard = () => {
                     <Box marginTop="10px">
                          <img margin="auto" width="40px" height="40px" src="https://image.flaticon.com/icons/png/512/1042/1042782.png"></img>
                     </Box>
-                    <Box width="600px" marginLeft="20px" marginY="auto">
+                    <Box>
                         <Link href="https://www.bonde.com.br/casa-e-decoracao/dicas/como-reduzir-o-consumo-de-agua-e-ainda-economizar-no-bolso-544302.html" >
                             <Text textAlign="start" fontSize="xl" fontWeight="400" color="black">Como reduzir o consumo de água e, ainda, economizar no bolso</Text>
                             <Text textAlign="start" fontSize="x1" fontWeight="200" color="grey">Portal Bonde • 8 dias atrás</Text>

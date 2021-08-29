@@ -292,57 +292,57 @@ const Dashboard = () => {
             </Box>
 
             <Text margin="0 0 20px 47px" fontSize="xl" fontWeight="400">Google News</Text>
-            <Box width="900px" height="500px" margin="20px 150px" display="inline-list-item" flexDirection="column">
+            <Box maxWidth="900px" maxHeight="850px" padding="20px" margin="0 10% 7%" display="inline-list-item" flexDirection="column">
 
-                <Box margin="7px auto" padding="20px" width="700px" height="100px" display="inline-flex" flexDirection="row"
+                <Box margin="7px auto" padding="22px" display="flex" flexDirection="column"
                 backgroundColor="#ffffff" boxShadow="card">
-                    <Box marginTop="10px">
+                    <Box>
                          <img margin="auto" width="40px" height="40px" src="https://image.flaticon.com/icons/png/512/1042/1042782.png"></img>
                     </Box>
-                    <Box width="600px" marginLeft="20px" marginY="auto">
+                    <Box>
                         <Link href="https://fdr.com.br/2021/08/26/c6-bank-anuncia-recurso-no-app-que-permite-pagamento-de-combustivel/" >
-                            <Text textAlign="start" fontSize="xl" fontWeight="400" color="black">C6 Bank anuncia recurso no app que permite pagamento de combustível</Text>
-                            <Text textAlign="start" fontSize="x1" fontWeight="200" color="grey">FDR -Terra • 4 horas atrás</Text>
+                            <Text marginLeft="7px" textAlign="start" fontSize="xl" fontWeight="400" color="black">C6 Bank anuncia recurso no app que permite pagamento de combustível</Text>
+                            <Text marginLeft="7px" textAlign="start" fontSize="x1" fontWeight="200" color="grey">FDR -Terra • 4 horas atrás</Text>
                         </Link>
                     </Box>
                 </Box>
 
-                <Box margin="7px auto" padding="20px" width="700px" height="100px" display="inline-flex" flexDirection="row"
+                <Box margin="7px auto" padding="22px" display="flex" flexDirection="column"
                 backgroundColor="#ffffff" boxShadow="card">
-                    <Box marginTop="10px">
+                    <Box>
                          <img margin="auto" width="40px" height="40px" src="https://image.flaticon.com/icons/png/512/1042/1042782.png"></img>
                     </Box>
-                    <Box width="600px" marginLeft="20px" marginY="auto">
+                    <Box>
                         <Link href="https://www.terra.com.br/noticias/tecnologia/c6-lanca-techinvest-carteira-de-investimentos-personalizada-e-automatica,7ed662496b6615c569cee7d74ac46af1kvppy0g0.html" >
-                            <Text textAlign="start" fontSize="xl" fontWeight="400" color="black">C6 lança TechInvest, carteira de investimentos personalizada e automática</Text>
-                            <Text textAlign="star" fontSize="x1" fontWeight="200" color="grey">Terra • 6 horas atrás</Text>
+                            <Text marginLeft="7px" textAlign="start" fontSize="xl" fontWeight="400" color="black">C6 lança TechInvest, carteira de investimentos personalizada e automática</Text>
+                            <Text marginLeft="7px" textAlign="star" fontSize="x1" fontWeight="200" color="grey">Terra • 6 horas atrás</Text>
                         </Link>
                     </Box>
                 </Box>
 
-                <Box margin="7px auto" padding="20px" width="700px" height="100px" display="inline-flex" flexDirection="row"
+                <Box margin="7px auto" padding="22px" display="flex" flexDirection="column"
                 backgroundColor="#ffffff" boxShadow="card">
-                    <Box marginTop="10px">
+                    <Box>
                          <img margin="auto" width="40px" height="40px" src="https://image.flaticon.com/icons/png/512/1042/1042782.png"></img>
                     </Box>
-                    <Box width="600px" marginLeft="20px" marginY="auto">
+                    <Box>
                         <Link href="https://www.moneytimes.com.br/c6-bank-lanca-plataforma-de-investimentos/" >
-                            <Text textAlign="start" fontSize="xl" fontWeight="400" color="black">C6 Bank lança plataforma de investimentos</Text>
-                            <Text textAlign="start" fontSize="x1" fontWeight="200" color="grey">Money Times • 3 dias atrás</Text>
+                            <Text marginLeft="7px" textAlign="start" fontSize="xl" fontWeight="400" color="black">C6 Bank lança plataforma de investimentos</Text>
+                            <Text marginLeft="7px" textAlign="start" fontSize="x1" fontWeight="200" color="grey">Money Times • 3 dias atrás</Text>
                         </Link>
                     </Box>
                 </Box>
 
-                <Box margin="7px auto" padding="15px" width="700px" height="100px" display="inline-flex" flexDirection="row"
+                <Box margin="7px auto" padding="22px" display="flex" flexDirection="column"
                 backgroundColor="#ffffff" boxShadow="card">
-                    <Box marginTop="10px">
+                    <Box>
                          <img margin="auto" width="40px" height="40px" src="https://image.flaticon.com/icons/png/512/1042/1042782.png"></img>
                     </Box>
-                    <Box width="600px" marginLeft="20px" marginY="auto">
+                    <Box>
                         <Link href="https://seucreditodigital.com.br/c6-bank-parceria-com-shell-box/" >
-                            <Text textAlign="start" fontSize="xl" fontWeight="400" color="black">C6 Bank faz parceria com a Shell Box para
+                            <Text marginLeft="7px" textAlign="start" fontSize="xl" fontWeight="400" color="black">C6 Bank faz parceria com a Shell Box para
                                 pagar a gasolina direto do app</Text>
-                            <Text textAlign="start" fontSize="x1" fontWeight="200" color="grey">Seu Crédito Digital • Ontem</Text>
+                            <Text marginLeft="7px" textAlign="start" fontSize="x1" fontWeight="200" color="grey">Seu Crédito Digital • Ontem</Text>
                         </Link>
                     </Box>
                 </Box>

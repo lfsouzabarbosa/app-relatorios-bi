@@ -321,14 +321,14 @@ const Dashboard = () => {
             </Box>
             
             <Text margin="0 0 20px 47px" fontSize="xl" fontWeight="400">Google News</Text>
-            <Box width="900px" height="500px" margin="20px 150px" display="inline-list-item" flexDirection="column">
+            <Box maxWidth="900px" maxHeight="850px" padding="20px" margin="0 10% 7%" display="inline-list-item" flexDirection="column">
 
                 <Box margin="7px auto" padding="20px" width="700px" height="100px" display="inline-flex" flexDirection="row"
                 backgroundColor="#ffffff" boxShadow="card">
                     <Box marginTop="10px">
                          <img margin="auto" width="40px" height="40px" src="https://image.flaticon.com/icons/png/512/1042/1042782.png"></img>
                     </Box>
-                    <Box width="600px" marginLeft="20px" marginY="auto">
+                    <Box>
                         <Link href="https://www.araxa.mg.gov.br/noticia/4689/projeto-maos-a-obra-ja-tem-92-cadastros-aprovados-e-continua-com-vagas-disponiveis" >
                             <Text textAlign="start" fontSize="xl" fontWeight="400" color="black">Notícia</Text>
                             <Text textAlign="start" fontSize="x1" fontWeight="200" color="grey">Notícia / Prefeitura de Araxá • 4 dias atrás</Text>
@@ -341,7 +341,7 @@ const Dashboard = () => {
                     <Box marginTop="10px">
                          <img margin="auto" width="40px" height="40px" src="https://image.flaticon.com/icons/png/512/1042/1042782.png"></img>
                     </Box>
-                    <Box width="600px" marginLeft="20px" marginY="auto">
+                    <Box>
                         <Link href="https://radioalianca.com.br/regiao/quartel-dos-bombeiros-de-piratuba-sera-ampliado-recursos-para-obra-ja-estao-sendo-captados" >
                             <Text textAlign="start" fontSize="xl" fontWeight="400" color="black">Quartel dos Bombeiros de piratuba será ampliado. Recursos para obra já estão sendo captados</Text>
                             <Text textAlign="star" fontSize="x1" fontWeight="200" color="grey">Rádio Aliança 750khz • 3 dias atrás</Text>
@@ -354,7 +354,7 @@ const Dashboard = () => {
                     <Box marginTop="10px">
                          <img margin="auto" width="40px" height="40px" src="https://image.flaticon.com/icons/png/512/1042/1042782.png"></img>
                     </Box>
-                    <Box width="600px" marginLeft="20px" marginY="auto">
+                    <Box>
                         <Link href="https://mercadoeconsumo.com.br/2021/01/13/com-a-bandeira-obra-ja-saint-gobain-investe-em-atacado-da-construcao/" >
                             <Text textAlign="start" fontSize="xl" fontWeight="400" color="black">Com a bandeira Obra Já! Saint-Gobain investe em atacado da construção</Text>
                             <Text textAlign="start" fontSize="x1" fontWeight="200" color="grey">Mercado e Consumo • 13 de jan</Text>
@@ -367,7 +367,7 @@ const Dashboard = () => {
                     <Box marginTop="10px">
                          <img margin="auto" width="40px" height="40px" src="https://image.flaticon.com/icons/png/512/1042/1042782.png"></img>
                     </Box>
-                    <Box width="600px" marginLeft="20px" marginY="auto">
+                    <Box>
                         <Link href="https://www.folhadaregiao.com.br/2021/08/28/arte-em-homenagem-a-ex-deputada-marielle-franco-e-apagada-de-muro/" >
                             <Text textAlign="start" fontSize="xl" fontWeight="400" color="black">Arte em homenagem à ex-deputada Marielle Franco é apagada de muro</Text>
                             <Text textAlign="start" fontSize="x1" fontWeight="200" color="grey">Folha da Região • 3 horas atrás</Text>

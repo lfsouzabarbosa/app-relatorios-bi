@@ -321,14 +321,14 @@ const Dashboard = () => {
             </Box>
             
             <Text margin="0 0 20px 47px" fontSize="xl" fontWeight="400">Google News</Text>
-            <Box width="900px" height="500px" margin="20px 150px" display="inline-list-item" flexDirection="column">
+            <Box maxWidth="900px" maxHeight="850px" padding="20px" margin="0 10% 7%" display="inline-list-item" flexDirection="column">
 
                 <Box margin="7px auto" padding="20px" width="700px" height="100px" display="inline-flex" flexDirection="row"
                 backgroundColor="#ffffff" boxShadow="card">
                     <Box marginTop="10px">
                          <img margin="auto" width="40px" height="40px" src="https://image.flaticon.com/icons/png/512/1042/1042782.png"></img>
                     </Box>
-                    <Box width="600px" marginLeft="20px" marginY="auto">
+                    <Box>
                         <Link href="https://www.segs.com.br/seguros/305573-suhai-seguradora-lanca-cobertura-de-terceiros" >
                             <Text textAlign="start" fontSize="xl" fontWeight="400" color="black">Suhai Seguradora lança cobertura de terceiros / SEGS - Portal Nacional de Seguros, Saúde, Info, TI...</Text>
                             <Text textAlign="start" fontSize="x1" fontWeight="200" color="grey">Portal nacional de Seguros • 10 dias atrás</Text>
@@ -341,7 +341,7 @@ const Dashboard = () => {
                     <Box marginTop="10px">
                          <img margin="auto" width="40px" height="40px" src="https://image.flaticon.com/icons/png/512/1042/1042782.png"></img>
                     </Box>
-                    <Box width="600px" marginLeft="20px" marginY="auto">
+                    <Box>
                         <Link href="https://propmark.com.br/anunciantes/suhai-chama-ele-para-mostrar-democratizacao-do-seguro/" >
                             <Text textAlign="start" fontSize="xl" fontWeight="400" color="black">Suhai chama 'Ele' para mostrar democratização do seguro</Text>
                             <Text textAlign="star" fontSize="x1" fontWeight="200" color="grey">Terra • 6 horas atrás</Text>
@@ -354,7 +354,7 @@ const Dashboard = () => {
                     <Box marginTop="10px">
                          <img margin="auto" width="40px" height="40px" src="https://image.flaticon.com/icons/png/512/1042/1042782.png"></img>
                     </Box>
-                    <Box width="600px" marginLeft="20px" marginY="auto">
+                    <Box>
                         <Link href="https://www.segs.com.br/seguros/306998-clube-dos-seguradores-da-bahia-recebe-executivo-da-sompo-seguros" >
                             <Text textAlign="start" fontSize="xl" fontWeight="400" color="black">Clube dos seguradores da Bahia recebe executivo da SOMPO SEGUROS / SEGS - Portal Nacional de Seguros</Text>
                             <Text textAlign="start" fontSize="x1" fontWeight="200" color="grey">Portal Nacional de Seguros • 14 horas atrás</Text>
@@ -367,7 +367,7 @@ const Dashboard = () => {
                     <Box marginTop="10px">
                          <img margin="auto" width="40px" height="40px" src="https://image.flaticon.com/icons/png/512/1042/1042782.png"></img>
                     </Box>
-                    <Box width="600px" marginLeft="20px" marginY="auto">
+                    <Box>
                         <Link href="https://noticias.uol.com.br/internacional/ultimas-noticias/2021/08/23/eua-acreditam-poder-evacuar-todos-os-americanos-do-afeganistao-ate-3108.htm" >
                             <Text textAlign="start" fontSize="xl" fontWeight="400" color="black">EUA acreditam poder evacuar todos os americanos do Afeganistão até 31/08</Text>
                             <Text textAlign="start" fontSize="x1" fontWeight="200" color="grey">UOL Notícias • 5 dias atrás</Text>

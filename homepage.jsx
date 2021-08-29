@@ -321,14 +321,14 @@ const Dashboard = () => {
             </Box>
 
             <Text margin="0 0 20px 47px" fontSize="xl" fontWeight="400">Google News</Text>
-            <Box width="900px" height="500px" margin="20px 150px" display="inline-list-item" flexDirection="column">
+            <Box maxWidth="900px" maxHeight="850px" padding="20px" margin="0 10% 7%" display="inline-list-item" flexDirection="column">
 
                 <Box margin="7px auto" padding="20px" width="700px" height="100px" display="inline-flex" flexDirection="row"
                 backgroundColor="#ffffff" boxShadow="card">
                     <Box marginTop="10px">
                          <img margin="auto" width="40px" height="40px" src="https://image.flaticon.com/icons/png/512/1042/1042782.png"></img>
                     </Box>
-                    <Box width="600px" marginLeft="20px" marginY="auto">
+                    <Box>
                         <Link href="https://www.segs.com.br/demais/305860-crise-hidrica-como-reduzir-o-consumo-de-agua-e-de-quebra-economizar-no-bolso" >
                             <Text textAlign="start" fontSize="xl" fontWeight="400" color="black">Crise hídrica: Como reduzir o consumo de água e, de quebra, economizar no bolso...</Text>
                             <Text textAlign="start" fontSize="x1" fontWeight="200" color="grey">Portal Nacional de Seguros • 8 dias atrás</Text>
@@ -341,7 +341,7 @@ const Dashboard = () => {
                     <Box marginTop="10px">
                          <img margin="auto" width="40px" height="40px" src="https://image.flaticon.com/icons/png/512/1042/1042782.png"></img>
                     </Box>
-                    <Box width="600px" marginLeft="20px" marginY="auto">
+                    <Box>
                         <Link href="https://www.segs.com.br/demais/302446-5-dicas-para-utilizar-quadros-decorativos-com-elegancia-e-estilo" >
                             <Text textAlign="start" fontSize="xl" fontWeight="400" color="black">5 dicas para utilizar quadros decorativos com elegância e estilo...</Text>
                             <Text textAlign="star" fontSize="x1" fontWeight="200" color="grey">Portal Nacional de Seguros • 30 de jul</Text>
@@ -354,7 +354,7 @@ const Dashboard = () => {
                     <Box marginTop="10px">
                          <img margin="auto" width="40px" height="40px" src="https://image.flaticon.com/icons/png/512/1042/1042782.png"></img>
                     </Box>
-                    <Box width="600px" marginLeft="20px" marginY="auto">
+                    <Box>
                         <Link href="https://valor.globo.com/carreira/noticia/2021/08/19/iniciativa-conecta-presidentes-com-universitarios.ghtml" >
                             <Text textAlign="start" fontSize="xl" fontWeight="400" color="black">Iniciativa conecta presidentes com universitários</Text>
                             <Text textAlign="start" fontSize="x1" fontWeight="200" color="grey">Valor Econômico • 9 dias atrás</Text>
@@ -367,7 +367,7 @@ const Dashboard = () => {
                     <Box marginTop="10px">
                          <img margin="auto" width="40px" height="40px" src="https://image.flaticon.com/icons/png/512/1042/1042782.png"></img>
                     </Box>
-                    <Box width="600px" marginLeft="20px" marginY="auto">
+                    <Box>
                         <Link href="https://www.bonde.com.br/casa-e-decoracao/dicas/como-reduzir-o-consumo-de-agua-e-ainda-economizar-no-bolso-544302.html" >
                             <Text textAlign="start" fontSize="xl" fontWeight="400" color="black">Como reduzir o consumo de água e, ainda, economizar no bolso</Text>
                             <Text textAlign="start" fontSize="x1" fontWeight="200" color="grey">Portal Bonde • 8 dias atrás</Text>

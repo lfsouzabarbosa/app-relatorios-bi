@@ -321,14 +321,14 @@ const Dashboard = () => {
             </Box>
             
             <Text margin="0 0 20px 47px" fontSize="xl" fontWeight="400">Google News</Text>
-            <Box width="900px" height="500px" margin="20px 150px" display="inline-list-item" flexDirection="column">
+            <Box maxWidth="900px" maxHeight="850px" padding="20px" margin="0 10% 7%" display="inline-list-item" flexDirection="column">
 
                 <Box margin="7px auto" padding="20px" width="700px" height="100px" display="inline-flex" flexDirection="row"
                 backgroundColor="#ffffff" boxShadow="card">
                     <Box marginTop="10px">
                          <img margin="auto" width="40px" height="40px" src="https://image.flaticon.com/icons/png/512/1042/1042782.png"></img>
                     </Box>
-                    <Box width="600px" marginLeft="20px" marginY="auto">
+                    <Box>
                         <Link href="https://www.automotivebusiness.com.br/noticia/33468/fabricante-de-mitsubishi-hpe-agora-faz-seguro-de-carro-casa-e-vida" >
                             <Text textAlign="start" fontSize="xl" fontWeight="400" color="black">Fabricante de Mitsubishi, HPE agora faz seguro de carro, casa e vida</Text>
                             <Text textAlign="start" fontSize="x1" fontWeight="200" color="grey">Automotive Business • 16 dias atrás</Text>
@@ -341,7 +341,7 @@ const Dashboard = () => {
                     <Box marginTop="10px">
                          <img margin="auto" width="40px" height="40px" src="https://image.flaticon.com/icons/png/512/1042/1042782.png"></img>
                     </Box>
-                    <Box width="600px" marginLeft="20px" marginY="auto">
+                    <Box>
                         <Link href="https://www.abcdoabc.com.br/brasil-mundo/noticia/tres-equipes-levaram-mitsubishi-ao-podio-categorias-diferentes-rally-sertoes-132269" >
                             <Text textAlign="start" fontSize="xl" fontWeight="400" color="black">Três equipes levaram Mitsubishi ao pódio em categorias difererntes do Rally dos Sertões</Text>
                             <Text textAlign="star" fontSize="x1" fontWeight="200" color="grey">ABCdoABC • 4 dias atrás</Text>
@@ -354,7 +354,7 @@ const Dashboard = () => {
                     <Box marginTop="10px">
                          <img margin="auto" width="40px" height="40px" src="https://image.flaticon.com/icons/png/512/1042/1042782.png"></img>
                     </Box>
-                    <Box width="600px" marginLeft="20px" marginY="auto">
+                    <Box>
                         <Link href="https://www.jornaldooeste.com.br/esporte/mitsubishi-cup-2021-cristiano-rocha-e-roberto-spessatto-sobem-ao-podio-na-quarta-etapa/" >
                             <Text textAlign="start" fontSize="xl" fontWeight="400" color="black">Mitsubishi Cup 2021: Cristiano Rocha e Roberto Spessatto sobem ao pódio na quarta etapa - Jornal do Oeste</Text>
                             <Text textAlign="start" fontSize="x1" fontWeight="200" color="grey">Jornal do Oeste • 26 dias atrás</Text>
@@ -367,7 +367,7 @@ const Dashboard = () => {
                     <Box marginTop="10px">
                          <img margin="auto" width="40px" height="40px" src="https://image.flaticon.com/icons/png/512/1042/1042782.png"></img>
                     </Box>
-                    <Box width="600px" marginLeft="20px" marginY="auto">
+                    <Box>
                         <Link href="https://www.folhape.com.br/colunistas/fmotors/mitsubishi-motors-marca-presenca-na-edicao-2021-do-rally-dos-sertoes/26264/" >
                             <Text textAlign="start" fontSize="xl" fontWeight="400" color="black">Mitsubishi Motors marca presença na edição 2021 do Rally dos sertões</Text>
                             <Text textAlign="start" fontSize="x1" fontWeight="200" color="grey">Folha de Pernambuco • 11 dias atrás</Text>

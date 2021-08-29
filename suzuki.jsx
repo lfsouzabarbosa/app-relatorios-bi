@@ -320,14 +320,14 @@ const Dashboard = () => {
             </Box>
             
             <Text margin="0 0 20px 47px" fontSize="xl" fontWeight="400">Google News</Text>
-            <Box width="900px" height="500px" margin="20px 150px" display="inline-list-item" flexDirection="column">
+            <Box maxWidth="900px" maxHeight="850px" padding="20px" margin="0 10% 7%" display="inline-list-item" flexDirection="column">
 
-                <Box margin="7px auto" padding="20px" width="700px" height="100px" display="inline-flex" flexDirection="row"
+                <Box margin="7px auto" padding="22px" display="flex" flexDirection="column"
                 backgroundColor="#ffffff" boxShadow="card">
                     <Box marginTop="10px">
                          <img margin="auto" width="40px" height="40px" src="https://image.flaticon.com/icons/png/512/1042/1042782.png"></img>
                     </Box>
-                    <Box width="600px" marginLeft="20px" marginY="auto">
+                    <Box>
                         <Link href="https://www.uol.com.br/carros/colunas/infomoto/2021/08/21/suzuki-v-strom-1050-chega-ao-brasil-em-outubro-conheca-a-nova-aventureira.htm" >
                             <Text textAlign="start" fontSize="xl" fontWeight="400" color="black">Suzuki V-Strom 1050 chega ao Brasil em outubro; conheça a nova aventureria</Text>
                             <Text textAlign="start" fontSize="x1" fontWeight="200" color="grey">UOL • 7 dias atrás</Text>
@@ -335,12 +335,12 @@ const Dashboard = () => {
                     </Box>
                 </Box>
 
-                <Box margin="7px auto" padding="20px" width="700px" height="100px" display="inline-flex" flexDirection="row"
+                <Box margin="7px auto" padding="22px" display="flex" flexDirection="column"
                 backgroundColor="#ffffff" boxShadow="card">
                     <Box marginTop="10px">
                          <img margin="auto" width="40px" height="40px" src="https://image.flaticon.com/icons/png/512/1042/1042782.png"></img>
                     </Box>
-                    <Box width="600px" marginLeft="20px" marginY="auto">
+                    <Box>
                         <Link href="]https://www.noticiasautomotivas.com.br/latin-ncap-zerou-renault-duster-e-suzuki-swift/" >
                             <Text textAlign="start" fontSize="xl" fontWeight="400" color="black">Latin NCAP "zerou" Renault Duster e Suzuki Swift</Text>
                             <Text textAlign="star" fontSize="x1" fontWeight="200" color="grey">Notícias Automotivas • Ontem</Text>
@@ -348,12 +348,12 @@ const Dashboard = () => {
                     </Box>
                 </Box>
 
-                <Box margin="7px auto" padding="20px" width="700px" height="100px" display="inline-flex" flexDirection="row"
+                <Box margin="7px auto" padding="22px" display="flex" flexDirection="column"
                 backgroundColor="#ffffff" boxShadow="card">
                     <Box marginTop="10px">
                          <img margin="auto" width="40px" height="40px" src="https://image.flaticon.com/icons/png/512/1042/1042782.png"></img>
                     </Box>
-                    <Box width="600px" marginLeft="20px" marginY="auto">
+                    <Box>
                         <Link href="https://www.grandepremio.com.br/motogp/noticias/lider-saida-davide-brivio-deixou-suzuki-sobrecarregada-substituto-2022/" >
                             <Text textAlign="start" fontSize="xl" fontWeight="400" color="black">Líder diz que saída de Brivio deixou Suzuki sobrecarregada e promete substituto em 2022</Text>
                             <Text textAlign="start" fontSize="x1" fontWeight="200" color="grey">Grande Prêmio • 3 dias atrás</Text>
@@ -361,12 +361,12 @@ const Dashboard = () => {
                     </Box>
                 </Box>
 
-                <Box margin="7px auto" padding="15px" width="700px" height="100px" display="inline-flex" flexDirection="row"
+                <Box margin="7px auto" padding="22px" display="flex" flexDirection="column"
                 backgroundColor="#ffffff" boxShadow="card">
                     <Box marginTop="10px">
                          <img margin="auto" width="40px" height="40px" src="https://image.flaticon.com/icons/png/512/1042/1042782.png"></img>
                     </Box>
-                    <Box width="600px" marginLeft="20px" marginY="auto">
+                    <Box>
                         <Link href="https://www.motonline.com.br/noticia/motos-suzuki-no-brasil/" >
                             <Text textAlign="start" fontSize="xl" fontWeight="400" color="black">Motos Suzuki no Brasil: preços e modelos 2021</Text>
                             <Text textAlign="start" fontSize="x1" fontWeight="200" color="grey">Motoline • 21 dias atrás</Text>

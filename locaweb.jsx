@@ -321,14 +321,14 @@ const Dashboard = () => {
             </Box>
             
             <Text margin="0 0 20px 47px" fontSize="xl" fontWeight="400">Google News</Text>
-            <Box width="900px" height="500px" margin="20px 150px" display="inline-list-item" flexDirection="column">
+            <Box maxWidth="900px" maxHeight="850px" padding="20px" margin="0 10% 7%" display="inline-list-item" flexDirection="column">
 
                 <Box margin="7px auto" padding="20px" width="700px" height="100px" display="inline-flex" flexDirection="row"
                 backgroundColor="#ffffff" boxShadow="card">
                     <Box marginTop="10px">
                          <img margin="auto" width="40px" height="40px" src="https://image.flaticon.com/icons/png/512/1042/1042782.png"></img>
                     </Box>
-                    <Box width="600px" marginLeft="20px" marginY="auto">
+                    <Box>
                         <Link href="https://www.telesintese.com.br/5g-vai-levar-produtos-restritos-a-grandes-empresas-para-pmes-preve-locaweb/" >
                             <Text textAlign="start" fontSize="xl" fontWeight="400" color="black">5G vai levar produtos restritos a grandes empresas para PMEs, prevê Locaweb</Text>
                             <Text textAlign="start" fontSize="x1" fontWeight="200" color="grey">Tele.Síntese • 20 horas atrás</Text>
@@ -341,7 +341,7 @@ const Dashboard = () => {
                     <Box marginTop="10px">
                          <img margin="auto" width="40px" height="40px" src="https://image.flaticon.com/icons/png/512/1042/1042782.png"></img>
                     </Box>
-                    <Box width="600px" marginLeft="20px" marginY="auto">
+                    <Box>
                         <Link href="https://www.moneytimes.com.br/locaweb-ainda-tem-muito-para-crescer-acao-continua-sendo-a-favorita-dos-analistas/" >
                             <Text textAlign="start" fontSize="xl" fontWeight="400" color="black">Locaweb ainda tem muito para crescer; ação continua sendo a favorita dos analistas</Text>
                             <Text textAlign="star" fontSize="x1" fontWeight="200" color="grey">Money Times • 10 dias atrás</Text>
@@ -354,7 +354,7 @@ const Dashboard = () => {
                     <Box marginTop="10px">
                          <img margin="auto" width="40px" height="40px" src="https://image.flaticon.com/icons/png/512/1042/1042782.png"></img>
                     </Box>
-                    <Box width="600px" marginLeft="20px" marginY="auto">
+                    <Box>
                         <Link href="https://valorinveste.globo.com/mercados/renda-variavel/empresas/noticia/2021/08/17/locaweb-aprova-programa-de-recompra-de-at-3-milhes-de-aes.ghtml" >
                             <Text textAlign="start" fontSize="xl" fontWeight="400" color="black">Locaweb aprova programa de recompra de até 3 milhões de ações</Text>
                             <Text textAlign="start" fontSize="x1" fontWeight="200" color="grey">Valor Investe • 11 dias atrás</Text>
@@ -367,7 +367,7 @@ const Dashboard = () => {
                     <Box marginTop="10px">
                          <img margin="auto" width="40px" height="40px" src="https://image.flaticon.com/icons/png/512/1042/1042782.png"></img>
                     </Box>
-                    <Box width="600px" marginLeft="20px" marginY="auto">
+                    <Box>
                         <Link href="https://www.moneytimes.com.br/locaweb-compra-plataforma-para-pequenas-e-medias-empresas-por-r-102-milhoes/" >
                             <Text textAlign="start" fontSize="xl" fontWeight="400" color="black">Locaweb compra plataforma para pquenas e médias empresas por R$ 102 milhões</Text>
                             <Text textAlign="start" fontSize="x1" fontWeight="200" color="grey">Money Times • 26 dias atrás</Text>
