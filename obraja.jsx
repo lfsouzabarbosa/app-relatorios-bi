@@ -13,7 +13,7 @@ const Dashboard = () => {
     return (
         <section>
             <Box margin="30px 0 20px 45px" width="200px"  minHeight="20px">
-                <img width="170px" src="https://logodhttps://upload.wikimedia.org/wikipedia/commons/thumb/7/77/Logo_C6_Bank.svg/2560px-Logo_C6_Bank.svg.png"
+                <img width="170px" src="https://i.pinimg.com/564x/f8/93/7c/f8937c03276bda678ed858dc63d9dadd.jpg"
                 alt="Logo ObraJá"></img>
             </Box>
             <br></br>
