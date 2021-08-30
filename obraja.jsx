@@ -25,7 +25,7 @@ const Dashboard = () => {
                     <section width="auto" class="sc-dIsAE cQyBfq admin-bro_Box">
                     
                         <section width="auto" class="sc-dIsAE cHuGUn admin-bro_Box">
-                            <a href="http://vps23593.publiccloud.com.br:3004/" class="sc-dIsAE default-dashboard__Card-y6jxa9-0 kgyQN kKlyvT admin-bro_Box">
+                            <a  class="sc-dIsAE default-dashboard__Card-y6jxa9-0 kgyQN kKlyvT admin-bro_Box">
                                 <div class="sc-jrsJCI exBroz admin-bro_Text">
                                     <img  width="auto" height="90" src="https://image.flaticon.com/icons/png/512/1384/1384053.png" alt="Icone Facebook"></img>
                                     <div class="sc-jrsJCI bJANQE admin-bro_Text"></div>
@@ -123,7 +123,7 @@ const Dashboard = () => {
 
 
                         <section width="auto" class="sc-dIsAE cHuGUn admin-bro_Box">
-                            <a href="http://vps23593.publiccloud.com.br:3004/" class="sc-dIsAE default-dashboard__Card-y6jxa9-0 kgyQN kKlyvT admin-bro_Box">
+                            <a class="sc-dIsAE default-dashboard__Card-y6jxa9-0 kgyQN kKlyvT admin-bro_Box">
                                 <div class="sc-jrsJCI exBroz admin-bro_Text">
                                     <img width="auto" height="90" src="https://image.flaticon.com/icons/png/512/1384/1384063.png" alt="Icone Instagram"></img>
                                     <div class="sc-jrsJCI bJANQE admin-bro_Text"></div>
@@ -220,7 +220,7 @@ const Dashboard = () => {
                         </section>
 
                         <section width="auto" class="sc-dIsAE cHuGUn admin-bro_Box">
-                            <a href="http://vps23593.publiccloud.com.br:3004/" class="sc-dIsAE default-dashboard__Card-y6jxa9-0 kgyQN kKlyvT admin-bro_Box">
+                            <a class="sc-dIsAE default-dashboard__Card-y6jxa9-0 kgyQN kKlyvT admin-bro_Box">
                                 <div class="sc-jrsJCI exBroz admin-bro_Text">
                                     <img width="auto" height="90" src="https://image.flaticon.com/icons/png/512/733/733579.png" alt="Icone Twitter"></img>
                                     <div class="sc-jrsJCI bJANQE admin-bro_Text"></div>

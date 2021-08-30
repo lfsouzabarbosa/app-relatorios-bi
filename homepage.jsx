@@ -7,6 +7,10 @@ import { ContentDeliveryNetwork32 } from '@carbon/icons-react';
 
 const api = new ApiClient()
 
+function trendsRedirecionamento(){
+    window.location.href="http://vps23593.publiccloud.com.br:3001/"
+}
+
 const Dashboard = () => {
 
     return (
@@ -25,7 +29,7 @@ const Dashboard = () => {
                     <section width="auto" class="sc-dIsAE cQyBfq admin-bro_Box">
                     
                         <section width="auto" class="sc-dIsAE cHuGUn admin-bro_Box">
-                            <a href="http://vps23593.publiccloud.com.br:3004/" class="sc-dIsAE default-dashboard__Card-y6jxa9-0 kgyQN kKlyvT admin-bro_Box">
+                            <a class="sc-dIsAE default-dashboard__Card-y6jxa9-0 kgyQN kKlyvT admin-bro_Box">
                                 <div class="sc-jrsJCI exBroz admin-bro_Text">
                                     <img  width="auto" height="90" src="https://image.flaticon.com/icons/png/512/1384/1384053.png" alt="Icone Facebook"></img>
                                     <div class="sc-jrsJCI bJANQE admin-bro_Text"></div>
@@ -123,7 +127,7 @@ const Dashboard = () => {
 
 
                         <section width="auto" class="sc-dIsAE cHuGUn admin-bro_Box">
-                            <a href="http://vps23593.publiccloud.com.br:3004/" class="sc-dIsAE default-dashboard__Card-y6jxa9-0 kgyQN kKlyvT admin-bro_Box">
+                            <a class="sc-dIsAE default-dashboard__Card-y6jxa9-0 kgyQN kKlyvT admin-bro_Box">
                                 <div class="sc-jrsJCI exBroz admin-bro_Text">
                                     <img width="auto" height="90" src="https://image.flaticon.com/icons/png/512/1384/1384063.png" alt="Icone Instagram"></img>
                                     <div class="sc-jrsJCI bJANQE admin-bro_Text"></div>
@@ -220,7 +224,7 @@ const Dashboard = () => {
                         </section>
 
                         <section width="auto" class="sc-dIsAE cHuGUn admin-bro_Box">
-                            <a href="http://vps23593.publiccloud.com.br:3004/" class="sc-dIsAE default-dashboard__Card-y6jxa9-0 kgyQN kKlyvT admin-bro_Box">
+                            <a class="sc-dIsAE default-dashboard__Card-y6jxa9-0 kgyQN kKlyvT admin-bro_Box">
                                 <div class="sc-jrsJCI exBroz admin-bro_Text">
                                     <img width="auto" height="90" src="https://image.flaticon.com/icons/png/512/733/733579.png" alt="Icone Twitter"></img>
                                     <div class="sc-jrsJCI bJANQE admin-bro_Text"></div>
@@ -384,7 +388,7 @@ const Dashboard = () => {
                 <Text margin="0 0 20px 47px" fontSize="xl" fontWeight="400">Google Trends</Text>
 
                 <Box boxShadow="card" border="2px solid #ffffff" backgroundColor="#ffffff" borderRadius="10px" maxWidth="800px" minHeight="300px" margin=" 10px auto 30px" >
-                    <a href="http://vps23593.publiccloud.com.br:3001/" class="sc-dIsAE default-dashboard__Card-y6jxa9-0 kgyQN kKlyvT admin-bro_Box">
+                    <a onClick="http://vps23593.publiccloud.com.br:3001/" class="sc-dIsAE default-dashboard__Card-y6jxa9-0 kgyQN kKlyvT admin-bro_Box">
                         <Box display="inline-flex" flexDirection="row" justifyContent="center" width="740px" >
                             <img width="700" height="250px" src="https://64.media.tumblr.com/3a48170cc3ce37252ec6e5d84b3a4abc/2c5fe4201d328713-92/s540x810/7c055dc02ac6b2ef5fec40477bb482fd9c67fc1a.png" alt="Imagem Trends"></img>
                         </Box>
