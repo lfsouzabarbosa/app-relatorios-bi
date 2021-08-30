@@ -16,9 +16,9 @@ const Dashboard = () => {
             <br></br>
             <br></br>
             <br></br>
-            <br></br>
+            <br></br> 
             <Box display="inline-flex" flexDirection="row" verticalAlign="center" variant="grey">
-               
+             
                 <section class="sc-dIsAE fbPpRS admin-bro_Box">
                     <section width="auto" class="sc-dIsAE cQyBfq admin-bro_Box">
 
@@ -36,21 +36,7 @@ const Dashboard = () => {
                                             <Text fontSize="15px" fontWeight="3px">Fãs</Text>
                                         </Box>
                                         <Box width="140px">
-                                            <Text textAlign="right" marginTop="27px" fontSize="xl" fontWeight="900">75.625</Text>
-                                        </Box>
-                                    </Box>
-                                    <hr color="black" size="2" width="100%" ></hr>
-                                </div>
-                                <br></br>
-                                <div>
-                                    <Box display="inline-flex">
-                                        <Box width="110px" >
-                                            <img width="25px" height="25px" src="https://image.flaticon.com/icons/png/512/1146/1146404.png" alt="Icone Crescimento"
-                                                alt="Crescimento"></img>
-                                            <Text fontSize="15px" fontWeight="3px">Crescimento</Text>
-                                        </Box>
-                                        <Box width="140px">
-                                            <Text textAlign="right" marginTop="27px" fontSize="xl" fontWeight="900">0.8%</Text>
+                                            <Text textAlign="right" marginTop="27px" fontSize="xl" fontWeight="900">76.160</Text>
                                         </Box>
                                     </Box>
                                     <hr color="black" size="2" width="100%" ></hr>
@@ -59,27 +45,12 @@ const Dashboard = () => {
                                 <div>
                                     <Box display="inline-flex">
                                         <Box width="110px">
-                                            <img width="25px" height="25px" src="https://image.flaticon.com/icons/png/512/31/31624.png" alt="Icone Impressões"
-                                                alt="Impressões"></img>
-                                            <Text fontSize="15px" fontWeight="3px">Impressões</Text>
+                                            <img width="25px" height="25px" src="https://image.flaticon.com/icons/png/512/3388/3388668.png" alt="Icone Posts"
+                                                alt="Posts"></img>
+                                            <Text fontSize="15px" fontWeight="3px">Posts</Text>
                                         </Box>
                                         <Box width="140px">
-                                            <Text textAlign="right" marginTop="27px" fontSize="xl" fontWeight="900">000.000
-                                            </Text>
-                                        </Box>
-                                    </Box>
-                                    <hr color="black" size="2" width="100%" ></hr>
-                                </div>
-                                <br></br>
-                                <div>
-                                    <Box display="inline-flex">
-                                        <Box width="110px">
-                                            <img width="25px" height="25px" src="https://image.flaticon.com/icons/png/512/1250/1250999.png" alt="Icone Alcance"
-                                                alt="Alcance"></img>
-                                            <Text fontSize="15px" fontWeight="3px">Alcance</Text>
-                                        </Box>
-                                        <Box width="140px">
-                                            <Text textAlign="right" marginTop="27px" fontSize="xl" fontWeight="900">9.220
+                                            <Text textAlign="right" marginTop="27px" fontSize="xl" fontWeight="900">5
                                             </Text>
                                         </Box>
                                     </Box>
@@ -94,19 +65,12 @@ const Dashboard = () => {
                                             <Text fontSize="15px" fontWeight="3px">Interações</Text>
                                         </Box>
                                         <Box width="140px">
-                                            <Text textAlign="right" marginTop="27px" fontSize="xl" fontWeight="900">1.745
+                                            <Text textAlign="right" marginTop="27px" fontSize="xl" fontWeight="900">938
                                             </Text>
                                         </Box>
                                     </Box>
                                     <hr color="black" size="2" width="100%" ></hr>
                                 </div>
-                                <br></br>
-                                <br></br>
-                                    <Box display="inline-flex" flexDirection="row" justifyContent="center" width="250px">
-                                        <Box>
-                                        <Button fontSize="xl" fontWeight="400" size="300px" backgroundColor="ffffff">+ Detalhes
-                                        </Button></Box>
-                                    </Box>
                             </a>
                         </section>
 
@@ -125,7 +89,7 @@ const Dashboard = () => {
                                             <Text fontSize="15px" fontWeight="3px">Seguidores</Text>
                                         </Box>
                                         <Box width="140px">
-                                            <Text textAlign="right" marginTop="27px" fontSize="xl" fontWeight="900">415.326</Text>
+                                            <Text textAlign="right" marginTop="27px" fontSize="xl" fontWeight="900">418.238</Text>
                                         </Box>
                                     </Box>
                                     <hr color="black" size="2" width="100%" ></hr>
@@ -134,41 +98,12 @@ const Dashboard = () => {
                                 <div>
                                     <Box display="inline-flex">
                                         <Box width="110px">
-                                            <img width="25px" height="25px" src="https://image.flaticon.com/icons/png/512/1146/1146404.png" alt="Icone Crescimento"
-                                                alt="Crescimento"></img>
-                                            <Text fontSize="15px" fontWeight="3px">Crescimento</Text>
+                                            <img width="25px" height="25px" src="https://image.flaticon.com/icons/png/512/3388/3388668.png" alt="Icone Posts"
+                                                alt="Posts"></img>
+                                            <Text fontSize="15px" fontWeight="3px">Posts</Text>
                                         </Box>
                                         <Box width="140px">
-                                            <Text textAlign="right" marginTop="27px" fontSize="xl" fontWeight="900">0.1%</Text>
-                                        </Box>
-                                    </Box>
-                                    <hr color="black" size="2" width="100%" ></hr>
-                                </div>
-                                <br></br>
-                                <div>
-                                    <Box display="inline-flex">
-                                        <Box width="110px">
-                                            <img width="25px" height="25px" src="https://image.flaticon.com/icons/png/512/31/31624.png" alt="Icone Impressões"
-                                                alt="Impressões"></img>
-                                            <Text fontSize="15px" fontWeight="3px">Impressões</Text>
-                                        </Box>
-                                        <Box width="140px">
-                                            <Text textAlign="right" marginTop="27px" fontSize="xl" fontWeight="900">000.000
-                                            </Text>
-                                        </Box>
-                                    </Box>
-                                    <hr color="black" size="2" width="100%" ></hr>
-                                </div>
-                                <br></br>
-                                <div>
-                                    <Box display="inline-flex">
-                                        <Box width="110px">
-                                            <img width="25px" height="25px" src="https://image.flaticon.com/icons/png/512/1250/1250999.png" alt="Icone Alcance"
-                                                alt="Alcance"></img>
-                                            <Text fontSize="15px" fontWeight="3px">Alcance</Text>
-                                        </Box>
-                                        <Box width="140px">
-                                            <Text textAlign="right" marginTop="27px" fontSize="xl" fontWeight="900">18.023
+                                            <Text textAlign="right" marginTop="27px" fontSize="xl" fontWeight="900">4
                                             </Text>
                                         </Box>
                                     </Box>
@@ -180,22 +115,15 @@ const Dashboard = () => {
                                         <Box width="110px">
                                             <img width="25px" height="25px" src="https://image.flaticon.com/icons/png/512/32/32557.png" alt="Icone Interações"
                                                 alt="Alcance"></img>
-                                            <Text fontSize="15px" fontWeight="3px">6.688</Text>
+                                            <Text fontSize="15px" fontWeight="3px">Interações</Text>
                                         </Box>
                                         <Box width="140px">
-                                            <Text textAlign="right" marginTop="27px" fontSize="xl" fontWeight="900">1.745
+                                            <Text textAlign="right" marginTop="27px" fontSize="xl" fontWeight="900">39.680
                                             </Text>
                                         </Box>
                                     </Box>
                                     <hr color="black" size="2" width="100%" ></hr>
                                 </div>
-                                <br></br>
-                                <br></br>
-                                <Box display="inline-flex" flexDirection="row" justifyContent="center" width="250px">
-                                        <Box>
-                                        <Button fontSize="xl" fontWeight="400" size="300px" backgroundColor="ffffff">+ Detalhes
-                                        </Button></Box>
-                                    </Box>
                             </a>
                         </section>
 
@@ -213,21 +141,7 @@ const Dashboard = () => {
                                             <Text fontSize="15px" fontWeight="3px">Seguidores</Text>
                                         </Box>
                                         <Box width="140px">
-                                            <Text textAlign="right" marginTop="27px" fontSize="xl" fontWeight="900">39.125</Text>
-                                        </Box>
-                                    </Box>
-                                    <hr color="black" size="2" width="100%" ></hr>
-                                </div>
-                                <br></br>
-                                <div>
-                                    <Box display="inline-flex">
-                                        <Box width="110px" >
-                                            <img width="25px" height="25px" src="https://image.flaticon.com/icons/png/512/1146/1146404.png" alt="Icone Crescimento"
-                                                alt="Crescimento"></img>
-                                            <Text fontSize="15px" fontWeight="3px">Crescimento</Text>
-                                        </Box>
-                                        <Box width="140px">
-                                            <Text textAlign="right" marginTop="27px" fontSize="xl" fontWeight="900">0.1%</Text>
+                                            <Text textAlign="right" marginTop="27px" fontSize="xl" fontWeight="900">39.615</Text>
                                         </Box>
                                     </Box>
                                     <hr color="black" size="2" width="100%" ></hr>
@@ -236,27 +150,12 @@ const Dashboard = () => {
                                 <div>
                                     <Box display="inline-flex">
                                         <Box width="110px">
-                                            <img width="25px" height="25px" src="https://image.flaticon.com/icons/png/512/31/31624.png" alt="Icone Impressões"
-                                                alt="Impressões"></img>
-                                            <Text fontSize="15px" fontWeight="3px">Impressões</Text>
+                                            <img width="25px" height="25px" src="https://image.flaticon.com/icons/png/512/3388/3388668.png" alt="Icone Posts"
+                                                alt="Posts"></img>
+                                            <Text fontSize="15px" fontWeight="3px">Posts</Text>
                                         </Box>
                                         <Box width="140px">
-                                            <Text textAlign="right" marginTop="27px" fontSize="xl" fontWeight="900">000.000
-                                            </Text>
-                                        </Box>
-                                    </Box>
-                                    <hr color="black" size="2" width="100%" ></hr>
-                                </div>
-                                <br></br>
-                                <div>
-                                    <Box display="inline-flex">
-                                        <Box width="110px">
-                                            <img width="25px" height="25px" src="https://image.flaticon.com/icons/png/512/1250/1250999.png" alt="Icone Alcance"
-                                                alt="Alcance"></img>
-                                            <Text fontSize="15px" fontWeight="3px">Alcance</Text>
-                                        </Box>
-                                        <Box width="140px">
-                                            <Text textAlign="right" marginTop="27px" fontSize="xl" fontWeight="900">4.429
+                                            <Text textAlign="right" marginTop="27px" fontSize="xl" fontWeight="900">2
                                             </Text>
                                         </Box>
                                     </Box>
@@ -271,25 +170,19 @@ const Dashboard = () => {
                                             <Text fontSize="15px" fontWeight="3px">Engajamento</Text>
                                         </Box>
                                         <Box width="140px">
-                                            <Text textAlign="right" marginTop="27px" fontSize="xl" fontWeight="900">1.832
+                                            <Text textAlign="right" marginTop="27px" fontSize="xl" fontWeight="900">1.471
                                             </Text>
                                         </Box>
                                     </Box>
                                     <hr color="black" size="2" width="100%" ></hr>
                                 </div>
-                                <br></br>
-                                <br></br>
-                                <Box display="inline-flex" flexDirection="row" justifyContent="center" width="250px">
-                                        <Box>
-                                        <Button fontSize="xl" fontWeight="400" size="300px" backgroundColor="ffffff">+ Detalhes
-                                        </Button></Box>
-                                    </Box>
                             </a>
                         </section>
 
                     </section>
                 </section>
             </Box>
+
 
             <Text margin="0 0 20px 47px" fontSize="xl" fontWeight="400">Google News</Text>
             <Box maxWidth="900px" maxHeight="850px" padding="20px" margin="0 10% 7%" display="inline-list-item" flexDirection="column">
