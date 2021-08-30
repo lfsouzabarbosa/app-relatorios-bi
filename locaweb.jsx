@@ -386,10 +386,7 @@ const Dashboard = () => {
                 <Box boxShadow="card" border="2px solid #ffffff" backgroundColor="#ffffff" borderRadius="10px" maxWidth="800px" minHeight="300px" margin=" 10px auto 30px" >
                     <a href="http://vps23593.publiccloud.com.br:3005/" class="sc-dIsAE default-dashboard__Card-y6jxa9-0 kgyQN kKlyvT admin-bro_Box">
                         <Box display="inline-flex" flexDirection="row" justifyContent="center" width="740px" >
-                            <img width="700" height="250px" src="https://64.media.tumblr.com/3a48170cc3ce37252ec6e5d84b3a4abc/2c5fe4201d328713-92/s540x810/7c055dc02ac6b2ef5fec40477bb482fd9c67fc1a.png" alt="Imagem Trends"></img>
-                        </Box>
-                        <Box display="inline-flex" flexDirection="row" justifyContent="center" width="740px">
-                            <Button fontSize="xl" fontWeight="400" size="300px" href="http://localhost:8080" backgroundColor="ffffff">+ Detalhes</Button>
+                            <img width="700" height="250px" src="https://i.pinimg.com/originals/7f/4f/26/7f4f2632504f399ee2f849c4ac582b7a.jpg" alt="Imagem Trends"></img>
                         </Box>
                     </a>
                 </Box>
