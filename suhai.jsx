@@ -10,167 +10,192 @@ const Dashboard = () => {
 
     return (
         <Box  flex flexDirection="column" variant="grey">
-            <Box maxHeight="100px" padding="1em" margin="10px">
+            <Box paddingBottom="20px" maxHeight="150px" padding="1em" margin="10px">
                 <Box width="200px"  minHeight="20px">
                     <img width="170px" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRgDDAk7HNLdKCcV0QoZfZkOZoR5Z0IcZXgiojUM7iYt1noMg3wI7_UGXv9ESvbSMtFTw&usqp=CAU"
                     alt="Logo Suhai"></img>
                 </Box>
             </Box>
 
-            <Box maxHeight="100px" padding="1em" marginY="10px" marginX="15px" flex flexDirection="row" justifyContent="center">
-                <Text fontSize="h3" color="black"><strong>FLASH REPORT</strong></Text>
+            <Box display={["block", "flex"]} marginTop="40px" padding="10px" flexDirection="row" verticalAlign="center" variant="grey">
+            <section class="sc-dIsAE fbPpRS admin-bro_Box">
+                    <section width="auto" class="sc-dIsAE cQyBfq admin-bro_Box">
+
+                        <section width="auto" class="sc-dIsAE cHuGUn admin-bro_Box">
+                            <a class="sc-dIsAE default-dashboard__Card-y6jxa9-0 kgyQN kKlyvT admin-bro_Box">
+                                <div class="sc-jrsJCI exBroz admin-bro_Text">
+                                    <img width="auto" height="90" src="https://image.flaticon.com/icons/png/512/1384/1384053.png" alt="Icone Facebook"></img>
+                                    <div class="sc-jrsJCI bJANQE admin-bro_Text"></div>
+                                </div>
+                                <div>
+                                    <Box display="inline-flex" flexDirection="row" verticalAlign="center">
+                                        <Box width="110px">
+                                            <img width="25px" height="25px" src="https://image.flaticon.com/icons/png/512/2097/2097681.png" alt="Icone Fãs"
+                                                alt="Fãs"></img>
+                                            <Text fontSize="15px" fontWeight="3px">Fãs</Text>
+                                        </Box>
+                                        <Box width="140px">
+                                            <Text textAlign="right" marginTop="27px" fontSize="xl" fontWeight="900">76.160</Text>
+                                        </Box>
+                                    </Box>
+                                    <hr color="black" size="2" width="100%" ></hr>
+                                </div>
+                                <br></br>
+                                <div>
+                                    <Box display="inline-flex">
+                                        <Box width="110px">
+                                            <img width="25px" height="25px" src="https://image.flaticon.com/icons/png/512/3388/3388668.png" alt="Icone Posts"
+                                                alt="Posts"></img>
+                                            <Text fontSize="15px" fontWeight="3px">Posts</Text>
+                                        </Box>
+                                        <Box width="140px">
+                                            <Text textAlign="right" marginTop="27px" fontSize="xl" fontWeight="900">5
+                                            </Text>
+                                        </Box>
+                                    </Box>
+                                    <hr color="black" size="2" width="100%" ></hr>
+                                </div>
+                                <br></br>
+                                <div>
+                                    <Box display="inline-flex">
+                                        <Box width="110px">
+                                            <img width="25px" height="25px" src="https://image.flaticon.com/icons/png/512/32/32557.png" alt="Icone Interações"
+                                                alt="Alcance"></img>
+                                            <Text fontSize="15px" fontWeight="3px">Interações</Text>
+                                        </Box>
+                                        <Box width="140px">
+                                            <Text textAlign="right" marginTop="27px" fontSize="xl" fontWeight="900">938
+                                            </Text>
+                                        </Box>
+                                    </Box>
+                                    <hr color="black" size="2" width="100%" ></hr>
+                                </div>
+                            </a>
+                        </section>
+
+
+                        <section width="auto" class="sc-dIsAE cHuGUn admin-bro_Box">
+                            <a  class="sc-dIsAE default-dashboard__Card-y6jxa9-0 kgyQN kKlyvT admin-bro_Box">
+                                <div class="sc-jrsJCI exBroz admin-bro_Text">
+                                    <img width="auto" height="90" src="https://image.flaticon.com/icons/png/512/1384/1384063.png" alt="Icone Instagram"></img>
+                                    <div class="sc-jrsJCI bJANQE admin-bro_Text"></div>
+                                </div>
+                                <div>
+                                    <Box display="inline-flex">
+                                        <Box width="110px">
+                                            <img width="25px" height="25px" src="https://image.flaticon.com/icons/png/512/2097/2097681.png" alt="Icone Fãs"
+                                                alt="Fãs"></img>
+                                            <Text fontSize="15px" fontWeight="3px">Seguidores</Text>
+                                        </Box>
+                                        <Box width="140px">
+                                            <Text textAlign="right" marginTop="27px" fontSize="xl" fontWeight="900">418.238</Text>
+                                        </Box>
+                                    </Box>
+                                    <hr color="black" size="2" width="100%" ></hr>
+                                </div>
+                                <br></br>
+                                <div>
+                                    <Box display="inline-flex">
+                                        <Box width="110px">
+                                            <img width="25px" height="25px" src="https://image.flaticon.com/icons/png/512/3388/3388668.png" alt="Icone Posts"
+                                                alt="Posts"></img>
+                                            <Text fontSize="15px" fontWeight="3px">Posts</Text>
+                                        </Box>
+                                        <Box width="140px">
+                                            <Text textAlign="right" marginTop="27px" fontSize="xl" fontWeight="900">4
+                                            </Text>
+                                        </Box>
+                                    </Box>
+                                    <hr color="black" size="2" width="100%" ></hr>
+                                </div>
+                                <br></br>
+                                <div>
+                                    <Box display="inline-flex">
+                                        <Box width="110px">
+                                            <img width="25px" height="25px" src="https://image.flaticon.com/icons/png/512/32/32557.png" alt="Icone Interações"
+                                                alt="Alcance"></img>
+                                            <Text fontSize="15px" fontWeight="3px">Interações</Text>
+                                        </Box>
+                                        <Box width="140px">
+                                            <Text textAlign="right" marginTop="27px" fontSize="xl" fontWeight="900">39.680
+                                            </Text>
+                                        </Box>
+                                    </Box>
+                                    <hr color="black" size="2" width="100%" ></hr>
+                                </div>
+                            </a>
+                        </section>
+
+                        <section width="auto" class="sc-dIsAE cHuGUn admin-bro_Box">
+                            <a  class="sc-dIsAE default-dashboard__Card-y6jxa9-0 kgyQN kKlyvT admin-bro_Box">
+                                <div class="sc-jrsJCI exBroz admin-bro_Text">
+                                    <img width="auto" height="90" src="https://image.flaticon.com/icons/png/512/733/733579.png" alt="Icone Twitter"></img>
+                                    <div class="sc-jrsJCI bJANQE admin-bro_Text"></div>
+                                </div>
+                                <div>
+                                    <Box display="inline-flex">
+                                        <Box width="110px">
+                                            <img width="25px" height="25px" src="https://image.flaticon.com/icons/png/512/2097/2097681.png" alt="Icone Fãs"
+                                                alt="Fãs"></img>
+                                            <Text fontSize="15px" fontWeight="3px">Seguidores</Text>
+                                        </Box>
+                                        <Box width="140px">
+                                            <Text textAlign="right" marginTop="27px" fontSize="xl" fontWeight="900">39.615</Text>
+                                        </Box>
+                                    </Box>
+                                    <hr color="black" size="2" width="100%" ></hr>
+                                </div>
+                                <br></br>
+                                <div>
+                                    <Box display="inline-flex">
+                                        <Box width="110px">
+                                            <img width="25px" height="25px" src="https://image.flaticon.com/icons/png/512/3388/3388668.png" alt="Icone Posts"
+                                                alt="Posts"></img>
+                                            <Text fontSize="15px" fontWeight="3px">Posts</Text>
+                                        </Box>
+                                        <Box width="140px">
+                                            <Text textAlign="right" marginTop="27px" fontSize="xl" fontWeight="900">2
+                                            </Text>
+                                        </Box>
+                                    </Box>
+                                    <hr color="black" size="2" width="100%" ></hr>
+                                </div>
+                                <br></br>
+                                <div>
+                                    <Box display="inline-flex">
+                                        <Box width="110px">
+                                            <img width="25px" height="25px" src="https://image.flaticon.com/icons/png/512/32/32557.png" alt="Icone Interações"
+                                                alt="Alcance"></img>
+                                            <Text fontSize="15px" fontWeight="3px">Engajamento</Text>
+                                        </Box>
+                                        <Box width="140px">
+                                            <Text textAlign="right" marginTop="27px" fontSize="xl" fontWeight="900">1.471
+                                            </Text>
+                                        </Box>
+                                    </Box>
+                                    <hr color="black" size="2" width="100%" ></hr>
+                                </div>
+                            </a>
+                        </section>
+
+                    </section>
+                </section>
             </Box>
-            <Box padding="2em" margin="20px" display={["block", "flex"]} backgroundColor="#ffffff" boxShadow="card" flexDirection="row" justifyContent="center" maxHeight="800px">
-            <Box justifyContent="center" margin="10px 30px" alignItems="center" maxHeight="200px" maxWidth="300px" display={["flex", "inline-flex"]} flexDirection="row">
-                <Box><img width="30px" height="30px"
-                    src="https://image.flaticon.com/icons/png/512/5502/5502145.png"></img></Box>
-                    <Box padding="10px">
-                        <Link href="suhaidaily.jsx">
-                        <Text color="black" fontSize="h4">Últimas 24 horas</Text></Link>
-                    </Box>
-                 </Box>
-                <Box justifyContent="center" margin="10px 30px" alignItems="center" maxHeight="200px" maxWidth="300px" display={["flex", "inline-flex"]} flexDirection="row">
-                    <Box><img width="30px" height="30px"
-                    src="https://image.flaticon.com/icons/png/512/5502/5502145.png"></img></Box>
-                    <Box padding="10px">
-                        <Text color="black" fontSize="h4">Última semana</Text>
-                    </Box>
-                 </Box>
-                 <Box justifyContent="center" margin="10px 30px" alignItems="center" maxHeight="200px" maxWidth="300px" display={["flex", "inline-flex"]} flexDirection="row">
-                    <Box><img width="30px" height="30px"
-                    src="https://image.flaticon.com/icons/png/512/5502/5502145.png"></img></Box>
-                    <Box padding="10px">
-                        <Text color="black" fontSize="h4">Último mês</Text>
-                    </Box>
-                 </Box>
+
+            <Box paddingX="45px" width="100%" display={["block", "flex"]} flexDirection="row" justifyContent="center">
+                <Button fontSize="h2" size="lg">
+                    Flash Report</Button>
             </Box>
 
-
-
-
-            <Box display="flex" flexDirection="row" alignItems="center" maxHeight="20px" padding=" 1em 3em" >
+            <Box marginY="10px" display="flex" flexDirection="row" alignItems="center" maxHeight="20px" padding="3em" >
                 <Box>
                     <img width="10px" height="10px" src="https://image.flaticon.com/icons/png/512/32/32738.png"></img>
                 </Box>
                 <Box paddingLeft="10px">
-                    <Text color="black" fontSize="h3">BIG NUMBERS</Text>
+                    <Text color="black" fontSize="h3">GOOGLE NEWS</Text>
                 </Box>
             </Box>
-            <Box padding="2em" margin="20px" display={["block", "flex"]} backgroundColor="#ffffff" boxShadow="card" flexDirection="row" justifyContent="center" maxHeight="800px">
-                <Box margin="10px 30px" alignItems="center" maxHeight="200px" display={["flex", "inline-flex"]}>
-                    <Box><img width="80px" height="80px"
-                     src="https://image.flaticon.com/icons/png/512/4985/4985048.png"></img></Box>
-                    <Box>
-                        <Text color="black" fontSize="h2">45,6K</Text>
-                        <Text color="black" fontSize="h3">INVESTIDO</Text>
-                    </Box>
-                </Box>
-                <Box display={["flex", "inline-flex"]} margin="10px 30px" alignItems="center" maxHeight="200px">
-                    <Box><img width="80px" height="80px"
-                     src="https://image.flaticon.com/icons/png/512/31/31624.png"></img></Box>
-                    <Box paddingLeft="10px">
-                        <Text color="black" fontSize="h2">1M</Text>
-                        <Text color="black" fontSize="h3">VIEWS</Text>
-                    </Box>
-                </Box>
-                <Box display={["flex", "inline-flex"]} margin="10px 30px" alignItems="center" maxHeight="200px">
-                    <Box><img width="80px" height="80px"
-                     src="https://image.flaticon.com/icons/png/512/1908/1908669.png"></img></Box>
-                    <Box paddingLeft="10px">
-                        <Text color="black" fontSize="h2">9,8M</Text>
-                        <Text color="black" fontSize="h3">IMPRESSÕES</Text>
-                    </Box>
-                </Box>
-            </Box>
-
-            <Box display="flex" flexDirection="row" alignItems="center" maxHeight="20px" padding=" 1em 3em" >
-                <Box>
-                    <img width="10px" height="10px" src="https://image.flaticon.com/icons/png/512/32/32738.png"></img>
-                </Box>
-                <Box paddingLeft="10px">
-                    <Text color="black" fontSize="h3">PROGRAMÁTICA</Text>
-                </Box>
-            </Box>
-            <Box padding="2em" margin="20px" backgroundColor="#ffffff" display={["block", "flex"]} flexDirection="row" boxShadow="card" justifyContent="center" maxHeight="800px">
-                <Box margin="10px 30px" alignItems="center" justifyContent="start" maxHeight="200px" display={["block", "block"]}>
-                        <Box ><img width="80px" height="80px"
-                        src="https://image.flaticon.com/icons/png/512/445/445569.png"></img></Box>
-                        <Text textAlign="center" color="black" fontSize="h2">Display/Vídeo</Text>
-                </Box>
-                <Box display={["flex", "inline-flex"]} margin="10px 40px" alignItems="center" maxHeight="200px">
-                    <Box padding="10px">
-                        <Text padding="5px" color="black" fontSize="h2">4,3M</Text>
-                        <Text padding="5px" color="black" fontSize="h3">IMPRESSÕES</Text>
-                    </Box>
-                </Box>
-                <Box display={["flex", "inline-flex"]} margin="10px 40px" alignItems="center" maxHeight="200px">
-                    <Box padding="10px">
-                        <Text padding="5px" color="black" fontSize="h2">R$1,42</Text>
-                        <Text padding="5px" color="black" fontSize="h3">CPM</Text>
-                    </Box>
-                </Box>
-                <Box display={["flex", "inline-flex"]} margin="10px 40px" alignItems="center" maxHeight="200px">
-                    <Box padding="10px">
-                        <Text padding="5px" color="black" fontSize="h2">0,02%</Text>
-                        <Text padding="5px" color="black" fontSize="h3">VCR</Text>
-                    </Box>
-                </Box>
-            </Box>
-
-            <Box padding="2em" margin="20px" backgroundColor="#ffffff" display={["block", "flex"]} flexDirection="row" boxShadow="card" justifyContent="center" maxHeight="800px">
-                <Box margin="10px 30px" alignItems="center" justifyContent="start" maxHeight="200px" display={["block", "block"]}>
-                        <Box ><img width="80px" height="80px"
-                        src="https://image.flaticon.com/icons/png/512/49/49084.png"></img></Box>
-                        <Text textAlign="center" color="black" fontSize="h2">Youtube</Text>
-                </Box>
-                <Box display={["flex", "inline-flex"]} margin="10px 40px" alignItems="center" maxHeight="200px">
-                    <Box padding="10px">
-                        <Text padding="5px" color="black" fontSize="h2">478K</Text>
-                        <Text padding="5px" color="black" fontSize="h3">IMPRESSÕES</Text>
-                    </Box>
-                </Box>
-                <Box display={["flex", "inline-flex"]} margin="10px 40px" alignItems="center" maxHeight="200px">
-                    <Box padding="10px">
-                        <Text padding="5px" color="black" fontSize="h2">R$21,60</Text>
-                        <Text padding="5px" color="black" fontSize="h3">CPM</Text>
-                    </Box>
-                </Box>
-                <Box display={["flex", "inline-flex"]} margin="10px 40px" alignItems="center" maxHeight="200px">
-                    <Box padding="10px">
-                        <Text padding="5px" color="black" fontSize="h2">47%</Text>
-                        <Text padding="5px" color="black" fontSize="h3">VCR</Text>
-                    </Box>
-                </Box>
-            </Box>
-
-            <Box padding="2em" margin="20px" backgroundColor="#ffffff" display={["block", "flex"]} flexDirection="row" boxShadow="card" justifyContent="center" maxHeight="800px">
-                <Box margin="10px 30px" alignItems="start" justifyContent="center" maxHeight="200px" display={["block", "block"]}>
-                        <Box ><img width="80px" height="80px"
-                        src="https://image.flaticon.com/icons/png/512/732/732141.png"></img></Box>
-                        <Text textAlign="center" color="black" fontSize="h2">Waze</Text>
-                </Box>
-                <Box display={["flex", "inline-flex"]} margin="10px 40px" alignItems="center" maxHeight="200px">
-                    <Box padding="10px">
-                        <Text padding="5px" color="black" fontSize="h2">1,3M</Text>
-                        <Text padding="5px" color="black" fontSize="h3">IMPRESSÕES</Text>
-                    </Box>
-                </Box>
-                <Box display={["flex", "inline-flex"]} margin="10px 40px" alignItems="center" maxHeight="200px">
-                    <Box padding="10px">
-                        <Text padding="5px" color="black" fontSize="h2">R$8,86</Text>
-                        <Text padding="5px" color="black" fontSize="h3">CPM</Text>
-                    </Box>
-                </Box>
-                <Box display={["flex", "inline-flex"]} margin="10px 40px" alignItems="center" maxHeight="200px">
-                    <Box padding="10px">
-                        <Text padding="5px" color="black" fontSize="h2">62%</Text>
-                        <Text padding="5px" color="black" fontSize="h3">VCR</Text>
-                    </Box>
-                </Box>
-            </Box>
-
-            <Text margin="0 0 20px 47px" fontSize="xl" fontWeight="400">Google News</Text>
-            <Box maxWidth="900px" maxHeight="850px" padding="20px" margin="0 10% 7%" display="inline-list-item" flexDirection="column">
+            <Box maxWidth="900px" maxHeight="1000px" padding="20px" marginX="45px" marginBottom="50px" justifyContent="center" display="inline-list-item" flexDirection="column">
 
             <Box margin="7px auto" padding="22px" display="flex" flexDirection="column"
                 backgroundColor="#ffffff" boxShadow="card">
@@ -225,12 +250,15 @@ const Dashboard = () => {
                 </Box>
 
             </Box>
-            <br></br>
-            <br></br>
-            <br></br>
-            <br></br>
-            <div>
-                <Text margin="0 0 20px 47px" fontSize="xl" fontWeight="400">Google Trends</Text>
+
+            <Box display="flex" flexDirection="row" alignItems="center" maxHeight="20px" padding="3em" >
+                <Box>
+                    <img width="10px" height="10px" src="https://image.flaticon.com/icons/png/512/32/32738.png"></img>
+                </Box>
+                <Box paddingLeft="10px">
+                    <Text color="black" fontSize="h3">GOOGLE TRENDS</Text>
+                </Box>
+            </Box>
 
                 <Box boxShadow="card" border="2px solid #ffffff" backgroundColor="#ffffff" borderRadius="10px" maxWidth="800px" minHeight="300px" margin=" 10px auto 30px" >
                     <a href="http://vps23593.publiccloud.com.br:3007/" class="sc-dIsAE default-dashboard__Card-y6jxa9-0 kgyQN kKlyvT admin-bro_Box">
@@ -239,7 +267,6 @@ const Dashboard = () => {
                         </Box>
                     </a>
                 </Box>
-            </div>
 
 
     </Box>
