@@ -3,6 +3,10 @@ const AdminBroExpress = require('@admin-bro/express')
 const AdminBroMongoose = require('@admin-bro/mongoose')
 const mongoose = require('mongoose')
 const c6 = require('./c6Trends')
+const morgan = require('morgan')
+const cors = require('cors')
+const bodyParser = require('body-parser')
+
 // const MongoStore = require('connect-mongo')(session)
 // const bcrypt = require('bcrypt')
 const AdminBroExpressjs = require('@admin-bro/express')
@@ -19,6 +23,7 @@ const trendsLocaweb = express()
 const trendsMitisubish = express()
 const trendsSuhai = express()
 const trendsSuzuki = express()
+const apiSheets = express()
 
 c6()
 
@@ -105,24 +110,24 @@ const adminBro = new AdminBro({
           list: { isAccessible: podeEditarUsuarios },
         }
       }
-    },  
-     /** {
-      resource: C6,
-      options: {
-        parent: 'Clientes',
-        properties: {
-          ownerId: { isVisible: { edit: false, show: false, list: false, filter: false } },
-          checkbox: { isVisible: { edit: false, show: false, list: false, filter: false } }
-        },
-        actions: {
-          edit: { isAccessible: operacional },
-          delete: { isAccessible: podeEditarClientes },
-          new: { isAccessible: operacional },
-          show: { isAccessible: podeEditarClientes },
-          list: { isAccessible: operacional },
-        }
-      }
-    },*/
+    },
+    /** {
+     resource: C6,
+     options: {
+       parent: 'Clientes',
+       properties: {
+         ownerId: { isVisible: { edit: false, show: false, list: false, filter: false } },
+         checkbox: { isVisible: { edit: false, show: false, list: false, filter: false } }
+       },
+       actions: {
+         edit: { isAccessible: operacional },
+         delete: { isAccessible: podeEditarClientes },
+         new: { isAccessible: operacional },
+         show: { isAccessible: podeEditarClientes },
+         list: { isAccessible: operacional },
+       }
+     }
+   },*/
     /** {
       resource: telhanorte,
       options: {
@@ -217,7 +222,7 @@ const adminBro = new AdminBro({
     },
     Tumelero: {
       component: AdminBro.bundle('./tumelero'),
-    }, 
+    },
     Obraja: {
       component: AdminBro.bundle('./obraja'),
     },
@@ -233,10 +238,13 @@ const adminBro = new AdminBro({
     Suhai: {
       component: AdminBro.bundle('./suhai'),
     },
+    SuhaiFlashReport: {
+      component: AdminBro.bundle('./suhaidaily'),
+    },
     Suzuki: {
       component: AdminBro.bundle('./suzuki'),
     },
-   
+
   },
   branding: {
     companyName: 'Tech and Soul',
@@ -352,6 +360,11 @@ const router = AdminBroExpressjs.buildAuthenticatedRouter(adminBro, {
 })
 
 app.use(adminBro.options.rootPath, router)
+app.use(morgan('dev'))
+app.use(bodyParser.urlencoded({ extended: false }))
+app.use(express.json())
+app.use(cors())
+
 app.listen(8080, () => console.log('Sistema rodando em localhost:8080/admin'))
 trendsTelha.listen(3001, () => console.log('Sistema rodando em localhost:3001/admin'))
 trendsTumelero.listen(3002, () => console.log('Sistema rodando em localhost:3002/admin'))
@@ -361,38 +374,65 @@ trendsLocaweb.listen(3005, () => console.log('Sistema rodando em localhost:3005/
 trendsMitisubish.listen(3006, () => console.log('Sistema rodando em localhost:3006/admin'))
 trendsSuhai.listen(3007, () => console.log('Sistema rodando em localhost:3007/admin'))
 trendsSuzuki.listen(3008, () => console.log('Sistema rodando em localhost:3008/admin'))
+apiSheets.listen(3009, () => console.log('API sheets rodando'))
+
+apiSheets.get('/', (req, res) => {
+  const { GoogleSpreadsheet } = require('google-spreadsheet')
+  const credenciais = require('./credenciais.json')
+  const arquivo = require('./arquivo.json')
+  const getDoc = async () => {
+    const doc = new GoogleSpreadsheet(arquivo.id);
+
+    await doc.useServiceAccountAuth({
+      client_email: credenciais.client_email,
+      private_key: credenciais.private_key.replace(/\\n/g, '\n')
+    })
+    await doc.loadInfo();
+    return doc;
+  }
+
+  let sheetInvestido;
+  getDoc().then(doc => {
+    sheetInvestido = doc.sheetsByIndex[0];
+    sheetInvestido.getRows().then(rows => {
+      rows.map(row => {
+        //return res.json(row.investido)
+        let investido = row.investido
+        let impressoes = row.impressoes
+        return res.json(investido)
+        return res.json(impressoes)
+      })
+    })
+  })
+})
 
 
-// app.use('/',(req, res) => {
-//   res.send('<script type="text/javascript" src="https://ssl.gstatic.com/trends_nrtr/2674_RC03/embed_loader.js"></script> <script type="text/javascript"> trends.embed.renderExploreWidget("GEO_MAP", {"comparisonItem":[{"keyword":"c6 bank","geo":"BR","time":"today 1-m"}],"category":0,"property":""}, {"exploreQuery":"q=c6bank&geo=BR&date=today 1-m","guestPath":"https://trends.google.com.br:443/trends/embed/"}); </script> <script type="text/javascript" src="https://ssl.gstatic.com/trends_nrtr/2674_RC03/embed_loader.js"></script> <script type="text/javascript"> trends.embed.renderExploreWidget("TIMESERIES", {"comparisonItem":[{"keyword":"c6 bank","geo":"BR","time":"today 1-m"}],"category":0,"property":""}, {"exploreQuery":"q=c6bank&geo=BR&date=today 1-m","guestPath":"https://trends.google.com.br:443/trends/embed/"}); </script> <script type="text/javascript" src="https://ssl.gstatic.com/trends_nrtr/2674_RC03/embed_loader.js"></script> <script type="text/javascript"> trends.embed.renderExploreWidget("RELATED_QUERIES", {"comparisonItem":[{"keyword":"c6 bank","geo":"BR","time":"today 1-m"}],"category":0,"property":""}, {"exploreQuery":"q=c6bank&geo=BR&date=today 1-m","guestPath":"https://trends.google.com.br:443/trends/embed/"}); </script>');
-//  });
-// <script type="text/javascript" src="https://ssl.gstatic.com/trends_nrtr/2674_RC03/embed_loader.js">  </script><script type="text/javascript"> trends.embed.renderExploreWidget("TIMESERIES", {"comparisonItem":[{"keyword":"c6 bank","geo":"BR","time":"today 1-m"}],"category":0,"property":""}, {"exploreQuery":"q=c6%20bank&geo=BR&date=today 1-m","guestPath":"https://trends.google.com.br:443/trends/embed/"}); trends.embed.renderExploreWidget("GEO_MAP", {"comparisonItem":[{"keyword":"c6 bank","geo":"BR","time":"today 1-m"}],"category":0,"property":""}, {"exploreQuery":"q=c6%20bank&geo=BR&date=today 1-m","guestPath":"https://trends.google.com.br:443/trends/embed/"}); </script>
-app.use('/',(req, res) => {
+app.use('/', (req, res) => {
   res.send('<script type="text/javascript" src="https://ssl.gstatic.com/trends_nrtr/2674_RC03/embed_loader.js">  </script><script type="text/javascript"> trends.embed.renderExploreWidget("TIMESERIES", {"comparisonItem":[{"keyword":"c6 bank","geo":"BR","time":"today 1-m"}],"category":0,"property":""}, {"exploreQuery":"q=c6%20bank&geo=BR&date=today 1-m","guestPath":"https://trends.google.com.br:443/trends/embed/"}); trends.embed.renderExploreWidget("GEO_MAP", {"comparisonItem":[{"keyword":"c6 bank","geo":"BR","time":"today 1-m"}],"category":0,"property":""}, {"exploreQuery":"q=c6%20bank&geo=BR&date=today 1-m","guestPath":"https://trends.google.com.br:443/trends/embed/"}); trends.embed.renderExploreWidget("RELATED_TOPICS", {"comparisonItem":[{"keyword":"c6 bank","geo":"BR","time":"today 1-m"}],"category":0,"property":""}, {"exploreQuery":"q=c6%20bank&geo=BR&date=today 1-m","guestPath":"https://trends.google.com.br:443/trends/embed/"}); trends.embed.renderExploreWidget("RELATED_TOPICS", {"comparisonItem":[{"keyword":"c6 bank","geo":"BR","time":"today 1-m"}],"category":0,"property":""}, {"exploreQuery":"q=c6%20bank&geo=BR&date=today 1-m","guestPath":"https://trends.google.com.br:443/trends/embed/"}); </script>');
- })
+})
 
- trendsTelha.use('/',(req, res) => {
+trendsTelha.use('/', (req, res) => {
   res.send('<script type="text/javascript" src="https://ssl.gstatic.com/trends_nrtr/2674_RC03/embed_loader.js"></script> <script type="text/javascript"> trends.embed.renderExploreWidget("TIMESERIES", {"comparisonItem":[{"keyword":"telhanorte","geo":"BR","time":"today 1-m"}],"category":0,"property":""}, {"exploreQuery":"geo=BR&q=telhanorte&date=today 1-m","guestPath":"https://trends.google.com.br:443/trends/embed/"}); trends.embed.renderExploreWidget("GEO_MAP", {"comparisonItem":[{"keyword":"telhanorte","geo":"BR","time":"today 1-m"}],"category":0,"property":""}, {"exploreQuery":"geo=BR&q=telhanorte&date=today 1-m","guestPath":"https://trends.google.com.br:443/trends/embed/"}); trends.embed.renderExploreWidget("RELATED_TOPICS", {"comparisonItem":[{"keyword":"telhanorte","geo":"BR","time":"today 1-m"}],"category":0,"property":""}, {"exploreQuery":"geo=BR&q=telhanorte&date=today 1-m","guestPath":"https://trends.google.com.br:443/trends/embed/"}); trends.embed.renderExploreWidget("RELATED_QUERIES", {"comparisonItem":[{"keyword":"telhanorte","geo":"BR","time":"today 1-m"}],"category":0,"property":""}, {"exploreQuery":"geo=BR&q=telhanorte&date=today 1-m","guestPath":"https://trends.google.com.br:443/trends/embed/"}); </script>');
- })
+})
 
- trendsTumelero.use('/',(req, res) => {
+trendsTumelero.use('/', (req, res) => {
   res.send('<script type="text/javascript" src="https://ssl.gstatic.com/trends_nrtr/2674_RC03/embed_loader.js"></script> <script type="text/javascript"> trends.embed.renderExploreWidget("TIMESERIES", {"comparisonItem":[{"keyword":"tumelero","geo":"BR","time":"today 1-m"}],"category":0,"property":""}, {"exploreQuery":"date=today%201-m&geo=BR&q=tumelero","guestPath":"https://trends.google.com.br:443/trends/embed/"}); trends.embed.renderExploreWidget("GEO_MAP", {"comparisonItem":[{"keyword":"tumelero","geo":"BR","time":"today 1-m"}],"category":0,"property":""}, {"exploreQuery":"date=today%201-m&geo=BR&q=tumelero","guestPath":"https://trends.google.com.br:443/trends/embed/"});trends.embed.renderExploreWidget("RELATED_TOPICS", {"comparisonItem":[{"keyword":"tumelero","geo":"BR","time":"today 1-m"}],"category":0,"property":""}, {"exploreQuery":"date=today%201-m&geo=BR&q=tumelero","guestPath":"https://trends.google.com.br:443/trends/embed/"}); trends.embed.renderExploreWidget("RELATED_QUERIES", {"comparisonItem":[{"keyword":"tumelero","geo":"BR","time":"today 1-m"}],"category":0,"property":""}, {"exploreQuery":"date=today%201-m&geo=BR&q=tumelero","guestPath":"https://trends.google.com.br:443/trends/embed/"}); </script>');
- })
- trendsObraja.use('/',(req, res) => {
+})
+trendsObraja.use('/', (req, res) => {
   res.send('<script type="text/javascript" src="https://ssl.gstatic.com/trends_nrtr/2674_RC03/embed_loader.js"></script> <script type="text/javascript"> trends.embed.renderExploreWidget("TIMESERIES", {"comparisonItem":[{"keyword":"obra já","geo":"BR","time":"today 1-m"}],"category":0,"property":""}, {"exploreQuery":"date=today%201-m&geo=BR&q=obra%20j%C3%A1","guestPath":"https://trends.google.com.br:443/trends/embed/"}); trends.embed.renderExploreWidget("GEO_MAP", {"comparisonItem":[{"keyword":"obra já","geo":"BR","time":"today 1-m"}],"category":0,"property":""}, {"exploreQuery":"date=today%201-m&geo=BR&q=obra%20j%C3%A1","guestPath":"https://trends.google.com.br:443/trends/embed/"}); trends.embed.renderExploreWidget("RELATED_TOPICS", {"comparisonItem":[{"keyword":"obra já","geo":"BR","time":"today 1-m"}],"category":0,"property":""}, {"exploreQuery":"date=today%201-m&geo=BR&q=obra%20j%C3%A1","guestPath":"https://trends.google.com.br:443/trends/embed/"}); trends.embed.renderExploreWidget("RELATED_QUERIES", {"comparisonItem":[{"keyword":"obra já","geo":"BR","time":"today 1-m"}],"category":0,"property":""}, {"exploreQuery":"date=today%201-m&geo=BR&q=obra%20j%C3%A1","guestPath":"https://trends.google.com.br:443/trends/embed/"});  </script>');
- })
- trendsKlabin.use('/',(req, res) => {
+})
+trendsKlabin.use('/', (req, res) => {
   res.send('<script type="text/javascript" src="https://ssl.gstatic.com/trends_nrtr/2674_RC03/embed_loader.js"></script> <script type="text/javascript"> trends.embed.renderExploreWidget("TIMESERIES", {"comparisonItem":[{"keyword":"klabin","geo":"BR","time":"today 1-m"}],"category":0,"property":""}, {"exploreQuery":"date=today%201-m&geo=BR&q=klabin","guestPath":"https://trends.google.com.br:443/trends/embed/"}); trends.embed.renderExploreWidget("GEO_MAP", {"comparisonItem":[{"keyword":"klabin","geo":"BR","time":"today 1-m"}],"category":0,"property":""}, {"exploreQuery":"date=today%201-m&geo=BR&q=klabin","guestPath":"https://trends.google.com.br:443/trends/embed/"}); trends.embed.renderExploreWidget("RELATED_TOPICS", {"comparisonItem":[{"keyword":"klabin","geo":"BR","time":"today 1-m"}],"category":0,"property":""}, {"exploreQuery":"date=today%201-m&geo=BR&q=klabin","guestPath":"https://trends.google.com.br:443/trends/embed/"}); trends.embed.renderExploreWidget("RELATED_QUERIES", {"comparisonItem":[{"keyword":"klabin","geo":"BR","time":"today 1-m"}],"category":0,"property":""}, {"exploreQuery":"date=today%201-m&geo=BR&q=klabin","guestPath":"https://trends.google.com.br:443/trends/embed/"});  </script>');
- })
- trendsLocaweb.use('/',(req, res) => {
+})
+trendsLocaweb.use('/', (req, res) => {
   res.send('<script type="text/javascript" src="https://ssl.gstatic.com/trends_nrtr/2674_RC03/embed_loader.js"></script> <script type="text/javascript"> trends.embed.renderExploreWidget("TIMESERIES", {"comparisonItem":[{"keyword":"locaweb","geo":"BR","time":"today 1-m"}],"category":0,"property":""}, {"exploreQuery":"date=today%201-m&geo=BR&q=locaweb","guestPath":"https://trends.google.com.br:443/trends/embed/"}); trends.embed.renderExploreWidget("GEO_MAP", {"comparisonItem":[{"keyword":"locaweb","geo":"BR","time":"today 1-m"}],"category":0,"property":""}, {"exploreQuery":"date=today%201-m&geo=BR&q=locaweb","guestPath":"https://trends.google.com.br:443/trends/embed/"}); trends.embed.renderExploreWidget("RELATED_TOPICS", {"comparisonItem":[{"keyword":"locaweb","geo":"BR","time":"today 1-m"}],"category":0,"property":""}, {"exploreQuery":"date=today%201-m&geo=BR&q=locaweb","guestPath":"https://trends.google.com.br:443/trends/embed/"}); trends.embed.renderExploreWidget("RELATED_QUERIES", {"comparisonItem":[{"keyword":"locaweb","geo":"BR","time":"today 1-m"}],"category":0,"property":""}, {"exploreQuery":"date=today%201-m&geo=BR&q=locaweb","guestPath":"https://trends.google.com.br:443/trends/embed/"}); </script>');
- })
- trendsMitisubish.use('/',(req, res) => {
+})
+trendsMitisubish.use('/', (req, res) => {
   res.send('<script type="text/javascript" src="https://ssl.gstatic.com/trends_nrtr/2674_RC03/embed_loader.js"></script> <script type="text/javascript"> trends.embed.renderExploreWidget("TIMESERIES", {"comparisonItem":[{"keyword":"Mitsubishi","geo":"BR","time":"today 1-m"}],"category":0,"property":""}, {"exploreQuery":"date=today%201-m&geo=BR&q=Mitsubishi","guestPath":"https://trends.google.com.br:443/trends/embed/"}); trends.embed.renderExploreWidget("GEO_MAP", {"comparisonItem":[{"keyword":"Mitsubishi","geo":"BR","time":"today 1-m"}],"category":0,"property":""}, {"exploreQuery":"date=today%201-m&geo=BR&q=Mitsubishi","guestPath":"https://trends.google.com.br:443/trends/embed/"}); trends.embed.renderExploreWidget("RELATED_TOPICS", {"comparisonItem":[{"keyword":"Mitsubishi","geo":"BR","time":"today 1-m"}],"category":0,"property":""}, {"exploreQuery":"date=today%201-m&geo=BR&q=Mitsubishi","guestPath":"https://trends.google.com.br:443/trends/embed/"});trends.embed.renderExploreWidget("RELATED_QUERIES", {"comparisonItem":[{"keyword":"Mitsubishi","geo":"BR","time":"today 1-m"}],"category":0,"property":""}, {"exploreQuery":"date=today%201-m&geo=BR&q=Mitsubishi","guestPath":"https://trends.google.com.br:443/trends/embed/"}); </script>');
- })
- trendsSuhai.use('/',(req, res) => {
+})
+trendsSuhai.use('/', (req, res) => {
   res.send('<script type="text/javascript" src="https://ssl.gstatic.com/trends_nrtr/2674_RC03/embed_loader.js"></script> <script type="text/javascript"> trends.embed.renderExploreWidget("TIMESERIES", {"comparisonItem":[{"keyword":"suhai","geo":"BR","time":"today 1-m"}],"category":0,"property":""}, {"exploreQuery":"date=today%201-m&geo=BR&q=suhai","guestPath":"https://trends.google.com.br:443/trends/embed/"}); trends.embed.renderExploreWidget("GEO_MAP", {"comparisonItem":[{"keyword":"suhai","geo":"BR","time":"today 1-m"}],"category":0,"property":""}, {"exploreQuery":"date=today%201-m&geo=BR&q=suhai","guestPath":"https://trends.google.com.br:443/trends/embed/"}); trends.embed.renderExploreWidget("RELATED_TOPICS", {"comparisonItem":[{"keyword":"suhai","geo":"BR","time":"today 1-m"}],"category":0,"property":""}, {"exploreQuery":"date=today%201-m&geo=BR&q=suhai","guestPath":"https://trends.google.com.br:443/trends/embed/"}); trends.embed.renderExploreWidget("RELATED_QUERIES", {"comparisonItem":[{"keyword":"suhai","geo":"BR","time":"today 1-m"}],"category":0,"property":""}, {"exploreQuery":"date=today%201-m&geo=BR&q=suhai","guestPath":"https://trends.google.com.br:443/trends/embed/"}); </script>');
- })
- trendsSuzuki.use('/',(req, res) => {
+})
+trendsSuzuki.use('/', (req, res) => {
   res.send('<script type="text/javascript" src="https://ssl.gstatic.com/trends_nrtr/2674_RC03/embed_loader.js"></script> <script type="text/javascript"> trends.embed.renderExploreWidget("TIMESERIES", {"comparisonItem":[{"keyword":"suzuki","geo":"BR","time":"today 1-m"}],"category":0,"property":""}, {"exploreQuery":"date=today%201-m&geo=BR&q=suzuki","guestPath":"https://trends.google.com.br:443/trends/embed/"}); trends.embed.renderExploreWidget("GEO_MAP", {"comparisonItem":[{"keyword":"suzuki","geo":"BR","time":"today 1-m"}],"category":0,"property":""}, {"exploreQuery":"date=today%201-m&geo=BR&q=suzuki","guestPath":"https://trends.google.com.br:443/trends/embed/"}); trends.embed.renderExploreWidget("RELATED_TOPICS", {"comparisonItem":[{"keyword":"suzuki","geo":"BR","time":"today 1-m"}],"category":0,"property":""}, {"exploreQuery":"date=today%201-m&geo=BR&q=suzuki","guestPath":"https://trends.google.com.br:443/trends/embed/"}); trends.embed.renderExploreWidget("RELATED_QUERIES", {"comparisonItem":[{"keyword":"suzuki","geo":"BR","time":"today 1-m"}],"category":0,"property":""}, {"exploreQuery":"date=today%201-m&geo=BR&q=suzuki","guestPath":"https://trends.google.com.br:443/trends/embed/"}); </script>');
- })
+})

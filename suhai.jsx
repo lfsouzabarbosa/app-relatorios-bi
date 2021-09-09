@@ -183,8 +183,10 @@ const Dashboard = () => {
             </Box>
 
             <Box paddingX="45px" width="100%" display={["block", "flex"]} flexDirection="row" justifyContent="center">
+                <Link href="./SuhaiFlashReport">
                 <Button fontSize="h2" size="lg">
                     Flash Report</Button>
+                </Link>
             </Box>
 
             <Box marginY="10px" display="flex" flexDirection="row" alignItems="center" maxHeight="20px" padding="3em" >

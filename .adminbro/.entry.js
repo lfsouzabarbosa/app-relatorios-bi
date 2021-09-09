@@ -15,7 +15,9 @@ import Component7 from '../mitsubishi'
 AdminBro.UserComponents.Component7 = Component7
 import Component8 from '../suhai'
 AdminBro.UserComponents.Component8 = Component8
-import Component9 from '../suzuki'
+import Component9 from '../suhaidaily'
 AdminBro.UserComponents.Component9 = Component9
-import Component10 from '../c6Bank'
+import Component10 from '../suzuki'
 AdminBro.UserComponents.Component10 = Component10
+import Component11 from '../c6Bank'
+AdminBro.UserComponents.Component11 = Component11
