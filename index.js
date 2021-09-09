@@ -391,18 +391,24 @@ apiSheets.get('/', (req, res) => {
     return doc;
   }
 
+  /**
+   * 
+   *   
+   * 
+   * 
+   * 
+   */
+
   let sheetInvestido;
   getDoc().then(doc => {
     sheetInvestido = doc.sheetsByIndex[0];
     sheetInvestido.getRows().then(rows => {
       rows.map(row => {
-        //return res.json(row.investido)
-        let investido = row.investido
-        let impressoes = row.impressoes
-        return res.json(investido)
-        return res.json(impressoes)
+        var dados = [row.investido, row.impressoes, row.views,	row.impressoesPD,	row.CPMDP,	row.CTRDP,	row.impressoesYT, row.CPMYT,	row.VCRYT,	row.impressoesW,	row.CPMW,	row.ERW]
+        
+        return res.json(dados)
       })
-    })
+    })    
   })
 })
 

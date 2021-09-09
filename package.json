@@ -20,6 +20,7 @@
     "admin-bro-typeorm": "^0.1.6-alpha.9",
     "argon": "^2.0.21",
     "argon2": "^0.28.2",
+    "axios": "^0.21.4",
     "bcrypt": "^5.0.1",
     "body-parser": "^1.19.0",
     "connect-mongo": "^4.4.1",
