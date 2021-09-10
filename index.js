@@ -19,7 +19,9 @@ const trendsLocaweb = express()
 const trendsMitisubish = express()
 const trendsSuhai = express()
 const trendsSuzuki = express()
-const apiSheets = express()
+const apiSheetsSuhai30D = express()
+const apiSheetsSuhai7D = express()
+const apiSheetsSuhai24H = express()
 
 const run = async () => {
   await mongoose.connect('mongodb+srv://techandsol:techandsol@cluster0.x9bvg.mongodb.net/myFirstDatabase?retryWrites=true&w=majority', {
@@ -37,48 +39,12 @@ const Usuario = mongoose.model('Usuario', {
   acesso: { type: String, enum: ['Admin', 'C-Level', 'Cliente', 'Head', 'Operacional'], required: true },
 })
 
-const Clientes = mongoose.model('Clientes', {
-  nome: String,
-  ownerId: {
-    type: mongoose.Types.ObjectId,
-    ref: 'Usuario',
-  }
-})
 
-const C6 = mongoose.model('C6', {
-  seguidores: Number,
-  Data: Date,
-  ownerId: {
-    type: mongoose.Types.ObjectId,
-    ref: 'Usuario',
-  }
-})
-const telhanorte = mongoose.model('telhanorte', {
-  nome: String,
-  ownerId: {
-    type: mongoose.Types.ObjectId,
-    ref: 'Usuario',
-  }
-})
-const tumelero = mongoose.model('tumelero', {
-  nome: String,
-  ownerId: {
-    type: mongoose.Types.ObjectId,
-    ref: 'Usuario',
-  }
-})
-const suhai = mongoose.model('suhai', {
-  nome: String,
-  ownerId: {
-    type: mongoose.Types.ObjectId,
-    ref: 'Usuario',
-  }
-})
 
-const podeEditarClientes = ({ currentAdmin }) => currentAdmin.acesso === 'Head' || currentAdmin.acesso === 'C-Level'
+// const podeEditarClientes = ({ currentAdmin }) => currentAdmin.acesso === 'Head' || currentAdmin.acesso === 'C-Level'
 const podeEditarUsuarios = ({ currentAdmin }) => currentAdmin && currentAdmin.acesso === 'Admin'
-const clevel = ({ currentAdmin }) => currentAdmin && currentAdmin.acesso === 'C-Level'
-const operacional = ({ currentAdmin }) => currentAdmin.acesso === 'Operacional'
+// const clevel = ({ currentAdmin }) => currentAdmin && currentAdmin.acesso === 'C-Level'
+// const operacional = ({ currentAdmin }) => currentAdmin.acesso === 'Operacional'
 
 const adminBro = new AdminBro({
   rootPath: '/admin',
@@ -105,107 +71,6 @@ const adminBro = new AdminBro({
         }
       }
     },
-    /** {
-     resource: C6,
-     options: {
-       parent: 'Clientes',
-       properties: {
-         ownerId: { isVisible: { edit: false, show: false, list: false, filter: false } },
-         checkbox: { isVisible: { edit: false, show: false, list: false, filter: false } }
-       },
-       actions: {
-         edit: { isAccessible: operacional },
-         delete: { isAccessible: podeEditarClientes },
-         new: { isAccessible: operacional },
-         show: { isAccessible: podeEditarClientes },
-         list: { isAccessible: operacional },
-       }
-     }
-   },*/
-    /** {
-      resource: telhanorte,
-      options: {
-        parent: 'Clientes',
-        properties: {
-          ownerId: { isVisible: { edit: false, show: false, list: false, filter: false } },
-          checkbox: { isVisible: { edit: false, show: false, list: false, filter: false } }
-        },
-        actions: {
-          edit: { isAccessible: podeEditarClientes },
-          delete: { isAccessible: podeEditarClientes },
-          new: { isAccessible: podeEditarClientes },
-          show: { isAccessible: podeEditarClientes },
-          list: { isAccessible: podeEditarClientes },
-        }
-      }
-    }, 
-    {
-      resource: tumelero,
-      options: {
-        parent: 'Clientes',
-        properties: {
-          ownerId: { isVisible: { edit: false, show: false, list: false, filter: false } },
-          checkbox: { isVisible: { edit: false, show: false, list: false, filter: false } }
-        },
-        actions: {
-          edit: { isAccessible: clevel },
-          delete: { isAccessible: clevel },
-          new: { isAccessible: clevel },
-          show: { isAccessible: clevel },
-          list: { isAccessible: clevel },
-        }
-      }
-    },
-    {
-      resource: suhai,
-      options: {
-        parent: 'Clientes',
-        properties: {
-          ownerId: { isVisible: { edit: false, show: false, list: false, filter: false } },
-          checkbox: { isVisible: { edit: false, show: false, list: false, filter: false } }
-        },
-        actions: {
-          edit: { isAccessible: clevel },
-          delete: { isAccessible: clevel },
-          new: { isAccessible: clevel },
-          show: { isAccessible: clevel },
-          list: { isAccessible: clevel },
-        }
-      }
-    },  
-    
-    
-    
-     C6: {
-      component: AdminBro.bundle('./c6'),
-    },
-    klabin: {
-      component: AdminBro.bundle('./klabin'),
-    },
-    locaweb: {
-      component: AdminBro.bundle('./locaweb'),
-    },
-    mitsubishi: {
-      component: AdminBro.bundle('./mitsubishi'),
-    },
-    obraja: {
-      component: AdminBro.bundle('./obraja'),
-    },
-    suhai: {
-      component: AdminBro.bundle('./suhai'),
-    },
-    suzuki: {
-      component: AdminBro.bundle('./suzuki'),
-    },
-    tumelero: {
-      component: AdminBro.bundle('./tumelero'),
-    }, 
-    
-    
-    
-    
-    
-    **/
   ],
   pages: {
     C6: {
@@ -354,23 +219,35 @@ const router = AdminBroExpressjs.buildAuthenticatedRouter(adminBro, {
 })
 
 app.use(adminBro.options.rootPath, router)
-apiSheets.use(morgan('dev'))
-apiSheets.use(bodyParser.urlencoded({ extended: false }))
-apiSheets.use(express.json())
-apiSheets.use(cors())
+apiSheetsSuhai30D.use(morgan('dev'))
+apiSheetsSuhai30D.use(bodyParser.urlencoded({ extended: false }))
+apiSheetsSuhai30D.use(express.json())
+apiSheetsSuhai30D.use(cors())
+
+apiSheetsSuhai7D.use(morgan('dev'))
+apiSheetsSuhai7D.use(bodyParser.urlencoded({ extended: false }))
+apiSheetsSuhai7D.use(express.json())
+apiSheetsSuhai7D.use(cors())
+
+apiSheetsSuhai24H.use(morgan('dev'))
+apiSheetsSuhai24H.use(bodyParser.urlencoded({ extended: false }))
+apiSheetsSuhai24H.use(express.json())
+apiSheetsSuhai24H.use(cors())
 
 app.listen(8080, () => console.log('Sistema rodando em localhost:8080/admin'))
-trendsTelha.listen(3001, () => console.log('Sistema rodando em localhost:3001/admin'))
-trendsTumelero.listen(3002, () => console.log('Sistema rodando em localhost:3002/admin'))
-trendsObraja.listen(3003, () => console.log('Sistema rodando em localhost:3003/admin'))
-trendsKlabin.listen(3004, () => console.log('Sistema rodando em localhost:3004/admin'))
-trendsLocaweb.listen(3005, () => console.log('Sistema rodando em localhost:3005/admin'))
-trendsMitisubish.listen(3006, () => console.log('Sistema rodando em localhost:3006/admin'))
-trendsSuhai.listen(3007, () => console.log('Sistema rodando em localhost:3007/admin'))
-trendsSuzuki.listen(3008, () => console.log('Sistema rodando em localhost:3008/admin'))
-apiSheets.listen(3099, () => console.log('API sheets rodando'))
+trendsTelha.listen(3001, () => console.log('Trends telhanorte rodando em localhost:3001/admin'))
+trendsTumelero.listen(3002, () => console.log('Trends tumelero rodando em localhost:3002/admin'))
+trendsObraja.listen(3003, () => console.log('Trends obraja em localhost:3003/admin'))
+trendsKlabin.listen(3004, () => console.log('Trends klabin em localhost:3004/admin'))
+trendsLocaweb.listen(3005, () => console.log('Trends locaweb em localhost:3005/admin'))
+trendsMitisubish.listen(3006, () => console.log('Trends mitsubishi em localhost:3006/admin'))
+trendsSuhai.listen(3007, () => console.log('Trends suhai em localhost:3007/admin'))
+trendsSuzuki.listen(3008, () => console.log('Trends suzuki em localhost:3008/admin'))
+apiSheetsSuhai30D.listen(3099, () => console.log('API sheets suhai 30 dias rodando'))
+apiSheetsSuhai7D.listen(3091, () => console.log('API sheets suhai 7 dias rodando'))
+apiSheetsSuhai24H.listen(3092, () => console.log('API sheets suhai 24 horas rodando'))
 
-apiSheets.get('/', (req, res) => {
+apiSheetsSuhai30D.get('/', (req, res) => {
   const { GoogleSpreadsheet } = require('google-spreadsheet')
   const credenciais = require('./credenciais.json')
   const arquivo = require('./arquivo.json')
@@ -384,14 +261,6 @@ apiSheets.get('/', (req, res) => {
     await doc.loadInfo();
     return doc;
   }
-
-  /**
-   * 
-   *   
-   * 
-   * 
-   * 
-   */
 
   let sheetInvestido;
   getDoc().then(doc => {
@@ -417,6 +286,87 @@ apiSheets.get('/', (req, res) => {
     })    
   })
 })
+
+apiSheetsSuhai7D.get('/', (req, res) => {
+  const { GoogleSpreadsheet } = require('google-spreadsheet')
+  const credenciais = require('./credenciais.json')
+  const arquivo = require('./arquivo.json')
+  const getDoc = async () => {
+    const doc = new GoogleSpreadsheet(arquivo.id);
+
+    await doc.useServiceAccountAuth({
+      client_email: credenciais.client_email,
+      private_key: credenciais.private_key.replace(/\\n/g, '\n')
+    })
+    await doc.loadInfo();
+    return doc;
+  }
+
+  let sheetInvestido;
+  getDoc().then(doc => {
+    sheetInvestido = doc.sheetsByIndex[1];
+    sheetInvestido.getRows().then(rows => {
+      rows.map(row => {
+        var dados = new Object();
+        dados.investido = row.investido
+        dados.impressoes = row.impressoes
+        dados.views = row.views
+        dados.impressoesPD = row.impressoesPD
+        dados.CPMD = row.CPMDP
+        dados.CTRDP = row.CTRDP
+        dados.impressoesYT = row.impressoesYT
+        dados.CPMYT = row.CPMYT
+        dados.VCRYT = row.VCRYT
+        dados.impressoesW =	row.impressoesW
+        dados.CPMW = row.CPMW
+        dados.ERW = row.ERW
+
+        return res.json(dados)
+      })
+    })    
+  })
+})
+
+apiSheetsSuhai24H.get('/', (req, res) => {
+  const { GoogleSpreadsheet } = require('google-spreadsheet')
+  const credenciais = require('./credenciais.json')
+  const arquivo = require('./arquivo.json')
+  const getDoc = async () => {
+    const doc = new GoogleSpreadsheet(arquivo.id);
+
+    await doc.useServiceAccountAuth({
+      client_email: credenciais.client_email,
+      private_key: credenciais.private_key.replace(/\\n/g, '\n')
+    })
+    await doc.loadInfo();
+    return doc;
+  }
+
+  let sheetInvestido;
+  getDoc().then(doc => {
+    sheetInvestido = doc.sheetsByIndex[2];
+    sheetInvestido.getRows().then(rows => {
+      rows.map(row => {
+        var dados = new Object();
+        dados.investido = row.investido
+        dados.impressoes = row.impressoes
+        dados.views = row.views
+        dados.impressoesPD = row.impressoesPD
+        dados.CPMD = row.CPMDP
+        dados.CTRDP = row.CTRDP
+        dados.impressoesYT = row.impressoesYT
+        dados.CPMYT = row.CPMYT
+        dados.VCRYT = row.VCRYT
+        dados.impressoesW =	row.impressoesW
+        dados.CPMW = row.CPMW
+        dados.ERW = row.ERW
+
+        return res.json(dados)
+      })
+    })    
+  })
+})
+
 
 
 app.use('/', (req, res) => {
