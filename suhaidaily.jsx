@@ -72,9 +72,9 @@ class Dashboard extends Component {
                         </Box>
                     </Box>
                     <Box boxShadow="card" borderRadius="5px" backgroundColor="#ffffff" minWidth="290px" margin="10px" alignItems="center" minHeight="120px" display={["flex", "inline-flex"]}>
-                        <Box paddingLeft="7px" paddingRight="9px" marginX="15px"><img width="80px" height="80px"
+                        <Box paddingLeft="7px" paddingRight="14px" marginX="15px"><img width="80px" height="80px"
                             src="https://image.flaticon.com/icons/png/512/31/31624.png"></img></Box>
-                        <Box paddingY="15px" paddingRight="90px" paddingLeft="7px" minHeight="70px">
+                        <Box paddingY="15px" paddingRight="60px" paddingLeft="7px" minHeight="70px">
                             <Text color="black" fontSize="h2">{ dados.views }</Text>
                             <Text color="black" fontSize="h3">VIEWS</Text>
                         </Box>
@@ -82,7 +82,7 @@ class Dashboard extends Component {
                     <Box boxShadow="card" borderRadius="5px" backgroundColor="#ffffff" minWidth="290px" margin="10px" alignItems="center" minHeight="120px" display={["flex", "inline-flex"]}>
                         <Box borderRadius="5px" paddingRight="20px" paddingLeft="5px" marginX="15px" ><img width="80px" height="80px"
                             src="https://image.flaticon.com/icons/png/512/1908/1908669.png"></img></Box>
-                        <Box paddingY="15px" paddingRight="20px" paddingLeft="7px" minHeight="70px">
+                        <Box paddingY="15px" paddingRight="40px" paddingLeft="7px" minHeight="70px">
                             <Text color="black" fontSize="h2">{ dados.impressoes }</Text>
                             <Text color="black" fontSize="h3">IMPRESSÕES</Text>
                         </Box>
