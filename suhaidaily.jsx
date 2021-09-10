@@ -14,9 +14,11 @@ class Dashboard extends Component {
     async componentDidMount(){
         const response = await apiSheets.get('');
         console.log(response.data)
-        // this.setState( dados: response.data );
+        this.setState({ dados: response.data });
     }
     render() {
+
+        const { dados } = this.state;
         return (
             <Box flex flexDirection="column" variant="grey">
                 <Box maxHeight="100px" padding="1em" margin="10px">
@@ -65,7 +67,7 @@ class Dashboard extends Component {
                         <Box paddingRight="20px" paddingLeft="7px" paddingRight="9px" marginX="15px" ><img width="80px" height="80px"
                             src="https://image.flaticon.com/icons/png/512/4985/4985048.png"></img></Box>
                         <Box paddingY="15px" paddingLeft="7px" paddingRight="35px" minHeight="70px">
-                            <Text color="black" fontSize="h2">45,6K</Text>
+                            <Text color="black" fontSize="h2">{ dados.investido }</Text>
                             <Text color="black" fontSize="h3">INVESTIDO</Text>
                         </Box>
                     </Box>
@@ -73,7 +75,7 @@ class Dashboard extends Component {
                         <Box paddingLeft="7px" paddingRight="9px" marginX="15px"><img width="80px" height="80px"
                             src="https://image.flaticon.com/icons/png/512/31/31624.png"></img></Box>
                         <Box paddingY="15px" paddingRight="90px" paddingLeft="7px" minHeight="70px">
-                            <Text color="black" fontSize="h2">1M</Text>
+                            <Text color="black" fontSize="h2">{ dados.views }</Text>
                             <Text color="black" fontSize="h3">VIEWS</Text>
                         </Box>
                     </Box>
@@ -81,7 +83,7 @@ class Dashboard extends Component {
                         <Box borderRadius="5px" paddingRight="20px" paddingLeft="5px" marginX="15px" ><img width="80px" height="80px"
                             src="https://image.flaticon.com/icons/png/512/1908/1908669.png"></img></Box>
                         <Box paddingY="15px" paddingRight="20px" paddingLeft="7px" minHeight="70px">
-                            <Text color="black" fontSize="h2">9,8M</Text>
+                            <Text color="black" fontSize="h2">{ dados.impressoes }</Text>
                             <Text color="black" fontSize="h3">IMPRESSÕES</Text>
                         </Box>
                     </Box>
@@ -103,19 +105,19 @@ class Dashboard extends Component {
                     </Box>
                     <Box display={["flex", "inline-flex"]} margin="10px 40px" alignItems="center" maxHeight="200px">
                         <Box padding="10px">
-                            <Text padding="5px" color="black" fontSize="h2">4,3M</Text>
+                            <Text padding="5px" color="black" fontSize="h2">{ dados.impressoesPD }</Text>
                             <Text padding="5px" color="black" fontSize="h3">IMPRESSÕES</Text>
                         </Box>
                     </Box>
                     <Box display={["flex", "inline-flex"]} margin="10px 40px" alignItems="center" maxHeight="200px">
                         <Box padding="10px">
-                            <Text padding="5px" color="black" fontSize="h2">R$1,42</Text>
+                            <Text padding="5px" color="black" fontSize="h2">{ dados.CPMD }</Text>
                             <Text padding="5px" color="black" fontSize="h3">CPM</Text>
                         </Box>
                     </Box>
                     <Box display={["flex", "inline-flex"]} margin="10px 40px" alignItems="center" maxHeight="200px">
                         <Box padding="10px">
-                            <Text padding="5px" color="black" fontSize="h2">0,02%</Text>
+                            <Text padding="5px" color="black" fontSize="h2">{ dados.CTRDP }</Text>
                             <Text padding="5px" color="black" fontSize="h3">VCR</Text>
                         </Box>
                     </Box>
@@ -129,19 +131,19 @@ class Dashboard extends Component {
                     </Box>
                     <Box display={["flex", "inline-flex"]} margin="10px 40px" alignItems="center" maxHeight="200px">
                         <Box padding="10px">
-                            <Text padding="5px" color="black" fontSize="h2">478K</Text>
+                            <Text padding="5px" color="black" fontSize="h2">{ dados.impressoesYT }</Text>
                             <Text padding="5px" color="black" fontSize="h3">IMPRESSÕES</Text>
                         </Box>
                     </Box>
                     <Box display={["flex", "inline-flex"]} margin="10px 40px" alignItems="center" maxHeight="200px">
                         <Box padding="10px">
-                            <Text padding="5px" color="black" fontSize="h2">R$21,60</Text>
+                            <Text padding="5px" color="black" fontSize="h2">{ dados.CPMYT }</Text>
                             <Text padding="5px" color="black" fontSize="h3">CPM</Text>
                         </Box>
                     </Box>
                     <Box display={["flex", "inline-flex"]} margin="10px 40px" alignItems="center" maxHeight="200px">
                         <Box padding="10px">
-                            <Text padding="5px" color="black" fontSize="h2">47%</Text>
+                            <Text padding="5px" color="black" fontSize="h2">{ dados.VCRYT }</Text>
                             <Text padding="5px" color="black" fontSize="h3">VCR</Text>
                         </Box>
                     </Box>
@@ -155,19 +157,19 @@ class Dashboard extends Component {
                     </Box>
                     <Box display={["flex", "inline-flex"]} margin="10px 40px" alignItems="center" maxHeight="200px">
                         <Box padding="10px">
-                            <Text padding="5px" color="black" fontSize="h2">1,3M</Text>
+                            <Text padding="5px" color="black" fontSize="h2">{ dados.impressoesW }</Text>
                             <Text padding="5px" color="black" fontSize="h3">IMPRESSÕES</Text>
                         </Box>
                     </Box>
                     <Box display={["flex", "inline-flex"]} margin="10px 40px" alignItems="center" maxHeight="200px">
                         <Box padding="10px">
-                            <Text padding="5px" color="black" fontSize="h2">R$8,86</Text>
+                            <Text padding="5px" color="black" fontSize="h2">{ dados.CPMW }</Text>
                             <Text padding="5px" color="black" fontSize="h3">CPM</Text>
                         </Box>
                     </Box>
                     <Box display={["flex", "inline-flex"]} margin="10px 40px" alignItems="center" maxHeight="200px">
                         <Box padding="10px">
-                            <Text padding="5px" color="black" fontSize="h2">62%</Text>
+                            <Text padding="5px" color="black" fontSize="h2">{ dados.ERW }</Text>
                             <Text padding="5px" color="black" fontSize="h3">VCR</Text>
                         </Box>
                     </Box>

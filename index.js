@@ -360,10 +360,10 @@ const router = AdminBroExpressjs.buildAuthenticatedRouter(adminBro, {
 })
 
 app.use(adminBro.options.rootPath, router)
-app.use(morgan('dev'))
-app.use(bodyParser.urlencoded({ extended: false }))
-app.use(express.json())
-app.use(cors())
+apiSheets.use(morgan('dev'))
+apiSheets.use(bodyParser.urlencoded({ extended: false }))
+apiSheets.use(express.json())
+apiSheets.use(cors())
 
 app.listen(8080, () => console.log('Sistema rodando em localhost:8080/admin'))
 trendsTelha.listen(3001, () => console.log('Sistema rodando em localhost:3001/admin'))
@@ -404,8 +404,20 @@ apiSheets.get('/', (req, res) => {
     sheetInvestido = doc.sheetsByIndex[0];
     sheetInvestido.getRows().then(rows => {
       rows.map(row => {
-        var dados = [row.investido, row.impressoes, row.views,	row.impressoesPD,	row.CPMDP,	row.CTRDP,	row.impressoesYT, row.CPMYT,	row.VCRYT,	row.impressoesW,	row.CPMW,	row.ERW]
-        
+        var dados = new Object();
+        dados.investido = row.investido
+        dados.impressoes = row.impressoes
+        dados.views = row.views
+        dados.impressoesPD = row.impressoesPD
+        dados.CPMD = row.CPMDP
+        dados.CTRDP = row.CTRDP
+        dados.impressoesYT = row.impressoesYT
+        dados.CPMYT = row.CPMYT
+        dados.VCRYT = row.VCRYT
+        dados.impressoesW =	row.impressoesW
+        dados.CPMW = row.CPMW
+        dados.ERW = row.ERW
+
         return res.json(dados)
       })
     })    
