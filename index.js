@@ -2,13 +2,9 @@ const AdminBro = require('admin-bro')
 const AdminBroExpress = require('@admin-bro/express')
 const AdminBroMongoose = require('@admin-bro/mongoose')
 const mongoose = require('mongoose')
-const c6 = require('./c6Trends')
 const morgan = require('morgan')
 const cors = require('cors')
 const bodyParser = require('body-parser')
-
-// const MongoStore = require('connect-mongo')(session)
-// const bcrypt = require('bcrypt')
 const AdminBroExpressjs = require('@admin-bro/express')
 
 AdminBro.registerAdapter(AdminBroMongoose)
@@ -24,8 +20,6 @@ const trendsMitisubish = express()
 const trendsSuhai = express()
 const trendsSuzuki = express()
 const apiSheets = express()
-
-c6()
 
 const run = async () => {
   await mongoose.connect('mongodb+srv://techandsol:techandsol@cluster0.x9bvg.mongodb.net/myFirstDatabase?retryWrites=true&w=majority', {
@@ -374,7 +368,7 @@ trendsLocaweb.listen(3005, () => console.log('Sistema rodando em localhost:3005/
 trendsMitisubish.listen(3006, () => console.log('Sistema rodando em localhost:3006/admin'))
 trendsSuhai.listen(3007, () => console.log('Sistema rodando em localhost:3007/admin'))
 trendsSuzuki.listen(3008, () => console.log('Sistema rodando em localhost:3008/admin'))
-apiSheets.listen(3009, () => console.log('API sheets rodando'))
+apiSheets.listen(3099, () => console.log('API sheets rodando'))
 
 apiSheets.get('/', (req, res) => {
   const { GoogleSpreadsheet } = require('google-spreadsheet')
