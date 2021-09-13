@@ -97,8 +97,14 @@ const adminBro = new AdminBro({
     Suhai: {
       component: AdminBro.bundle('./suhai'),
     },
-    SuhaiFlashReport: {
+    suhaiFlashReport: {
       component: AdminBro.bundle('./suhaidaily'),
+    },
+    suhaiReport7dias: {
+      component: AdminBro.bundle('./suhaiReport7dias'),
+    },
+    suhaiReport24horas: {
+      component: AdminBro.bundle('./suhaiReport24horas'),
     },
     Suzuki: {
       component: AdminBro.bundle('./suzuki'),

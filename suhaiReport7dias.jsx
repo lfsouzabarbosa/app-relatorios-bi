@@ -15,13 +15,22 @@ class Dashboard extends Component {
         dados: [],
     }
     async componentDidMount() {
-        var responseapiSheetsSuhai30 = await apiSheetsSuhai30.get('');
-        console.log(responseapiSheetsSuhai30.data)
-        this.setState({ dados: responseapiSheetsSuhai30.data });
-        this.setState({ dados30: responseapiSheetsSuhai30.data });
+        var responseapiSheetsSuhai7 = await apiSheetsSuhai7.get('');
+        console.log(responseapiSheetsSuhai7.data)
+        this.setState({ dados: responseapiSheetsSuhai7.data });
+        this.setState({ dados7: responseapiSheetsSuhai7.data });
     };
     render() {        
-        const { dados } = this.state;
+        var { dados } = this.state;
+        function horas() {
+           dados = this.setState({ dados24: responseapiSheetsSuhai24.data });
+        }
+        function SeteDias() {
+           dados = this.setState({ dados7: responseapiSheetsSuhai7.data });
+        }
+        function TrintaDias() {
+           dados = this.setState({ dados30: responseapiSheetsSuhai30.data });
+        }
         return (
             <Box flex flexDirection="column" variant="grey">
                 <Box maxHeight="100px" padding="1em" margin="10px">

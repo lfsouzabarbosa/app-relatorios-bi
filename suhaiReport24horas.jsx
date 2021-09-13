@@ -15,10 +15,10 @@ class Dashboard extends Component {
         dados: [],
     }
     async componentDidMount() {
-        var responseapiSheetsSuhai30 = await apiSheetsSuhai30.get('');
-        console.log(responseapiSheetsSuhai30.data)
-        this.setState({ dados: responseapiSheetsSuhai30.data });
-        this.setState({ dados30: responseapiSheetsSuhai30.data });
+        var responseapiSheetsSuhai24 = await apiSheetsSuhai24.get('');
+        console.log(responseapiSheetsSuhai24.data)
+        this.setState({ dados: responseapiSheetsSuhai24.data });
+        this.setState({ dados24: responseapiSheetsSuhai24.data });
     };
     render() {        
         const { dados } = this.state;

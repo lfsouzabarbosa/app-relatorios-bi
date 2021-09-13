@@ -17,7 +17,11 @@ import Component8 from '../suhai'
 AdminBro.UserComponents.Component8 = Component8
 import Component9 from '../suhaidaily'
 AdminBro.UserComponents.Component9 = Component9
-import Component10 from '../suzuki'
+import Component10 from '../suhaiReport7dias'
 AdminBro.UserComponents.Component10 = Component10
-import Component11 from '../c6Bank'
+import Component11 from '../suhaiReport24horas'
 AdminBro.UserComponents.Component11 = Component11
+import Component12 from '../suzuki'
+AdminBro.UserComponents.Component12 = Component12
+import Component13 from '../c6Bank'
+AdminBro.UserComponents.Component13 = Component13
