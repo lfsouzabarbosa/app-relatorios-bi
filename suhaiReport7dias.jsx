@@ -62,7 +62,7 @@ class Dashboard extends Component {
                         <Box padding="10px" paddingRight="62px">
                             <Link href="./suhaiFlashReport">
                                 <Text color="black" fontSize="h4">Último mês</Text></Link>
-                        </Box>
+                        </Box>  
                     </Box>
                 </Box>
 
