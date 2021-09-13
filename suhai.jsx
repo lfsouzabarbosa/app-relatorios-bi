@@ -185,7 +185,7 @@ const Dashboard = () => {
                 </Box>
 
                 <Box paddingX="45px" width="100%" display={["block", "flex"]} flexDirection="row" justifyContent="center">
-                    <Link href="./SuhaiFlashReport">
+                    <Link href="./suhaiFlashReport">
                     <Button fontSize="h2" size="lg">
                         Flash Report</Button>
                     </Link>
