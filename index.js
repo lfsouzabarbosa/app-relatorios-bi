@@ -284,6 +284,7 @@ apiSheetsSuhai30D.get('/', (req, res) => {
         dados.ERW = row.ERW
         dados.CPMFBIT = row.CPMFBIT
         dados.ERFBIT = row.ERFBIT
+        dados.impressoesBigNumbers = row.impressoes + row.viewsGD + row.CTRDP
 
         return res.json(dados)
       })
@@ -326,6 +327,7 @@ apiSheetsSuhai7D.get('/', (req, res) => {
         dados.ERW = row.ERW
         dados.CPMFBIT = row.CPMFBIT
         dados.ERFBIT = row.ERFBIT
+        dados.impressoesBigNumbers = row.impressoes + row.viewsGD + row.CTRDP
 
         return res.json(dados)
       })
@@ -368,6 +370,7 @@ apiSheetsSuhai24H.get('/', (req, res) => {
         dados.ERW = row.ERW
         dados.CPMFBIT = row.CPMFBIT
         dados.ERFBIT = row.ERFBIT
+        dados.impressoesBigNumbers = row.impressoes + row.viewsGD + row.CTRDP
 
         return res.json(dados)
       })

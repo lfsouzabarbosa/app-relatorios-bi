@@ -86,7 +86,7 @@ class Dashboard extends Component {
                         <Box borderRadius="5px" paddingRight="20px" paddingLeft="5px" marginX="15px" ><img width="80px" height="80px"
                             src="https://image.flaticon.com/icons/png/512/1908/1908669.png"></img></Box>
                         <Box paddingY="15px" paddingRight="20px" paddingLeft="7px" minHeight="70px">
-                            <Text color="black" fontSize="h2">{dados.impressoes}</Text>
+                            <Text color="black" fontSize="h2">{dados.impressoesBigNumbers}</Text>
                             <Text color="black" fontSize="h3">IMPRESSÕES</Text>
                         </Box>
                     </Box>
@@ -190,7 +190,7 @@ class Dashboard extends Component {
                     </Box>
                     <Box display={["flex", "inline-flex"]} margin="10px 40px" alignItems="center" maxHeight="200px">
                         <Box padding="10px">
-                            <Text padding="5px" color="black" fontSize="h2">{ dados.impressoesPD }</Text>
+                            <Text padding="5px" color="black" fontSize="h2">{ dados.impressoes }</Text>
                             <Text padding="5px" color="black" fontSize="h3">IMPRESSÕES</Text>
                         </Box>
                     </Box>
