@@ -15,13 +15,22 @@ class Dashboard extends Component {
         dados: [],
     }
     async componentDidMount() {
-        var responseapiSheetsSuhai30 = await apiSheetsSuhai30.get('');
-        console.log(responseapiSheetsSuhai30.data)
-        this.setState({ dados: responseapiSheetsSuhai30.data });
-        this.setState({ dados30: responseapiSheetsSuhai30.data });
+        var responseapiSheetsSuhai7 = await apiSheetsSuhai7.get('');
+        console.log(responseapiSheetsSuhai7.data)
+        this.setState({ dados: responseapiSheetsSuhai7.data });
+        this.setState({ dados7: responseapiSheetsSuhai7.data });
     };
     render() {        
-        const { dados } = this.state;
+        var { dados } = this.state;
+        function horas() {
+           dados = this.setState({ dados24: responseapiSheetsSuhai24.data });
+        }
+        function SeteDias() {
+           dados = this.setState({ dados7: responseapiSheetsSuhai7.data });
+        }
+        function TrintaDias() {
+           dados = this.setState({ dados30: responseapiSheetsSuhai30.data });
+        }
         return (
             <Box flex flexDirection="column" variant="grey">
                 <Box maxHeight="100px" padding="1em" margin="10px">
@@ -53,7 +62,7 @@ class Dashboard extends Component {
                         <Box padding="10px" paddingRight="62px">
                             <Link href="./suhaiFlashReport">
                                 <Text color="black" fontSize="h4">Último mês</Text></Link>
-                        </Box>
+                        </Box>  
                     </Box>
                 </Box>
 
@@ -100,36 +109,6 @@ class Dashboard extends Component {
                         <Text color="black" fontSize="h3">PROGRAMÁTICA</Text>
                     </Box>
                 </Box>
-                <Box padding="2em" margin="20px" backgroundColor="#ffffff" display={["block", "flex"]} flexDirection="row" boxShadow="card" justifyContent="center" maxHeight="800px">
-                    <Box paddingX="25px" margin="10px 30px" alignItems="center" justifyContent="start" maxHeight="200px" display={["block", "block"]}>
-                        <Box display={["inline-flex"]} flexDirection="row">
-                            <Box ><img width="80px" height="80px"
-                                src="https://cdn-icons-png.flaticon.com/512/1384/1384031.png"></img></Box>
-                            <Box marginLeft="-2%"><img width="80px" height="80px"
-                                src="https://cdn-icons-png.flaticon.com/512/1384/1384005.png"></img></Box>
-                        </Box>
-                        <Text paddingRight="20px" paddingTop="10px" textAlign="center" color="black" fontSize="h2">SOCIAL</Text>
-                    </Box>
-                    <Box display={["flex", "inline-flex"]} margin="10px 40px" alignItems="center" maxHeight="200px">
-                        <Box padding="10px">
-                            <Text padding="5px" color="black" fontSize="h2">{ dados.impressoesPD }</Text>
-                            <Text padding="5px" color="black" fontSize="h3">IMPRESSÕES</Text>
-                        </Box>
-                    </Box>
-                    <Box display={["flex", "inline-flex"]} margin="10px 40px" alignItems="center" maxHeight="200px">
-                        <Box padding="10px">
-                            <Text padding="5px" color="black" fontSize="h2">{ dados.CPMD }</Text>
-                            <Text padding="5px" color="black" fontSize="h3">CPM</Text>
-                        </Box>
-                    </Box>
-                    <Box display={["flex", "inline-flex"]} margin="10px 40px" alignItems="center" maxHeight="200px">
-                        <Box padding="10px">
-                            <Text padding="5px" color="black" fontSize="h2">{ dados.CTRDP }</Text>
-                            <Text padding="5px" color="black" fontSize="h3">VCR</Text>
-                        </Box>
-                    </Box>
-                </Box>
-
                 <Box padding="2em" margin="20px" backgroundColor="#ffffff" display={["block", "flex"]} flexDirection="row" boxShadow="card" justifyContent="center" maxHeight="800px">
                     <Box paddingX="25px" margin="10px 30px" alignItems="center" justifyContent="start" maxHeight="200px" display={["block", "block"]}>
                         <Box ><img width="80px" height="80px"
@@ -207,7 +186,6 @@ class Dashboard extends Component {
                         </Box>
                     </Box>
                 </Box>
-
                 <Box padding="2em" margin="20px" backgroundColor="#ffffff" display={["block", "flex"]} flexDirection="row" boxShadow="card" justifyContent="center" maxHeight="800px">
                     <Box paddingX="25px" margin="10px 30px" alignItems="center" justifyContent="start" maxHeight="200px" display={["block", "block"]}>
                         <Box display={["inline-flex"]} flexDirection="row">
