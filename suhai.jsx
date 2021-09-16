@@ -3,7 +3,229 @@ import { Box } from '@admin-bro/design-system'
 import { Text } from '@admin-bro/design-system'
 import { Button } from '@admin-bro/design-system'
 import { Link } from '@admin-bro/design-system'
+import {
+    Brush, LineChart, Line,
+    AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer 
+} from 'recharts';
 
+const rsInsta = [
+  {
+    impressões: 228,
+    curtidas: 50,
+    data: "13/08"
+  },
+  {
+    impressões: 12554,
+    curtidas: 508,
+    data: "14/08"
+  },
+  {
+    impressões: 239,
+    curtidas: 53,
+    data: "16/08"
+  },
+  {
+    impressões: 10099,
+    curtidas: 349,
+    data:"16/08"
+  },
+  {
+    impressões: 116,
+    curtidas: 12,
+    data:"18/08"
+  },
+  {
+    impressões: 174,
+    curtidas: 38,
+    data:"19/08"
+  },
+  {
+    impressões: 4131,
+    curtidas: 140,
+    data: "19/08"
+  },
+  {
+    impressões: 11824,
+    curtidas: 310,
+    data: "20/08"
+  },
+  {
+    impressões: 172,
+    curtidas: 28,
+    data: "23/08"
+  },
+  {
+    impressões: 10127,
+    curtidas: 297,
+    data:"24/08"
+  },
+  {
+    impressões: 6361,
+    curtidas: 268,
+    data: "26/08"
+  },
+  {
+    impressões: 207,
+    curtidas: 56,
+    data: "27/08"
+  },
+  {
+    impressões: 7639,
+    curtidas: 204,
+    data: "28/08"
+  },
+  {
+    impressões: 184,
+    curtidas: 41,
+    data: "31/08"
+  },
+  {
+    impressões: 2235,
+    curtidas: 75,
+    data: "01/09"
+  },
+  {
+    impressões: 7818,
+    curtidas: 266,
+    data: "02/09"
+  },
+  {
+    impressões: 1003,
+    curtidas: 38,
+    data: "02/09"
+  },
+  {
+    impressões: 134,
+    curtidas: 28,
+    data: "03/09"
+  },
+  {
+    impressões: 9748,
+    curtidas: 265,
+    data: "03/09"
+  },
+  {
+    impressões: 4179,
+    curtidas: 112,
+    data: "08/09"
+  },
+  {
+    impressões: 72,
+    curtidas: 10,
+    data: "09/09"
+  },
+
+];
+
+const rsFace = [
+    {
+      alcance: 4,
+      compartilhamento: 0,
+      data: "13/08"
+    },
+    {
+      alcance: 4816,
+      compartilhamento: 11,
+      data: "13/08"
+    },
+    {
+      alcance: 9,
+      compartilhamento: 0,
+      data: "16/08"
+    },
+    {
+      alcance: 4307,
+      compartilhamento: 26,
+      data:"16/08"
+    },
+    {
+      alcance: 10,
+      compartilhamento: 0,
+      data:"18/08"
+    },
+    {
+      alcance: 5,
+      compartilhamento: 0,
+      data:"19/08"
+    },
+    {
+      alcance: 1567,
+      compartilhamento: 1,
+      data: "19/08"
+    },
+    {
+      alcance: 6716,
+      compartilhamento: 29,
+      data: "20/08"
+    },
+    {
+        alcance: 9,
+        compartilhamento: 0,
+        data: "23/08"
+      },
+    {
+      alcance: 1422,
+      compartilhamento: 6,
+      data: "24/08"
+    },
+    {
+      alcance: 1554,
+      compartilhamento: 5,
+      data:"26/08"
+    },
+    {
+      alcance: 1133,
+      compartilhamento: 0,
+      data: "26/08"
+    },
+    {
+      alcance: 7,
+      compartilhamento: 0,
+      data: "27/08"
+    },
+    {
+      alcance: 1860,
+      compartilhamento: 2,
+      data: "28/08"
+    },
+    {
+      alcance: 4,
+      compartilhamento: 0,
+      data: "31/08"
+    },
+    {
+      alcance: 823,
+      compartilhamento: 5,
+      data: "02/09"
+    },
+    {
+      alcance: 1295,
+      compartilhamento: 2,
+      data: "02/09"
+    },
+    {
+      alcance: 0,
+      compartilhamento: 0,
+      data: "03/09"
+    },
+    {
+      alcance: 1661,
+      compartilhamento: 3,
+      data: "03/09"
+    },
+    {
+      alcance: 983,
+      compartilhamento: 2,
+      data: "07/09"
+    },
+    {
+      alcance: 4,
+      compartilhamento: 0,
+      data: "09/09"
+    }
+  
+];
+  
 const api = new ApiClient()
 
 const Dashboard = () => {
@@ -263,14 +485,118 @@ const Dashboard = () => {
                         <Text color="black" fontSize="h3">GOOGLE TRENDS</Text>
                     </Box>
                 </Box>
+                <Box boxShadow="card" backgroundColor="#ffffff" margin="30px" padding="20px" display={["block", "flex"]} flexDirection="row" justifyContent="center">
+                <div style={{ width: '100%' }}>
+                    <h4>Impressões Instagram</h4>
+                    <ResponsiveContainer width="100%" height={200} aspect={3}>
+                        <AreaChart
+                            width={500}
+                            height={200}
+                            data={rsInsta}
+                            syncId="anyId"
+                            margin={{
+                            top: 10,
+                            right: 30,
+                            left: 0,
+                            bottom: 0,
+                            }}>
+                            <CartesianGrid strokeDasharray="3 3" />
+                            <XAxis dataKey="data" />
+                            <YAxis />
+                            <Tooltip />
+                            <Area type="monotone" dataKey="impressões" stroke="#FFFF00" fill="#FFFF00" />
+                        </AreaChart>
+                    </ResponsiveContainer>
+                    <p>Curtidas Instagram</p>
 
-                    <Box boxShadow="card" border="2px solid #ffffff" backgroundColor="#ffffff" borderRadius="10px" maxWidth="800px" minHeight="300px" margin=" 10px auto 30px" >
-                        <a href="http://vps23593.publiccloud.com.br:3007/" class="sc-dIsAE default-dashboard__Card-y6jxa9-0 kgyQN kKlyvT admin-bro_Box">
-                            <Box display="inline-flex" flexDirection="row" justifyContent="center" width="740px" >
-                                <img width="700" height="250px" src="https://i.pinimg.com/564x/c0/31/9f/c0319f95faa07bec813e6b66d8ef6912.jpg" alt="Imagem Trends"></img>
-                            </Box>
-                        </a>
-                    </Box>
+                    <ResponsiveContainer width="100%" height={200}>
+                    <AreaChart
+                        width={500}
+                        height={200}
+                        data={rsInsta}
+                        syncId="anyId"
+                        margin={{
+                        top: 10,
+                        right: 30,
+                        left: 0,
+                        bottom: 0,
+                        }}>
+                        <CartesianGrid strokeDasharray="3 3" />
+                        <XAxis dataKey="data" />
+                        <YAxis />
+                        <Tooltip />
+                        <Area type="monotone" dataKey="curtidas" stroke="#82ca9d" fill="#82ca9d" />
+                    </AreaChart>
+                    </ResponsiveContainer>
+                </div>
+
+                <div style={{ width: '100%' }}>
+                    <h4>Alcance Facebook</h4>
+
+                    <ResponsiveContainer width="100%" height={200}>
+                        <LineChart
+                            width={500}
+                            height={200}
+                            data={rsFace}
+                            syncId="anyId"
+                            margin={{
+                            top: 10,
+                            right: 30,
+                            left: 0,
+                            bottom: 0,
+                            }}>
+                            <CartesianGrid strokeDasharray="3 3" />
+                            <XAxis dataKey="data" />
+                            <YAxis />
+                            <Tooltip />
+                            <Line type="monotone" dataKey="alcance" stroke="#8884d8" fill="#8884d8" />
+                        </LineChart>
+                        </ResponsiveContainer>
+                        <p>Compartilhamento Facebook</p>
+
+                        <ResponsiveContainer width="100%" height={200}>
+                            <LineChart
+                                width={500}
+                                height={200}
+                                data={rsFace}
+                                syncId="anyId"
+                                margin={{
+                                top: 10,
+                                right: 30,
+                                left: 0,
+                                bottom: 0,
+                                }}>
+                                <CartesianGrid strokeDasharray="3 3" />
+                                <XAxis dataKey="data" />
+                                <YAxis />
+                                <Tooltip />
+                                <Line type="monotone" dataKey="compartilhamento" stroke="#82ca9d" fill="#82ca9d" />
+                                <Brush />
+                            </LineChart>
+                        </ResponsiveContainer>
+
+                        <ResponsiveContainer width="100%" height={200}>
+                            <AreaChart
+                                width={500}
+                                height={200}
+                                data={rsFace}
+                                syncId="anyId"
+                                margin={{
+                                top: 10,
+                                right: 30,
+                                left: 0,
+                                bottom: 0,
+                                }}>
+                                <CartesianGrid strokeDasharray="3 3" />
+                                <XAxis dataKey="data" />
+                                <YAxis />
+                                <Tooltip />
+                                <Area type="monotone" dataKey="alcance" stroke="#82ca9d" fill="#82ca9d" />
+                            </AreaChart>
+                    </ResponsiveContainer>
+                 </div>
+
+            </Box>
         </section>
     )
 }
