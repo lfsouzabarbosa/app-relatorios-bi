@@ -22,6 +22,9 @@ const trendsSuzuki = express()
 const apiSheetsSuhai30D = express()
 const apiSheetsSuhai7D = express()
 const apiSheetsSuhai24H = express()
+let acessUser;
+
+// console.log(`${acessUser} : "Varivel criada"`)
 
 const run = async () => {
   await mongoose.connect('mongodb+srv://techandsol:techandsol@cluster0.x9bvg.mongodb.net/myFirstDatabase?retryWrites=true&w=majority', {
@@ -36,7 +39,7 @@ const Usuario = mongoose.model('Usuario', {
   nome: { type: String, required: true },
   senha: { type: String, required: true },
   email: { type: String, required: true },
-  acesso: { type: String, enum: ['Admin', 'C-Level', 'Cliente', 'Head', 'Operacional'], required: true },
+  acesso: { type: String, enum: ['Admin', 'C-Level', 'Cliente', 'Head', 'Operacional', 'Suhai'], required: true },
 })
 
 // const podeEditarClientes = ({ currentAdmin }) => currentAdmin.acesso === 'Head' || currentAdmin.acesso === 'C-Level'
@@ -70,42 +73,7 @@ const adminBro = new AdminBro({
     },
   ],
   pages: {
-    C6: {
-      component: AdminBro.bundle('./c6Bank'),
-    },
-    Telhanorte: {
-      component: AdminBro.bundle('./homepage'),
-    },
-    Tumelero: {
-      component: AdminBro.bundle('./tumelero'),
-    },
-    Obraja: {
-      component: AdminBro.bundle('./obraja'),
-    },
-    Klabin: {
-      component: AdminBro.bundle('./klabin'),
-    },
-    Locaweb: {
-      component: AdminBro.bundle('./locaweb'),
-    },
-    Mitsubishi: {
-      component: AdminBro.bundle('./mitsubishi'),
-    },
-    Suhai: {
-      component: AdminBro.bundle('./suhai'),
-    },
-    suhaiFlashReport: {
-      component: AdminBro.bundle('./suhaidaily'),
-    },
-    suhaiReport7dias: {
-      component: AdminBro.bundle('./suhaiReport7dias'),
-    },
-    suhaiReport24horas: {
-      component: AdminBro.bundle('./suhaiReport24horas'),
-    },
-    Suzuki: {
-      component: AdminBro.bundle('./suzuki'),
-    }
+
   },
   branding: {
     companyName: 'Tech and Soul',
@@ -202,11 +170,167 @@ const adminBro = new AdminBro({
   }
 })
 
+let paginas = adminBro.options.pages;
+
 // const router = AdminBroExpress.buildRouter(adminBro)
 
 const router = AdminBroExpressjs.buildAuthenticatedRouter(adminBro, {
   authenticate: async (email, senha) => {
     const user = await Usuario.findOne({ email })
+    var nivel = user.acesso
+    acessUser = nivel;
+    console.log(nivel)
+    console.log(`${acessUser} : "Varivel de fora"`)
+
+    if(acessUser == "Suhai") { 
+      suhai = {Suhai: {
+        component: AdminBro.bundle('./suhai'),
+      }};
+      suhaiFlashReport = {suhaiFlashReport: {
+        component: AdminBro.bundle('./suhaidaily'),
+      }};
+      suhaiReport7dias = {suhaiReport7dias: {
+        component: AdminBro.bundle('./suhaiReport7dias'),
+      }};
+      suhaiReport24horas = {suhaiReport24horas: {
+        component: AdminBro.bundle('./suhaiReport24horas'),
+      }};
+      const returnedTarget = Object.assign(paginas, suhai, suhaiFlashReport, suhaiReport7dias, suhaiReport24horas)
+      let testinho = adminBro.options.pages
+      console.log(testinho);
+      delete testinho.C6;
+      delete testinho.Telhanorte;
+      delete testinho.Tumelero;
+      delete testinho.Obraja;
+      delete testinho.Klabin;
+      delete testinho.Locaweb;
+      delete testinho.Mitsubishi;
+      delete testinho.Suzuki;
+      // console.log(returnedTarget)
+      // console.log("ALEEEEEEEEEEEEFEEE") 
+    } 
+
+    if(acessUser == "Admin") { 
+      c6 = {C6: {
+        component: AdminBro.bundle('./c6Bank'),
+      }};
+      telhanorte = {Telhanorte: {
+        component: AdminBro.bundle('./homepage'),
+      }};
+      tumelero = {Tumelero: {
+        component: AdminBro.bundle('./tumelero'),
+      }};
+      obraja = {Obraja: {
+        component: AdminBro.bundle('./obraja'),
+      }};
+      klabin = {Klabin: {
+        component: AdminBro.bundle('./klabin'),
+      }};
+      locaweb = {Locaweb: {
+        component: AdminBro.bundle('./locaweb'),
+      }};
+      mitisubish = {Mitsubishi: {
+        component: AdminBro.bundle('./mitsubishi'),
+      }};
+      suhai = {Suhai: {
+        component: AdminBro.bundle('./suhai'),
+      }};
+      Suzuki = {Suzuki: {
+        component: AdminBro.bundle('./suzuki'),
+      }};
+      const returnedTarget = Object.assign(paginas, c6, telhanorte, tumelero, obraja, klabin, locaweb, mitisubish, suhai, Suzuki)
+      let testinho = adminBro.options.pages
+      delete testinho.suhaiFlashReport;
+      delete testinho.suhaiReport24horas;
+      delete testinho.suhaiReport7dias;
+    } 
+
+    if(acessUser == "C-Level") { 
+      c6 = {C6: {
+        component: AdminBro.bundle('./c6Bank'),
+      }};
+      telhanorte = {Telhanorte: {
+        component: AdminBro.bundle('./homepage'),
+      }};
+      tumelero = {Tumelero: {
+        component: AdminBro.bundle('./tumelero'),
+      }};
+      obraja = {Obraja: {
+        component: AdminBro.bundle('./obraja'),
+      }};
+      klabin = {Klabin: {
+        component: AdminBro.bundle('./klabin'),
+      }};
+      locaweb = {Locaweb: {
+        component: AdminBro.bundle('./locaweb'),
+      }};
+      mitisubish = {Mitsubishi: {
+        component: AdminBro.bundle('./mitsubishi'),
+      }};
+      suhai = {Suhai: {
+        component: AdminBro.bundle('./suhai'),
+      }};
+      Suzuki = {Suzuki: {
+        component: AdminBro.bundle('./suzuki'),
+      }};
+      const returnedTarget = Object.assign(paginas, c6, telhanorte, tumelero, obraja, klabin, locaweb, mitisubish, suhai, Suzuki)
+      let testinho = adminBro.options.pages
+      delete testinho.suhaiFlashReport;
+      delete testinho.suhaiReport24horas;
+      delete testinho.suhaiReport7dias;
+    } 
+
+    if(acessUser == "Head") { 
+      c6 = {C6: {
+        component: AdminBro.bundle('./c6Bank'),
+      }};
+      telhanorte = {Telhanorte: {
+        component: AdminBro.bundle('./homepage'),
+      }};
+      tumelero = {Tumelero: {
+        component: AdminBro.bundle('./tumelero'),
+      }};
+      obraja = {Obraja: {
+        component: AdminBro.bundle('./obraja'),
+      }};
+      klabin = {Klabin: {
+        component: AdminBro.bundle('./klabin'),
+      }};
+      locaweb = {Locaweb: {
+        component: AdminBro.bundle('./locaweb'),
+      }}; 
+      const returnedTarget = Object.assign(paginas, c6, telhanorte, tumelero, obraja, klabin, locaweb)
+      let testinho = adminBro.options.pages
+      delete testinho.Mitisubish;
+      delete testinho.Suhai;
+      delete testinho.Suzuki;
+      delete testinho.suhaiFlashReport;
+      delete testinho.suhaiReport24horas;
+      delete testinho.suhaiReport7dias;
+    }
+
+    if(acessUser == "Operacional") { 
+      c6 = {C6: {
+        component: AdminBro.bundle('./c6Bank'),
+      }};
+      telhanorte = {Telhanorte: {
+        component: AdminBro.bundle('./homepage'),
+      }};
+      tumelero = {Tumelero: {
+        component: AdminBro.bundle('./tumelero'),
+      }};
+      const returnedTarget = Object.assign(paginas, c6, telhanorte, tumelero)
+      let testinho = adminBro.options.pages
+      delete testinho.Obraja;
+      delete testinho.Klabin;
+      delete testinho.Locaweb;
+      delete testinho.Suhai;
+      delete testinho.Mitsubishi;
+      delete testinho.Suzuki;
+      delete testinho.suhaiFlashReport;
+      delete testinho.suhaiReport24horas;
+      delete testinho.suhaiReport7dias;
+    }
     if (user) {
       const matched = await user.senha
       if (matched) {
