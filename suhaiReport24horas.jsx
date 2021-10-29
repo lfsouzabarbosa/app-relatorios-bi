@@ -52,7 +52,7 @@ class Dashboard extends Component {
                             src="https://image.flaticon.com/icons/png/512/5502/5502145.png"></img></Box>
                         <Box padding="10px" paddingRight="62px">
                             <Link href="./suhaiFlashReport">
-                                <Text color="black" fontSize="h4">Último mês</Text></Link>
+                            <Text color="black" fontSize="h4">Total Investido</Text></Link>
                         </Box>
                     </Box>
                 </Box>

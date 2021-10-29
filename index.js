@@ -171,6 +171,7 @@ const adminBro = new AdminBro({
 })
 
 let paginas = adminBro.options.pages;
+let dashboard = adminBro.options.dashboard;
 
 // const router = AdminBroExpress.buildRouter(adminBro)
 
@@ -183,6 +184,9 @@ const router = AdminBroExpressjs.buildAuthenticatedRouter(adminBro, {
     console.log(`${acessUser} : "Varivel de fora"`)
 
     if(acessUser == "Suhai") { 
+      let dash = adminBro.options.dashboard
+
+      delete dash.component
       suhai = {Suhai: {
         component: AdminBro.bundle('./suhai'),
       }};
@@ -195,9 +199,13 @@ const router = AdminBroExpressjs.buildAuthenticatedRouter(adminBro, {
       suhaiReport24horas = {suhaiReport24horas: {
         component: AdminBro.bundle('./suhaiReport24horas'),
       }};
-      const returnedTarget = Object.assign(paginas, suhai, suhaiFlashReport, suhaiReport7dias, suhaiReport24horas)
+      dashsuhai = {suhaiFlashReport: {
+        component: AdminBro.bundle('./suhaidaily'),
+      }};
+      const returnedTarget = Object.assign(paginas, suhai, suhaiFlashReport, suhaiReport7dias, suhaiReport24horas, dashsuhai)
+      const returnedTarget2 = Object.assign(dashboard, dashsuhai)
       let testinho = adminBro.options.pages
-      console.log(testinho);
+      
       delete testinho.C6;
       delete testinho.Telhanorte;
       delete testinho.Tumelero;
