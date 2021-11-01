@@ -317,48 +317,57 @@ const Dashboard = () => {
             </Box>
         </Box>
 
-        <Box backgroundColor="#ffffff" boxShadow="cardHover" borderRadius="7px" display={["block", "flex"]} flexDirection="column" justifyContent="space-evenly" marginX="3%" minWidth="90%" minHeight="30%">
+        <Box backgroundColor="#ffffff" boxShadow="cardHover" borderRadius="7px" display={["block", "flex"]} flexDirection="column" justifyContent="space-evenly" marginY="3%" marginX="3%" minWidth="30%" minHeight="5%" maxHeight="20%">
+            <Box backgroundColor="#1C1C1C" borderRadius="7px" minWidth="80%" marginX="2%" justifyContent="space-evenly" marginTop="-1%">
+                <Text paddingY="20px" paddingX="20px" fontSize="h1" color="white" fontWeight="4px">Mídia</Text>
+            </Box>
+               <Box display={["block"]} flexDirection="column" justifyContent="center" paddingBottom="3%" >
+                    <ResponsiveContainer width="100%" height="80%" aspect={3, 3}>
+                        <PieChart width={413} height={200}>
+                        <Pie
+                            activeIndex={activeIndex}
+                            activeShape={renderActiveShape}
+                            data={crono}
+                            cx="50%"
+                            cy="50%"
+                            innerRadius={60}
+                            outerRadius={80}
+                            fill="#1C1C1C"
+                            dataKey="total"
+                            onMouseEnter={onPieEnter}
+                        />
+                        </PieChart>
+                    </ResponsiveContainer>
+                </Box>
+        </Box>
+
+
+        <Box backgroundColor="#ffffff" boxShadow="cardHover" borderRadius="7px" display={["block", "flex"]} flexDirection="column" justifyContent="space-evenly" marginX="3%" minWidth="90%" minHeight="5%" maxHeight="25%">
             <Box backgroundColor="#1C1C1C" borderRadius="7px" minWidth="80%" marginX="2%" justifyContent="space-evenly" marginTop="-1%">
                 <Text paddingY="20px" paddingX="20px" fontSize="h1" color="white" fontWeight="4px">Google Trends</Text>
             </Box>
-               <Box display={["block", "flex"]} flexDirection="row" justifyContent="space-evenly" >
-                        <ResponsiveContainer width="100%" height="70%" aspect={3}>
-                            <PieChart width={30} height={500}>
-                            <Pie
-                                activeIndex={activeIndex}
-                                activeShape={renderActiveShape}
-                                data={crono}
-                                cx="50%"
-                                cy="50%"
-                                innerRadius={60}
-                                outerRadius={80}
-                                fill="#1C1C1C"
-                                dataKey="total"
-                                onMouseEnter={onPieEnter}
-                            />
-                            </PieChart>
-                        </ResponsiveContainer>
-                </Box>
-                <Box display={["block", "flex"]} flexDirection="row" justifyContent="space-evenly">
-                    <ResponsiveContainer width="100%" height="100%">
-                        <AreaChart
-                        width={500}
-                        height={300}
-                        data={Trds}
-                        margin={{
-                            top: 10,
-                            right: 30,
-                            left: 0,
-                            bottom: 0,
-                        }}
-                        >
-                        <CartesianGrid strokeDasharray="3 3" />
-                        <XAxis dataKey="data" />
-                        <YAxis />
-                        <Tooltip />
-                        <Area type="monotone" dataKey="interesse" stroke="#1C1C1C" fill="#1C1C1C" />
-                        </AreaChart>
-                    </ResponsiveContainer></Box>
+            <Box paddingY="3%" paddingX="2%">
+                <Text textAlign="center" paddingBottom="1%" fontSize="h3" fontWeight="3px" >Interesse</Text>
+               <ResponsiveContainer width="100%" height="90%" aspect={3, 3}>
+                    <AreaChart
+                    width={500}
+                    height={400}
+                    data={Trds}
+                    margin={{
+                        top: 10,
+                        right: 30,
+                        left: 0,
+                        bottom: 0,
+                    }}
+                    >
+                    <CartesianGrid strokeDasharray="3 3" />
+                    <XAxis dataKey="data" />
+                    <YAxis />
+                    <Tooltip />
+                    <Brush />
+                    <Area type="monotone" dataKey="interesse" stroke="#1C1C1C" fill="#1C1C1C" />
+                    </AreaChart>
+                </ResponsiveContainer></Box>
 
                 <Box display="flex" justifyContent="center"  marginTop="2%" verticalAlign="center">
                         <Botao >
@@ -371,7 +380,7 @@ const Dashboard = () => {
 
             
             <Box display={["block", "flex"]} padding="10px" flexDirection="row" margin="10px" justifyContent="center">
-                <Box minWidth="45%" marginY="4%" marginX="30px" boxShadow="card" borderRadius="5px" backgroundColor="#ffffff" padding="20px" display={["block", "flex"]} >
+                <Box minWidth="45%" marginTop="5%" marginBottom="4%" marginX="30px" boxShadow="card" borderRadius="5px" backgroundColor="#ffffff" padding="20px" display={["block", "flex"]} >
                     <Table>
                         <Topo minHeight="70px">
                             <Text paddingTop="2%" fontSize="h2">Pesquisas relacionadas</Text>
@@ -423,7 +432,9 @@ const Dashboard = () => {
                     </Table>
                 </Box>
 
-                <Box minWidth="45%" marginY="4%" marginX="30px" boxShadow="card" borderRadius="5px" backgroundColor="#ffffff" padding="20px" display={["block", "flex"]} >
+                <br></br>
+
+                <Box minWidth="45%" marginTop="5%" marginBottom="4%" marginX="30px" boxShadow="card" borderRadius="5px" backgroundColor="#ffffff" padding="20px" display={["block", "flex"]} >
                     <Table>
                         <Topo>
                             <Text paddingTop="2%" paddingBottom="1%" fontSize="h2">Assuntos relacionados</Text>
