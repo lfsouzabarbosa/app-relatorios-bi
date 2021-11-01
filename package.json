@@ -30,6 +30,7 @@
     "express": "^4.17.1",
     "express-formidable": "^1.2.0",
     "express-session": "^1.17.2",
+    "google-news-json": "^2.0.4",
     "google-spreadsheet": "^3.1.15",
     "google-trends-api": "^3.0.2",
     "js-tabs": "^1.0.1",

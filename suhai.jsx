@@ -267,7 +267,7 @@ const Dashboard = () => {
 
                 <Box display="flex" justifyContent="center" verticalAlign="center">
                     <Botao >
-                            <StyledLink href="./suhaiFlashReport">
+                            <StyledLink href="http://vps23593.publiccloud.com.br:3007/">
                                 <Text textAlign="center" fontSize="h2" fontWeight="900">Mais Detalhes</Text>
                             </StyledLink>
                     </Botao>

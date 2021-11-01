@@ -42,8 +42,18 @@ const Usuario = mongoose.model('Usuario', {
   acesso: { type: String, enum: ['Admin', 'C-Level', 'Cliente', 'Head', 'Operacional', 'Suhai'], required: true },
 })
 
+const Topics = mongoose.model('Topicos Web', {
+  titulo: { type: String, required: true },
+  tipo: { type: String, required: true },
+  codigo: { type: String, required: true },
+  termo: { type: String, required: true },
+  interesse: { type: String, required: true }, 
+})
+ 
 // const podeEditarClientes = ({ currentAdmin }) => currentAdmin.acesso === 'Head' || currentAdmin.acesso === 'C-Level'
 const podeEditarUsuarios = ({ currentAdmin }) => currentAdmin && currentAdmin.acesso === 'Admin'
+const GrupoSuhai = ({ currentAdmin }) => currentAdmin && currentAdmin.acesso === 'Suhai'
+const codigo = ({ currentAdmin }) => currentAdmin && currentAdmin.acesso === 'Dev'
 // const clevel = ({ currentAdmin }) => currentAdmin && currentAdmin.acesso === 'C-Level'
 // const operacional = ({ currentAdmin }) => currentAdmin.acesso === 'Operacional'
 
@@ -60,7 +70,10 @@ const adminBro = new AdminBro({
             isVisible: {
               list: false, edit: true, filter: false, show: false, new: true,
             },
-          }
+          },
+          _id: {
+            isVisible: { list: false, filter: false, show: false, edit: false },
+          },
         },
         actions: {
           edit: { isAccessible: podeEditarUsuarios },
@@ -68,6 +81,24 @@ const adminBro = new AdminBro({
           new: { isAccessible: podeEditarUsuarios },
           show: { isAccessible: podeEditarUsuarios },
           list: { isAccessible: podeEditarUsuarios },
+        }
+      }
+    },
+    {
+      resource: Topics,
+      options: {
+        parent: 'Configurações',
+        properties: {
+          _id: {
+						isVisible: { list: false, filter: false, show: false, edit: false },
+					},
+        },
+        actions: {
+          edit: { isAccessible: codigo },
+          delete: { isAccessible: codigo },
+          new: { isAccessible: codigo },
+          show: { isAccessible: GrupoSuhai },
+          list: { isAccessible: GrupoSuhai },
         }
       }
     },
@@ -91,7 +122,7 @@ const adminBro = new AdminBro({
         show: 'Mostrar',
         delete: 'Deletar',
         bulkDelete: 'Deletar tudo',
-        list: 'Listagem',
+        list: '',
       },
       buttons: {
         save: 'Salvar',
