@@ -1,13 +1,13 @@
+import React, { useCallback, useState } from "react";
 import { ApiClient } from 'admin-bro'
 import { Box } from '@admin-bro/design-system'
 import { Text } from '@admin-bro/design-system'
 import { Button } from '@admin-bro/design-system'
 import { Link } from '@admin-bro/design-system'
 import {
-    Brush,
-    AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer 
+    PieChart, Pie, Sector, ResponsiveContainer, AreaChart, Area, XAxis, YAxis, CartesianGrid, Brush, Tooltip
 } from 'recharts';
-import { LogoFacebook32 } from '@carbon/icons-react'
+import { LogoFacebook32, UserFollow32, FavoriteFilled32, SendAltFilled32, LogoInstagram32 } from '@carbon/icons-react'
 import styled from 'styled-components'
 import {
     Table,
@@ -19,8 +19,8 @@ import {
 } from '@admin-bro/design-system'
 
 const Topo = styled(TableCaption)`
-background: #1E90FF;
-border: 2px solid #1E90FF;
+background: #1C1C1C;
+border: 2px solid #1C1C1C;
 border-radius: 3px;
 height: 60px;
 color: black;
@@ -28,26 +28,26 @@ color: black;
 
 const Botao = styled.button`
 background: white;
-color: #1E90FF;
+color: #1C1C1CF;
 
 &:hover {
-    background: #1E90FF;
+    background: #1C1C1C;
     color: white;
-    border: 2px solid #1E90FF;
+    border: 2px solid #1C1C1C;
 };
 
 align: center;
 max-width: 50%;
 font-size: 1em;
-margin: 1em;
+margin-bottom: 1em;
 padding: 1em;
-border: 2px solid #1E90FF;
+border: 2px solid #1C1C1C;
 border-radius: 3px;
 `;
 
 const StyledLink = styled(Link)`
 text-decoration: none;
-color: #1E90FF;
+color: #1C1C1C;
 
 &:hover {
    text-decoration:none;
@@ -128,10 +128,106 @@ const Trds = [
     {interesse: 14, data:"16/10"},
     {interesse: 40, data:"17/10"},
 ];
+
+const crono = [
+    {nome: 'TV Aberta', total: 1723691.74 , tempo:'27/06 a 11/07'},
+    {nome: 'Pay TV', total: 256116.80, tempo: '18/07 a 03/10' },
+    {nome: 'OOH', total: 838278.29, tempo: '04/07 a 26/09' },
+    {nome: 'Digital', total: 1193197.32, tempo: '27/07 a 10/10'}
+];
+
+const renderActiveShape = (props) => {
+    const RADIAN = Math.PI / 180;
+    const {
+      cx,
+      cy,
+      midAngle,
+      innerRadius,
+      outerRadius,
+      startAngle,
+      endAngle,
+      fill,
+      payload,
+      percent,
+      value
+    } = props;
+    const sin = Math.sin(-RADIAN * midAngle);
+    const cos = Math.cos(-RADIAN * midAngle);
+    const sx = cx + (outerRadius + 10) * cos;
+    const sy = cy + (outerRadius + 10) * sin;
+    const mx = cx + (outerRadius + 30) * cos;
+    const my = cy + (outerRadius + 30) * sin;
+    const ex = mx + (cos >= 0 ? 1 : -1) * 22;
+    const ey = my;
+    const textAnchor = cos >= 0 ? "start" : "end";
   
+    return (
+      <g>
+        <text x={cx} y={cy} dy={10} textAnchor="middle" fill={fill}>
+          {payload.nome}
+        </text>
+        <Sector
+          cx={cx}
+          cy={cy}
+          innerRadius={innerRadius}
+          outerRadius={outerRadius}
+          startAngle={startAngle}
+          endAngle={endAngle}
+          fill={fill}
+        />
+        <Sector
+          cx={cx}
+          cy={cy}
+          startAngle={startAngle}
+          endAngle={endAngle}
+          innerRadius={outerRadius + 6}
+          outerRadius={outerRadius + 10}
+          fill={fill}
+        />
+        <path
+          d={`M${sx},${sy}L${mx},${my}L${ex},${ey}`}
+          stroke={fill}
+          fill="none"
+        />
+        <circle cx={ex} cy={ey} r={3} fill={fill} stroke="none" />
+        <text
+          x={ex + (cos >= 0 ? 1 : -1) * 12}
+          y={ey}
+          textAnchor={textAnchor}
+          fill="#333"
+        >Total: {`${payload.total}`}</text>
+        <text
+          x={ex + (cos >= 0 ? 1 : -1) * 12}
+          y={ey}
+          dy={18}
+          textAnchor={textAnchor}
+          fill="#333"
+        >{`${payload.tempo}`}</text>
+        <text
+          x={ex + (cos >= 0 ? 1 : -1) * 12}
+          y={ey}
+          dy={34}
+          textAnchor={textAnchor}
+          fill="#999"
+        >
+          {`(Rate ${(percent * 100).toFixed(2)}%)`}
+        </text>
+      </g>
+    );
+};
+
 const api = new ApiClient()
 
 const Dashboard = () => {
+
+    
+    const [activeIndex, setActiveIndex] = useState(0);
+    const onPieEnter = useCallback(
+        (_, index) => {
+        setActiveIndex(index);
+        },
+        [setActiveIndex]
+    );
 
     return (
 
@@ -146,80 +242,70 @@ const Dashboard = () => {
         <Box display={["block", "flex"]} flexDirection="column" justifyContent="center">
             <Box padding="20px" alignItems="center" margin="10px" display={["flex"]} flexDirection="column" justifyContent="center" minHeight="650px">
                 <Box backgroundColor="#ffffff" boxShadow="card" borderRadius="5px" padding="10px" alignItems="center" justifyContent="start" maxHeight="100px" minWidth="100%" display={["inline-flex"]}>
-                      <Box ><img width="50px" height="50px"
-                        src="https://image.flaticon.com/icons/png/512/747/747543.png"></img>
-                      </Box>
+                      <Text paddingY="5px" paddingX="5px" fontSize="h1" fontWeight="4px">Facebook</Text>
                 </Box>
-                <Box display={["block", "flex"]} padding="10px" flexDirection="row" margin="10px" alignItems="center" minHeight="200px">
-                  <Box display={["block", "flex"]} padding="10px" flexDirection="row" margin="10px" alignItems="center" minHeight="200px">
-                        <Box backgroundColor="#ffffff" justifyContent="center" boxShadow="cardHover" borderRadius="7px" padding="15px" display={["block", "flex"]} marginX="10px" marginY="35px" alignItems="center" maxHeight="200px">
-                            <Box backgroundColor="#05ff7a" borderRadius="7px" marginTop="-30%" padding="15px"  paddingTop="17px">
-                                <img width="35px" height="35px" src="https://image.flaticon.com/icons/png/512/2097/2097681.png" alt="Icone Fãs"
-                                alt="Fãs"></img>
-                            </Box>
-                            <Box paddingY="10px" paddingLeft="10px" paddingRight="30px">
-                                <Text paddingY="5px" fontSize="h4" fontWeight="3px">Fãs</Text>
-                                <Text fontSize="h2" fontWeight="900">76.160</Text>
-                            </Box>
+                <Box backgroundColor="#ffffff" boxShadow="cardHover" borderRadius="7px" display={["block", "flex"]} flexDirection="row" justifyContent="space-evenly" marginY="5%" minWidth="100%" minHeight="100px">
+                    <Box justifyContent="center" padding="15px" display={["block", "flex"]} marginY="7px" alignItems="center" maxHeight="200px">
+                        <Box backgroundColor="#1C1C1C" borderRadius="7px" padding="10px">
+                            <UserFollow32 color="white" aria-label="Add" />
                         </Box>
-                        <Box backgroundColor="#ffffff" boxShadow="cardHover" borderRadius="7px" padding="15px" display={["block", "flex"]} marginX="10px" marginY="50px" alignItems="center" maxHeight="200px">
-                            <Box backgroundColor="#05ff7a" borderRadius="7px" marginTop="-30%" padding="15px" paddingTop="18px">
-                                <img width="35px" height="35px" src="https://image.flaticon.com/icons/png/512/3388/3388668.png" alt="Icone Posts"
-                                alt="Posts"></img>
-                            </Box>
-                            <Box padding="10px" paddingRight="70px">
-                                <Text paddingY="5px" fontSize="h4" fontWeight="3px">Posts</Text>
-                                <Text fontSize="h2" fontWeight="900">5</Text>
-                            </Box>
+                        <Box paddingY="10px" paddingLeft="10px" paddingRight="30px">
+                            <Text paddingY="5px" fontSize="h4" fontWeight="3px">Fãs</Text>
+                            <Text fontSize="h2" fontWeight="900">76.160</Text>
                         </Box>
-                        <Box backgroundColor="#ffffff" boxShadow="cardHover" borderRadius="7px" padding="15px" display={["block", "flex"]} marginX="10px" marginY="35px" alignItems="center" maxHeight="200px">
-                            <Box backgroundColor="#05ff7a" borderRadius="7px" marginTop="-30%" padding="15px" paddingTop="17px">
-                                <img width="35px" height="35px" src="https://image.flaticon.com/icons/png/512/32/32557.png" alt="Icone Interações"
-                                alt="Alcance"></img>
+                    </Box>
+                    <Box justifyContent="center" padding="15px" display={["block", "flex"]} marginY="7px" alignItems="center" maxHeight="200px">
+                        <Box backgroundColor="#1C1C1C" borderRadius="7px" padding="10px">
+                            <SendAltFilled32 aria-label="Add" color="white"/>
+                        </Box>
+                        <Box padding="10px">
+                            <Text paddingY="5px" fontSize="h4" fontWeight="3px">Posts</Text>
+                            <Text fontSize="h2" fontWeight="900">5</Text>
+                        </Box>
+                    </Box>
+                    <Box justifyContent="center" padding="15px" display={["block", "flex"]} marginY="7px" alignItems="center" maxHeight="200px">
+                            <Box backgroundColor="#1C1C1C" borderRadius="7px" padding="10px">
+                                <FavoriteFilled32 aria-label="Add" color="white" />
                             </Box>
-                            <Box paddingY="10px" paddingLeft="10px" paddingRight="35px">
+                            <Box paddingY="10px" paddingLeft="10px">
                                 <Text paddingY="5px" fontSize="h4" fontWeight="3px">Interações</Text>
                                 <Text fontSize="h2" fontWeight="900">938</Text>
                             </Box>
                         </Box>
-                  </Box>
                 </Box>
 
                     <Box backgroundColor="#ffffff" boxShadow="card" borderRadius="5px" padding="10px" alignItems="center" justifyContent="start" maxHeight="100px" minWidth="100%" display={["inline-flex"]}>
-                            <Box ><img width="50px" height="50px"
-                            src="https://image.flaticon.com/icons/png/512/733/733558.png"></img></Box>
+                        <Text paddingY="5px" paddingX="5px" fontSize="h1" fontWeight="4px">Instagram</Text>
                     </Box>
-                    <Box display={["block", "flex"]} padding="10px" flexDirection="row" margin="10px" alignItems="center" minHeight="200px">
-                            <Box backgroundColor="#ffffff" justifyContent="center" boxShadow="cardHover" borderRadius="7px" padding="15px" display={["block", "flex"]} marginX="10px" marginY="35px" alignItems="center" maxHeight="200px">
-                                <Box backgroundColor="#FF1493" borderRadius="7px" marginTop="-30%" padding="15px"  paddingTop="17px">
-                                        <img width="35px" height="35px" src="https://image.flaticon.com/icons/png/512/2097/2097681.png" alt="Icone Fãs"
-                                        alt="Fãs"></img>
-                                    </Box>
-                                    <Box padding="10px">
-                                        <Text paddingY="5px" fontSize="h4" fontWeight="3px">Seguidores</Text>
-                                        <Text fontSize="h2" fontWeight="900">418.238</Text>
-                                </Box>
+                    <Box backgroundColor="#ffffff" boxShadow="cardHover" borderRadius="7px" display={["block", "flex"]} flexDirection="row" justifyContent="space-evenly" marginY="5%" minWidth="100%" minHeight="100px">
+                        <Box justifyContent="center" padding="15px" display={["block", "flex"]} marginY="7px" alignItems="center" maxHeight="200px">
+                            <Box backgroundColor="#1C1C1C" borderRadius="7px" padding="10px">
+                                <UserFollow32 color="white" aria-label="Add" />
                             </Box>
-                            <Box backgroundColor="#ffffff" boxShadow="cardHover" borderRadius="7px" padding="15px" display={["block", "flex"]} marginX="10px" marginY="50px" alignItems="center" maxHeight="200px">
-                                <Box backgroundColor="#FF1493" borderRadius="7px" marginTop="-30%" padding="15px" paddingTop="18px">
-                                    <img width="35px" height="35px" src="https://image.flaticon.com/icons/png/512/3388/3388668.png" alt="Icone Posts"
-                                    alt="Posts"></img>
-                                </Box>
-                                <Box padding="10px" paddingRight="50px">
-                                    <Text paddingY="5px" fontSize="h4" fontWeight="3px">Posts</Text>
-                                    <Text fontSize="h2" fontWeight="900">4</Text>
-                                </Box>
+                            <Box padding="10px">
+                                <Text paddingY="5px" fontSize="h4" fontWeight="3px">Seguidores</Text>
+                                <Text fontSize="h2" fontWeight="900">418.238</Text>
                             </Box>
-                            <Box backgroundColor="#ffffff" boxShadow="cardHover" borderRadius="7px" padding="15px" display={["block", "flex"]} marginX="10px" marginY="35px" alignItems="center" maxHeight="200px">
-                                <Box backgroundColor="#FF1493" borderRadius="7px" marginTop="-30%" padding="15px" paddingTop="17px">
-                                    <img width="35px" height="35px" src="https://image.flaticon.com/icons/png/512/32/32557.png" alt="Icone Interações"
-                                    alt="Alcance"></img>
-                                </Box>
-                                <Box paddingY="10px" paddingLeft="10px" paddingRight="35px">
-                                    <Text paddingY="5px" fontSize="h4" fontWeight="3px">Interações</Text>
-                                    <Text fontSize="h2" fontWeight="900">39.680</Text>
-                                </Box>
-                            </Box>   
+                        </Box>
+                        <Box justifyContent="center" padding="15px" display={["block", "flex"]} marginY="7px" alignItems="center" maxHeight="200px">
+                            <Box backgroundColor="#1C1C1C" borderRadius="7px" padding="10px">
+                                <SendAltFilled32 aria-label="Add" color="white"/>
+                            </Box>
+                            <Box padding="10px">
+                                <Text paddingY="5px" fontSize="h4" fontWeight="3px">Posts</Text>
+                                <Text fontSize="h2" fontWeight="900">4</Text>
+                            </Box>
+                        </Box>
+                        <Box justifyContent="center" padding="15px" display={["block", "flex"]} marginY="7px" alignItems="center" maxHeight="200px">
+                        <Box backgroundColor="#1C1C1C" borderRadius="7px" padding="10px">
+                                <FavoriteFilled32 aria-label="Add" color="white" />
+                            </Box>
+                            <Box paddingY="10px" paddingLeft="10px">
+                                <Text paddingY="5px" fontSize="h4" fontWeight="3px">Interações</Text>
+                                <Text fontSize="h2" fontWeight="900">39.680</Text>
+                            </Box>
+                        </Box>   
+
                     </Box> 
 
                     <Botao>
@@ -231,57 +317,66 @@ const Dashboard = () => {
             </Box>
         </Box>
 
-            <Box display="flex" flexDirection="row" alignItems="center" maxHeight="20px" padding="3em" >
-                <Box>
-                    <img width="10px" height="10px" src="https://image.flaticon.com/icons/png/512/32/32738.png"></img>
-                </Box>
-                <Box paddingLeft="10px">
-                    <Text color="black" fontSize="h3">GOOGLE TRENDS</Text>
-                </Box>
+        <Box backgroundColor="#ffffff" boxShadow="cardHover" borderRadius="7px" display={["block", "flex"]} flexDirection="column" justifyContent="space-evenly" marginX="3%" minWidth="90%" minHeight="30%">
+            <Box backgroundColor="#1C1C1C" borderRadius="7px" minWidth="80%" marginX="2%" justifyContent="space-evenly" marginTop="-1%">
+                <Text paddingY="20px" paddingX="20px" fontSize="h1" color="white" fontWeight="4px">Google Trends</Text>
             </Box>
-            
-            <Box borderRadius="5px" boxShadow="card" backgroundColor="#ffffff" margin="30px" padding="20px" display={["block", "flex"]} flexDirection="column" justifyContent="center">
-                <div style={{ width: '100%' }}>
-                    <Text marginY="1%" textAlign="center" fontSize="h2" fontWeight="300" color="black">Interesse</Text>
-                    <ResponsiveContainer width="100%" height={300}>
+               <Box display={["block", "flex"]} flexDirection="row" justifyContent="space-evenly" >
+                        <ResponsiveContainer width="100%" height="70%" aspect={3}>
+                            <PieChart width={30} height={500}>
+                            <Pie
+                                activeIndex={activeIndex}
+                                activeShape={renderActiveShape}
+                                data={crono}
+                                cx="50%"
+                                cy="50%"
+                                innerRadius={60}
+                                outerRadius={80}
+                                fill="#1C1C1C"
+                                dataKey="total"
+                                onMouseEnter={onPieEnter}
+                            />
+                            </PieChart>
+                        </ResponsiveContainer>
+                </Box>
+                <Box display={["block", "flex"]} flexDirection="row" justifyContent="space-evenly">
+                    <ResponsiveContainer width="100%" height="100%">
                         <AreaChart
-                            width={500}
-                            height={300}
-                            data={Trds}
-                            syncId="anyId"
-                            margin={{
+                        width={500}
+                        height={300}
+                        data={Trds}
+                        margin={{
                             top: 10,
                             right: 30,
                             left: 0,
                             bottom: 0,
-                            }}>
-                            <CartesianGrid strokeDasharray="3 3" />
-                            <XAxis dataKey="data" />
-                            <YAxis />
-                            <Tooltip />
-                            <Brush />
-                            <Area type="monotone" dataKey="interesse" stroke="#1E90FF" fill="#1E90FF" />
+                        }}
+                        >
+                        <CartesianGrid strokeDasharray="3 3" />
+                        <XAxis dataKey="data" />
+                        <YAxis />
+                        <Tooltip />
+                        <Area type="monotone" dataKey="interesse" stroke="#1C1C1C" fill="#1C1C1C" />
                         </AreaChart>
-                    </ResponsiveContainer>
-                 </div>
+                    </ResponsiveContainer></Box>
 
-                <Box display="flex" justifyContent="center" verticalAlign="center">
-                    <Botao >
-                            <StyledLink href="http://vps23593.publiccloud.com.br:3007/">
-                                <Text textAlign="center" fontSize="h2" fontWeight="900">Mais Detalhes</Text>
-                            </StyledLink>
-                    </Botao>
+                <Box display="flex" justifyContent="center"  marginTop="2%" verticalAlign="center">
+                        <Botao >
+                                <StyledLink href="./suhaiFlashReport">
+                                    <Text textAlign="center" fontSize="h2" fontWeight="900">Mais Detalhes</Text>
+                                </StyledLink>
+                        </Botao>
                 </Box>
-            </Box>
+        </Box>
 
             
             <Box display={["block", "flex"]} padding="10px" flexDirection="row" margin="10px" justifyContent="center">
-                <Box minWidth="45%" marginY="2%" marginX="30px" boxShadow="card" borderRadius="5px" backgroundColor="#ffffff" padding="20px" display={["block", "flex"]} >
+                <Box minWidth="45%" marginY="4%" marginX="30px" boxShadow="card" borderRadius="5px" backgroundColor="#ffffff" padding="20px" display={["block", "flex"]} >
                     <Table>
-                        <Topo>
+                        <Topo minHeight="70px">
                             <Text paddingTop="2%" fontSize="h2">Pesquisas relacionadas</Text>
                         </Topo>
-                        <TableRow><TableCell> </TableCell></TableRow>
+                        <TableRow><TableCell> </TableCell> <TableCell> </TableCell></TableRow>
                         <TableBody>
                             <TableRow>
                                 <TableCell>1</TableCell>
@@ -328,12 +423,12 @@ const Dashboard = () => {
                     </Table>
                 </Box>
 
-                <Box minWidth="45%" marginTop="20px" marginBottom="30px" marginX="30px" boxShadow="card" borderRadius="5px" backgroundColor="#ffffff" padding="20px" display={["block", "flex"]} >
+                <Box minWidth="45%" marginY="4%" marginX="30px" boxShadow="card" borderRadius="5px" backgroundColor="#ffffff" padding="20px" display={["block", "flex"]} >
                     <Table>
                         <Topo>
-                            <Text paddingTop="2%" fontSize="h2">Assuntos relacionados</Text>
+                            <Text paddingTop="2%" paddingBottom="1%" fontSize="h2">Assuntos relacionados</Text>
                         </Topo>
-                        <TableRow><TableCell> </TableCell></TableRow>
+                        <TableRow><TableCell> </TableCell><TableCell> </TableCell></TableRow>
                         <TableBody>
                             <TableRow>
                                 <TableCell>1</TableCell>
