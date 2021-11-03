@@ -277,12 +277,12 @@ const Dashboard = () => {
 
             <div>
                 <Box display={["block", "flex"]} flexDirection="row" flexWrap="wrap" justifyContent="center">
-                    <Box backgroundColor="#ffffff" boxShadow="cardHover" borderRadius="7px" display={["block", "flex"]} marginTop="10px" marginY="2%" marginBottom="2%" flexDirection="column" paddingX="20px" justifyContent="space-evenly">
+                    <Box backgroundColor="#ffffff" minWidth="45%" marginX="2%" boxShadow="cardHover" borderRadius="7px" display={["block", "flex"]} minHeight="10%" maxHeight="30%" marginTop="10px" marginY="2%" marginBottom="2%" flexDirection="column" paddingX="20px" justifyContent="space-evenly">
                         <Box backgroundColor="#1C1C1C" borderRadius="7px" minWidth="80%" marginX="2%" marginBottom="5%" justifyContent="space-evenly" marginTop="-3%">
                             <Text textAlign="center" paddingY="15px" paddingX="8px" fontSize="h1" color="white" fontWeight="4px">Facebook</Text>
                         </Box>
                         <Box>
-                            <Box display={["block", "flex"]} flexDirection="column" justifyContent="center" marginY="1%" minWidth="100%" minHeight="100px">
+                            <Box display={["block", "flex"]} flexDirection="column" justifyContent="center" marginY="1%" minWidth="45%" minHeight="100px">
                                 <Box justifyContent="left" padding="15px" display={["block", "flex"]} marginY="7px" alignItems="center" maxHeight="200px">
                                     <Box paddingX="15px" paddingY="10px" backgroundColor="#1C1C1C" borderRadius="7px">
                                         <UserFollow32 color="white" aria-label="Add" />
@@ -314,7 +314,42 @@ const Dashboard = () => {
                         </Box>
                     </Box>
                     <br></br>
-                    <Box backgroundColor="#ffffff" boxShadow="cardHover" borderRadius="7px" display={["block", "flex"]} marginY="2%" marginX="1%" flexDirection="column" paddingX="5px" justifyContent="center" minWidth="67%" minHeight="50%">
+                    <Box backgroundColor="#ffffff" minWidth="46%" marginX="2%" boxShadow="cardHover" borderRadius="7px" display={["block", "flex"]} minHeight="10%" maxHeight="30%" marginTop="10px" marginY="2%" marginBottom="2%" flexDirection="column" paddingX="20px" justifyContent="space-evenly">
+                        <Box backgroundColor="#1C1C1C" borderRadius="7px" minWidth="80%" marginX="2%" marginBottom="5%" justifyContent="space-evenly" marginTop="-3%">
+                            <Text textAlign="center" paddingY="15px" paddingX="8px" fontSize="h1" color="white" fontWeight="4px">Instagram</Text>
+                        </Box>
+                        <Box display={["block", "flex"]} flexDirection="column" justifyContent="space-evenly" marginY="1%" minWidth="90%" minHeight="15%">
+                            <Box justifyContent="left" padding="15px" display={["block", "flex"]} marginY="7px" alignItems="center" >
+                                <Box paddingX="15px" paddingY="10px" backgroundColor="#1C1C1C" borderRadius="7px">
+                                    <UserFollow32 color="white" aria-label="Add" />
+                                </Box>
+                                <Box padding="10px">
+                                    <Text fontSize="h4" fontWeight="3px">Seguidores</Text>
+                                    <Text fontSize="h2" fontWeight="900">418.238</Text>
+                                </Box>
+                            </Box>
+                            <Box justifyContent="left" padding="15px" display={["block", "flex"]} marginY="7px" alignItems="center">
+                                <Box paddingX="14px" paddingY="10px" backgroundColor="#1C1C1C" borderRadius="7px" >
+                                    <SendAltFilled32 aria-label="Add" color="white" />
+                                </Box>
+                                <Box padding="10px">
+                                    <Text fontSize="h4" fontWeight="3px">Posts</Text>
+                                    <Text fontSize="h2" fontWeight="900">4</Text>
+                                </Box>
+                            </Box>
+                            <Box justifyContent="left" padding="15px" display={["block", "flex"]} marginY="7px" alignItems="center" >
+                                <Box paddingLeft="14px" paddingRight="15px" paddingY="10px" backgroundColor="#1C1C1C" borderRadius="7px">
+                                    <FavoriteFilled32 aria-label="Add" color="white" />
+                                </Box>
+                                <Box padding="10px">
+                                    <Text fontSize="h4" fontWeight="3px">Interações</Text>
+                                    <Text fontSize="h2" fontWeight="900">39.680</Text>
+                                </Box>
+                            </Box>
+                        </Box>
+                    </Box>
+                    <br></br>
+                    <Box backgroundColor="#ffffff" boxShadow="cardHover" borderRadius="7px" display={["block", "flex"]} marginY="2%" marginX="1%" flexDirection="column" paddingX="5px" justifyContent="center" minWidth="95%" minHeight="50%">
                         <Box backgroundColor="#1C1C1C" borderRadius="7px" minWidth="80%" marginX="2%" marginBottom="3%" justifyContent="space-evenly" marginTop="-1%">
                             <Text paddingY="15px" paddingX="8px" fontSize="h1" color="white" fontWeight="4px">Mídia</Text>
                         </Box>
@@ -347,41 +382,6 @@ const Dashboard = () => {
                                     <Text textAlign="center" fontSize="h2" fontWeight="900">Flash Report</Text>
                                 </StyledLink>
                             </Botao>
-                        </Box>
-                    </Box>
-                    <br></br>
-                    <Box backgroundColor="#ffffff" boxShadow="cardHover" borderRadius="7px" minWidth="95%" display={["block"]} minHeight="10%" maxHeight="30%" marginY="3%" marginX="2%" flexDirection="column" paddingX="20px" justifyContent="center">
-                        <Box backgroundColor="#1C1C1C" borderRadius="7px" minWidth="80%" marginX="1%" justifyContent="space-evenly" marginTop="-2%">
-                            <Text textAlign="center" paddingY="13px" paddingX="8px" fontSize="h1" color="white" fontWeight="4px">Instagram</Text>
-                        </Box>
-                        <Box display={["block", "flex"]} flexDirection="row" justifyContent="space-evenly" marginY="1%" minWidth="90%" minHeight="15%">
-                            <Box justifyContent="left" padding="15px" display={["block", "flex"]} marginY="7px" alignItems="center" >
-                                <Box paddingX="15px" paddingY="10px" backgroundColor="#1C1C1C" borderRadius="7px">
-                                    <UserFollow32 color="white" aria-label="Add" />
-                                </Box>
-                                <Box padding="10px">
-                                    <Text fontSize="h4" fontWeight="3px">Seguidores</Text>
-                                    <Text fontSize="h2" fontWeight="900">418.238</Text>
-                                </Box>
-                            </Box>
-                            <Box justifyContent="left" padding="15px" display={["block", "flex"]} marginY="7px" alignItems="center">
-                                <Box paddingX="14px" paddingY="10px" backgroundColor="#1C1C1C" borderRadius="7px" >
-                                    <SendAltFilled32 aria-label="Add" color="white" />
-                                </Box>
-                                <Box padding="10px">
-                                    <Text fontSize="h4" fontWeight="3px">Posts</Text>
-                                    <Text fontSize="h2" fontWeight="900">4</Text>
-                                </Box>
-                            </Box>
-                            <Box justifyContent="left" padding="15px" display={["block", "flex"]} marginY="7px" alignItems="center" >
-                                <Box paddingLeft="14px" paddingRight="15px" paddingY="10px" backgroundColor="#1C1C1C" borderRadius="7px">
-                                    <FavoriteFilled32 aria-label="Add" color="white" />
-                                </Box>
-                                <Box padding="10px">
-                                    <Text fontSize="h4" fontWeight="3px">Interações</Text>
-                                    <Text fontSize="h2" fontWeight="900">39.680</Text>
-                                </Box>
-                            </Box>
                         </Box>
                     </Box>
                 </Box>
