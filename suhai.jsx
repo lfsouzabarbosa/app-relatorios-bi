@@ -275,87 +275,86 @@ const Dashboard = () => {
                 </Box>
             </Box>
 
-            <Box display={["block", "flex"]} flexDirection="row" justifyContent="center">
-                <Box backgroundColor="#ffffff" boxShadow="cardHover" borderRadius="7px" display={["block", "flex"]} marginY="2%" marginX="2%" flexDirection="column" paddingX="20px" justifyContent="space-evenly">
-                    <Box backgroundColor="#1C1C1C" borderRadius="7px" minWidth="80%" marginX="2%" justifyContent="space-evenly" marginTop="-4%">
-                        <Text textAlign="center" paddingY="13px" paddingX="8px" fontSize="h1" color="white" fontWeight="4px">Facebook</Text>
-                    </Box>
-                    <Box>
-                        <Box display={["block", "flex"]} flexDirection="column" justifyContent="center" marginY="5%" minWidth="100%" minHeight="100px">
-                            <Box justifyContent="left" padding="15px" display={["block", "flex"]} marginY="7px" alignItems="center" maxHeight="200px">
-                                <Box paddingX="15px" paddingY="10px" backgroundColor="#1C1C1C" borderRadius="7px">
-                                    <UserFollow32 color="white" aria-label="Add" />
+            <div>
+                <Box display={["block", "flex"]} flexDirection="row" flexWrap="wrap" justifyContent="center">
+                    <Box backgroundColor="#ffffff" boxShadow="cardHover" borderRadius="7px" display={["block", "flex"]} marginTop="10px" marginY="2%" marginBottom="2%" flexDirection="column" paddingX="20px" justifyContent="space-evenly">
+                        <Box backgroundColor="#1C1C1C" borderRadius="7px" minWidth="80%" marginX="2%" marginBottom="5%" justifyContent="space-evenly" marginTop="-3%">
+                            <Text textAlign="center" paddingY="15px" paddingX="8px" fontSize="h1" color="white" fontWeight="4px">Facebook</Text>
+                        </Box>
+                        <Box>
+                            <Box display={["block", "flex"]} flexDirection="column" justifyContent="center" marginY="1%" minWidth="100%" minHeight="100px">
+                                <Box justifyContent="left" padding="15px" display={["block", "flex"]} marginY="7px" alignItems="center" maxHeight="200px">
+                                    <Box paddingX="15px" paddingY="10px" backgroundColor="#1C1C1C" borderRadius="7px">
+                                        <UserFollow32 color="white" aria-label="Add" />
+                                    </Box>
+                                    <Box padding="10px">
+                                        <Text fontSize="h4" fontWeight="3px">Fãs</Text>
+                                        <Text fontSize="h2" fontWeight="900">76.160</Text>
+                                    </Box>
                                 </Box>
-                                <Box padding="10px">
-                                    <Text fontSize="h4" fontWeight="3px">Fãs</Text>
-                                    <Text fontSize="h2" fontWeight="900">76.160</Text>
+                                <Box justifyContent="left" padding="15px" display={["block", "flex"]} marginY="7px" alignItems="center" maxHeight="200px">
+                                    <Box paddingX="14px" paddingY="10px" backgroundColor="#1C1C1C" borderRadius="7px" >
+                                        <SendAltFilled32 aria-label="Add" color="white" />
+                                    </Box>
+                                    <Box padding="10px">
+                                        <Text fontSize="h4" fontWeight="3px">Posts</Text>
+                                        <Text fontSize="h2" fontWeight="900">5</Text>
+                                    </Box>
                                 </Box>
-                            </Box>
-                            <Box justifyContent="left" padding="15px" display={["block", "flex"]} marginY="7px" alignItems="center" maxHeight="200px">
-                                <Box paddingX="14px" paddingY="10px" backgroundColor="#1C1C1C" borderRadius="7px" >
-                                    <SendAltFilled32 aria-label="Add" color="white" />
-                                </Box>
-                                <Box padding="10px">
-                                    <Text fontSize="h4" fontWeight="3px">Posts</Text>
-                                    <Text fontSize="h2" fontWeight="900">5</Text>
-                                </Box>
-                            </Box>
-                            <Box justifyContent="left" padding="15px" display={["block", "flex"]} marginY="7px" alignItems="center" maxHeight="200px">
-                                <Box paddingLeft="14px" paddingRight="15px" paddingY="10px" backgroundColor="#1C1C1C" borderRadius="7px">
-                                    <FavoriteFilled32 aria-label="Add" color="white" />
-                                </Box>
-                                <Box padding="10px">
-                                    <Text fontSize="h4" fontWeight="3px">Interações</Text>
-                                    <Text fontSize="h2" fontWeight="900">938</Text>
+                                <Box justifyContent="left" padding="15px" display={["block", "flex"]} marginY="7px" alignItems="center" maxHeight="200px">
+                                    <Box paddingLeft="14px" paddingRight="15px" paddingY="10px" backgroundColor="#1C1C1C" borderRadius="7px">
+                                        <FavoriteFilled32 aria-label="Add" color="white" />
+                                    </Box>
+                                    <Box padding="10px">
+                                        <Text fontSize="h4" fontWeight="3px">Interações</Text>
+                                        <Text fontSize="h2" fontWeight="900">938</Text>
+                                    </Box>
                                 </Box>
                             </Box>
                         </Box>
                     </Box>
-                </Box>
-
-                <Box backgroundColor="#ffffff" boxShadow="cardHover" borderRadius="7px" display={["block", "flex"]} marginY="2%" marginX="1%" flexDirection="column" paddingX="5px" justifyContent="center" minWidth="65%" minHeight="50%">
-                    <Box backgroundColor="#1C1C1C" borderRadius="7px" minWidth="80%" marginX="2%" justifyContent="space-evenly" marginTop="-1%">
-                        <Text paddingY="13px" paddingX="8px" fontSize="h1" color="white" fontWeight="4px">Mídia</Text>
+                    <br></br>
+                    <Box backgroundColor="#ffffff" boxShadow="cardHover" borderRadius="7px" display={["block", "flex"]} marginY="2%" marginX="1%" flexDirection="column" paddingX="5px" justifyContent="center" minWidth="67%" minHeight="50%">
+                        <Box backgroundColor="#1C1C1C" borderRadius="7px" minWidth="80%" marginX="2%" marginBottom="3%" justifyContent="space-evenly" marginTop="-1%">
+                            <Text paddingY="15px" paddingX="8px" fontSize="h1" color="white" fontWeight="4px">Mídia</Text>
+                        </Box>
+                        <Box minWidth="95%" minHeight="55%" alignSelf="center" marginY="1%">
+                            <ResponsiveContainer width="100%" height="100%" aspect={3, 3, 3}>
+                                <PieChart width={300} height={300}>
+                                <Pie
+                                    data={crono}
+                                    cx="50%"
+                                    cy="50%"
+                                    labelLine={false}
+                                    label={renderCustomizedLabel}
+                                    outerRadius={80}
+                                    fill="#8884d8"
+                                    dataKey="total"
+                                >
+                                    {crono.map((entry, index) => (
+                                    <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
+                                    ))}
+                                </Pie>
+                                <Legend height={1} layout="horizontal" payload={[{value: 'TV Aberta', type: 'linear', id:'ID01', color: '#0088fe' }, 
+                            {value: 'Digital', type: 'linear', id:'ID02', color: '#ff8042' }, {value: 'OOH', type: 'linear', id:'ID03', color: '#ffbb28' },
+                            {value: 'Pay TV', type: 'linear', id:'ID04', color: '#00c49f' }]} />
+                                </PieChart>
+                            </ResponsiveContainer>
+                        </Box>
+                        <Box display="flex" paddingY="3%" justifyContent="center" verticalAlign="center">
+                            <Botao>
+                                <StyledLink href="./suhaiFlashReport">
+                                    <Text textAlign="center" fontSize="h2" fontWeight="900">Flash Report</Text>
+                                </StyledLink>
+                            </Botao>
+                        </Box>
                     </Box>
-                    <Box minWidth="95%" minHeight="70%" alignSelf="center" marginTop="2%">
-                        <ResponsiveContainer width="100%" height="100%" aspect={3, 3, 3}>
-                            <PieChart width={300} height={300}>
-                            <Pie
-                                data={crono}
-                                cx="50%"
-                                cy="50%"
-                                labelLine={false}
-                                label={renderCustomizedLabel}
-                                outerRadius={80}
-                                fill="#8884d8"
-                                dataKey="total"
-                            >
-                                {crono.map((entry, index) => (
-                                <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
-                                ))}
-                            </Pie>
-                            <Legend height={1} layout="horizontal" payload={[{value: 'TV Aberta', type: 'linear', id:'ID01', color: '#0088fe' }, 
-                        {value: 'Digital', type: 'linear', id:'ID02', color: '#ff8042' }, {value: 'OOH', type: 'linear', id:'ID03', color: '#ffbb28' },
-                        {value: 'Pay TV', type: 'linear', id:'ID04', color: '#00c49f' }]} />
-                            </PieChart>
-                        </ResponsiveContainer>
-                    </Box>
-                    <Box display="flex" justifyContent="center" verticalAlign="center">
-                        <Botao>
-                            <StyledLink href="./suhaiFlashReport">
-                                <Text textAlign="center" fontSize="h2" fontWeight="900">Flash Report</Text>
-                            </StyledLink>
-                        </Botao>
-                    </Box>
-                </Box>
-            </Box>
-
-            <Box backgroundColor="#ffffff" boxShadow="cardHover" borderRadius="7px" display={["block", "flex"]} minHeight="10%" marginY="3%" marginX="2%" flexDirection="column" paddingX="20px" justifyContent="space-evenly">
-                    <Box backgroundColor="#1C1C1C" borderRadius="7px" minWidth="80%" marginX="1%" justifyContent="space-evenly" marginTop="-2%">
-                        <Text textAlign="center" paddingY="13px" paddingX="8px" fontSize="h1" color="white" fontWeight="4px">Instagram</Text>
-                    </Box>
-                    <Box>
-                        <Box display={["block", "flex"]} flexDirection="row" justifyContent="space-evenly" marginY="1%" minWidth="100%" minHeight="15%">
+                    <br></br>
+                    <Box backgroundColor="#ffffff" boxShadow="cardHover" borderRadius="7px" minWidth="95%" display={["block"]} minHeight="10%" maxHeight="30%" marginY="3%" marginX="2%" flexDirection="column" paddingX="20px" justifyContent="center">
+                        <Box backgroundColor="#1C1C1C" borderRadius="7px" minWidth="80%" marginX="1%" justifyContent="space-evenly" marginTop="-2%">
+                            <Text textAlign="center" paddingY="13px" paddingX="8px" fontSize="h1" color="white" fontWeight="4px">Instagram</Text>
+                        </Box>
+                        <Box display={["block", "flex"]} flexDirection="row" justifyContent="space-evenly" marginY="1%" minWidth="90%" minHeight="15%">
                             <Box justifyContent="left" padding="15px" display={["block", "flex"]} marginY="7px" alignItems="center" >
                                 <Box paddingX="15px" paddingY="10px" backgroundColor="#1C1C1C" borderRadius="7px">
                                     <UserFollow32 color="white" aria-label="Add" />
@@ -386,148 +385,151 @@ const Dashboard = () => {
                         </Box>
                     </Box>
                 </Box>
+            </div>
+            <div>
+                <Box display={["block"]} flexDirection="row" flexWrap="wrap" justifyContent="space-evenly">
+                        <Box margin="3%" backgroundColor="#ffffff" boxShadow="cardHover" borderRadius="7px" display={["block", "flex"]} flexDirection="column" justifyContent="center" minWidth="90%" minHeight="5%" maxHeight="50%">
+                            <Box backgroundColor="#1C1C1C" borderRadius="7px" minWidth="80%" marginX="2%" justifyContent="space-evenly" marginTop="-1%">
+                                <Text paddingY="20px" paddingX="20px" fontSize="h1" color="white" fontWeight="4px">Google Trends</Text>
+                            </Box>
+                            <Box paddingY="3%" paddingRight="3%">
+                                <ResponsiveContainer width="100%" height="100%" aspect={3}>
+                                    <ComposedChart
+                                    width={600}
+                                    height={400}
+                                    data={Trds}
+                                    margin={10}
+                                    >
+                                    <CartesianGrid stroke="#f5f5f5" />
+                                    <XAxis dataKey="data" scale="band" />
+                                    <YAxis />
+                                    <Tooltip />
+                                    <Legend verticalAlign="top"/>
+                                    <Bar dataKey="interesse" barSize={20} fill="#413ea0" />
+                                    <Line type="linear" dataKey="midia" stroke="#ff7300" />
+                                    <Brush />
+                                    </ComposedChart>
+                                </ResponsiveContainer>
+                                </Box>
 
-            <Box backgroundColor="#ffffff" boxShadow="cardHover" borderRadius="7px" display={["block", "flex"]} flexDirection="column" justifyContent="space-evenly" marginY="3%" marginX="2%" minWidth="90%" minHeight="5%" maxHeight="60%">
-                <Box backgroundColor="#1C1C1C" borderRadius="7px" minWidth="80%" marginX="2%" justifyContent="space-evenly" marginTop="-1%">
-                    <Text paddingY="20px" paddingX="20px" fontSize="h1" color="white" fontWeight="4px">Google Trends</Text>
-                </Box>
-                <Box paddingY="3%" paddingX="2%">
-                    <ResponsiveContainer width="100%" height="100%" aspect={3}>
-                        <ComposedChart
-                        width={600}
-                        height={400}
-                        data={Trds}
-                        margin={10}
-                        >
-                        <CartesianGrid stroke="#f5f5f5" />
-                        <XAxis dataKey="data" scale="band" />
-                        <YAxis />
-                        <Tooltip />
-                        <Legend verticalAlign="top"/>
-                        <Bar dataKey="interesse" barSize={20} fill="#413ea0" />
-                        <Line type="linear" dataKey="midia" stroke="#ff7300" />
-                        <Brush />
-                        </ComposedChart>
-                    </ResponsiveContainer>
+                            <Box display="flex" marginBottom="15px" justifyContent="center" verticalAlign="center">
+                                <Botao>
+                                    <StyledLink href="http://vps23593.publiccloud.com.br:3007/">
+                                        <Text textAlign="center" fontSize="h2" fontWeight="900">Mais Detalhes</Text>
+                                    </StyledLink>
+                                </Botao>
+                            </Box>
+                        </Box>
+                        <br></br>
+                        <Box display={["block", "flex"]} flexDirection="row" maeginX="3%" justifyContent="center">
+                            <Box minWidth="45%" marginX="2%" boxShadow="card" borderRadius="7px" backgroundColor="#ffffff" padding="20px" display={["block", "flex"]}>
+                                <Table>
+                                    <Topo minHeight="70px">
+                                        <Text paddingTop="2%" fontSize="h2">Pesquisas relacionadas</Text>
+                                    </Topo>
+                                    <TableRow><TableCell> </TableCell> <TableCell> </TableCell></TableRow>
+                                    <TableBody>
+                                        <TableRow>
+                                            <TableCell>1</TableCell>
+                                            <TableCell>Suhai seguros
+                                            </TableCell>
+                                        </TableRow>
+                                        <TableRow>
+                                            <TableCell>2</TableCell>
+                                            <TableCell>Suhai seguradora</TableCell>
+                                        </TableRow>
+                                        <TableRow>
+                                            <TableCell>3</TableCell>
+                                            <TableCell>Suhai seguro</TableCell>
+                                        </TableRow>
+                                        <TableRow>
+                                            <TableCell>4</TableCell>
+                                            <TableCell>Suhai corretor</TableCell>
+                                        </TableRow>
+                                        <TableRow>
+                                            <TableCell>5</TableCell>
+                                            <TableCell>Suhai telefone</TableCell>
+                                        </TableRow>
+                                        <TableRow>
+                                            <TableCell>6</TableCell>
+                                            <TableCell>Suhai reclame aqui</TableCell>
+                                        </TableRow>
+                                        <TableRow>
+                                            <TableCell>7</TableCell>
+                                            <TableCell>Suhai moto suhai</TableCell>
+                                        </TableRow>
+                                        <TableRow>
+                                            <TableCell>8</TableCell>
+                                            <TableCell>Suhai boleto</TableCell>
+                                        </TableRow>
+                                        <TableRow>
+                                            <TableCell>9</TableCell>
+                                            <TableCell>Suhai corretor portal do corretor</TableCell>
+                                        </TableRow>
+                                        <TableRow>
+                                            <TableCell>10</TableCell>
+                                            <TableCell>Suhai seguros corretor</TableCell>
+                                        </TableRow>
+                                    </TableBody>
+                                </Table>
+                            </Box>
+                            <br></br>
+                            <br></br>
+                            <Box minWidth="45%" marginX="2%" boxShadow="card" borderRadius="7px" backgroundColor="#ffffff" padding="20px" display={["block", "flex"]}>
+                                <Table>
+                                    <Topo>
+                                        <Text paddingTop="2%" paddingBottom="1%" fontSize="h2">Assuntos relacionados</Text>
+                                    </Topo>
+                                    <TableRow><TableCell> </TableCell><TableCell> </TableCell></TableRow>
+                                    <TableBody>
+                                        <TableRow>
+                                            <TableCell>1</TableCell>
+                                            <TableCell>Insurance
+                                            </TableCell>
+                                        </TableRow>
+                                        <TableRow>
+                                            <TableCell>2</TableCell>
+                                            <TableCell>Broker</TableCell>
+                                        </TableRow>
+                                        <TableRow>
+                                            <TableCell>3</TableCell>
+                                            <TableCell>Motorcycle</TableCell>
+                                        </TableRow>
+                                        <TableRow>
+                                            <TableCell>4</TableCell>
+                                            <TableCell>Reclame Aqui</TableCell>
+                                        </TableRow>
+                                        <TableRow>
+                                            <TableCell>5</TableCell>
+                                            <TableCell>Boleto</TableCell>
+                                        </TableRow>
+                                        <TableRow>
+                                            <TableCell>6</TableCell>
+                                            <TableCell>Porto Seguro S.A.</TableCell>
+                                        </TableRow>
+                                        <TableRow>
+                                            <TableCell>7</TableCell>
+                                            <TableCell>Liberty Seguros</TableCell>
+                                        </TableRow>
+                                        <TableRow>
+                                            <TableCell>8</TableCell>
+                                            <TableCell>Suhai Personal Security</TableCell>
+                                        </TableRow>
+                                        <TableRow>
+                                            <TableCell>9</TableCell>
+                                            <TableCell>SulAmérica Seguros</TableCell>
+                                        </TableRow>
+                                        <TableRow>
+                                            <TableCell>10</TableCell>
+                                            <TableCell>Bradesco Seguros</TableCell>
+                                        </TableRow>
+                                    </TableBody>
+                                </Table>
+                            </Box>
+                        </Box>
                     </Box>
-
-                <Box display="flex" marginBottom="15px" justifyContent="center" verticalAlign="center">
-                    <Botao>
-                        <StyledLink href="http://vps23593.publiccloud.com.br:3007/">
-                            <Text textAlign="center" fontSize="h2" fontWeight="900">Mais Detalhes</Text>
-                        </StyledLink>
-                    </Botao>
-                </Box>
-            </Box>
-            
-            <Box display={["block", "flex"]} padding="10px" flexDirection="row" margin="10px" justifyContent="center">
-                <Box minWidth="45%" marginTop="5%" marginBottom="4%" marginX="30px" boxShadow="card" borderRadius="5px" backgroundColor="#ffffff" padding="20px" display={["block", "flex"]}>
-                    <Table>
-                        <Topo minHeight="70px">
-                            <Text paddingTop="2%" fontSize="h2">Pesquisas relacionadas</Text>
-                        </Topo>
-                        <TableRow><TableCell> </TableCell> <TableCell> </TableCell></TableRow>
-                        <TableBody>
-                            <TableRow>
-                                <TableCell>1</TableCell>
-                                <TableCell>Suhai seguros
-                                </TableCell>
-                            </TableRow>
-                            <TableRow>
-                                <TableCell>2</TableCell>
-                                <TableCell>Suhai seguradora</TableCell>
-                            </TableRow>
-                            <TableRow>
-                                <TableCell>3</TableCell>
-                                <TableCell>Suhai seguro</TableCell>
-                            </TableRow>
-                            <TableRow>
-                                <TableCell>4</TableCell>
-                                <TableCell>Suhai corretor</TableCell>
-                            </TableRow>
-                            <TableRow>
-                                <TableCell>5</TableCell>
-                                <TableCell>Suhai telefone</TableCell>
-                            </TableRow>
-                            <TableRow>
-                                <TableCell>6</TableCell>
-                                <TableCell>Suhai reclame aqui</TableCell>
-                            </TableRow>
-                            <TableRow>
-                                <TableCell>7</TableCell>
-                                <TableCell>Suhai moto suhai</TableCell>
-                            </TableRow>
-                            <TableRow>
-                                <TableCell>8</TableCell>
-                                <TableCell>Suhai boleto</TableCell>
-                            </TableRow>
-                            <TableRow>
-                                <TableCell>9</TableCell>
-                                <TableCell>Suhai corretor portal do corretor</TableCell>
-                            </TableRow>
-                            <TableRow>
-                                <TableCell>10</TableCell>
-                                <TableCell>Suhai seguros corretor</TableCell>
-                            </TableRow>
-                        </TableBody>
-                    </Table>
-                </Box>
-
-                <br></br>
-
-                <Box minWidth="45%" marginTop="5%" marginBottom="4%" marginX="30px" boxShadow="card" borderRadius="5px" backgroundColor="#ffffff" padding="20px" display={["block", "flex"]}>
-                    <Table>
-                        <Topo>
-                            <Text paddingTop="2%" paddingBottom="1%" fontSize="h2">Assuntos relacionados</Text>
-                        </Topo>
-                        <TableRow><TableCell> </TableCell><TableCell> </TableCell></TableRow>
-                        <TableBody>
-                            <TableRow>
-                                <TableCell>1</TableCell>
-                                <TableCell>Insurance
-                                </TableCell>
-                            </TableRow>
-                            <TableRow>
-                                <TableCell>2</TableCell>
-                                <TableCell>Broker</TableCell>
-                            </TableRow>
-                            <TableRow>
-                                <TableCell>3</TableCell>
-                                <TableCell>Motorcycle</TableCell>
-                            </TableRow>
-                            <TableRow>
-                                <TableCell>4</TableCell>
-                                <TableCell>Reclame Aqui</TableCell>
-                            </TableRow>
-                            <TableRow>
-                                <TableCell>5</TableCell>
-                                <TableCell>Boleto</TableCell>
-                            </TableRow>
-                            <TableRow>
-                                <TableCell>6</TableCell>
-                                <TableCell>Porto Seguro S.A.</TableCell>
-                            </TableRow>
-                            <TableRow>
-                                <TableCell>7</TableCell>
-                                <TableCell>Liberty Seguros</TableCell>
-                            </TableRow>
-                            <TableRow>
-                                <TableCell>8</TableCell>
-                                <TableCell>Suhai Personal Security</TableCell>
-                            </TableRow>
-                            <TableRow>
-                                <TableCell>9</TableCell>
-                                <TableCell>SulAmérica Seguros</TableCell>
-                            </TableRow>
-                            <TableRow>
-                                <TableCell>10</TableCell>
-                                <TableCell>Bradesco Seguros</TableCell>
-                            </TableRow>
-                        </TableBody>
-                    </Table>
-                </Box>
-            </Box>
-        </Box></>
+                </div>
+            </Box></>
     )
 }
 

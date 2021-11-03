@@ -11,3 +11,13 @@ import Component5 from '../suhaiReport24horas'
 AdminBro.UserComponents.Component5 = Component5
 import Component6 from '../suhaidaily'
 AdminBro.UserComponents.Component6 = Component6
+import Component6 from '../klabin'
+AdminBro.UserComponents.Component6 = Component6
+import Component7 from '../locaweb'
+AdminBro.UserComponents.Component7 = Component7
+import Component8 from '../mitsubishi'
+AdminBro.UserComponents.Component8 = Component8
+import Component9 from '../suhai'
+AdminBro.UserComponents.Component9 = Component9
+import Component10 from '../suzuki'
+AdminBro.UserComponents.Component10 = Component10
