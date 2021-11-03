@@ -19,3 +19,21 @@ import Component9 from '../suhai'
 AdminBro.UserComponents.Component9 = Component9
 import Component10 from '../suzuki'
 AdminBro.UserComponents.Component10 = Component10
+import Component11 from '../c6Bank'
+AdminBro.UserComponents.Component11 = Component11
+import Component12 from '../homepage'
+AdminBro.UserComponents.Component12 = Component12
+import Component13 from '../tumelero'
+AdminBro.UserComponents.Component13 = Component13
+import Component14 from '../obraja'
+AdminBro.UserComponents.Component14 = Component14
+import Component15 from '../klabin'
+AdminBro.UserComponents.Component15 = Component15
+import Component16 from '../locaweb'
+AdminBro.UserComponents.Component16 = Component16
+import Component17 from '../mitsubishi'
+AdminBro.UserComponents.Component17 = Component17
+import Component18 from '../suhai'
+AdminBro.UserComponents.Component18 = Component18
+import Component19 from '../suzuki'
+AdminBro.UserComponents.Component19 = Component19
