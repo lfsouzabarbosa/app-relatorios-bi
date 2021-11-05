@@ -47,7 +47,7 @@ color: #1C1C1CF;
 };
 
 align: center;
-max-width: 50%;
+max-width: 60%;
 font-size: 1em;
 margin-bottom: 1em;
 padding: 1em;
@@ -268,7 +268,7 @@ const Dashboard = () => {
     return (
 
         <><Box flex flexDirection="column" variant="grey">
-            <Box paddingBottom="20px" maxHeight="150px" padding="1em" margin="10px">
+            <Box paddingBottom="20px" maxHeight="150px" paddingX="1em" paddingY="1%" margin="10px">
                 <Box width="200px" minHeight="20px">
                     <img width="170px" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRgDDAk7HNLdKCcV0QoZfZkOZoR5Z0IcZXgiojUM7iYt1noMg3wI7_UGXv9ESvbSMtFTw&usqp=CAU"
                         alt="Logo Suhai"></img>
@@ -276,9 +276,9 @@ const Dashboard = () => {
             </Box>
 
             <div>
-                <Box display={["block", "flex"]} flexDirection="row" flexWrap="wrap" justifyContent="center">
-                    <Box backgroundColor="#ffffff" minWidth="45%" marginX="2%" boxShadow="cardHover" borderRadius="7px" display={["block", "flex"]} minHeight="10%" maxHeight="30%" marginTop="10px" marginY="2%" marginBottom="2%" flexDirection="column" paddingX="20px" justifyContent="space-evenly">
-                        <Box backgroundColor="#1C1C1C" borderRadius="7px" minWidth="80%" marginX="2%" marginBottom="5%" justifyContent="space-evenly" marginTop="-3%">
+                <Box display={["block", "flex"]} flexDirection="row" justifyContent="space-evenly">
+                    <Box backgroundColor="#ffffff" minWidth="20%" marginX="2%" boxShadow="cardHover" borderRadius="7px" display={["block", "flex"]} minHeight="10%" maxHeight="30%" marginTop="10px" marginY="2%" marginBottom="2%" flexDirection="column" paddingX="20px" justifyContent="space-evenly">
+                        <Box backgroundColor="#1C1C1C" borderRadius="7px" minWidth="80%" marginX="2%" marginBottom="6%" justifyContent="space-evenly" marginTop="-4%">
                             <Text textAlign="center" paddingY="15px" paddingX="8px" fontSize="h1" color="white" fontWeight="4px">Facebook</Text>
                         </Box>
                         <Box>
@@ -314,8 +314,8 @@ const Dashboard = () => {
                         </Box>
                     </Box>
                     <br></br>
-                    <Box backgroundColor="#ffffff" minWidth="46%" marginX="2%" boxShadow="cardHover" borderRadius="7px" display={["block", "flex"]} minHeight="10%" maxHeight="30%" marginTop="10px" marginY="2%" marginBottom="2%" flexDirection="column" paddingX="20px" justifyContent="space-evenly">
-                        <Box backgroundColor="#1C1C1C" borderRadius="7px" minWidth="80%" marginX="2%" marginBottom="5%" justifyContent="space-evenly" marginTop="-3%">
+                    <Box backgroundColor="#ffffff" minWidth="20%" marginX="2%" boxShadow="cardHover" borderRadius="7px" display={["block", "flex"]} minHeight="10%" maxHeight="30%" marginTop="10px" marginY="2%" marginBottom="2%" flexDirection="column" paddingX="20px" justifyContent="space-evenly">
+                        <Box backgroundColor="#1C1C1C" borderRadius="7px" minWidth="80%" marginX="2%" marginBottom="6%" justifyContent="space-evenly" marginTop="-3%">
                             <Text textAlign="center" paddingY="15px" paddingX="8px" fontSize="h1" color="white" fontWeight="4px">Instagram</Text>
                         </Box>
                         <Box display={["block", "flex"]} flexDirection="column" justifyContent="space-evenly" marginY="1%" minWidth="90%" minHeight="15%">
@@ -349,12 +349,12 @@ const Dashboard = () => {
                         </Box>
                     </Box>
                     <br></br>
-                    <Box backgroundColor="#ffffff" boxShadow="cardHover" borderRadius="7px" display={["block", "flex"]} marginY="2%" marginX="1%" flexDirection="column" paddingX="5px" justifyContent="center" minWidth="95%" minHeight="50%">
-                        <Box backgroundColor="#1C1C1C" borderRadius="7px" minWidth="80%" marginX="2%" marginBottom="3%" justifyContent="space-evenly" marginTop="-1%">
-                            <Text paddingY="15px" paddingX="8px" fontSize="h1" color="white" fontWeight="4px">Mídia</Text>
+                    <Box backgroundColor="#ffffff" boxShadow="cardHover" paddingX="20px"  marginX="2%" borderRadius="7px" display={["block", "flex"]}  flexDirection="column" marginTop="10px" marginY="2%" marginBottom="2%" justifyContent="center" minWidth="33%" minHeight="30%">
+                        <Box backgroundColor="#1C1C1C" borderRadius="7px" minWidth="80%" marginX="2%" marginBottom="3%" justifyContent="space-evenly" marginTop="-3%">
+                            <Text textAlign="center" paddingY="15px" paddingX="8px" fontSize="h1" color="white" fontWeight="4px">Mídia</Text>
                         </Box>
-                        <Box minWidth="95%" minHeight="55%" alignSelf="center" marginY="1%">
-                            <ResponsiveContainer width="100%" height="100%" aspect={3, 3, 3}>
+                        <div>
+                            <ResponsiveContainer width="100%" height={270}>
                                 <PieChart width={300} height={300}>
                                 <Pie
                                     data={crono}
@@ -362,7 +362,7 @@ const Dashboard = () => {
                                     cy="50%"
                                     labelLine={false}
                                     label={renderCustomizedLabel}
-                                    outerRadius={80}
+                                    outerRadius="70%"
                                     fill="#8884d8"
                                     dataKey="total"
                                 >
@@ -370,32 +370,34 @@ const Dashboard = () => {
                                     <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
                                     ))}
                                 </Pie>
-                                <Legend height={1} layout="horizontal" payload={[{value: 'TV Aberta', type: 'linear', id:'ID01', color: '#0088fe' }, 
-                            {value: 'Digital', type: 'linear', id:'ID02', color: '#ff8042' }, {value: 'OOH', type: 'linear', id:'ID03', color: '#ffbb28' },
-                            {value: 'Pay TV', type: 'linear', id:'ID04', color: '#00c49f' }]} />
+                                <Legend height={5} verticalAlign="top" layout="horizontal" payload={[{value: 'TV Aberta', type: 'linear', id:'ID01', color: '#0088fe' }, 
+                                {value: 'Digital', type: 'linear', id:'ID02', color: '#ff8042' }, {value: 'OOH', type: 'linear', id:'ID03', color: '#ffbb28' },
+                                {value: 'Pay TV', type: 'linear', id:'ID04', color: '#00c49f' }]} />
                                 </PieChart>
                             </ResponsiveContainer>
-                        </Box>
-                        <Box display="flex" paddingY="3%" justifyContent="center" verticalAlign="center">
-                            <Botao>
-                                <StyledLink href="./suhaiFlashReport">
-                                    <Text textAlign="center" fontSize="h2" fontWeight="900">Flash Report</Text>
-                                </StyledLink>
-                            </Botao>
-                        </Box>
+                        </div>
+                        <div>
+                            <Box display="flex" minWidth="100%" justifyContent="center" verticalAlign="center">
+                                <Botao>
+                                    <StyledLink href="./suhaiFlashReport">
+                                        <Text textAlign="center" fontSize="h2" fontWeight="800">Detalhes</Text>
+                                    </StyledLink>
+                                </Botao>
+                            </Box>
+                        </div>
                     </Box>
                 </Box>
             </div>
             <div>
-                <Box display={["block"]} flexDirection="row" flexWrap="wrap" justifyContent="space-evenly">
-                        <Box margin="3%" backgroundColor="#ffffff" boxShadow="cardHover" borderRadius="7px" display={["block", "flex"]} flexDirection="column" justifyContent="center" minWidth="90%" minHeight="5%" maxHeight="50%">
+                <Box display={["block"]} flexDirection="row" flexWrap="wrap" marginY="3%" justifyContent="space-evenly">
+                        <Box backgroundColor="#ffffff" marginX="2%" marginY="2%" boxShadow="cardHover" borderRadius="7px" display={["block", "flex"]} flexDirection="column" justifyContent="space-evenly" minWidth="93%" minHeight="5%" maxHeight="50%">
                             <Box backgroundColor="#1C1C1C" borderRadius="7px" minWidth="80%" marginX="2%" justifyContent="space-evenly" marginTop="-1%">
-                                <Text paddingY="20px" paddingX="20px" fontSize="h1" color="white" fontWeight="4px">Google Trends</Text>
+                                <Text textAlign="center" paddingY="20px" paddingX="20px" fontSize="h1" color="white" fontWeight="4px">Google Trends</Text>
                             </Box>
-                            <Box paddingY="3%" paddingRight="3%">
+                            <Box paddingY="3%" paddingRight="4%">
                                 <ResponsiveContainer width="100%" height="100%" aspect={3}>
                                     <ComposedChart
-                                    width={600}
+                                    width={550}
                                     height={400}
                                     data={Trds}
                                     margin={10}
@@ -405,7 +407,7 @@ const Dashboard = () => {
                                     <YAxis />
                                     <Tooltip />
                                     <Legend verticalAlign="top"/>
-                                    <Bar dataKey="interesse" barSize={20} fill="#413ea0" />
+                                    <Bar dataKey="interesse" barSize="50%" fill="#413ea0" />
                                     <Line type="linear" dataKey="midia" stroke="#ff7300" />
                                     <Brush />
                                     </ComposedChart>
@@ -421,11 +423,11 @@ const Dashboard = () => {
                             </Box>
                         </Box>
                         <br></br>
-                        <Box display={["block", "flex"]} flexDirection="row" maeginX="3%" justifyContent="center">
-                            <Box minWidth="45%" marginX="2%" boxShadow="card" borderRadius="7px" backgroundColor="#ffffff" padding="20px" display={["block", "flex"]}>
+                        <Box display={["block", "flex"]} flexDirection="row" justifyContent="space-evenly">
+                            <Box minWidth="46%" margin="2%" boxShadow="card" borderRadius="7px" backgroundColor="#ffffff" padding="20px" display={["block", "flex"]}>
                                 <Table>
-                                    <Topo minHeight="70px">
-                                        <Text paddingTop="2%" fontSize="h2">Pesquisas relacionadas</Text>
+                                    <Topo>
+                                        <Text textAlign="center" paddingTop="2%" fontSize="h2">Pesquisas relacionadas</Text>
                                     </Topo>
                                     <TableRow><TableCell> </TableCell> <TableCell> </TableCell></TableRow>
                                     <TableBody>
@@ -475,10 +477,10 @@ const Dashboard = () => {
                             </Box>
                             <br></br>
                             <br></br>
-                            <Box minWidth="45%" marginX="2%" boxShadow="card" borderRadius="7px" backgroundColor="#ffffff" padding="20px" display={["block", "flex"]}>
+                            <Box minWidth="46%" margin="2%" boxShadow="card" borderRadius="7px" backgroundColor="#ffffff" padding="20px" display={["block", "flex"]}>
                                 <Table>
                                     <Topo>
-                                        <Text paddingTop="2%" paddingBottom="1%" fontSize="h2">Assuntos relacionados</Text>
+                                        <Text textAlign="center" paddingTop="2%" fontSize="h2">Assuntos relacionados</Text>
                                     </Topo>
                                     <TableRow><TableCell> </TableCell><TableCell> </TableCell></TableRow>
                                     <TableBody>
