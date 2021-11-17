@@ -52,8 +52,10 @@ const Topics = mongoose.model('Topicos Web', {
 
 const Investimentos = mongoose.model('Investimentos de Mídia', {
   Cliente: { type: String, enum: ['C6 bank', 'Telhanorte', 'Tumelero', 'Obraja', 'Klabin', 'Locaweb', 'Mitsubishi', 'Suhai'], required: true },
-  Tipo: { type: String, required: true },
-  Valor: { type: String, required: true },
+  Tipo: { type: String,  enum: ['TV Aberta', 'TV Fechada', 'Mídia Out of Home',], required: true },
+  Valor: { type: Number, required: true },
+  Inicio: { type: Date, required: true },
+  Fim: { type: Date, required: true },
 })
  
 // const podeEditarClientes = ({ currentAdmin }) => currentAdmin.acesso === 'Head' || currentAdmin.acesso === 'C-Level'
@@ -101,8 +103,8 @@ const adminBro = new AdminBro({
 					},
         },
         actions: {
-          edit: { isAccessible: CRUDmidia },
-          delete: { isAccessible: CRUDmidia },
+          edit: { isAccessible: codigo },
+          delete: { isAccessible: codigo },
           new: { isAccessible: CRUDmidia },
           show: { isAccessible: CRUDmidia },
           list: { isAccessible: CRUDmidia },
@@ -196,7 +198,7 @@ const adminBro = new AdminBro({
         error404Record: 'Recurso de id: {{resourceId}} não tem nenhum registro com o ID: {{recordId}}',
         seeConsoleForMore: 'Veja o console de desenvolvimento para mais detalhes...',
         noActionComponent: 'Você deve implementar o componente de ação para a sua Ação',
-        noRecordsInResource: 'Não há registros neste recurso',
+        noRecordsInResource: '',
         noRecords: 'Sem registros',
         confirmDelete: 'Tem certeza de que deseja remover este item?',
         welcomeOnBoard_title: 'Bem-vindo a bordo!',
