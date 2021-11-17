@@ -1,4 +1,15 @@
+/*
+
+(async () => {
+  const db = require('./db')
+  const gdisplay = await db.selectDisplay();
+  console.log(gdisplay);
+})();
+
+*/
+
 const AdminBro = require('admin-bro')
+
 const AdminBroExpress = require('@admin-bro/express')
 const AdminBroMongoose = require('@admin-bro/mongoose')
 const mongoose = require('mongoose')
