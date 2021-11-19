@@ -14,6 +14,7 @@
     "@admin-bro/express": "^3.1.0",
     "@admin-bro/mongoose": "^1.1.0",
     "@carbon/icons-react": "^10.37.0",
+    "@styled-system/css": "^5.1.5",
     "admin-bro": "^4.0.1",
     "admin-bro-expressjs": "^2.1.1",
     "admin-bro-mongoose": "^0.5.2",

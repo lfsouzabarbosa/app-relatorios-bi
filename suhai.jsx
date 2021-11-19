@@ -276,6 +276,7 @@ const Dashboard = () => {
             </Box>
 
             <div>
+                <br></br>
                 <Box display={["block", "flex"]} flexDirection="row" justifyContent="space-evenly">
                     <Box backgroundColor="#ffffff" minWidth="20%" marginX="2%" boxShadow="cardHover" borderRadius="7px" display={["block", "flex"]} minHeight="10%" maxHeight="30%" marginTop="10px" marginY="2%" marginBottom="2%" flexDirection="column" paddingX="20px" justifyContent="space-evenly">
                         <Box backgroundColor="#1C1C1C" borderRadius="7px" minWidth="80%" marginX="2%" marginBottom="6%" justifyContent="space-evenly" marginTop="-4%">
@@ -288,7 +289,7 @@ const Dashboard = () => {
                                         <UserFollow32 color="white" aria-label="Add" />
                                     </Box>
                                     <Box padding="10px">
-                                        <Text fontSize="h4" fontWeight="3px">Fãs</Text>
+                                        <Text paddingY="2px" fontSize="h4" fontWeight="3px">Fãs</Text>
                                         <Text fontSize="h2" fontWeight="900">76.160</Text>
                                     </Box>
                                 </Box>
@@ -297,7 +298,7 @@ const Dashboard = () => {
                                         <SendAltFilled32 aria-label="Add" color="white" />
                                     </Box>
                                     <Box padding="10px">
-                                        <Text fontSize="h4" fontWeight="3px">Posts</Text>
+                                        <Text paddingY="2px" fontSize="h4" fontWeight="3px">Posts</Text>
                                         <Text fontSize="h2" fontWeight="900">5</Text>
                                     </Box>
                                 </Box>
@@ -306,7 +307,7 @@ const Dashboard = () => {
                                         <FavoriteFilled32 aria-label="Add" color="white" />
                                     </Box>
                                     <Box padding="10px">
-                                        <Text fontSize="h4" fontWeight="3px">Interações</Text>
+                                        <Text paddingY="2px" fontSize="h4" fontWeight="3px">Interações</Text>
                                         <Text fontSize="h2" fontWeight="900">938</Text>
                                     </Box>
                                 </Box>
@@ -324,7 +325,7 @@ const Dashboard = () => {
                                     <UserFollow32 color="white" aria-label="Add" />
                                 </Box>
                                 <Box padding="10px">
-                                    <Text fontSize="h4" fontWeight="3px">Seguidores</Text>
+                                    <Text paddingY="2px" fontSize="h4" fontWeight="3px">Seguidores</Text>
                                     <Text fontSize="h2" fontWeight="900">418.238</Text>
                                 </Box>
                             </Box>
@@ -333,7 +334,7 @@ const Dashboard = () => {
                                     <SendAltFilled32 aria-label="Add" color="white" />
                                 </Box>
                                 <Box padding="10px">
-                                    <Text fontSize="h4" fontWeight="3px">Posts</Text>
+                                    <Text paddingY="2px" fontSize="h4" fontWeight="3px">Posts</Text>
                                     <Text fontSize="h2" fontWeight="900">4</Text>
                                 </Box>
                             </Box>
@@ -342,7 +343,7 @@ const Dashboard = () => {
                                     <FavoriteFilled32 aria-label="Add" color="white" />
                                 </Box>
                                 <Box padding="10px">
-                                    <Text fontSize="h4" fontWeight="3px">Interações</Text>
+                                    <Text paddingY="2px" fontSize="h4" fontWeight="3px">Interações</Text>
                                     <Text fontSize="h2" fontWeight="900">39.680</Text>
                                 </Box>
                             </Box>
@@ -390,17 +391,22 @@ const Dashboard = () => {
             </div>
             <div>
                 <Box display={["block"]} flexDirection="row" flexWrap="wrap" marginY="3%" justifyContent="space-evenly">
-                        <Box backgroundColor="#ffffff" marginX="2%" marginY="2%" boxShadow="cardHover" borderRadius="7px" display={["block", "flex"]} flexDirection="column" justifyContent="space-evenly" minWidth="93%" minHeight="5%" maxHeight="50%">
+                        <Box backgroundColor="#ffffff" marginX="2%" marginY="2%" boxShadow="cardHover" borderRadius="7px" display={["block", "flex"]} flexDirection="column" justifyContent="center" minWidth="93%" minHeight="5%" maxHeight="50%">
                             <Box backgroundColor="#1C1C1C" borderRadius="7px" minWidth="80%" marginX="2%" justifyContent="space-evenly" marginTop="-1%">
                                 <Text textAlign="center" paddingY="20px" paddingX="20px" fontSize="h1" color="white" fontWeight="4px">Google Trends</Text>
                             </Box>
-                            <Box paddingY="3%" paddingRight="4%">
-                                <ResponsiveContainer width="100%" height="100%" aspect={3}>
+                            <div>
+                                <ResponsiveContainer width="100%" height={350}>
                                     <ComposedChart
-                                    width={550}
-                                    height={400}
+                                    width="100%"
+                                    height="100%"
                                     data={Trds}
-                                    margin={10}
+                                    margin={{
+                                        top: 25,
+                                        right: 30,
+                                        left: -17,
+                                        bottom: 20,
+                                      }}
                                     >
                                     <CartesianGrid stroke="#f5f5f5" />
                                     <XAxis dataKey="data" scale="band" />
@@ -412,7 +418,7 @@ const Dashboard = () => {
                                     <Brush />
                                     </ComposedChart>
                                 </ResponsiveContainer>
-                                </Box>
+                            </div>
 
                             <Box display="flex" marginBottom="15px" justifyContent="center" verticalAlign="center">
                                 <Botao>
