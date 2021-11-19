@@ -39,7 +39,7 @@ const Usuario = mongoose.model('Usuario', {
   nome: { type: String, required: true },
   senha: { type: String, required: true },
   email: { type: String, required: true },
-  acesso: { type: String, enum: ['Admin', 'C-Level', 'Cliente', 'Head', 'Operacional', 'Suhai'], required: true },
+  acesso: { type: String, enum: ['Admin', 'C-Level', 'Cliente', 'Head', 'Operacional', 'Suhai', 'Mídia'], required: true },
 })
 
 const Topics = mongoose.model('Topicos Web', {
@@ -49,11 +49,20 @@ const Topics = mongoose.model('Topicos Web', {
   termo: { type: String, required: true },
   interesse: { type: String, required: true }, 
 })
+
+const Investimentos = mongoose.model('Investimentos de Mídia', {
+  Cliente: { type: String, enum: ['C6 bank', 'Telhanorte', 'Tumelero', 'Obraja', 'Klabin', 'Locaweb', 'Mitsubishi', 'Suhai'], required: true },
+  Tipo: { type: String,  enum: ['TV Aberta', 'TV Fechada', 'Mídia Out of Home',], required: true },
+  Valor: { type: Number, required: true },
+  Inicio: { type: Date, required: true },
+  Fim: { type: Date, required: true },
+})
  
 // const podeEditarClientes = ({ currentAdmin }) => currentAdmin.acesso === 'Head' || currentAdmin.acesso === 'C-Level'
 const podeEditarUsuarios = ({ currentAdmin }) => currentAdmin && currentAdmin.acesso === 'Admin'
 const GrupoSuhai = ({ currentAdmin }) => currentAdmin && currentAdmin.acesso === 'Suhai'
 const codigo = ({ currentAdmin }) => currentAdmin && currentAdmin.acesso === 'Dev'
+const CRUDmidia = ({ currentAdmin }) => currentAdmin && currentAdmin.acesso === 'Mídia'
 // const clevel = ({ currentAdmin }) => currentAdmin && currentAdmin.acesso === 'C-Level'
 // const operacional = ({ currentAdmin }) => currentAdmin.acesso === 'Operacional'
 
@@ -85,9 +94,27 @@ const adminBro = new AdminBro({
       }
     },
     {
+      resource: Investimentos,
+      options: {
+        parent: 'Menu',
+        properties: {
+          _id: {
+						isVisible: { list: false, filter: false, show: false, edit: false },
+					},
+        },
+        actions: {
+          edit: { isAccessible: codigo },
+          delete: { isAccessible: codigo },
+          new: { isAccessible: CRUDmidia },
+          show: { isAccessible: CRUDmidia },
+          list: { isAccessible: CRUDmidia },
+        }
+      }
+    },
+    {
       resource: Topics,
       options: {
-        parent: 'Configurações',
+        parent: 'Menu',
         properties: {
           _id: {
 						isVisible: { list: false, filter: false, show: false, edit: false },
@@ -117,7 +144,7 @@ const adminBro = new AdminBro({
   locale: {
     translations: {
       actions: {
-        new: 'Criar novo',
+        new: 'Registrar',
         edit: 'Editar',
         show: 'Mostrar',
         delete: 'Deletar',
@@ -138,7 +165,7 @@ const adminBro = new AdminBro({
         createFirstRecord: 'Criar primeiro registro',
       },
       labels: {
-        navigation: 'Menu',
+        navigation: '',
         Logout: 'Sair',
         Login: 'Entrar',
         pages: 'Páginas',
@@ -171,7 +198,7 @@ const adminBro = new AdminBro({
         error404Record: 'Recurso de id: {{resourceId}} não tem nenhum registro com o ID: {{recordId}}',
         seeConsoleForMore: 'Veja o console de desenvolvimento para mais detalhes...',
         noActionComponent: 'Você deve implementar o componente de ação para a sua Ação',
-        noRecordsInResource: 'Não há registros neste recurso',
+        noRecordsInResource: '',
         noRecords: 'Sem registros',
         confirmDelete: 'Tem certeza de que deseja remover este item?',
         welcomeOnBoard_title: 'Bem-vindo a bordo!',
@@ -245,6 +272,28 @@ const router = AdminBroExpressjs.buildAuthenticatedRouter(adminBro, {
       delete testinho.Locaweb;
       delete testinho.Mitsubishi;
       delete testinho.Suzuki;
+      // console.log(returnedTarget)
+      // console.log("ALEEEEEEEEEEEEFEEE") 
+    } 
+
+    
+    if(acessUser == "Mídia") { 
+      let dash = adminBro.options.dashboard
+
+      delete dash.component
+      let testinho = adminBro.options.pages
+      delete testinho.C6;
+      delete testinho.Telhanorte;
+      delete testinho.Tumelero;
+      delete testinho.Obraja;
+      delete testinho.Klabin;
+      delete testinho.Locaweb;
+      delete testinho.Mitsubishi;
+      delete testinho.Suzuki;
+      delete testinho.suhai;
+      delete testinho.suhaiFlashReport;
+      delete testinho.suhaiReport7dias;
+      delete testinho.suhaiReport24horas;
       // console.log(returnedTarget)
       // console.log("ALEEEEEEEEEEEEFEEE") 
     } 
