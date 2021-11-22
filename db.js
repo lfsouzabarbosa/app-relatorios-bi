@@ -10,9 +10,12 @@ return connection;
 }
 connect ();
 
-async function selectDisplay(){
+async function selectDisplay(Data){
     const conn = await connect();
-    return await conn.query('SELECT * FROM gDisplay LIMIT 100;')
+    const sql = 'SELECT sum(Clicks) as clicks FROM gDisplay WHERE DATE BETWEEN "2021-08-12" AND "2021-09-20" '
+    // const values = [Data.inicio, Data.final]
+    //return await conn.query('SELECT * FROM gDisplay LIMIT 2;'
+    return await conn.query(sql)
 }
 
 module.exports = {selectDisplay}

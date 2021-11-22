@@ -2,11 +2,10 @@ import React, { Component } from 'react'
 import { ApiClient } from 'admin-bro'
 import { Box } from '@admin-bro/design-system'
 import { Text } from '@admin-bro/design-system'
-import { Button } from '@admin-bro/design-system'
 import apiSheetsSuhai30 from './apiSheetsSuhai30'
-import apiSheetsSuhai7 from './apiSheetsSuhai7'
-import apiSheetsSuhai24 from './apiSheetsSuhai24'
+import gdisplay from './gdisplay' //
 import { Link } from '@admin-bro/design-system'
+import { DatePicker, DatePickerProps } from '@admin-bro/design-system'
 
 const api = new ApiClient()
 
@@ -15,12 +14,11 @@ class Dashboard extends Component {
         dados: [],
     }
     async componentDidMount() {
-        var responseapiSheetsSuhai30 = await apiSheetsSuhai30.get('');
+        var responseapiSheetsSuhai30 = await gdisplay.get('');
         console.log(responseapiSheetsSuhai30.data)
         this.setState({ dados: responseapiSheetsSuhai30.data });
-        this.setState({ dados30: responseapiSheetsSuhai30.data });
     };
-    render() {        
+    render() {
         const { dados } = this.state;
         return (
             <Box flex flexDirection="column" variant="grey">
@@ -31,29 +29,12 @@ class Dashboard extends Component {
                     </Box>
                 </Box>
                 <Box padding="2em" margin="20px" display={["block", "flex"]} backgroundColor="#ffffff" boxShadow="card" flexDirection="row" justifyContent="center" maxHeight="800px">
-                    <Box justifyContent="center" margin="10px 20px" alignItems="center" maxHeight="200px" maxWidth="300px" display={["flex", "inline-flex"]} flexDirection="row">
-                        <Box padding="5px"><img width="35px" height="35px"
-                            src="https://image.flaticon.com/icons/png/512/5502/5502145.png"></img></Box>
-                        <Box padding="10px">
-                            <Link href="./suhaiReport24horas">
-                                <Text color="black" fontSize="h4">Últimas 24 horas</Text></Link>
-                        </Box>
+                    <Box width={1 / 2} height="50px">
+                        <DatePicker onChange={(date) => console.log(date)} placeholder={'teste'}/>
                     </Box>
-                    <Box justifyContent="center" margin="10px 20px" alignItems="center" maxHeight="200px" maxWidth="300px" display={["flex", "inline-flex"]} flexDirection="row">
-                        <Box padding="5px"><img width="35px" height="35px"
-                            src="https://image.flaticon.com/icons/png/512/5502/5502145.png"></img></Box>
-                        <Box padding="10px" paddingRight="25px">
-                            <Link href="./suhaiReport7dias">
-                                <Text color="black" fontSize="h4">Última semana</Text></Link>
-                        </Box>
-                    </Box>
-                    <Box justifyContent="center" margin="10px 20px" alignItems="center" maxHeight="200px" maxWidth="300px" display={["flex", "inline-flex"]} flexDirection="row">
-                        <Box padding="5px"><img width="35px" height="35px"
-                            src="https://image.flaticon.com/icons/png/512/5502/5502145.png"></img></Box>
-                        <Box padding="10px" paddingRight="62px">
-                            <Link href="./suhaiFlashReport">
-                                <Text color="black" fontSize="h4">Total Investido</Text></Link>
-                        </Box>
+
+                    <Box width={1 / 2} height="50px">
+                        <DatePicker onChange={(date) => console.log(date)} />
                     </Box>
                 </Box>
 
@@ -70,7 +51,7 @@ class Dashboard extends Component {
                         <Box paddingRight="20px" paddingLeft="7px" paddingRight="9px" marginX="15px" ><img width="80px" height="80px"
                             src="https://image.flaticon.com/icons/png/512/4985/4985048.png"></img></Box>
                         <Box paddingY="15px" paddingLeft="7px" paddingRight="35px" minHeight="70px">
-                            <Text color="black" fontSize="h2">{dados.investido}</Text>
+                            <Text color="black" fontSize="h2">{dados.clicks}</Text>
                             <Text color="black" fontSize="h3">INVESTIDO</Text>
                         </Box>
                     </Box>
@@ -78,7 +59,7 @@ class Dashboard extends Component {
                         <Box paddingLeft="7px" paddingRight="9px" marginX="15px"><img width="80px" height="80px"
                             src="https://image.flaticon.com/icons/png/512/31/31624.png"></img></Box>
                         <Box paddingY="15px" paddingRight="90px" paddingLeft="7px" minHeight="70px">
-                            <Text color="black" fontSize="h2">{dados.views}</Text>
+                            <Text color="black" fontSize="h2">{dados.clicks}</Text>
                             <Text color="black" fontSize="h3">VIEWS</Text>
                         </Box>
                     </Box>
@@ -86,128 +67,12 @@ class Dashboard extends Component {
                         <Box borderRadius="5px" paddingRight="20px" paddingLeft="5px" marginX="15px" ><img width="80px" height="80px"
                             src="https://image.flaticon.com/icons/png/512/1908/1908669.png"></img></Box>
                         <Box paddingY="15px" paddingRight="20px" paddingLeft="7px" minHeight="70px">
-                            <Text color="black" fontSize="h2">{dados.impressoesBigNumbers}</Text>
+                            <Text color="black" fontSize="h2">{dados.clicks}</Text>
                             <Text color="black" fontSize="h3">IMPRESSÕES</Text>
                         </Box>
                     </Box>
                 </Box>
 
-                <Box display="flex" flexDirection="row" alignItems="center" maxHeight="20px" padding=" 1em 3em" >
-                    <Box>
-                        <img width="10px" height="10px" src="https://image.flaticon.com/icons/png/512/32/32738.png"></img>
-                    </Box>
-                    <Box paddingLeft="10px">
-                        <Text color="black" fontSize="h3">PROGRAMÁTICA</Text>
-                    </Box>
-                </Box>
-
-                <Box padding="2em" margin="20px" backgroundColor="#ffffff" display={["block", "flex"]} flexDirection="row" boxShadow="card" justifyContent="center" maxHeight="800px">
-                    <Box paddingX="25px" margin="10px 30px" alignItems="center" justifyContent="start" maxHeight="200px" display={["block", "block"]}>
-                        <Box ><img width="80px" height="80px"
-                            src="https://image.flaticon.com/icons/png/512/445/445569.png"></img></Box>
-                        <Text paddingRight="20px" paddingTop="10px" textAlign="center" color="black" fontSize="h2">Display/Vídeo</Text>
-                    </Box>
-                    <Box display={["flex", "inline-flex"]} margin="10px 40px" alignItems="center" maxHeight="200px">
-                        <Box padding="10px">
-                            <Text padding="5px" color="black" fontSize="h2">{dados.impressoesPD}</Text>
-                            <Text padding="5px" color="black" fontSize="h3">IMPRESSÕES</Text>
-                        </Box>
-                    </Box>
-                    <Box display={["flex", "inline-flex"]} margin="10px 40px" alignItems="center" maxHeight="200px">
-                        <Box padding="10px">
-                            <Text padding="5px" color="black" fontSize="h2">{dados.CPMD}</Text>
-                            <Text padding="5px" color="black" fontSize="h3">CPM</Text>
-                        </Box>
-                    </Box>
-                    <Box display={["flex", "inline-flex"]} margin="10px 40px" alignItems="center" maxHeight="200px">
-                        <Box padding="10px">
-                            <Text padding="5px" color="black" fontSize="h2">{dados.CTRDP}</Text>
-                            <Text padding="5px" color="black" fontSize="h3">VCR</Text>
-                        </Box>
-                    </Box>
-                </Box>
-
-                <Box padding="2em" margin="20px" backgroundColor="#ffffff" display={["block", "flex"]} flexDirection="row" boxShadow="card" justifyContent="center" maxHeight="800px">
-                    <Box paddingRight="100px" paddingLeft="25px" paddingY="15px" margin="10px 30px" alignItems="center" justifyContent="center" maxHeight="200px" display={["block", "block"]}>
-                        <Box ><img width="80px" height="80px"
-                            src="https://image.flaticon.com/icons/png/512/49/49084.png"></img></Box>
-                        <Text paddingRight="20px" paddingTop="10px" textAlign="center" color="black" fontSize="h2">Youtube</Text>
-                    </Box>
-                    <Box display={["flex", "inline-flex"]} margin="10px 40px" alignItems="center" maxHeight="200px">
-                        <Box padding="10px">
-                            <Text padding="5px" color="black" fontSize="h2">{dados.impressoesYT}</Text>
-                            <Text padding="5px" color="black" fontSize="h3">IMPRESSÕES</Text>
-                        </Box>
-                    </Box>
-                    <Box display={["flex", "inline-flex"]} margin="10px 40px" alignItems="center" maxHeight="200px">
-                        <Box padding="10px">
-                            <Text padding="5px" color="black" fontSize="h2">{dados.CPMYT}</Text>
-                            <Text padding="5px" color="black" fontSize="h3">CPM</Text>
-                        </Box>
-                    </Box>
-                    <Box display={["flex", "inline-flex"]} margin="10px 40px" alignItems="center" maxHeight="200px">
-                        <Box padding="10px">
-                            <Text padding="5px" color="black" fontSize="h2">{dados.VCRYT}</Text>
-                            <Text padding="5px" color="black" fontSize="h3">VCR</Text>
-                        </Box>
-                    </Box>
-                </Box>
-
-                <Box padding="2em" margin="20px" backgroundColor="#ffffff" display={["block", "flex"]} flexDirection="row" boxShadow="card" justifyContent="center" maxHeight="800px">
-                    <Box paddingRight="150px" paddingLeft="25px" paddingY="15px" margin="10px 30px" alignItems="center" justifyContent="center" maxHeight="200px" display={["block", "block"]}>
-                        <Box ><img width="80px" height="80px"
-                            src="https://image.flaticon.com/icons/png/512/732/732141.png"></img></Box>
-                        <Text textAlign="center" color="black" fontSize="h2">Waze</Text>
-                    </Box>
-                    <Box display={["flex", "inline-flex"]} margin="10px 40px" alignItems="center" maxHeight="200px">
-                        <Box padding="10px">
-                            <Text padding="5px" color="black" fontSize="h2">{dados.impressoesW}</Text>
-                            <Text padding="5px" color="black" fontSize="h3">IMPRESSÕES</Text>
-                        </Box>
-                    </Box>
-                    <Box display={["flex", "inline-flex"]} margin="10px 40px" alignItems="center" maxHeight="200px">
-                        <Box padding="10px">
-                            <Text padding="5px" color="black" fontSize="h2">{dados.CPMW}</Text>
-                            <Text padding="5px" color="black" fontSize="h3">CPM</Text>
-                        </Box>
-                    </Box>
-                    <Box display={["flex", "inline-flex"]} margin="10px 40px" alignItems="center" maxHeight="200px">
-                        <Box padding="10px">
-                            <Text padding="5px" color="black" fontSize="h2">{dados.ERW}</Text>
-                            <Text padding="5px" color="black" fontSize="h3">VCR</Text>
-                        </Box>
-                    </Box>
-                </Box>
-
-                <Box padding="2em" margin="20px" backgroundColor="#ffffff" display={["block", "flex"]} flexDirection="row" boxShadow="card" justifyContent="center" maxHeight="800px">
-                    <Box paddingX="25px" margin="10px 30px" alignItems="center" justifyContent="start" maxHeight="200px" display={["block", "block"]}>
-                        <Box display={["inline-flex"]} flexDirection="row">
-                            <Box ><img width="80px" height="80px"
-                                src="https://cdn-icons-png.flaticon.com/512/1384/1384031.png"></img></Box>
-                            <Box marginLeft="-2%"><img width="80px" height="80px"
-                                src="https://cdn-icons-png.flaticon.com/512/1384/1384005.png"></img></Box>
-                        </Box>
-                        <Text paddingRight="20px" paddingTop="10px" textAlign="center" color="black" fontSize="h2">SOCIAL</Text>
-                    </Box>
-                    <Box display={["flex", "inline-flex"]} margin="10px 40px" alignItems="center" maxHeight="200px">
-                        <Box padding="10px">
-                            <Text padding="5px" color="black" fontSize="h2">{ dados.impressoes }</Text>
-                            <Text padding="5px" color="black" fontSize="h3">IMPRESSÕES</Text>
-                        </Box>
-                    </Box>
-                    <Box display={["flex", "inline-flex"]} margin="10px 40px" alignItems="center" maxHeight="200px">
-                        <Box padding="10px">
-                            <Text padding="5px" color="black" fontSize="h2">{ dados.CPMFBIT }</Text>
-                            <Text padding="5px" color="black" fontSize="h3">CPM</Text>
-                        </Box>
-                    </Box>
-                    <Box display={["flex", "inline-flex"]} margin="10px 40px" alignItems="center" maxHeight="200px">
-                        <Box padding="10px">
-                            <Text padding="5px" color="black" fontSize="h2">{ dados.ERFBIT }</Text>
-                            <Text padding="5px" color="black" fontSize="h3">ERF</Text>
-                        </Box>
-                    </Box>
-                </Box>
 
             </Box>
         );

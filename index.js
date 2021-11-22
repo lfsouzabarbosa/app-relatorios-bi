@@ -33,6 +33,7 @@ const trendsSuzuki = express()
 const apiSheetsSuhai30D = express()
 const apiSheetsSuhai7D = express()
 const apiSheetsSuhai24H = express()
+const APIgdisplayBanco = express()
 let acessUser;
 
 // console.log(`${acessUser} : "Varivel criada"`)
@@ -410,6 +411,11 @@ apiSheetsSuhai24H.use(bodyParser.urlencoded({ extended: false }))
 apiSheetsSuhai24H.use(express.json())
 apiSheetsSuhai24H.use(cors())
 
+APIgdisplayBanco.use(morgan('dev'))
+APIgdisplayBanco.use(bodyParser.urlencoded({ extended: false }))
+APIgdisplayBanco.use(express.json())
+APIgdisplayBanco.use(cors())
+
 app.listen(8080, () => console.log('Sistema rodando em localhost:8080/admin'))
 trendsTelha.listen(3001, () => console.log('Trends telhanorte rodando em localhost:3001'))
 trendsTumelero.listen(3002, () => console.log('Trends tumelero rodando em localhost:3002'))
@@ -422,6 +428,18 @@ trendsSuzuki.listen(3008, () => console.log('Trends suzuki em localhost:3008'))
 apiSheetsSuhai30D.listen(3099, () => console.log('API sheets suhai 30 dias rodando'))
 apiSheetsSuhai7D.listen(3091, () => console.log('API sheets suhai 7 dias rodando'))
 apiSheetsSuhai24H.listen(3092, () => console.log('API sheets suhai 24 horas rodando'))
+APIgdisplayBanco.listen(3093, () => console.log('API Gdisplay banco de dados'))
+
+let ini
+let fim
+APIgdisplayBanco.get('/', (req, res) => {
+  (async () => {
+    const db = require('./db')
+    // const gdisplay = await db.selectDisplay({inicio:ini, final:fim});
+    const gdisplay = await db.selectDisplay();
+    return res.json(gdisplay[0][0]) 
+  })();
+}) 
 
 apiSheetsSuhai30D.get('/', (req, res) => {
   const { GoogleSpreadsheet } = require('google-spreadsheet')
