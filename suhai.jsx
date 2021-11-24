@@ -262,6 +262,18 @@ const crono = [
     { nome: 'Digital', total: 1193197.32, tempo: '27/07 a 10/10' }
 ];
 
+const genero = [
+    {genero: "Homem", valor: 295},
+    {genero:"Organização", valor: 195},
+    {genero: "Feminino", valor: 10}
+]
+
+const sentimentos = [
+    {tipo: "Positivo", valor: 421},
+    {tipo: "Negativo", valor: 190},
+    {tipo: "Neutro", valor: 155}
+]
+
 const api = new ApiClient()
 
 const Dashboard = () => {
@@ -388,6 +400,70 @@ const Dashboard = () => {
                         </div>
                     </Box>
                 </Box>
+            </div>
+            <div>
+                <Box backgroundColor="#ffffff" boxShadow="cardHover"  borderRadius="7px" display={["block", "flex"]}  flexDirection="column" justifyContent="center" margin="2%" minHeight="90%">
+                            <Box backgroundColor="#1C1C1C" borderRadius="7px" minWidth="80%" marginX="2%" justifyContent="space-evenly" marginTop="-1%">
+                                <Text textAlign="center" paddingY="20px" paddingX="20px" fontSize="h1" color="white" fontWeight="4px">Monitoramento de menções</Text>
+                            </Box>
+                    <Box display={["block", "flex"]}  flexDirection="row" justifyContent="center">
+                        <Box paddingX="20px" marginX="2%" display={["block", "flex"]}  flexDirection="column" marginTop="10px" marginY="2%" marginBottom="2%" justifyContent="center" minWidth="33%" minHeight="30%">
+                            <Text textAlign="center" paddingY="15px" paddingX="8px" fontSize="h1" fontWeight="4px">Gênero</Text>
+                                <div>
+                                    <ResponsiveContainer width="100%" height={270}>
+                                        <PieChart width={300} height={300}>
+                                        <Pie
+                                            data={genero}
+                                            cx="50%"
+                                            cy="50%"
+                                            labelLine={false}
+                                            label={renderCustomizedLabel}
+                                            outerRadius="70%"
+                                            fill="#8884d8"
+                                            dataKey="valor"
+                                        >
+                                            {crono.map((entry, index) => (
+                                            <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
+                                            ))}
+                                        </Pie>
+                                        <Legend height={5} verticalAlign="top" layout="horizontal" payload={[{value: 'Homem', type: 'linear', id:'ID01', color: '#0088fe' }, 
+                                        {value: 'Feminino', type: 'linear', id:'ID03', color: '#ffbb28' },
+                                        {value: 'Organização', type: 'linear', id:'ID04', color: '#00c49f' }]} />
+                                        </PieChart>
+                                    </ResponsiveContainer>
+                                </div>
+                            </Box>
+                            <Box paddingX="20px"  marginX="2%" display={["block", "flex"]}  flexDirection="column" marginTop="10px" marginY="2%" marginBottom="2%" justifyContent="center" minWidth="33%" minHeight="30%">
+                                    <Text textAlign="center" paddingY="15px" paddingX="8px" fontSize="h1" fontWeight="4px">Sentimento</Text>
+                                <div>
+                                    <ResponsiveContainer width="100%" height={270}>
+                                        <PieChart width={300} height={300}>
+                                        <Pie
+                                            data={sentimentos}
+                                            cx="50%"
+                                            cy="50%"
+                                            labelLine={false}
+                                            label={renderCustomizedLabel}
+                                            outerRadius="70%"
+                                            fill="#8884d8"
+                                            dataKey="valor"
+                                        >
+                                            {crono.map((entry, index) => (
+                                            <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
+                                            ))}
+                                        </Pie>
+                                        <Legend height={5} verticalAlign="top" layout="horizontal" payload={[{value: 'Positivo', type: 'linear', id:'ID01', color: '#0088fe' }, 
+                                        {value: 'Negativo', type: 'linear', id:'ID03', color: '#ffbb28' },
+                                        {value: 'Neutro', type: 'linear', id:'ID04', color: '#00c49f' }]} />
+                                        </PieChart>
+                                    </ResponsiveContainer>
+                                </div>
+                            </Box>
+                        </Box>
+                        <Box display={["block", "flex"]} flexDirection="row" justifyContent="center" paddingY="2%" paddingX="5%">
+                            <Text textAlign="center" fontSize="h2" fontWeight="700">Publicações monitoradas: 766</Text>
+                        </Box>
+                    </Box>
             </div>
             <div>
                 <Box display={["block"]} flexDirection="row" flexWrap="wrap" marginY="3%" justifyContent="space-evenly">
