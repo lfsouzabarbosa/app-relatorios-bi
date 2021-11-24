@@ -264,7 +264,7 @@ const crono = [
 
 const genero = [
     {genero: "Homem", valor: 295},
-    {genero:"Organização", valor: 195},
+    {genero:"Indefinido", valor: 195},
     {genero: "Feminino", valor: 10}
 ]
 
