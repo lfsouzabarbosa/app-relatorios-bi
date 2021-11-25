@@ -439,6 +439,28 @@ APIgdisplayBanco.get('/', (req, res) => {
     const gdisplay = await db.selectDisplay();
     return res.json(gdisplay[0][0]) 
   })();
+
+
+  const { GoogleSpreadsheet } = require('google-spreadsheet')
+  const credenciais = require('./credenciais.json')
+  const arquivo = require('./arquivo.json')
+  const getDoc = async () => {
+    const doc = new GoogleSpreadsheet(arquivo.id);
+
+    await doc.useServiceAccountAuth({
+      client_email: credenciais.client_email,
+      private_key: credenciais.private_key.replace(/\\n/g, '\n')
+    })
+    await doc.loadInfo();
+    return doc;
+  }
+
+  let sheetInvestido;
+  getDoc().then(doc => {
+    sheetInvestido = doc.sheetsByIndex[0];
+    const linhas = sheetInvestido.getRows()
+    console.log(linhas.length)
+  })
 }) 
 
 apiSheetsSuhai30D.get('/', (req, res) => {
