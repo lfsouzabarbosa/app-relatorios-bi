@@ -390,7 +390,7 @@ const Dashboard = () => {
                         <div>
                             <Box display="flex" minWidth="100%" justifyContent="center" verticalAlign="center">
                                 <Botao>
-                                    <StyledLink href="./suhaiFlashReport">
+                                    <StyledLink href="./FlashReport">
                                         <Text textAlign="center" fontSize="h2" fontWeight="800">Detalhes</Text>
                                     </StyledLink>
                                 </Botao>
