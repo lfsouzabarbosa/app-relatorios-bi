@@ -248,20 +248,12 @@ const router = AdminBroExpressjs.buildAuthenticatedRouter(adminBro, {
       suhai = {Suhai: {
         component: AdminBro.bundle('./suhai'),
       }};
-      suhaiFlashReport = {suhaiFlashReport: {
+      suhaiFlashReport = {FlashReport: {
         component: AdminBro.bundle('./suhaidaily'),
       }};
-      suhaiReport7dias = {suhaiReport7dias: {
-        component: AdminBro.bundle('./suhaiReport7dias'),
-      }};
-      suhaiReport24horas = {suhaiReport24horas: {
-        component: AdminBro.bundle('./suhaiReport24horas'),
-      }};
-      dashsuhai = {suhaiFlashReport: {
-        component: AdminBro.bundle('./suhaidaily'),
-      }};
-      const returnedTarget = Object.assign(paginas, suhai, suhaiFlashReport, suhaiReport7dias, suhaiReport24horas, dashsuhai)
-      const returnedTarget2 = Object.assign(dashboard, dashsuhai)
+
+      const returnedTarget = Object.assign(paginas, suhai, suhaiFlashReport)
+      const returnedTarget2 = Object.assign(dashboard)
       let testinho = adminBro.options.pages
       
       delete testinho.C6;
