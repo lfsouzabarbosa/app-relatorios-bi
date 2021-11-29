@@ -5,6 +5,8 @@ import apiSheetsSuhai30 from './apiSheetsSuhai30'
 import apiSheetsSuhai7 from './apiSheetsSuhai7'
 import apiSheetsSuhai24 from './apiSheetsSuhai24'
 import { Link } from '@admin-bro/design-system'
+import { Loader } from '@admin-bro/design-system'
+
 
 class Dashboard extends Component {
     constructor(props) {
@@ -37,12 +39,20 @@ class Dashboard extends Component {
 
     async componentDidMount() {
         let responseapiSheetsSuhai30 = await apiSheetsSuhai30.get('');
-        console.log(responseapiSheetsSuhai30.data)
         this.setState({ dados: responseapiSheetsSuhai30.data });
     };
 
     render() {
         const { dados } = this.state;
+        const objeto = Object.keys(dados).length;
+        console.log(objeto)
+        while( objeto == 0){
+            return (
+                <div>
+                    <Loader/>
+                </div>
+            );
+        }
         return (
             <><Box flex flexDirection="column" variant="grey">
                 <Box maxHeight="100px" padding="1em" margin="10px">

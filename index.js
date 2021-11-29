@@ -247,7 +247,7 @@ const router = AdminBroExpressjs.buildAuthenticatedRouter(adminBro, {
       delete dash.component
       suhai = {Suhai: {
         component: AdminBro.bundle('./suhai'),
-      }};
+      }}; 
       suhaiFlashReport = {FlashReport: {
         component: AdminBro.bundle('./suhaidaily'),
       }};
