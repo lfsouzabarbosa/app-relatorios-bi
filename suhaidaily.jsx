@@ -6,34 +6,42 @@ import apiSheetsSuhai7 from './apiSheetsSuhai7'
 import apiSheetsSuhai24 from './apiSheetsSuhai24'
 import { Link } from '@admin-bro/design-system'
 import { Loader } from '@admin-bro/design-system'
+//let loading;
 
 
 class Dashboard extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            dados: []
+            dados: [],
+            loading: ''
         };
 
         this.UltimoDia = this.UltimoDia.bind(this);
         this.UltimaSemana = this.UltimaSemana.bind(this);
         this.UltimoMes = this.UltimoMes.bind(this);
-
+       
     }
     async UltimaSemana() {
+        this.setState({ loading: 1 });
         let responseapiSheetsSuhai7 = await apiSheetsSuhai7.get('');
         console.log(responseapiSheetsSuhai7.data)
+        this.setState({ loading: 0 });
         this.setState({ dados: responseapiSheetsSuhai7.data });
     };
 
     async UltimoDia() {
+        this.setState({ loading: 1 });
         let responseapiSheetsSuhai24 = await apiSheetsSuhai24.get('');
         console.log(responseapiSheetsSuhai24.data)
+        this.setState({ loading: 0 });
         this.setState({ dados: responseapiSheetsSuhai24.data });
     }
     async UltimoMes() {
+        this.setState({ loading: 1 });
         let responseapiSheetsSuhai30 = await apiSheetsSuhai30.get('');
         console.log(responseapiSheetsSuhai30.data)
+        this.setState({ loading: 0 });
         this.setState({ dados: responseapiSheetsSuhai30.data });
     }
 
@@ -47,6 +55,14 @@ class Dashboard extends Component {
         const objeto = Object.keys(dados).length;
         console.log(objeto)
         while( objeto == 0){
+            return (
+                <div>
+                    <Loader/>
+                </div>
+            );
+        }
+        const loading = this.state.loading
+        while ( loading == 1 ){
             return (
                 <div>
                     <Loader/>
@@ -108,7 +124,7 @@ class Dashboard extends Component {
                             <Box backgroundColor="#1C1C1C" borderRadius="7px" paddingLeft="4%" paddingRight="4%" paddingTop="3%" mminHeight="10%" maxHeight="30%" maxWidth="60%"><img width="80px" height="80px"
                                 src="https://64.media.tumblr.com/c39820edfa29154e95c97fc93f0ff142/a5af1ad2e1a2f53f-d4/s540x810/ea7208ce872e4120020af15e7cb9d04eb60de273.png"></img></Box>
                             <Box paddingY="15px" paddingLeft="7px" alignSelf="self-end" maxWidth="50%">
-                                <Text paddingBottom="2%" color="black" fontSize="h2">{dados.investido}</Text>
+                                <Text paddingBottom="2%" color="black" fontSize="h2">{dados.investido == '#DIV/0!' ? '0,00' : dados.investido}</Text>
                                 <Text color="black" fontSize="h3">INVESTIDO</Text>
                             </Box>
                         </Box>
@@ -116,7 +132,7 @@ class Dashboard extends Component {
                             <Box backgroundColor="#1C1C1C" borderRadius="7px" paddingLeft="4%" paddingRight="4%" paddingY="3%" maxHeight="80%" maxWidth="60%"><img width="80px" height="80px"
                                 src="https://64.media.tumblr.com/1c856e21d16c57127d27f0c46e8ee71a/898ced3754308402-fb/s540x810/514e554fc0e667b8224ea62d403c794028735942.png"></img></Box>
                             <Box paddingY="15px" paddingLeft="7px" alignSelf="self-end" minWidth="50%">
-                                <Text paddingBottom="2%" color="black" fontSize="h2">{dados.views}</Text>
+                                <Text paddingBottom="2%" color="black" fontSize="h2">{dados.views == '#DIV/0!' ? '0,00' : dados.views}</Text>
                                 <Text color="black" fontSize="h3">VIEWS</Text>
                             </Box>
                         </Box>
@@ -124,7 +140,7 @@ class Dashboard extends Component {
                             <Box backgroundColor="#1C1C1C" borderRadius="7px" paddingLeft="3%" paddingRight="5%" paddingY="3%" maxHeight="80%" maxWidth="60%"><img width="80px" height="80px"
                                 src="https://64.media.tumblr.com/1f756e8650d4da630561798a866c1f22/139abaa599e23fa4-14/s500x750/550cbc2de53e7e7d68a183bbd910bd57137816f2.png"></img></Box>
                             <Box paddingY="15px" paddingLeft="7px" alignSelf="self-end" minWidth="48%">
-                                <Text paddingBottom="2%" color="black" fontSize="h2">{dados.impressoesBigNumbers}</Text>
+                                <Text paddingBottom="2%" color="black" fontSize="h2">{dados.impressoesBigNumbers == '#DIV/0!' ? '0,00' : dados.impressoesBigNumbers}</Text>
                                 <Text color="black" fontSize="h3">IMPRESSÕES</Text>
                             </Box>
                         </Box>
@@ -149,15 +165,15 @@ class Dashboard extends Component {
                         </Box>
                         <Box display={["block", "flex"]} flexDirection="row" justifyContent="space-between" minWidth="70%">
                             <Box display={["block"]} paddingY="2%">
-                                <Text textAlign="center" padding="5px" color="black" fontSize="h2">{dados.impressoesPD}</Text>
+                                <Text textAlign="center" padding="5px" color="black" fontSize="h2">{dados.impressoesPD == '#DIV/0!' ? '0,00' : dados.impressoesPD}</Text>
                                 <Text textAlign="center" padding="5px" color="black" fontSize="h3">IMPRESSÕES</Text>
                             </Box>
                             <Box paddingY="2%" >
-                                <Text textAlign="center" padding="5px" color="black" fontSize="h2">{dados.CPMD}</Text>
+                                <Text textAlign="center" padding="5px" color="black" fontSize="h2">{dados.CPMD == '#DIV/0!' ? '0,00' : dados.CPMD}</Text>
                                 <Text textAlign="center" padding="5px" color="black" fontSize="h3">CPM</Text>
                             </Box>
                             <Box paddingY="2%">
-                                <Text textAlign="center" padding="5px" color="black" fontSize="h2">{dados.CTRDP}</Text>
+                                <Text textAlign="center" padding="5px" color="black" fontSize="h2">{dados.CTRDP == '#DIV/0!' ? '0,00' : dados.CTRDP}</Text>
                                 <Text textAlign="center" padding="5px" color="black" fontSize="h3">VCR</Text>
                             </Box>
                         </Box>
@@ -172,15 +188,15 @@ class Dashboard extends Component {
                         </Box>
                         <Box display={["block", "flex"]} flexDirection="row" justifyContent="space-between" minWidth="70%">
                             <Box display={["block"]} paddingY="2%">
-                                <Text textAlign="center" padding="5px" color="black" fontSize="h2">{dados.impressoesYT}</Text>
+                                <Text textAlign="center" padding="5px" color="black" fontSize="h2">{dados.impressoesYT == '#DIV/0!' ? '0,00' : dados.impressoesYT}</Text>
                                 <Text textAlign="center" padding="5px" color="black" fontSize="h3">IMPRESSÕES</Text>
                             </Box>
                             <Box paddingY="2%" >
-                                <Text textAlign="center" padding="5px" color="black" fontSize="h2">{dados.CPMYT}</Text>
+                                <Text textAlign="center" padding="5px" color="black" fontSize="h2">{dados.CPMYT == '#DIV/0!' ? '0,00' : dados.CPMYT}</Text>
                                 <Text textAlign="center" padding="5px" color="black" fontSize="h3">CPM</Text>
                             </Box>
                             <Box paddingY="2%">
-                                <Text textAlign="center" padding="5px" color="black" fontSize="h2">{dados.VCRYT}</Text>
+                                <Text textAlign="center" padding="5px" color="black" fontSize="h2">{dados.VCRYT == '#DIV/0!' ? '0,00' : dados.VCRYT}</Text>
                                 <Text textAlign="center" padding="5px" color="black" fontSize="h3">VCR</Text>
                             </Box>
                         </Box>
@@ -195,15 +211,15 @@ class Dashboard extends Component {
                         </Box>
                         <Box display={["block", "flex"]} flexDirection="row" justifyContent="space-between" minWidth="70%">
                             <Box display={["block"]} paddingY="2%">
-                                <Text textAlign="center" padding="5px" color="black" fontSize="h2">{dados.impressoesW}</Text>
+                                <Text textAlign="center" padding="5px" color="black" fontSize="h2">{dados.impressoesW == '#DIV/0!' ? '0,00' : dados.impressoesW}</Text>
                                 <Text textAlign="center" padding="5px" color="black" fontSize="h3">IMPRESSÕES</Text>
                             </Box>
                             <Box paddingY="2%" >
-                                <Text textAlign="center" padding="5px" color="black" fontSize="h2">{dados.CPMW}</Text>
+                                <Text textAlign="center" padding="5px" color="black" fontSize="h2">{dados.CPMW == '#DIV/0!' ? '0,00' : dados.CPMW}</Text>
                                 <Text textAlign="center" padding="5px" color="black" fontSize="h3">CPM</Text>
                             </Box>
                             <Box paddingY="2%">
-                                <Text textAlign="center" padding="5px" color="black" fontSize="h2">{dados.ERW}</Text>
+                                <Text textAlign="center" padding="5px" color="black" fontSize="h2">{dados.ERW == '#DIV/0!' ? '0,00' : dados.ERW}</Text>
                                 <Text textAlign="center" padding="5px" color="black" fontSize="h3">VCR</Text>
                             </Box>
                         </Box>
@@ -221,15 +237,15 @@ class Dashboard extends Component {
                         </Box>
                         <Box display={["block", "flex"]} flexDirection="row" justifyContent="space-between" minWidth="70%">
                             <Box display={["block"]} paddingY="2%">
-                                <Text textAlign="center" padding="5px" color="black" fontSize="h2">{dados.impressoes}</Text>
+                                <Text textAlign="center" padding="5px" color="black" fontSize="h2">{dados.impressoes == '#DIV/0!' ? '0,00' : dados.impressoes}</Text>
                                 <Text textAlign="center" padding="5px" color="black" fontSize="h3">IMPRESSÕES</Text>
                             </Box>
                             <Box paddingY="2%" >
-                                <Text textAlign="center" padding="5px" color="black" fontSize="h2">{dados.CPMFBIT}</Text>
+                                <Text textAlign="center" padding="5px" color="black" fontSize="h2">{dados.CPMFBIT == '#DIV/0!' ? '0,00' : dados.CPMFBIT}</Text>
                                 <Text textAlign="center" padding="5px" color="black" fontSize="h3">CPM</Text>
                             </Box>
                             <Box paddingY="2%">
-                                <Text textAlign="center" padding="5px" color="black" fontSize="h2">{dados.ERFBIT}</Text>
+                                <Text textAlign="center" padding="5px" color="black" fontSize="h2">{dados.ERFBIT == '#DIV/0!' ? '0,00' : dados.ERFBIT}</Text>
                                 <Text textAlign="center" padding="5px" color="black" fontSize="h3">VCR</Text>
                             </Box>
                         </Box>
