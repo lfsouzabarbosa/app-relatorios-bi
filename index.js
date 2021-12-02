@@ -411,6 +411,31 @@ const router = AdminBroExpressjs.buildAuthenticatedRouter(adminBro, {
       delete testinho.suhaiReport24horas;
       delete testinho.suhaiReport7dias;
     }
+
+    if(acessUser == "Mídia") { 
+      Midias = {Midias: {
+        component: AdminBro.bundle('./midia'),
+      }};
+      const returnedTarget = Object.assign(paginas, Midias)
+      let testinho = adminBro.options.pages
+
+      let dash = adminBro.options.dashboard
+
+      delete dash.component
+      delete testinho.C6;
+      delete testinho.Telhanorte;
+      delete testinho.Tumelero;
+      delete testinho.Obraja;
+      delete testinho.Klabin;
+      delete testinho.Locaweb;
+      delete testinho.Mitsubishi;
+      delete testinho.Suzuki;
+      delete testinho.suhai;
+      delete testinho.suhaiFlashReport;
+      delete testinho.suhaiReport7dias;
+      delete testinho.suhaiReport24horas;
+    } 
+    
     if (user) {
       const matched = await user.senha
       if (matched) {
