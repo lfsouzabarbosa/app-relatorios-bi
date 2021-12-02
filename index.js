@@ -50,7 +50,7 @@ const Topics = mongoose.model('Topicos Web', {
   interesse: { type: String, required: true }, 
 })
 
-const Investimentos = mongoose.model('Investimentos de Mídia', {
+const InvestimentosOLD = mongoose.model('Investimentos de Mídia', {
   Cliente: { type: String, enum: ['C6 bank', 'Telhanorte', 'Tumelero', 'Obraja', 'Klabin', 'Locaweb', 'Mitsubishi', 'Suhai'], required: true },
   Tipo: { type: String,  enum: ['TV Aberta', 'TV Fechada', 'Mídia Out of Home',], required: true },
   Valor: { type: Number, required: true },
@@ -94,7 +94,7 @@ const adminBro = new AdminBro({
       }
     },
     {
-      resource: Investimentos,
+      resource: InvestimentosOLD,
       options: {
         parent: 'Menu',
         properties: {
@@ -413,10 +413,14 @@ const router = AdminBroExpressjs.buildAuthenticatedRouter(adminBro, {
     }
 
     if(acessUser == "Mídia") { 
+      Investimentos = {Investimentos: {
+        component: AdminBro.bundle('./InvestimentosMidia'),
+      }};
+
       Midias = {Midias: {
         component: AdminBro.bundle('./midia'),
       }};
-      const returnedTarget = Object.assign(paginas, Midias)
+      const returnedTarget = Object.assign(paginas, Midias, Investimentos)
       let testinho = adminBro.options.pages
 
       let dash = adminBro.options.dashboard
