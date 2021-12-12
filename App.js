@@ -212,7 +212,7 @@ const router = AdminBroExpressjs.buildAuthenticatedRouter(adminBro, {
         Suhai: {
           component: AdminBro.bundle('src/components/suhai.jsx'),
         }
-      };
+      }; 
       suhaiFlashReport = {
         FlashReport: {
           component: AdminBro.bundle('src/components/suhaiFlashReport.jsx'),
