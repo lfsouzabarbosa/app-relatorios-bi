@@ -485,8 +485,8 @@ apiSheetsSuhai24H.listen(3092, () => console.log('API sheets suhai 24 horas roda
 
 apiSheetsSuhai30D.get('/', (req, res) => {
   const { GoogleSpreadsheet } = require('google-spreadsheet')
-  const credenciais = require('././src/sheets/credenciaisIntegraSuhai.json')
-  const arquivo = require('././src/sheets/arquivoIntegraSuhai.json')
+  const credenciais = require('./src/sheets/credenciaisIntegraSuhai.json')
+  const arquivo = require('./src/sheets/arquivoIntegraSuhai.json')
   const getDoc = async () => {
     const doc = new GoogleSpreadsheet(arquivo.id);
 
@@ -528,8 +528,8 @@ apiSheetsSuhai30D.get('/', (req, res) => {
 
 apiSheetsSuhai7D.get('/', (req, res) => {
   const { GoogleSpreadsheet } = require('google-spreadsheet')
-  const credenciais = require('././src/sheets/credenciaisIntegraSuhai.json')
-  const arquivo = require('././src/sheets/arquivoIntegraSuhai.json')
+  const credenciais = require('./src/sheets/credenciaisIntegraSuhai.json')
+  const arquivo = require('./src/sheets/arquivoIntegraSuhai.json')
   const getDoc = async () => {
     const doc = new GoogleSpreadsheet(arquivo.id);
 
@@ -571,8 +571,8 @@ apiSheetsSuhai7D.get('/', (req, res) => {
 
 apiSheetsSuhai24H.get('/', (req, res) => {
   const { GoogleSpreadsheet } = require('google-spreadsheet')
-  const credenciais = require('././src/sheets/credenciaisIntegraSuhai.json')
-  const arquivo = require('././src/sheets/arquivoIntegraSuhai.json')
+  const credenciais = require('./src/sheets/credenciaisIntegraSuhai.json')
+  const arquivo = require('./src/sheets/arquivoIntegraSuhai.json')
   const getDoc = async () => {
     const doc = new GoogleSpreadsheet(arquivo.id);
 
