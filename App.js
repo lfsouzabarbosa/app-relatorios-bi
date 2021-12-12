@@ -104,7 +104,7 @@ const adminBro = new AdminBro({
     softwareBrothers: false,
   },
   dashboard: {
-    component: AdminBro.bundle('./src/components/c6Bank.jsx'),
+    component: AdminBro.bundle('./src/components/c6Bank'),
   },
   locale: {
     translations: {
@@ -210,12 +210,12 @@ const router = AdminBroExpressjs.buildAuthenticatedRouter(adminBro, {
       delete dash.component
       suhai = {
         Suhai: {
-          component: AdminBro.bundle('./src/components/suhai.jsx'),
+          component: AdminBro.bundle('./src/components/suhai'),
         }
       }; 
       suhaiFlashReport = {
         FlashReport: {
-          component: AdminBro.bundle('./src/components/suhaiFlashReport.jsx'),
+          component: AdminBro.bundle('./src/components/suhaiFlashReport'),
         }
       };
 
@@ -236,32 +236,32 @@ const router = AdminBroExpressjs.buildAuthenticatedRouter(adminBro, {
     if (acessUser == "Admin") {
       c6 = {
         C6: {
-          component: AdminBro.bundle('./src/components/c6Bank.jsx'),
+          component: AdminBro.bundle('./src/components/c6Bank'),
         }
       };
       telhanorte = {
         Telhanorte: {
-          component: AdminBro.bundle('./src/components/homepage.jsx'),
+          component: AdminBro.bundle('./src/components/homepage'),
         }
       };
       tumelero = {
         Tumelero: {
-          component: AdminBro.bundle('./src/components/tumelero.jsx'),
+          component: AdminBro.bundle('./src/components/tumelero'),
         }
       };
       obraja = {
         Obraja: {
-          component: AdminBro.bundle('./src/components/obraja.jsx'),
+          component: AdminBro.bundle('./src/components/obraja'),
         }
       };
       klabin = {
         Klabin: {
-          component: AdminBro.bundle('./src/components/klabin.jsx'),
+          component: AdminBro.bundle('./src/components/klabin'),
         }
       };
       locaweb = {
         Locaweb: {
-          component: AdminBro.bundle('./src/components/locaweb.jsx'),
+          component: AdminBro.bundle('./src/components/locaweb'),
         }
       };
       mitisubish = {
@@ -271,12 +271,12 @@ const router = AdminBroExpressjs.buildAuthenticatedRouter(adminBro, {
       };
       suhai = {
         Suhai: {
-          component: AdminBro.bundle('./src/components/suhai.jsx'),
+          component: AdminBro.bundle('./src/components/suhai'),
         }
       };
       Suzuki = {
         Suzuki: {
-          component: AdminBro.bundle('./src/components/suzuki.jsx'),
+          component: AdminBro.bundle('./src/components/suzuki'),
         }
       };
       const returnedTarget = Object.assign(paginas, c6, telhanorte, tumelero, obraja, klabin, locaweb, mitisubish, suhai, Suzuki)
@@ -289,47 +289,47 @@ const router = AdminBroExpressjs.buildAuthenticatedRouter(adminBro, {
     if (acessUser == "C-Level") {
       c6 = {
         C6: {
-          component: AdminBro.bundle('./src/components/c6Bank.jsx'),
+          component: AdminBro.bundle('./src/components/c6Bank'),
         }
       };
       telhanorte = {
         Telhanorte: {
-          component: AdminBro.bundle('./src/components/homepage.jsx'),
+          component: AdminBro.bundle('./src/components/homepage'),
         }
       };
       tumelero = {
         Tumelero: {
-          component: AdminBro.bundle('./src/components/tumelero.jsx'),
+          component: AdminBro.bundle('./src/components/tumelero'),
         }
       };
       obraja = {
         Obraja: {
-          component: AdminBro.bundle('./src/components/obraja.jsx'),
+          component: AdminBro.bundle('./src/components/obraja'),
         }
       };
       klabin = {
         Klabin: {
-          component: AdminBro.bundle('./src/components/klabin.jsx'),
+          component: AdminBro.bundle('./src/components/klabin'),
         }
       };
       locaweb = {
         Locaweb: {
-          component: AdminBro.bundle('./src/components/locaweb.jsx'),
+          component: AdminBro.bundle('./src/components/locaweb'),
         }
       };
       mitisubish = {
         Mitsubishi: {
-          component: AdminBro.bundle('./src/components/mitsubishi.jsx'),
+          component: AdminBro.bundle('./src/components/mitsubishi'),
         }
       };
       suhai = {
         Suhai: {
-          component: AdminBro.bundle('./src/components/suhai.jsx'),
+          component: AdminBro.bundle('./src/components/suhai'),
         }
       };
       Suzuki = {
         Suzuki: {
-          component: AdminBro.bundle('./src/components/suzuki.jsx'),
+          component: AdminBro.bundle('./src/components/suzuki'),
         }
       };
       const returnedTarget = Object.assign(paginas, c6, telhanorte, tumelero, obraja, klabin, locaweb, mitisubish, suhai, Suzuki)
@@ -342,32 +342,32 @@ const router = AdminBroExpressjs.buildAuthenticatedRouter(adminBro, {
     if (acessUser == "Head") {
       c6 = {
         C6: {
-          component: AdminBro.bundle('./src/components/c6Bank.jsx'),
+          component: AdminBro.bundle('./src/components/c6Bank'),
         }
       };
       telhanorte = {
         Telhanorte: {
-          component: AdminBro.bundle('./src/components/homepage.jsx'),
+          component: AdminBro.bundle('./src/components/homepage'),
         }
       };
       tumelero = {
         Tumelero: {
-          component: AdminBro.bundle('./src/components/tumelero.jsx'),
+          component: AdminBro.bundle('./src/components/tumelero'),
         }
       };
       obraja = {
         Obraja: {
-          component: AdminBro.bundle('./src/components/obraja.jsx'),
+          component: AdminBro.bundle('./src/components/obraja'),
         }
       };
       klabin = {
         Klabin: {
-          component: AdminBro.bundle('./src/components/klabin.jsx'),
+          component: AdminBro.bundle('./src/components/klabin'),
         }
       };
       locaweb = {
         Locaweb: {
-          component: AdminBro.bundle('./src/components/locaweb.jsx'),
+          component: AdminBro.bundle('./src/components/locaweb'),
         }
       };
       const returnedTarget = Object.assign(paginas, c6, telhanorte, tumelero, obraja, klabin, locaweb)
@@ -383,17 +383,17 @@ const router = AdminBroExpressjs.buildAuthenticatedRouter(adminBro, {
     if (acessUser == "Operacional") {
       c6 = {
         C6: {
-          component: AdminBro.bundle('./src/components/c6Bank.jsx'),
+          component: AdminBro.bundle('./src/components/c6Bank'),
         }
       };
       telhanorte = {
         Telhanorte: {
-          component: AdminBro.bundle('./src/components/homepage.jsx'),
+          component: AdminBro.bundle('./src/components/homepage'),
         }
       };
       tumelero = {
         Tumelero: {
-          component: AdminBro.bundle('./src/components/tumelero.jsx'),
+          component: AdminBro.bundle('./src/components/tumelero'),
         }
       };
       const returnedTarget = Object.assign(paginas, c6, telhanorte, tumelero)
@@ -412,13 +412,13 @@ const router = AdminBroExpressjs.buildAuthenticatedRouter(adminBro, {
     if (acessUser == "Mídia") {
       Investimentos = {
         Investimentos: {
-          component: AdminBro.bundle('./src/components/InvestimentosMidia.jsx'),
+          component: AdminBro.bundle('./src/components/InvestimentosMidia'),
         }
       };
 
       Midias = {
         Midias: {
-          component: AdminBro.bundle('./src/components/midia.jsx'),
+          component: AdminBro.bundle('./src/components/midia'),
         }
       };
       const returnedTarget = Object.assign( paginas, Investimentos, Midias )
