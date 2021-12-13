@@ -1,4 +1,4 @@
-import React, { useCallback, useState } from "react";
+import React from "react";
 import { ApiClient } from 'admin-bro'
 import { Box } from '@admin-bro/design-system'
 import { Text } from '@admin-bro/design-system'
@@ -13,16 +13,15 @@ import {
     Tooltip,
     Legend,
     ResponsiveContainer,
-    Brush, PieChart, Pie, Sector, Cell
+    Brush, PieChart, Pie, Cell
 } from 'recharts';
-import { LogoFacebook32, UserFollow32, FavoriteFilled32, SendAltFilled32, LogoInstagram32 } from '@carbon/icons-react'
+import { UserFollow32, FavoriteFilled32, SendAltFilled32 } from '@carbon/icons-react'
 import styled from 'styled-components'
 import {
     Table,
     TableRow,
     TableCell,
     TableCaption,
-    TableHead,
     TableBody,
 } from '@admin-bro/design-system'
 

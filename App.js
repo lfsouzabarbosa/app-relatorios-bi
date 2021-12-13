@@ -274,16 +274,28 @@ const router = AdminBroExpressjs.buildAuthenticatedRouter(adminBro, {
           component: AdminBro.bundle('./src/components/suhai'),
         }
       };
+      suhaiFlashReport = {
+        FlashReport: {
+          component: AdminBro.bundle('./src/components/suhaiFlashReport'),
+        }
+      };
       Suzuki = {
         Suzuki: {
           component: AdminBro.bundle('./src/components/suzuki'),
         }
       };
-      const returnedTarget = Object.assign(paginas, c6, telhanorte, tumelero, obraja, klabin, locaweb, mitisubish, suhai, Suzuki)
+      Investimentos = {
+        Investimentos: {
+          component: AdminBro.bundle('./src/components/InvestimentosMidia'),
+        }
+      };
+      Midias = {
+        Midias: {
+          component: AdminBro.bundle('./src/components/midia'),
+        }
+      };
+      const returnedTarget = Object.assign(paginas, c6, telhanorte, tumelero, obraja, klabin, locaweb, mitisubish, suhai, suhaiFlashReport, Suzuki, Investimentos, Midias )
       let objetoPages = adminBro.options.pages
-      delete objetoPages.suhaiFlashReport;
-      delete objetoPages.suhaiReport24horas;
-      delete objetoPages.suhaiReport7dias;
     }
 
     if (acessUser == "C-Level") {
@@ -545,7 +557,7 @@ apiSheetsSuhai7D.get('/', (req, res) => {
   getDoc().then(doc => {
     sheetInvestido = doc.sheetsByIndex[1];
     sheetInvestido.getRows().then(rows => {
-      rows.map(row => {
+      rows.map(row => { 
         var dados = new Object();
         dados.investido = row.investido
         dados.impressoes = row.impressoes

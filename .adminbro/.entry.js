@@ -17,5 +17,11 @@ import Component8 from '../src/components/mitsubishi'
 AdminBro.UserComponents.Component8 = Component8
 import Component9 from '../src/components/suhai'
 AdminBro.UserComponents.Component9 = Component9
-import Component10 from '../src/components/suzuki'
+import Component10 from '../src/components/suhaiFlashReport'
 AdminBro.UserComponents.Component10 = Component10
+import Component11 from '../src/components/suzuki'
+AdminBro.UserComponents.Component11 = Component11
+import Component12 from '../src/components/InvestimentosMidia'
+AdminBro.UserComponents.Component12 = Component12
+import Component13 from '../src/components/midia'
+AdminBro.UserComponents.Component13 = Component13

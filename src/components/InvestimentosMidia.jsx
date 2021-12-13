@@ -4,7 +4,6 @@ import Select from 'react-select';
 import { Text } from '@admin-bro/design-system';
 import styled from 'styled-components';
 import CurrencyInput from 'react-currency-masked-input';
-import { selectDisplay } from '../db'
 
 const firebaseConfig = {
     apiKey: "AIzaSyAgWSfHtcjF3d_qXB0bTCcyXkdKgljBkI4",
@@ -66,10 +65,6 @@ class InvestimentosMidia extends Component {
             inicio: this.state.inicio,
             final: this.state.final
         }
-
-        await selectDisplay()
-
-
     };
 
     render() {
