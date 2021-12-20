@@ -18,6 +18,7 @@ const trendsSuzuki = express()
 const apiSheetsSuhai30D = express()
 const apiSheetsSuhai7D = express()
 const apiSheetsSuhai24H = express()
+const apiSheetsIntegraPifPaF = express()
 
 let acessUser;
 
@@ -482,6 +483,11 @@ apiSheetsSuhai24H.use(bodyParser.urlencoded({ extended: false }))
 apiSheetsSuhai24H.use(express.json())
 apiSheetsSuhai24H.use(cors())
 
+apiSheetsIntegraPifPaF.use(morgan('dev'))
+apiSheetsIntegraPifPaF.use(bodyParser.urlencoded({ extended: false }))
+apiSheetsIntegraPifPaF.use(express.json())
+apiSheetsIntegraPifPaF.use(cors())
+
 app.listen(8080, () => console.log('Sistema rodando em localhost:8080/admin'))
 trendsTelha.listen(3001, () => console.log('Trends telhanorte rodando em localhost:3001'))
 trendsTumelero.listen(3002, () => console.log('Trends tumelero rodando em localhost:3002'))
@@ -494,6 +500,7 @@ trendsSuzuki.listen(3008, () => console.log('Trends suzuki em localhost:3008'))
 apiSheetsSuhai30D.listen(3099, () => console.log('API sheets suhai 30 dias rodando'))
 apiSheetsSuhai7D.listen(3091, () => console.log('API sheets suhai 7 dias rodando'))
 apiSheetsSuhai24H.listen(3092, () => console.log('API sheets suhai 24 horas rodando'))
+apiSheetsIntegraPifPaF.listen(3093, () => console.log('API sheets Integra PifPaf'))
 
 apiSheetsSuhai30D.get('/', (req, res) => {
   const { GoogleSpreadsheet } = require('google-spreadsheet')
@@ -618,6 +625,50 @@ apiSheetsSuhai24H.get('/', (req, res) => {
         dados.ERFBIT = row.ERFBIT
         dados.impressoesBigNumbers = row.impressoesBIG
 
+        return res.json(dados)
+      })
+    })
+  })
+})
+
+apiSheetsIntegraPifPaF.get('/', (req, res) => {
+  const { GoogleSpreadsheet } = require('google-spreadsheet')
+  const credenciais = require('./src/sheets/credenciasIntegraPifPaf.json')
+  const arquivo = require('./src/sheets/arquivoIntegraPifPaf.json')
+  const getDoc = async () => {
+    const doc = new GoogleSpreadsheet(arquivo.id);
+
+    await doc.useServiceAccountAuth({ 
+      client_email: credenciais.client_email,
+      private_key: credenciais.private_key.replace(/\\n/g, '\n')
+    })
+    await doc.loadInfo();
+    return doc;
+  }
+
+  let sheetPaidMedia;
+  getDoc().then(doc => {
+    sheetPaidMedia = doc.sheetsByIndex[2];
+    sheetPaidMedia.getRows().then(rows => {
+      rows.map(row => {
+        var dados = new Object();
+        dados.Date = row.Date
+        dados.Account = row.Account        
+        dados.CampaignName = row.CampaignName
+        dados.AdSetName = row.AdSetName
+        dados.AdName = row.AdName
+        dados.PublisherPlatform	= row.PublisherPlatform
+        dados.CampaignObjective = row.CampaignObjective
+        dados.CampaignLifetimeBudget	= row.CampaignLifetimeBudget
+        dados.CampaignBudgetRemaining	= row.CampaignBudgetRemaining
+        dados.Cost = row.Cost
+        dados.Impressions = row.Impressions
+        dados.Reach = row.Reach
+        dados.LinkClicks = row.LinkClicks
+        dados.PostEngagements = row.PostEngagements	
+        dados.PageLikes	= row.PageLikes
+        dados.Frequencia = row.Frequencia
+        dados.CTRpercentage = row.CTRpercentage
         return res.json(dados)
       })
     })
