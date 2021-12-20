@@ -6,7 +6,7 @@ const AdminBroExpressjs = require('@admin-bro/express')
 const cors = require('cors')
 const morgan = require('morgan')
 const express = require('express')
-const app = express() 
+const app = express()
 const trendsTelha = express()
 const trendsTumelero = express()
 const trendsObraja = express()
@@ -213,7 +213,7 @@ const router = AdminBroExpressjs.buildAuthenticatedRouter(adminBro, {
         Suhai: {
           component: AdminBro.bundle('./src/components/suhai'),
         }
-      }; 
+      };
       suhaiFlashReport = {
         FlashReport: {
           component: AdminBro.bundle('./src/components/suhaiFlashReport'),
@@ -295,7 +295,7 @@ const router = AdminBroExpressjs.buildAuthenticatedRouter(adminBro, {
           component: AdminBro.bundle('./src/components/midia'),
         }
       };
-      const returnedTarget = Object.assign(paginas, c6, telhanorte, tumelero, obraja, klabin, locaweb, mitisubish, suhai, suhaiFlashReport, Suzuki, Investimentos, Midias )
+      const returnedTarget = Object.assign(paginas, c6, telhanorte, tumelero, obraja, klabin, locaweb, mitisubish, suhai, suhaiFlashReport, Suzuki, Investimentos, Midias)
       let objetoPages = adminBro.options.pages
     }
 
@@ -434,7 +434,7 @@ const router = AdminBroExpressjs.buildAuthenticatedRouter(adminBro, {
           component: AdminBro.bundle('./src/components/midia'),
         }
       };
-      const returnedTarget = Object.assign( paginas, Investimentos, Midias )
+      const returnedTarget = Object.assign(paginas, Investimentos, Midias)
       let objetoPages = adminBro.options.pages
 
       let dash = adminBro.options.dashboard
@@ -542,7 +542,7 @@ apiSheetsSuhai30D.get('/', (req, res) => {
         return res.json(dados)
       })
     })
-  })  
+  })
 })
 
 apiSheetsSuhai7D.get('/', (req, res) => {
@@ -564,7 +564,7 @@ apiSheetsSuhai7D.get('/', (req, res) => {
   getDoc().then(doc => {
     sheetInvestido = doc.sheetsByIndex[1];
     sheetInvestido.getRows().then(rows => {
-      rows.map(row => { 
+      rows.map(row => {
         var dados = new Object();
         dados.investido = row.investido
         dados.impressoes = row.impressoes
@@ -632,7 +632,9 @@ apiSheetsSuhai24H.get('/', (req, res) => {
 })
 
 apiSheetsIntegraPifPaF.get('/', (req, res) => {
-  const { GoogleSpreadsheet } = require('google-spreadsheet')
+  /*
+
+    const { GoogleSpreadsheet } = require('google-spreadsheet')
   const credenciais = require('./src/sheets/credenciasIntegraPifPaf.json')
   const arquivo = require('./src/sheets/arquivoIntegraPifPaf.json')
   const getDoc = async () => {
@@ -648,7 +650,7 @@ apiSheetsIntegraPifPaF.get('/', (req, res) => {
 
   let sheetPaidMedia;
   getDoc().then(doc => {
-    sheetPaidMedia = doc.sheetsByIndex[2];
+    sheetPaidMedia = doc.sheetsByIndex[3];
     sheetPaidMedia.getRows().then(rows => {
       rows.map(row => {
         var dados = new Object();
@@ -673,6 +675,14 @@ apiSheetsIntegraPifPaF.get('/', (req, res) => {
       })
     })
   })
+
+  */
+
+  (async () => {
+    const db = require("./src/db.js");
+    const integraPifPaf = await db.selectPifPafPaidMedia();
+    return res.json(integraPifPaf);
+  })();
 })
 
 app.use('/', (req, res) => {
