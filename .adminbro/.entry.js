@@ -15,13 +15,15 @@ import Component7 from '../src/components/locaweb'
 AdminBro.UserComponents.Component7 = Component7
 import Component8 from '../src/components/mitsubishi'
 AdminBro.UserComponents.Component8 = Component8
-import Component9 from '../src/components/suhai'
+import Component9 from '../src/components/mitsubishi'
 AdminBro.UserComponents.Component9 = Component9
-import Component10 from '../src/components/suhaiFlashReport'
+import Component10 from '../src/components/suhai'
 AdminBro.UserComponents.Component10 = Component10
-import Component11 from '../src/components/suzuki'
+import Component11 from '../src/components/suhaiFlashReport'
 AdminBro.UserComponents.Component11 = Component11
-import Component12 from '../src/components/InvestimentosMidia'
+import Component12 from '../src/components/suzuki'
 AdminBro.UserComponents.Component12 = Component12
-import Component13 from '../src/components/midia'
+import Component13 from '../src/components/InvestimentosMidia'
 AdminBro.UserComponents.Component13 = Component13
+import Component14 from '../src/components/midia'
+AdminBro.UserComponents.Component14 = Component14

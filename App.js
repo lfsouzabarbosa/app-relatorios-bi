@@ -265,8 +265,13 @@ const router = AdminBroExpressjs.buildAuthenticatedRouter(adminBro, {
           component: AdminBro.bundle('./src/components/locaweb'),
         }
       };
-      mitisubish = {
+    mitisubish = {
         Mitsubishi: {
+          component: AdminBro.bundle('./src/components/mitsubishi'),
+        }
+      };
+      midiaMitsubish = {
+        midiaMitsubish: {
           component: AdminBro.bundle('./src/components/mitsubishi'),
         }
       };
@@ -295,7 +300,7 @@ const router = AdminBroExpressjs.buildAuthenticatedRouter(adminBro, {
           component: AdminBro.bundle('./src/components/midia'),
         }
       };
-      const returnedTarget = Object.assign(paginas, c6, telhanorte, tumelero, obraja, klabin, locaweb, mitisubish, suhai, suhaiFlashReport, Suzuki, Investimentos, Midias)
+      const returnedTarget = Object.assign(paginas, c6, telhanorte, tumelero, obraja, klabin, locaweb, mitisubish, midiaMitsubish, suhai, suhaiFlashReport, Suzuki, Investimentos, Midias)
       let objetoPages = adminBro.options.pages
     }
 
@@ -330,8 +335,13 @@ const router = AdminBroExpressjs.buildAuthenticatedRouter(adminBro, {
           component: AdminBro.bundle('./src/components/locaweb'),
         }
       };
-      mitisubish = {
+    mitisubish = {
         Mitsubishi: {
+          component: AdminBro.bundle('./src/components/mitsubishi'),
+        }
+      };
+      midiaMitsubish = {
+        midiaMitsubish: {
           component: AdminBro.bundle('./src/components/mitsubishi'),
         }
       };
@@ -345,7 +355,7 @@ const router = AdminBroExpressjs.buildAuthenticatedRouter(adminBro, {
           component: AdminBro.bundle('./src/components/suzuki'),
         }
       };
-      const returnedTarget = Object.assign(paginas, c6, telhanorte, tumelero, obraja, klabin, locaweb, mitisubish, suhai, Suzuki)
+      const returnedTarget = Object.assign(paginas, c6, telhanorte, tumelero, obraja, klabin, locaweb, mitisubish, midiaMitsubish, suhai, Suzuki)
       let objetoPages = adminBro.options.pages
       delete objetoPages.suhaiFlashReport;
       delete objetoPages.suhaiReport24horas;
