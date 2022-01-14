@@ -272,7 +272,7 @@ const router = AdminBroExpressjs.buildAuthenticatedRouter(adminBro, {
       };
       midiaMitsubish = {
         midiaMitsubish: {
-          component: AdminBro.bundle('./src/components/mitsubishi'),
+          component: AdminBro.bundle('./src/components/midiaMitsubish'),
         }
       };
       suhai = {
@@ -342,7 +342,7 @@ const router = AdminBroExpressjs.buildAuthenticatedRouter(adminBro, {
       };
       midiaMitsubish = {
         midiaMitsubish: {
-          component: AdminBro.bundle('./src/components/mitsubishi'),
+          component: AdminBro.bundle('./src/components/midiaMitsubish'),
         }
       };
       suhai = {
