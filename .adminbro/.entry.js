@@ -1,12 +1,29 @@
-import Component37 from '../src/components/midiaMitsubish'
-AdminBro.UserComponents.Component37 = Component37
-import Component38 from '../src/components/suhai'
-AdminBro.UserComponents.Component38 = Component38
-import Component39 from '../src/components/suhaiFlashReport'
-AdminBro.UserComponents.Component39 = Component39
-import Component40 from '../src/components/suzuki'
-AdminBro.UserComponents.Component40 = Component40
-import Component41 from '../src/components/InvestimentosMidia'
-AdminBro.UserComponents.Component41 = Component41
-import Component42 from '../src/components/midia'
-AdminBro.UserComponents.Component42 = Component42
+AdminBro.UserComponents = {}
+import Component1 from '../src/components/c6Bank'
+AdminBro.UserComponents.Component1 = Component1
+import Component2 from '../src/components/c6Bank'
+AdminBro.UserComponents.Component2 = Component2
+import Component3 from '../src/components/homepage'
+AdminBro.UserComponents.Component3 = Component3
+import Component4 from '../src/components/tumelero'
+AdminBro.UserComponents.Component4 = Component4
+import Component5 from '../src/components/obraja'
+AdminBro.UserComponents.Component5 = Component5
+import Component6 from '../src/components/klabin'
+AdminBro.UserComponents.Component6 = Component6
+import Component7 from '../src/components/locaweb'
+AdminBro.UserComponents.Component7 = Component7
+import Component8 from '../src/components/mitsubishi'
+AdminBro.UserComponents.Component8 = Component8
+import Component9 from '../src/components/midiaMitsubish'
+AdminBro.UserComponents.Component9 = Component9
+import Component10 from '../src/components/suhai'
+AdminBro.UserComponents.Component10 = Component10
+import Component11 from '../src/components/suhaiFlashReport'
+AdminBro.UserComponents.Component11 = Component11
+import Component12 from '../src/components/suzuki'
+AdminBro.UserComponents.Component12 = Component12
+import Component13 from '../src/components/InvestimentosMidia'
+AdminBro.UserComponents.Component13 = Component13
+import Component14 from '../src/components/midia'
+AdminBro.UserComponents.Component14 = Component14
