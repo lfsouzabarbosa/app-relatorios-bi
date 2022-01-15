@@ -264,15 +264,20 @@ const router = AdminBroExpressjs.buildAuthenticatedRouter(adminBro, {
         Locaweb: {
           component: AdminBro.bundle('./src/components/locaweb'),
         }
-      };
+      }; 
     mitisubish = {
         Mitsubishi: {
           component: AdminBro.bundle('./src/components/mitsubishi'),
         }
       };
-      midiaMitsubish = {
-        midiaMitsubish: {
-          component: AdminBro.bundle('./src/components/midiaMitsubish'),
+      instagramMitisubish = {
+        InstagramMitisubish: {
+          component: AdminBro.bundle('./src/components/midiaInstaMIT'),
+        }
+      };
+      FacebookMitsubish = {
+        FacebookMitsubish: {
+          component: AdminBro.bundle('./src/components/midiaFaceMIT'),
         }
       };
       suhai = {
@@ -300,9 +305,9 @@ const router = AdminBroExpressjs.buildAuthenticatedRouter(adminBro, {
           component: AdminBro.bundle('./src/components/midia'),
         }
       };
-      const returnedTarget = Object.assign(paginas, c6, telhanorte, tumelero, obraja, klabin, locaweb, mitisubish, midiaMitsubish, suhai, suhaiFlashReport, Suzuki, Investimentos, Midias)
+      const returnedTarget = Object.assign(paginas, c6, telhanorte, tumelero, obraja, klabin, locaweb, mitisubish, instagramMitisubish, FacebookMitsubish, suhai, suhaiFlashReport, Suzuki, Investimentos, Midias)
       let objetoPages = adminBro.options.pages
-    }
+    } 
 
     if (acessUser == "C-Level") {
       c6 = {
@@ -340,9 +345,14 @@ const router = AdminBroExpressjs.buildAuthenticatedRouter(adminBro, {
           component: AdminBro.bundle('./src/components/mitsubishi'),
         }
       };
-      midiaMitsubish = {
-        midiaMitsubish: {
-          component: AdminBro.bundle('./src/components/midiaMitsubish'),
+      instagramMitisubish = {
+        InstagramMitisubish: {
+          component: AdminBro.bundle('./src/components/midiaInstaMIT'),
+        }
+      };
+      FacebookMitsubish = {
+        FacebookMitsubish: {
+          component: AdminBro.bundle('./src/components/midiaFaceMIT'),
         }
       };
       suhai = {
@@ -355,7 +365,7 @@ const router = AdminBroExpressjs.buildAuthenticatedRouter(adminBro, {
           component: AdminBro.bundle('./src/components/suzuki'),
         }
       };
-      const returnedTarget = Object.assign(paginas, c6, telhanorte, tumelero, obraja, klabin, locaweb, mitisubish, midiaMitsubish, suhai, Suzuki)
+      const returnedTarget = Object.assign(paginas, c6, telhanorte, tumelero, obraja, klabin, locaweb, mitisubish, instagramMitisubish, FacebookMitsubish, suhai, Suzuki)
       let objetoPages = adminBro.options.pages
       delete objetoPages.suhaiFlashReport;
       delete objetoPages.suhaiReport24horas;
