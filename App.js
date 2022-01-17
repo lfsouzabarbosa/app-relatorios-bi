@@ -329,7 +329,22 @@ const router = AdminBroExpressjs.buildAuthenticatedRouter(adminBro, {
           component: AdminBro.bundle('./src/components/midia'),
         }
       };
-      const returnedTarget = Object.assign(paginas, c6, telhanorte, tumelero, obraja, klabin, locaweb, suhai, suhaiFlashReport, Suzuki, Investimentos, Midias)
+      mitsubishi = {
+        Mitsubishi: {
+          component: AdminBro.bundle('./src/components/mitsubishi'),
+        }
+      };
+      instagramMitisubish = {
+        InstagramMitsubishi: {
+          component: AdminBro.bundle('./src/components/midiaInstaMIT'),
+        }
+      };
+      FacebookMitsubishi = {
+        FacebookMitsubishi: {
+          component: AdminBro.bundle('./src/components/midiaFaceMIT'),
+        }
+      };
+      const returnedTarget = Object.assign(paginas, c6, telhanorte, tumelero, obraja, klabin, locaweb, suhai, suhaiFlashReport, Suzuki, Investimentos, Midias, mitsubishi, instagramMitsubishi, FacebookMitsubishi)
       let objetoPages = adminBro.options.pages
     } 
 
