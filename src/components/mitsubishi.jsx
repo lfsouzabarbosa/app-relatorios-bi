@@ -34,7 +34,7 @@ color: #1C1C1CF;
 };
 
 align: center;
-max-width: 60%;
+max-width: 70%;
 font-size: 1em;
 margin-bottom: 1em;
 padding: 1em;
@@ -102,6 +102,13 @@ const Dashboard = () => {
                                     <Text fontSize="h2" fontWeight="900">1.908</Text>
                                 </Box>
                             </Box>
+                            <Box flex marginBottom="15px" justifyContent="center" verticalAlign="center">
+                                <Botao>
+                                    <StyledLink href="./midiaFaceMIT">
+                                        <Text textAlign="center" fontSize="h2" fontWeight="900">Detalhes</Text>
+                                    </StyledLink>
+                                </Botao>
+                            </Box>
                         </Box>
                     </Box>
                 </Box>
@@ -139,6 +146,13 @@ const Dashboard = () => {
                                 <Text fontSize="h2" fontWeight="900">56.370</Text>
                             </Box>
                         </Box>
+                        <Box flex marginBottom="15px" justifyContent="center" verticalAlign="center">
+                            <Botao>
+                                <StyledLink href="./midiaInstaMIT">
+                                    <Text textAlign="center" fontSize="h2" fontWeight="900">Detalhes</Text>
+                                </StyledLink>
+                            </Botao>
+                        </Box>
                     </Box>
                 </Box>
                 <br></br>
@@ -173,6 +187,13 @@ const Dashboard = () => {
                                 <Text paddingY="2px" fontSize="h4" fontWeight="3px">Engajamento</Text>
                                 <Text fontSize="h2" fontWeight="900">-</Text>
                             </Box>
+                        </Box>
+                        <Box flex marginBottom="15px" justifyContent="center" verticalAlign="center">
+                            <Botao>
+                                <StyledLink href="#">
+                                    <Text textAlign="center" fontSize="h2" fontWeight="900">Detalhes</Text>
+                                </StyledLink>
+                            </Botao>
                         </Box>
                     </Box>
                 </Box>
