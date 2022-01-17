@@ -104,7 +104,7 @@ const Dashboard = () => {
                             </Box>
                             <Box flex marginBottom="15px" justifyContent="center" verticalAlign="center">
                                 <Botao>
-                                    <StyledLink href="./midiaFaceMIT">
+                                    <StyledLink href="./FacebookMitsubish">
                                         <Text textAlign="center" fontSize="h2" fontWeight="900">Detalhes</Text>
                                     </StyledLink>
                                 </Botao>
@@ -148,7 +148,7 @@ const Dashboard = () => {
                         </Box>
                         <Box flex marginBottom="15px" justifyContent="center" verticalAlign="center">
                             <Botao>
-                                <StyledLink href="./midiaInstaMIT">
+                                <StyledLink href="./InstagramMitisubish">
                                     <Text textAlign="center" fontSize="h2" fontWeight="900">Detalhes</Text>
                                 </StyledLink>
                             </Botao>
