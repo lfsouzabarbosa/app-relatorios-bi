@@ -35,7 +35,7 @@ const Usuario = mongoose.model('Usuario', {
   nome: { type: String, required: true },
   senha: { type: String, required: true },
   email: { type: String, required: true },
-  acesso: { type: String, enum: ['Admin', 'C-Level', 'Cliente', 'Head', 'Operacional', 'Suhai', 'Mídia'], required: true },
+  acesso: { type: String, enum: ['Admin', 'C-Level', 'Cliente', 'Head', 'Operacional', 'Suhai', 'Mídia', 'Mitsubishi'], required: true },
 })
 
 const Topics = mongoose.model('Topicos Web', {
@@ -234,6 +234,45 @@ const router = AdminBroExpressjs.buildAuthenticatedRouter(adminBro, {
       delete objetoPages.Suzuki;
     }
 
+    if (acessUser == "Mitsubishi") {
+      let dash = adminBro.options.dashboard
+
+      delete dash.component
+      mitisubish = {
+        Mitsubishi: {
+          component: AdminBro.bundle('./src/components/mitsubishi'),
+        }
+      };
+      instagramMitisubish = {
+        InstagramMitisubish: {
+          component: AdminBro.bundle('./src/components/midiaInstaMIT'),
+        }
+      };
+      FacebookMitsubish = {
+        FacebookMitsubish: {
+          component: AdminBro.bundle('./src/components/midiaFaceMIT'),
+        }
+      };
+
+      const returnedTarget = Object.assign(paginas, mitisubish, instagramMitisubish, FacebookMitsubish)
+      const returnedTarget2 = Object.assign(dashboard)
+      let objetoPages = adminBro.options.pages
+
+      delete objetoPages.C6;
+      delete objetoPages.Telhanorte;
+      delete objetoPages.Tumelero;
+      delete objetoPages.Obraja;
+      delete objetoPages.Klabin;
+      delete objetoPages.Locaweb;
+      delete objetoPages.Suhai;
+      delete objetoPages.Suzuki;
+      delete objetoPages.suhaiFlashReport;
+      delete objetoPages.suhaiReport24horas;
+      delete objetoPages.suhaiReport7dias;
+      delete objetoPages.Suzuki
+      delete objetoPages.Investimentos
+      delete objetoPages.Midias
+    }
     if (acessUser == "Admin") {
       c6 = {
         C6: {
@@ -265,21 +304,6 @@ const router = AdminBroExpressjs.buildAuthenticatedRouter(adminBro, {
           component: AdminBro.bundle('./src/components/locaweb'),
         }
       }; 
-    mitisubish = {
-        Mitsubishi: {
-          component: AdminBro.bundle('./src/components/mitsubishi'),
-        }
-      };
-      instagramMitisubish = {
-        InstagramMitisubish: {
-          component: AdminBro.bundle('./src/components/midiaInstaMIT'),
-        }
-      };
-      FacebookMitsubish = {
-        FacebookMitsubish: {
-          component: AdminBro.bundle('./src/components/midiaFaceMIT'),
-        }
-      };
       suhai = {
         Suhai: {
           component: AdminBro.bundle('./src/components/suhai'),
@@ -305,7 +329,7 @@ const router = AdminBroExpressjs.buildAuthenticatedRouter(adminBro, {
           component: AdminBro.bundle('./src/components/midia'),
         }
       };
-      const returnedTarget = Object.assign(paginas, c6, telhanorte, tumelero, obraja, klabin, locaweb, mitisubish, instagramMitisubish, FacebookMitsubish, suhai, suhaiFlashReport, Suzuki, Investimentos, Midias)
+      const returnedTarget = Object.assign(paginas, c6, telhanorte, tumelero, obraja, klabin, locaweb, suhai, suhaiFlashReport, Suzuki, Investimentos, Midias)
       let objetoPages = adminBro.options.pages
     } 
 
